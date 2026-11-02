@@ -3,22 +3,21 @@ import { createHash } from 'node:crypto';
 import { Cat } from '@/components/Cat';
 import { Icon } from '@/components/Icon';
 import { JsonLd } from '@/components/JsonLd';
-import { LinkForm, AskForm } from '@/components/QaForms';
+import { AskForm } from '@/components/QaForms';
+import { NewsletterForm } from '@/components/NewsletterForm';
 import { signOut } from './actions';
 import { api, convex, secret } from '@/lib/convex';
 import { breadcrumbs, graph, meta } from '@/lib/seo';
-import { site } from '@/lib/site';
 
 export const metadata = meta({
   title: 'Live with Dr. Dana: the monthly Q&A for members',
-  description: 'Once a month, Dr. Dana Kivlin answers members\' questions live. Unlocked with a premium plan in the app and the free letters.',
+  description: 'Once a month, Dr. Dana Kivlin, urologist, answers your questions live. Get the next date by email.',
   path: '/live',
 });
 
 const fmt = (t: number) => new Date(t).toLocaleString('en-US', { weekday: 'long', month: 'long', day: 'numeric', hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York', timeZoneName: 'short' });
 
-export default async function Page({ searchParams }: { searchParams: Promise<{ link?: string }> }) {
-  const sp = await searchParams;
+export default async function Page() {
   const c = convex();
   const pass = (await cookies()).get('hc_qa')?.value;
   const portal = c && pass ? await c.query(api.qa.portal, { secret, passHash: createHash('sha256').update(pass).digest('hex') }).catch(() => null) : null;
@@ -29,7 +28,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ l
       <div className="read">
         <div className="hero__cat" aria-hidden="true"><Cat pose="calendar" width={210} priority /></div>
         <h1 className="h1" style={{ fontSize: 'clamp(40px, 5.6vw, 64px)' }}>Live with Dr. <em>Dana</em>.</h1>
-        <p className="lede">Once a month, Dr. Dana answers members&rsquo; questions live. Every past live waits here too.</p>
+        <p className="lede">Once a month, Dr. Dana answers your questions live.</p>
         {next && <p className="next-live">Next live: {fmt(next.startsAt)}</p>}
 
         {portal ? (
@@ -58,12 +57,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ l
           </div>
         ) : (
           <>
-            <ul className="locks" aria-label="To unlock the lives">
-              <li><Icon name="lock" /><div>A premium plan in the app<span>Weekly or Annual, in {site.appShort}</span></div></li>
-              <li><Icon name="lock" /><div>The free letters<span>With the same email as in the app</span></div></li>
-            </ul>
-            {sp.link === 'expired' && <p className="nl-err" role="alert">That link expired or was already used. Ask for a new one below.</p>}
-            <div className="hero__form"><LinkForm /></div>
+            <div className="hero__form"><NewsletterForm source="/live#hero" tag="live-date" cta="Tell me the next date" /></div>
           </>
         )}
       </div>

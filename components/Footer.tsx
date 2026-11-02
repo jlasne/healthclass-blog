@@ -17,19 +17,17 @@ export function Footer() {
           <div>
             <Brand white />
             <p className="ft__about">
-              The pelvic floor class by {dana.name}, urologist. On your phone and in your inbox.
+              The pelvic floor class for women. Laugh, move and feel in control.
             </p>
             <div className="ft__social">
               <a href={dana.socials[0].url} rel="me noopener" target="_blank" aria-label="Dr. Dana on Instagram"><Icon name="instagram" /></a>
               <a href={`mailto:${site.email}`} aria-label="Email us"><Icon name="mail" /></a>
-              <a href="/feed.xml" aria-label="RSS feed of the letters"><Icon name="link" /></a>
             </div>
           </div>
           <div>
             <h2>Read</h2>
             <ul>
               <li><a href="/letters">All letters</a></li>
-              <li><a href="/feed.xml">RSS</a></li>
             </ul>
           </div>
           <div>

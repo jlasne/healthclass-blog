@@ -735,3 +735,30 @@ a, button, summary, input, textarea, label { touch-action: manipulation; }
   .h1 { font-size: 84px; }
 }
 .doc .tbl { margin: 0 calc(var(--pad) * -1); padding: 0 var(--pad); overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+/* ------------------------------------------------------------------ the film in the home hero (16:9) */
+.home__grid--film { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); }
+.film { position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 28px; overflow: hidden; cursor: pointer;
+  background: var(--bg) url(/media/hero/poster.jpg) center / cover no-repeat; box-shadow: var(--shadow-lg), inset 0 0 0 1px var(--hair); }
+.film video { position: absolute; inset: 0; width: 100%; height: 100%; display: block; object-fit: cover; }
+.film__play { position: absolute; left: 50%; top: 50%; width: 68px; height: 68px; margin: -34px 0 0 -34px; border: 0; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; background: var(--rose-ink); box-shadow: var(--shadow); cursor: pointer; opacity: 0; transition: opacity .2s var(--ease); }
+.film__play svg { width: 26px; height: 26px; }
+.film.is-paused .film__play, .film:hover .film__play, .film__play:focus-visible { opacity: 1; }
+.film__sound { position: absolute; left: 14px; bottom: 16px; display: inline-flex; align-items: center; gap: 8px; padding: 9px 15px 9px 11px; border: 0; border-radius: 999px;
+  background: var(--plum-deep); color: #fff; font: 600 14px/1 var(--sans); box-shadow: var(--shadow); cursor: pointer; }
+.film__sound.is-on { background: var(--white); color: var(--plum-deep); }
+.film__sound svg { width: 18px; height: 18px; flex: none; }
+.film__bar { position: absolute; left: 0; right: 0; bottom: 0; height: 4px; background: rgba(124, 45, 75, .12); }
+.film__bar i { display: block; height: 100%; width: 0; background: var(--rose); }
+@media (max-width: 760px) { .home__grid--film { grid-template-columns: 1fr; } .film { border-radius: 20px; } .film__play { width: 56px; height: 56px; margin: -28px 0 0 -28px; } }
+@media (prefers-reduced-motion: reduce) { .film__play { transition: none; } }
+
+/* ------------------------------------------------------------------ letters: a big hero on its own band, then the archive */
+.hero--band { position: relative; padding: clamp(48px, 8vw, 112px) 0 clamp(64px, 9vw, 128px); margin-bottom: clamp(40px, 6vw, 72px);
+  background: radial-gradient(70% 90% at 50% 0%, var(--rose-soft) 0%, rgba(252, 235, 238, 0) 70%), var(--plum-mist);
+  border-radius: 0 0 50% 50% / 0 0 clamp(28px, 5vw, 64px) clamp(28px, 5vw, 64px); }
+.hero--band .hero__cat { width: clamp(170px, 22vw, 260px); }
+.h1--xl { font-size: clamp(46px, 7.2vw, 88px); }
+.hero--band .lede { font-size: clamp(19px, 1.8vw, 23px); }
+.archive__h { margin: 0 0 18px; font: 600 12.5px/1.2 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--plum); }
