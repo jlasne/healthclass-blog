@@ -66,6 +66,9 @@ export default function Page() {
           <p>Apple (App Store) or Google (Google Play) process your payment. We never see your card. Superwall, our subscription provider, shows the plan screen and tests versions of it. It receives an anonymous app user ID, your device type, language and app version, the plan screens you see and your purchases. It never receives your answers, your program or your log.</p>
           <p>When you buy, renew, cancel or end a plan, Superwall tells our website server (hosted by Convex) the event, the product, the end date, the anonymous app user ID and, if you added it in the app, your email. We use this only to let paid members into the monthly live Q&amp;A.</p>
 
+          <h2 id="analytics">App usage and crashes</h2>
+          <p>PostHog, our analytics provider, stores data in the European Union (Frankfurt). It receives the random app ID, your phone&rsquo;s platform and app version, the screens you open, the buttons you tap (their names, never what you type), session lengths, your streak, whether you have a plan, purchase results and crash reports. It discards your IP address. It never receives your answers, your log, your program, your email or your photos. We use it to fix crashes and to make the class easier to follow. PostHog keeps this data for up to 1 year. Delete my data gives your phone a new app ID; to erase the old one at PostHog, email us. The website itself sends nothing to PostHog.</p>
+
           <h2 id="chat">Support chat (iPhone)</h2>
           <p>On iPhone, Today and Settings open a chat with our team, run by Reception. When the app opens, Reception receives your phone&rsquo;s details: app version, phone model, iOS version, language, region, time zone and whether notifications are on. When you chat, Reception receives what you write and the photos you send. From your first chat, it also receives your email if you added it, your plan, the day you joined, your week and day, your reminder time and your break dates. Never your answers to the first questions or your log. If you mention your health in the chat, we use it only to answer you.</p>
 
@@ -90,6 +93,7 @@ export default function Page() {
               <tbody>
                 <tr><td>Apple, Google</td><td>App stores, payments, phone backups</td><td>Purchases, under their own policies</td></tr>
                 <tr><td>Superwall</td><td>Plan screens, subscription events</td><td>Anonymous app user ID, device details, purchases, email if added</td></tr>
+                <tr><td>PostHog (EU)</td><td>App analytics and crash reports</td><td>Random app ID, screens, button names, purchase results, crashes</td></tr>
                 <tr><td>Supabase</td><td>App database</td><td>Email, Notify me requests, screen numbers</td></tr>
                 <tr><td>Convex</td><td>Website database</td><td>Newsletter emails, paid members, Q&amp;A questions, sign-in hashes</td></tr>
                 <tr><td>Vercel</td><td>Website hosting</td><td>Technical request data</td></tr>
