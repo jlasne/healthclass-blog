@@ -38,36 +38,38 @@ export default async function Page() {
 
   if (!portal) {
     return (
-      <section className="hero live" style={{ paddingBottom: 80 }}>
-        <div className="wrap live__grid">
-          <div className="live__clip">
-            <LiveClip src={site.qa.clip} poster={dana.hero} label={`${dana.name}, urologist`} />
-            <span className="live__badge"><i aria-hidden="true" />Live Q&amp;A with Dr. Dana</span>
-            <Cat pose="calendar" width={170} className="live__cat" />
-          </div>
-          <div className="live__copy">
+      <>
+        <section className="hero hero--center hero--band live-hero">
+          <div className="read">
+            <div className="live-hero__clip">
+              <LiveClip src={site.qa.clip} poster={dana.hero} label={`${dana.name}, urologist`} />
+              <Cat pose="calendar" width={120} className="live-hero__cat" />
+            </div>
             <span className="eyebrow">Live with Dr. Dana</span>
-            <h1 className="h1 live__h1">Next live: <em>{over ? 'date soon' : date}</em>.</h1>
-            {!over && <p className="live__when">{when}</p>}
-            {!over && <Countdown to={startsAt} durationMin={durMin} />}
-            <div className="live__list">
-              <b>Only for the list</b>
-              <ul className="live__need">
-                <li>Premium in the app</li>
-                <li>Subscribed to the free letter</li>
-              </ul>
-              <p>Your code to join is in the app. The letter reminds you.</p>
-            </div>
-            <div className="live__join">
-              <NewsletterForm source="/live#hero" tag="live-date" cta="Join the letter" />
-              <a className="link live__app" href="/#get">{appLive ? 'Get the app' : 'The app opens soon: get told on launch day'}</a>
-            </div>
+            <h1 className="h1 h1--xl">Next live: <em>{over ? 'date soon' : date}</em>.</h1>
+            {!over && <p className="lede">{when}. Dr. Dana answers your questions live.</p>}
+            {!over && <div className="live-hero__count"><Countdown to={startsAt} durationMin={durMin} /></div>}
           </div>
-        </div>
+        </section>
+
+        <section className="read live-how" aria-labelledby="how" style={{ paddingBottom: 80 }}>
+          <span className="eyebrow">Only for the list</span>
+          <h2 id="how" className="h2">How to <em>join</em>.</h2>
+          <ol className="join-steps">
+            <li className="tone--rosy"><b>Go premium in the app</b><span>{appLive ? 'Weekly or Annual.' : 'The app opens soon.'}</span></li>
+            <li className="tone--sky"><b>Join the free letter</b><span>Every Wednesday and Sunday.</span></li>
+            <li className="tone--plum"><b>Get your code in the app</b><span>The letter reminds you the week of the live.</span></li>
+          </ol>
+          <div className="live-how__join">
+            <NewsletterForm source="/live#how" tag="live-date" cta="Join the letter" />
+            <a className="link live__app" href="/#get">{appLive ? 'Get the app' : 'The app opens soon: see it'}</a>
+          </div>
+        </section>
         <JsonLd data={graph(breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Live', path: '/live' }]))} />
-      </section>
+      </>
     );
   }
+
 
   return (
     <section className="hero hero--center" style={{ paddingBottom: 80 }}>

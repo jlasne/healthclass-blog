@@ -836,3 +836,28 @@ a, button, summary, input, textarea, label { touch-action: manipulation; }
   .film__sound { left: 10px; bottom: 12px; padding: 10px; }
   .film__sound span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 }
+
+/* ------------------------------------------------------------------ landing hero: the first screen, whole */
+.home--film { min-height: calc(100svh - 70px); display: flex; align-items: center; padding: clamp(28px, 4vw, 56px) 0; }
+.home--film .home__stage { width: 100%; }
+.home__cta .stores { margin: 0; }
+.home__cta .home__soon { margin: 14px 0 0; font-weight: 500; color: var(--ink-2); }
+@media (max-width: 860px) { .home--film { min-height: 0; } }
+
+/* ------------------------------------------------------------------ /live: the letters' smooth hero, then how to join */
+.live-hero__clip { position: relative; width: clamp(170px, 20vw, 230px); aspect-ratio: 4 / 5; margin: 0 auto 22px; }
+.live-hero__clip .live__vid, .live-hero__clip .live__vid video { border-radius: 999px 999px 30px 30px; }
+.live-hero__clip .live__vid video { box-shadow: 0 0 0 6px var(--white), var(--shadow-lg); }
+.live-hero__cat { position: absolute; right: -62px; bottom: -10px; width: 110px; height: auto; }
+.live-hero .eyebrow { margin-top: 4px; }
+.live-hero .h1 { margin-top: 14px; }
+.live-hero__count { display: flex; justify-content: center; }
+.live-hero__count .count { margin-top: 26px; }
+.live-how .h2 { margin-top: 12px; }
+.join-steps { margin: 26px 0 0; padding: 0; list-style: none; display: grid; gap: 12px; counter-reset: step; }
+.join-steps li { position: relative; display: grid; grid-template-columns: 46px 1fr; column-gap: 16px; align-items: center; padding: 18px 20px; border-radius: 20px; background: var(--tone-soft); box-shadow: inset 0 0 0 1px var(--hair); counter-increment: step; }
+.join-steps li::before { content: counter(step); grid-row: span 2; display: grid; place-items: center; width: 46px; height: 46px; border-radius: 50%; background: var(--white); box-shadow: inset 0 0 0 1.5px var(--tone); font: 400 24px/1 var(--serif); color: var(--plum); }
+.join-steps b { grid-column: 2; font: 600 18px/1.3 var(--sans); color: var(--ink); }
+.join-steps span { grid-column: 2; font: 500 15.5px/1.4 var(--sans); color: var(--muted-dk); }
+.live-how__join { margin-top: 28px; }
+@media (max-width: 860px) { .live-hero__cat { right: -48px; width: 88px; } }

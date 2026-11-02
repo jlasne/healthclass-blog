@@ -3,7 +3,6 @@ import { preload } from 'react-dom';
 import { Cat } from '@/components/Cat';
 import { HeroFilm } from '@/components/HeroFilm';
 import { Stores } from '@/components/Stores';
-import { NewsletterForm } from '@/components/NewsletterForm';
 import { JsonLd } from '@/components/JsonLd';
 import { app, graph, meta } from '@/lib/seo';
 import { dana, site } from '@/lib/site';
@@ -40,19 +39,14 @@ export default async function Home() {
           </div>
           <div className="home__film"><HeroFilm /></div>
           <div className="home__cta">
+            <Stores />
             {live ? (
-              <div className="home__get">
-                <Stores />
-                <div className="qr" aria-label={`QR code: scan to open ${site.magicHost} on your phone`} role="img">
-                  <span dangerouslySetInnerHTML={{ __html: qr }} />
-                  <small>Scan with your phone</small>
-                </div>
+              <div className="qr" aria-label={`QR code: scan to open ${site.magicHost} on your phone`} role="img">
+                <span dangerouslySetInnerHTML={{ __html: qr }} />
+                <small>Scan with your phone</small>
               </div>
             ) : (
-              <>
-                <p className="home__soon">Coming soon to iPhone and Android. <span>Week&nbsp;1&nbsp;free.</span></p>
-                <NewsletterForm source="/#get" tag="app-waitlist" cta="Tell me on launch day" fine="1 email on launch day, then the free letters." />
-              </>
+              <p className="home__soon">Coming soon to iPhone and Android. <span>Week&nbsp;1&nbsp;free.</span></p>
             )}
           </div>
         </div>

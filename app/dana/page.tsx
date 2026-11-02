@@ -33,7 +33,7 @@ export default function Page() {
             <div className="arch">
               <div className="arch__photo">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <video src="/media/dana/insta.mp4" poster={dana.hero} autoPlay muted loop playsInline preload="metadata" aria-label={`${dana.name}, urologist, from her Instagram`} width={576} height={720} />
+                <img src={dana.photo} alt={`${dana.name}, urologist`} width={560} height={560} />
               </div>
               <Cat pose="heart" width={200} className="arch__cat" priority />
               <div className="arch__badge">
