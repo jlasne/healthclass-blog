@@ -105,3 +105,14 @@ cheer, hammock, sleep...). `vendor/ink-blog.js` adds the website's own poses wit
 their own CSS, swapping 7 times a second, frame 1 alone under reduced motion. `public/cats/still/` holds frame 1 for
 share images. To add a pose, `I.define(name, { w, h, draw(t, K) })` in `vendor/ink-blog.js` (the format is documented
 at the top of `vendor/ink.js`).
+
+## Open decisions (to settle before launch)
+
+- **Pricing.** The app's settings say $7.99 a week and $79.99 a year, with 7 free days on the annual plan only. Not
+  confirmed yet. Once decided: create the 2 subscriptions in App Store Connect and Google Play
+  (`healthclass_weekly`, `healthclass_annual`), add them in Superwall (Products, entitlement `premium`), build the
+  paywall, and add the 4 placements (`onboarding_done`, `week_locked`, `routine_locked`, `settings_plan`) to a
+  campaign. Then update the prices in `lib/site.ts`, the Terms (plans) and the store descriptions.
+- **Google Play account type.** Personal account: keep only "Activity and fitness" in Health apps. For medical
+  categories, get a D-U-N-S number and move the app to an organization account.
+- **Reception on Android.** Not available (iOS only). Asked the founder; email support on Android until then.
