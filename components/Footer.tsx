@@ -17,7 +17,7 @@ export function Footer() {
           <div>
             <Brand white />
             <p className="ft__about">
-              Short letters from {dana.name}, a board-certified urologist, on the pelvic floor, bladder leaks and the habits that fix them. The blog of the {site.appName} app.
+              The pelvic floor class by {dana.name}, urologist. On your phone and in your inbox.
             </p>
             <div className="ft__social">
               <a href={dana.socials[0].url} rel="me noopener" target="_blank" aria-label="Dr. Dana on Instagram"><Icon name="instagram" /></a>

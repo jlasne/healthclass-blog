@@ -3,11 +3,11 @@ import { Cat, type Pose } from './Cat';
 import { dana } from '@/lib/site';
 
 // The letter signup, kept simple: who writes it, one line, one field. The trust lines sit under the field
-// (free, 1 email a week, leave in 1 click, where the email goes).
+// (free, Wednesday and Sunday, leave in 1 click, where the email goes).
 export function Newsletter({
   source,
   tag,
-  title = <>1 letter a week from a <em>urologist</em>.</>,
+  title = <>Letters from a urologist, <em>Dr. Dana Kivlin</em>.</>,
   pose = 'write',
   as = 'h2',
   peek = false,
@@ -24,7 +24,7 @@ export function Newsletter({
 }) {
   const H = as;
   const box = (
-    <section className={compact ? 'nl nl--compact' : 'nl'} aria-label="The free weekly letter">
+    <section className={compact ? 'nl nl--compact' : 'nl'} aria-label="The free letters">
       <div>
         <div className="nl__who">
           {/* eslint-disable-next-line @next/next/no-img-element */}

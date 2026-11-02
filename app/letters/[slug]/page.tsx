@@ -110,7 +110,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
       </div>
 
       <div className="wrap" style={{ marginTop: 40 }}>
-        <Newsletter source={`/letters/${a.slug}`} tag="article-end" title={<>Liked this? Get the next one <em>Sunday</em>.</>} pose="bell" peek />
+        <Newsletter source={`/letters/${a.slug}`} tag="article-end" title={<>Liked this? The next letter lands <em>Wednesday or Sunday</em>.</>} pose="bell" peek />
       </div>
 
       {more.length > 0 && (

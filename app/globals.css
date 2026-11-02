@@ -163,7 +163,7 @@ button, input, textarea, select { font: inherit; color: inherit; }
 .arch { position: absolute; inset: 0 6% 12% 6%; }
 .arch::before { content: ""; position: absolute; inset: 0; border-radius: 999px 999px 36px 36px; background: var(--rose-tint); transform: translate(14px, 14px); }
 .arch__photo { position: absolute; inset: 0; overflow: hidden; border-radius: 999px 999px 36px 36px; background: var(--well); box-shadow: var(--shadow-lg); }
-.arch__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+.arch__photo img, .arch__photo video { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
 .arch__cat { position: absolute; z-index: 2; left: -9%; bottom: -1%; width: 44%; filter: drop-shadow(0 10px 18px rgba(74, 36, 51, .14)); }
 .arch__badge {
   position: absolute; right: -2%; bottom: 6%; display: flex; align-items: center; gap: 10px; padding: 12px 16px 12px 12px;
@@ -666,3 +666,8 @@ html.js [data-rise].is-in { opacity: 1; transform: none; transition: opacity .6s
 .door span { display: block; margin-top: 3px; font-size: 14.5px; color: var(--muted-dk); }
 .door:hover b { color: var(--rose-ink); }
 @media (max-width: 820px) { .doors { grid-template-columns: 1fr; } }
+
+.impacts { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 0; padding: 0; list-style: none; max-width: 540px; }
+.impacts li { display: inline-flex; align-items: center; gap: 7px; padding: 9px 14px; border-radius: 999px; background: var(--tone-soft); box-shadow: inset 0 0 0 1px var(--hair); font: 600 14.5px/1 var(--sans); color: var(--plum); }
+.impacts li::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--tone); box-shadow: 1.5px 1.5px 0 var(--plum); }
+.door__face { flex: none; width: 76px; height: 76px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 3px #fff, 0 0 0 4.5px var(--blush); }

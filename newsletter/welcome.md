@@ -1,16 +1,16 @@
-Subject: You're in. Here is what Sunday brings.
+Subject: You're in. Here is what Wednesday and Sunday bring.
 Preview: 1 idea, 1 exercise, 1 reader question. 3 minutes.
 
 Hi, I'm Dana.
 
-I'm a board-certified urologist at Middlesex Health in Connecticut. Every Sunday I'll send you one short letter about
+I'm a board-certified urologist at Middlesex Health in Connecticut. Every Wednesday and Sunday I'll send you one short letter about
 your pelvic floor:
 
 1. **1 idea.** What the research says, in plain words, with its source.
 2. **1 exercise.** A 2-minute move to try the same day.
 3. **1 question.** A reader asks, I answer.
 
-Free, for good. 1 email a week. Leave in 1 click at the bottom of any letter.
+Free, for good. 2 emails a week. Leave in 1 click at the bottom of any letter.
 
 **Your first step, today:** read [Meet your hammock](https://www.healthclass.app/blog/what-is-the-pelvic-floor). It takes
 3 minutes and shows you where your pelvic floor is.

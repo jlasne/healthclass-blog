@@ -21,7 +21,7 @@ ${letters}
 
 - [About ${dana.name}](${absoluteUrl('/dana')}): credentials and practice
 - [The app](${absoluteUrl('/')}): ${site.appName}, 6-week pelvic floor programs
-- [The letters](${absoluteUrl('/letters')}): free, weekly
+- [The letters](${absoluteUrl('/letters')}): free, every Wednesday and Sunday
 - [Live with Dr. Dana](${absoluteUrl('/live')}): the monthly Q&A for premium members
 
 ## Policies

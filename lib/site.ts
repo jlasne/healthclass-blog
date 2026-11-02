@@ -22,7 +22,7 @@ export const site = {
   price: { weekly: '$7.99', annual: '$79.99', trialDays: 7 },
   newsletter: {
     name: 'Class Notes',
-    cadence: 'Every Sunday',
+    cadence: 'Every Wednesday and Sunday',
     promise: '1 idea, 1 exercise and 1 reader question, in a 3-minute read.',
   },
   qa: {

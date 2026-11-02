@@ -11,7 +11,7 @@ import { site } from '@/lib/site';
 
 export const metadata = meta({
   title: 'Live with Dr. Dana: the monthly Q&A for members',
-  description: 'Once a month, Dr. Dana Kivlin answers members\' questions live. Unlocked with a premium plan in the app and the free weekly letter.',
+  description: 'Once a month, Dr. Dana Kivlin answers members\' questions live. Unlocked with a premium plan in the app and the free letters.',
   path: '/live',
 });
 
@@ -60,7 +60,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ l
           <>
             <ul className="locks" aria-label="To unlock the lives">
               <li><Icon name="lock" /><div>A premium plan in the app<span>Weekly or Annual, in {site.appShort}</span></div></li>
-              <li><Icon name="lock" /><div>The free weekly letter<span>With the same email as in the app</span></div></li>
+              <li><Icon name="lock" /><div>The free letters<span>With the same email as in the app</span></div></li>
             </ul>
             {sp.link === 'expired' && <p className="nl-err" role="alert">That link expired or was already used. Ask for a new one below.</p>}
             <div className="hero__form"><LinkForm /></div>

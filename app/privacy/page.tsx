@@ -56,7 +56,7 @@ export default function Page() {
 
           <h2 id="app">Data the app sends us</h2>
           <ul>
-            <li><b>Your email, if you add it</b>, for Class Notes, our weekly letter, and to sign in to the members&rsquo; Q&amp;A. Each letter has a one-click unsubscribe link.</li>
+            <li><b>Your email, if you add it</b>, for Class Notes, our free letter (Wednesday and Sunday), and to sign in to the members&rsquo; Q&amp;A. Each letter has a one-click unsubscribe link.</li>
             <li><b>&ldquo;Notify me&rdquo; requests:</b> the program you ask about (for example Prolapse), a random app ID created on your phone, your email if you add it, and your phone&rsquo;s platform and app version. We use them to count the demand for each program and to tell you the day it opens.</li>
             <li><b>The first-question screens you reach:</b> a screen number (1 to 12), the random app ID, and your phone&rsquo;s platform and app version. Never your answers. We use them to make the first questions shorter.</li>
           </ul>
@@ -77,7 +77,7 @@ export default function Page() {
           </ul>
 
           <h2 id="newsletter">Class Notes, the newsletter</h2>
-          <p>If you join Class Notes on the website or in the app, we store your email, the page you joined from, the date and whether you are subscribed, in our database at Convex. We send the letters through MailCheap, which receives your email, the source &ldquo;website&rdquo; and your IP address (to block fake signups). We use your email to send the letter, once a week, and nothing else. Every letter has a one-click unsubscribe link. Unsubscribing stops the letters at once.</p>
+          <p>If you join Class Notes on the website or in the app, we store your email, the page you joined from, the date and whether you are subscribed, in our database at Convex. We send the letters through MailCheap, which receives your email, the source &ldquo;website&rdquo; and your IP address (to block fake signups). We use your email to send the letters, twice a week, and nothing else. Every letter has a one-click unsubscribe link. Unsubscribing stops the letters at once.</p>
 
           <h2 id="qa">The live Q&amp;A with Dr. Dana</h2>
           <p>To sign in, you type the email you added in the app. Our server checks it against our list of paid members and, if it matches, emails you a one-time link through Resend. The answer on the page is the same for every email, so the page never shows whether someone has a plan. We store a scrambled form (a hash) of each link and sign-in key, never the key itself.</p>

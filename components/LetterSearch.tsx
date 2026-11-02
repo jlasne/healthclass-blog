@@ -1,17 +1,14 @@
 'use client';
-// The archive with a search box and topic filters, all in the browser (the list is small).
-import { useMemo, useState } from 'react';
+// The archive with a search box, all in the browser (the list is small).
+import { useState } from 'react';
 import { Icon } from './Icon';
 
 export type LetterItem = { slug: string; title: string; excerpt: string; topic: string; tone: string; cat: string; date: string; dateLabel: string; minutes: number; keywords: string[] };
 
 export function LetterSearch({ items }: { items: LetterItem[] }) {
   const [q, setQ] = useState('');
-  const [topic, setTopic] = useState('');
-  const topics = useMemo(() => Array.from(new Set(items.map((a) => a.topic))), [items]);
   const words = q.toLowerCase().split(/\s+/).filter(Boolean);
   const shown = items.filter((a) => {
-    if (topic && a.topic !== topic) return false;
     const hay = `${a.title} ${a.excerpt} ${a.topic} ${a.keywords.join(' ')}`.toLowerCase();
     return words.every((w) => hay.includes(w));
   });
@@ -21,10 +18,6 @@ export function LetterSearch({ items }: { items: LetterItem[] }) {
         <Icon name="book" />
         <label htmlFor="letter-q" className="sr-only">Search the letters</label>
         <input id="letter-q" type="search" placeholder="Search: leaks, Kegels, pregnancy..." value={q} onChange={(e) => setQ(e.target.value)} />
-      </div>
-      <div className="search__topics" aria-label="Topics">
-        <button type="button" aria-pressed={!topic} onClick={() => setTopic('')}>All</button>
-        {topics.map((t) => (<button key={t} type="button" aria-pressed={topic === t} onClick={() => setTopic(topic === t ? '' : t)}>{t}</button>))}
       </div>
       {shown.length ? (
         <ol className="letters">

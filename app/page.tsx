@@ -27,7 +27,14 @@ export default async function Home() {
           <div>
             <span className="eyebrow">{site.appName}</span>
             <h1 className="h1">The pelvic floor class for <em>women</em>.</h1>
-            <p className="lede">A urologist&rsquo;s class on your phone. 5 minutes a day for your bladder, your core and your confidence. Week 1 free.</p>
+            <p className="lede">The upcoming app built to be the #1 for women&rsquo;s pelvic floor. 5 minutes a day, by a urologist. Week 1 free.</p>
+            <ul className="impacts" aria-label="What your pelvic floor shapes">
+              <li className="tone--rosy">Bladder control</li>
+              <li className="tone--sky">Core strength</li>
+              <li className="tone--plum">Intimacy</li>
+              <li className="tone--blush">Pregnancy and after birth</li>
+              <li className="tone--rosy">Menopause</li>
+            </ul>
             {live ? (
               <div className="home__get">
                 <Stores />
@@ -42,11 +49,6 @@ export default async function Home() {
                 <NewsletterForm source="/#get" tag="app-waitlist" cta="Tell me on launch day" />
               </div>
             )}
-            <div className="byline home__by">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={dana.avatar} alt="" width={46} height={46} />
-              <div><b>Created by {dana.name}, {dana.credential}</b><span>{dana.role} · {dana.practice}</span></div>
-            </div>
           </div>
           <Phone />
         </div>
@@ -55,12 +57,13 @@ export default async function Home() {
       <section className="sec--tight" aria-label="More from Dr. Dana" style={{ paddingBottom: 72 }}>
         <div className="wrap doors">
           <a className="door" href="/dana">
-            <span className="tone-disc tone--rosy" aria-hidden="true"><Cat pose="heart" width={76} /></span>
-            <div><b>Meet Dr. Dana</b><span>The urologist behind the class</span></div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img className="door__face" src={dana.avatar} alt="" width={76} height={76} />
+            <div><b>Meet {dana.name}, {dana.credential}</b><span>{dana.role} · {dana.practice}</span></div>
           </a>
           <a className="door" href="/letters">
             <span className="tone-disc tone--sky" aria-hidden="true"><Cat pose="read" width={76} /></span>
-            <div><b>Read the letters</b><span>Free, every Sunday</span></div>
+            <div><b>Read the letters</b><span>Free, every Wednesday and Sunday</span></div>
           </a>
           <a className="door" href="/live">
             <span className="tone-disc tone--plum" aria-hidden="true"><Cat pose="calendar" width={76} /></span>

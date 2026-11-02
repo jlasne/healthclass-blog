@@ -33,7 +33,7 @@ export default function Page() {
             <div className="arch">
               <div className="arch__photo">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={dana.photo} alt={`${dana.name}, urologist`} width={560} height={560} fetchPriority="high" />
+                <video src="/media/dana/insta.mp4" poster={dana.hero} autoPlay muted loop playsInline preload="metadata" aria-label={`${dana.name}, urologist, from her Instagram`} width={576} height={720} />
               </div>
               <Cat pose="heart" width={200} className="arch__cat" priority />
               <div className="arch__badge">
@@ -61,7 +61,7 @@ export default function Page() {
 
       <section className="sec" aria-labelledby="find">
         <div className="wrap">
-          <div className="sec__hd"><div><span className="eyebrow">Where you can find me</span><h2 id="find" className="h2">Same person, same advice</h2></div></div>
+          <div className="sec__hd"><div><span className="eyebrow">Where you can find me</span><h2 id="find" className="h2">Women&rsquo;s health, <em>every day</em></h2></div></div>
           <div className="related">
             {dana.socials.map((s, i) => (
               <a key={s.url} className={`card tone--${['rosy', 'sky', 'plum'][i % 3]}`} href={s.url} rel="me noopener" target="_blank">

@@ -10,7 +10,7 @@ export const revalidate = 3600;
 
 export const metadata = meta({
   title: 'Letters on the pelvic floor and bladder leaks, from a urologist',
-  description: 'Free weekly letters from Dr. Dana Kivlin, board-certified urologist: bladder leaks, Kegels done right, the Knack, pregnancy and more. Short and sourced.',
+  description: 'Free letters twice a week from Dr. Dana Kivlin, board-certified urologist: bladder leaks, Kegels done right, the Knack, pregnancy and more. Short and sourced.',
   path: '/letters',
 });
 
@@ -22,8 +22,8 @@ export default function Page() {
       <section className="hero hero--center">
         <div className="read">
           <div className="hero__cat" aria-hidden="true"><Cat pose="reading" width={210} priority /></div>
-          <h1 className="h1" style={{ fontSize: 'clamp(40px, 5.6vw, 64px)' }}>1 letter a week from a <em>urologist</em>.</h1>
-          <p className="lede">Free, every Sunday. 3 minutes to read.</p>
+          <h1 className="h1" style={{ fontSize: 'clamp(40px, 5.6vw, 64px)' }}>Letters from a urologist, <em>Dr. Dana Kivlin</em>.</h1>
+          <p className="lede">Free, every Wednesday and Sunday. Pelvic health in 3 minutes, with the sources.</p>
           <div className="hero__form"><NewsletterForm source="/letters#hero" tag="letters-hero" /></div>
         </div>
       </section>

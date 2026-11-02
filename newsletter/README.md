@@ -1,6 +1,6 @@
 # Class Notes · the newsletter
 
-Free, every Sunday, from Dr. Dana Kivlin. Hosted on [MailCheap](https://mailcheap.ai). Every signup on the website lands
+Free, every Wednesday and Sunday, from Dr. Dana Kivlin. Hosted on [MailCheap](https://mailcheap.ai). Every signup on the website lands
 in Convex first (`subscribers` table), then goes to MailCheap through its API as soon as `MAILCHEAP_API_KEY` is set on
 Convex. An hourly job sends everyone who signed up before the key existed, so no signup is lost while the newsletter
 is being set up.
@@ -29,4 +29,4 @@ Use `issue-template.md`. The checklist, in short:
 | One clear ask | One link: read the full letter, or try the exercise. The app comes after the value, once |
 | A reader question | Answered by Dana, published without a name, with permission |
 | Easy exit | 1-click unsubscribe, the postal address (required by CAN-SPAM) |
-| Same day, same time | Sunday, 7:00 AM Eastern |
+| Same days, same time | Wednesday and Sunday, 7:00 AM Eastern |

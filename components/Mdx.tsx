@@ -43,7 +43,7 @@ function Remember({ children, title = '3 things to remember' }: { children: Reac
 function Letter({ slug }: { slug?: string }) {
   return (
     <div style={{ margin: '2.4em 0' }}>
-      <Newsletter compact as="h3" source={`/letters/${slug ?? ''}#mid`} tag="article" title={<>Get the next letter on <em>Sunday</em>.</>} text="1 idea, 1 exercise and 1 reader question from Dr. Dana. Free, in a 3-minute read." />
+      <Newsletter compact as="h3" source={`/letters/${slug ?? ''}#mid`} tag="article" title={<>Get my next letter, <em>free</em>.</>} text="1 idea, 1 exercise and 1 reader question from Dr. Dana. Free, in a 3-minute read." />
     </div>
   );
 }

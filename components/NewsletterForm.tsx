@@ -12,7 +12,7 @@ export function NewsletterForm({ source, tag, cta = 'Get the free letter', id }:
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/cats/cheer.svg" alt="" width={78} height={78} />
         <div>
-          <b>You&rsquo;re in. See you Sunday.</b>
+          <b>You&rsquo;re in. See you Wednesday or Sunday.</b>
           <span>Look for &ldquo;Class Notes&rdquo; from Dr. Dana in your inbox. Move it to your main tab so the next one lands there.</span>
         </div>
       </div>
@@ -37,7 +37,7 @@ export function NewsletterForm({ source, tag, cta = 'Get the free letter', id }:
       </div>
       {state.status === 'error' && <p className="nl-err" role="alert">{state.message}</p>}
       <p className="nl-fine" id={`${fieldId}-fine`}>
-        Free. 1 email every Sunday. Unsubscribe in 1 click. Your email stays with us: <a href="/privacy#newsletter">privacy</a>.
+        Free. Every Wednesday and Sunday. Unsubscribe in 1 click. Your email stays with us: <a href="/privacy#newsletter">privacy</a>.
       </p>
     </form>
   );
