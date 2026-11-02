@@ -39,7 +39,7 @@ export default function Page() {
           </ul>
 
           <h2 id="use">3. Using the app and the website</h2>
-          <p>The app and the website are for adults, 18 and over, for personal use. Keep your phone and its backup secure: your log lives there. Use the forms with your own email, and send questions without other people&rsquo;s private details.</p>
+          <p>The app and the website are for people aged 16 and over, for personal use. If you are 16 or 17, read these terms with a parent or guardian; buying a plan follows the rules of your App Store or Google Play account. Keep your phone and its backup secure: your log lives there. Use the forms with your own email, and send questions without other people&rsquo;s private details.</p>
 
           <h2 id="plans">4. Plans and payments</h2>
           <ul>

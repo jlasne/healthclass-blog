@@ -102,7 +102,7 @@ export function articleLd(a: Article) {
       timeRequired: `PT${a.minutes}M`,
       keywords: a.keywords.join(', '),
       articleSection: a.topic,
-      audience: { '@type': 'PeopleAudience', audienceType: 'Women', suggestedGender: 'female', suggestedMinAge: 18 },
+      audience: { '@type': 'PeopleAudience', audienceType: 'Women', suggestedGender: 'female', suggestedMinAge: 16 },
       author: { '@id': danaId },
       reviewedBy: { '@id': danaId },
       publisher: { '@id': orgId },

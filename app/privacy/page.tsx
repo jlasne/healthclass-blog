@@ -18,7 +18,7 @@ const SECTIONS = [
   ['short', 'The short version'], ['who', 'Who we are'], ['phone', 'Data that stays on your phone'], ['app', 'Data the app sends us'],
   ['purchases', 'Purchases'], ['chat', 'Support chat'], ['website', 'The website'], ['newsletter', 'Class Notes'], ['qa', 'The live Q&A'],
   ['processors', 'Who processes data'], ['retention', 'How long we keep data'], ['rights', 'Your rights and deletion'], ['health', 'Health information'],
-  ['children', 'Children'], ['changes', 'Changes'],
+  ['children', 'Teens and children'], ['changes', 'Changes'],
 ] as const;
 
 export default function Page() {
@@ -116,8 +116,8 @@ export default function Page() {
           <h2 id="health">Health information</h2>
           <p>{site.appName} is education from a urologist, not medical advice. Your health answers stay on your phone and never reach us. A question you send for the Q&amp;A may mention your health: we use it only to prepare the session.</p>
 
-          <h2 id="children">Children</h2>
-          <p>The app and the website are for adults, 18 and over.</p>
+          <h2 id="children">Teens and children</h2>
+          <p>The app and the website are for people aged 16 and over. We handle the data of 16 and 17 year olds exactly as described above, with no advertising and no profiling. We do not knowingly collect data from anyone under 16. If you think a child under 16 has sent us data, write to <a href={`mailto:${site.email}`}>{site.email}</a> and we will delete it.</p>
 
           <h2 id="changes">Changes</h2>
           <p>We post any change on this page and in the app, with a new date at the top. For an important change, we also tell Class Notes subscribers by email.</p>
