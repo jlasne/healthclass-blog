@@ -60,7 +60,7 @@ NEXT_LOG=next.log node tests/flows.mjs http://localhost:3005    # the forms end 
 7. **Stores:** when the listings are live, set `appStoreUrl`, `playStoreUrl` and `appStoreId` in `lib/site.ts`.
    Store fields: Privacy Policy URL `https://www.healthclass.app/privacy`, Terms of Use (EULA)
    `https://www.healthclass.app/terms`, Support URL `https://www.healthclass.app/support`, Marketing URL
-   `https://www.healthclass.app`, Play data deletion URL `https://www.healthclass.app/support#delete-my-data`.
+   `https://www.healthclass.app`, Play data deletion URL `https://www.healthclass.app/privacy#rights`.
 8. **Superwall:** add the webhook `https://<deployment>.convex.site/webhooks/superwall?key=<SUPERWALL_WEBHOOK_KEY>`.
    In the app, set the member's email as a Superwall user attribute when she adds it
    (`Superwall.setUserAttributes({ email })`), so the Q&A recognizes her. Manual fix for one member:
