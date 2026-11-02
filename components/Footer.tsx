@@ -28,24 +28,22 @@ export function Footer() {
           <div>
             <h2>Read</h2>
             <ul>
-              <li><a href="/blog">All letters</a></li>
-              <li><a href="/newsletter">Class Notes, the free letter</a></li>
+              <li><a href="/letters">All letters</a></li>
               <li><a href="/feed.xml">RSS</a></li>
             </ul>
           </div>
           <div>
             <h2>The class</h2>
             <ul>
-              <li><a href="/app">Get the app</a></li>
-              <li><a href="/qa">Live Q&amp;A with Dr. Dana</a></li>
+              <li><a href="/#get">Get the app</a></li>
+              <li><a href="/live">Live with Dr. Dana</a></li>
               <li><a href="/support">Help and support</a></li>
             </ul>
           </div>
           <div>
-            <h2>Trust</h2>
+            <h2>About</h2>
             <ul>
-              <li><a href="/about">About Dr. Dana</a></li>
-              <li><a href="/about#how-we-write">How we write</a></li>
+              <li><a href="/dana">Dr. Dana</a></li>
               <li><a href="/privacy">Privacy</a></li>
               <li><a href="/terms">Terms</a></li>
             </ul>

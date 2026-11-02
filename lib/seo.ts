@@ -16,8 +16,8 @@ export function meta({ title, description, path, image, type = 'website', noinde
 
 export const orgId = absoluteUrl('/#organization');
 export const siteId = absoluteUrl('/#website');
-export const danaId = absoluteUrl('/about#dana');
-export const appId = absoluteUrl('/app#app');
+export const danaId = absoluteUrl('/dana#dana');
+export const appId = absoluteUrl('/#app');
 
 export const organization = {
   '@type': 'Organization',
@@ -40,7 +40,7 @@ export const person = {
   jobTitle: 'Urologist',
   description: `${dana.role} at ${dana.practice} in ${dana.practiceCity}. Creator of ${site.appName}.`,
   image: absoluteUrl(dana.photo),
-  url: absoluteUrl('/about'),
+  url: absoluteUrl('/dana'),
   worksFor: { '@type': 'MedicalOrganization', name: dana.practice, url: 'https://middlesexhealth.org' },
   alumniOf: { '@type': 'CollegeOrUniversity', name: dana.medicalSchool },
   hasCredential: [{ '@type': 'EducationalOccupationalCredential', credentialCategory: 'degree', name: 'Doctor of Osteopathic Medicine (DO)' }],
@@ -83,7 +83,7 @@ export function breadcrumbs(items: { name: string; path: string }[]) {
 }
 
 export function articleLd(a: Article) {
-  const url = absoluteUrl(`/blog/${a.slug}`);
+  const url = absoluteUrl(`/letters/${a.slug}`);
   return [
     {
       '@type': ['BlogPosting', 'MedicalWebPage'],
@@ -93,7 +93,7 @@ export function articleLd(a: Article) {
       description: a.description,
       url,
       mainEntityOfPage: url,
-      image: absoluteUrl(`/blog/${a.slug}/opengraph-image`),
+      image: absoluteUrl(`/letters/${a.slug}/opengraph-image`),
       datePublished: a.date,
       dateModified: a.updated,
       lastReviewed: a.updated,
@@ -112,7 +112,7 @@ export function articleLd(a: Article) {
     ...(a.faq.length
       ? [{ '@type': 'FAQPage', '@id': `${url}#faq`, mainEntity: a.faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) }]
       : []),
-    breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Letters', path: '/blog' }, { name: a.title, path: `/blog/${a.slug}` }]),
+    breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Letters', path: '/letters' }, { name: a.title, path: `/letters/${a.slug}` }]),
   ];
 }
 

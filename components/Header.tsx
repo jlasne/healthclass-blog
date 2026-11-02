@@ -20,14 +20,14 @@ export function Header() {
             <a key={n.href} href={n.href} aria-current={current(n.href)}>{n.label}</a>
           ))}
         </nav>
-        <a className="btn btn--sm hd__cta" href="/app">Get the app</a>
+        <a className="btn btn--sm hd__cta" href="/#get">Get the app</a>
         <details className="hd__menu" ref={menu}>
           <summary aria-label="Menu"><Icon name="menu" /></summary>
           <div className="hd__sheet">
             {nav.map((n) => (
               <a key={n.href} href={n.href} aria-current={current(n.href)}>{n.label}</a>
             ))}
-            <a className="btn" href="/app">Get the app</a>
+            <a className="btn" href="/#get">Get the app</a>
           </div>
         </details>
       </div>

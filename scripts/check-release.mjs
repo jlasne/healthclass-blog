@@ -30,7 +30,7 @@ const site = read('lib/site.ts');
 if (/appStoreUrl:\s*''/.test(site)) warns.push('lib/site.ts: appStoreUrl is empty (buttons say "Coming soon"; healthclass.app sends iPhones to /app)');
 if (/playStoreUrl:\s*''/.test(site)) warns.push('lib/site.ts: playStoreUrl is empty (same for Android)');
 if (/podcasts:\s*\[\]/.test(site)) warns.push('lib/site.ts: no podcast episodes yet (the About page shows "on the way")');
-warns.push('Dr. Dana to approve: the quote on the home page, "A letter from Dana" on /about, and her credentials in lib/site.ts');
+warns.push('Dr. Dana to approve: "Why I made this class" on /dana, and her credentials in lib/site.ts');
 
 // 4. the environment (Vercel and Convex)
 const env = { ...process.env };

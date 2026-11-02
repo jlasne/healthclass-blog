@@ -14,16 +14,19 @@ export type AskState = { status: 'idle' | 'ok' | 'error'; message?: string };
 const sha = async (s: string) => createHash('sha256').update(s).digest('hex');
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
+// The one form on /live: it joins the free letter (the second condition) and, if the email has a premium plan in the
+// app (the first condition), emails a sign-in link to the members' lives.
 export async function requestLink(_prev: LinkState, fd: FormData): Promise<LinkState> {
   const email = String(fd.get('email') ?? '').trim().toLowerCase();
   if (!EMAIL_RE.test(email)) return { status: 'error', message: 'Use the email you added in the app, like name@gmail.com.', email };
   const c = convex();
   if (!c) {
-    console.info(`[qa] Convex not set up yet: would check ${email}`);
+    console.info(`[live] Convex not set up yet: would subscribe and check ${email}`);
     return { status: 'sent', email };
   }
   const h = await headers();
   const ip = (h.get('x-forwarded-for') ?? '').split(',')[0].trim() || undefined;
+  await c.mutation(api.newsletter.subscribe, { secret, email, source: '/live', tags: ['website', 'live'], ip }).catch((e) => console.error('[live] subscribe', e));
   const token = randomBytes(32).toString('base64url');
   try {
     const r = await c.mutation(api.qa.requestLink, { secret, email, tokenHash: await sha(token), ip });
@@ -47,13 +50,13 @@ export async function askQuestion(_prev: AskState, fd: FormData): Promise<AskSta
   if (text.length > 1200) return { status: 'error', message: 'Keep it under 1,200 characters, about 200 words.' };
   const c = convex();
   const pass = (await cookies()).get('hc_qa')?.value;
-  if (!c || !pass) return { status: 'error', message: 'Your sign-in ended. Ask for a new link below.' };
+  if (!c || !pass) return { status: 'error', message: 'Your sign-in ended. Ask for a new link on this page.' };
   const r = await c.mutation(api.qa.ask, { secret, passHash: await sha(pass), text, firstName: firstName || undefined });
   if (!r.ok) {
     const msg = r.error === 'too_many' ? 'That is 6 questions today. Send the next one tomorrow.' : r.error === 'signed_out' ? 'Your sign-in ended. Ask for a new link below.' : 'Keep it between 8 and 1,200 characters.';
     return { status: 'error', message: msg };
   }
-  revalidatePath('/qa');
+  revalidatePath('/live');
   return { status: 'ok' };
 }
 
@@ -63,5 +66,5 @@ export async function signOut() {
   const c = convex();
   if (c && pass) await c.mutation(api.qa.signOut, { secret, passHash: await sha(pass) }).catch(() => {});
   jar.delete('hc_qa');
-  revalidatePath('/qa');
+  revalidatePath('/live');
 }

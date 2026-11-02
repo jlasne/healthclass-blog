@@ -6,7 +6,7 @@ import { absoluteUrl, dana, site } from '@/lib/site';
 export const revalidate = 3600;
 
 export function GET() {
-  const letters = getArticles().map((a) => `- [${a.title}](${absoluteUrl(`/blog/${a.slug}`)}): ${a.description}`).join('\n');
+  const letters = getArticles().map((a) => `- [${a.title}](${absoluteUrl(`/letters/${a.slug}`)}): ${a.description}`).join('\n');
   const body = `# ${site.name}
 
 > ${site.description}
@@ -19,10 +19,10 @@ ${letters}
 
 ## About
 
-- [About ${dana.name}](${absoluteUrl('/about')}): credentials, practice and editorial policy
-- [Class Notes newsletter](${absoluteUrl('/newsletter')}): free, weekly
-- [The app](${absoluteUrl('/app')}): ${site.appName}, 6-week pelvic floor programs
-- [Monthly live Q&A](${absoluteUrl('/qa')}): for paid members of the app
+- [About ${dana.name}](${absoluteUrl('/dana')}): credentials and practice
+- [The app](${absoluteUrl('/')}): ${site.appName}, 6-week pelvic floor programs
+- [The letters](${absoluteUrl('/letters')}): free, weekly
+- [Live with Dr. Dana](${absoluteUrl('/live')}): the monthly Q&A for premium members
 
 ## Policies
 

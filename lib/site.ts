@@ -3,7 +3,7 @@
 
 export const site = {
   url: 'https://www.healthclass.app',
-  // the magic link: healthclass.app (no www) sends phones to their store, computers to /app (see proxy.ts)
+  // the magic link: healthclass.app (no www) sends phones to their store, computers to the home page (see proxy.ts)
   magicHost: 'healthclass.app',
   name: 'Health Class',
   appName: 'Pelvic Health Class: for Women',
@@ -58,10 +58,9 @@ export const dana = {
 };
 
 export const nav = [
-  { href: '/blog', label: 'Letters' },
-  { href: '/qa', label: 'Live Q&A' },
-  { href: '/about', label: 'Dr. Dana' },
-  { href: '/newsletter', label: 'Newsletter' },
+  { href: '/letters', label: 'Letters' },
+  { href: '/live', label: 'Live' },
+  { href: '/dana', label: 'Dr. Dana' },
 ] as const;
 
 export const programs = [

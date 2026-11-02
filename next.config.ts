@@ -28,10 +28,15 @@ const nextConfig: NextConfig = {
       { source: '/legal/terms.html', destination: '/terms', permanent: true },
       { source: '/privacy-policy', destination: '/privacy', permanent: true },
       { source: '/terms-of-service', destination: '/terms', permanent: true },
-      { source: '/letters', destination: '/blog', permanent: true },
-      { source: '/letters/:slug', destination: '/blog/:slug', permanent: true },
+      { source: '/blog', destination: '/letters', permanent: true },
+      { source: '/blog/:slug', destination: '/letters/:slug', permanent: true },
+      { source: '/newsletter', destination: '/letters', permanent: true },
+      { source: '/qa', destination: '/live', permanent: true },
+      { source: '/qa/access', destination: '/live/access', permanent: false },
+      { source: '/about', destination: '/dana', permanent: true },
+      { source: '/app', destination: '/', permanent: true },
       { source: '/rss.xml', destination: '/feed.xml', permanent: true },
-      { source: '/download', destination: '/app', permanent: true },
+      { source: '/download', destination: '/', permanent: true },
     ];
   },
 };

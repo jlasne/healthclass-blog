@@ -1,8 +1,8 @@
 // healthclass.app (no www) is the magic link, like a store badge you can type: a phone goes straight to its store,
-// a computer goes to www.healthclass.app/app (store buttons and a QR code). Every other path on the bare domain,
+// a computer goes to www.healthclass.app (store buttons and a QR code). Every other path on the bare domain,
 // like healthclass.app/privacy, goes to the same path on www, so links printed anywhere keep working.
 // Store links come from env (APP_STORE_URL, PLAY_STORE_URL) or lib/site.ts; until a store is live, phones land on
-// /app too. Campaign tags (utm_*) ride along: to Google Play as its install referrer, to the page as they are.
+// the home page too. Campaign tags (utm_*) ride along: to Google Play as its install referrer, to the page as they are.
 import { NextResponse, type NextRequest } from 'next/server';
 import { site } from '@/lib/site';
 
@@ -26,7 +26,7 @@ export function proxy(req: NextRequest) {
       if (utm.length) dest.searchParams.set('referrer', new URLSearchParams(utm).toString());
       return NextResponse.redirect(dest, 302);
     }
-    const page = new URL('/app', WWW);
+    const page = new URL('/', WWW);
     utm.forEach(([k, v]) => page.searchParams.set(k, v));
     if (!utm.length) page.searchParams.set('utm_source', 'magic-link');
     return NextResponse.redirect(page, 302);

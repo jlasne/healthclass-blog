@@ -1,6 +1,6 @@
 'use client';
 import { useActionState } from 'react';
-import { requestLink, askQuestion, type LinkState, type AskState } from '@/app/qa/actions';
+import { requestLink, askQuestion, type LinkState, type AskState } from '@/app/live/actions';
 import { Icon } from './Icon';
 
 export function LinkForm() {
@@ -10,7 +10,7 @@ export function LinkForm() {
       <div className="nl-done sparkle" role="status" aria-live="polite" style={{ marginTop: 18 }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/cats/bell.svg" alt="" width={78} height={78} />
-        <div><b>Check your inbox.</b><span>If {s.email} has a plan, your sign-in link is on its way. It works once, for 30 minutes.</span></div>
+        <div><b>You&rsquo;re on the letter.</b><span>If {s.email} has a premium plan in the app, your link to the lives is in your inbox. It works once, for 30 minutes.</span></div>
       </div>
     );
   }
@@ -19,7 +19,7 @@ export function LinkForm() {
       <div className={pending ? 'nl-form is-sending' : 'nl-form'}>
         <label htmlFor="qa-email" className="sr-only">Your email</label>
         <input id="qa-email" type="email" name="email" inputMode="email" autoComplete="email" placeholder="The email in your app" defaultValue={s.email} required />
-        <button className="btn" type="submit" disabled={pending}>{pending ? 'Sending…' : 'Email me my link'}{!pending && <Icon name="arrow" />}</button>
+        <button className="btn" type="submit" disabled={pending}>{pending ? 'Sending…' : 'Unlock the lives'}{!pending && <Icon name="arrow" />}</button>
       </div>
       {s.status === 'error' && <p className="nl-err" role="alert">{s.message}</p>}
     </form>

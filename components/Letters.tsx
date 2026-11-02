@@ -8,7 +8,7 @@ export function Letters({ items, headingLevel = 'h2' }: { items: Article[]; head
     <ol className="letters">
       {items.map((a, i) => (
         <li key={a.slug} data-rise style={{ ['--i' as string]: i }}>
-          <a className={`letter tone--${a.tone}`} href={`/blog/${a.slug}`}>
+          <a className={`letter tone--${a.tone}`} href={`/letters/${a.slug}`}>
             <div>
               <div className="letter__meta">
                 <span className="pill">{a.topic}</span>
@@ -29,7 +29,7 @@ export function Letters({ items, headingLevel = 'h2' }: { items: Article[]; head
 
 export function Feature({ a }: { a: Article }) {
   return (
-    <a className={`feature tone--${a.tone}`} href={`/blog/${a.slug}`} data-rise>
+    <a className={`feature tone--${a.tone}`} href={`/letters/${a.slug}`} data-rise>
       <Cat pose="peek" width={150} className="peek peek--left" />
       <div>
         <div className="letter__meta">

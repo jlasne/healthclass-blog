@@ -27,12 +27,12 @@ await p.click('.hero__form button[type=submit]');
 await p.waitForSelector('.hero__form .nl-done');
 ok(true, 'newsletter: subscribed, the cheering cat shows');
 
-await p.goto(base + '/qa', { waitUntil: 'networkidle' });
+await p.goto(base + '/live', { waitUntil: 'networkidle' });
 await p.fill('#qa-email', 'stranger@example.com');
 await p.click('form button[type=submit]');
 await p.waitForSelector('.nl-done');
 const a1 = await p.textContent('.nl-done span');
-await p.goto(base + '/qa', { waitUntil: 'networkidle' });
+await p.goto(base + '/live', { waitUntil: 'networkidle' });
 await p.fill('#qa-email', member);
 await p.click('form button[type=submit]');
 await p.waitForSelector('.nl-done');

@@ -7,7 +7,7 @@ const sha = (s: string) => createHash('sha256').update(s).digest('hex');
 
 export async function GET(req: NextRequest) {
   const token = req.nextUrl.searchParams.get('t') ?? '';
-  const back = new URL('/qa', req.nextUrl);
+  const back = new URL('/live', req.nextUrl);
   const c = convex();
   if (!c || token.length < 20) { back.searchParams.set('link', 'expired'); return NextResponse.redirect(back); }
   const pass = randomBytes(32).toString('base64url');

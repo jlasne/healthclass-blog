@@ -11,7 +11,7 @@ export default function NotFound() {
         <h1 className="h1" style={{ marginTop: 10, fontSize: 'clamp(36px,5vw,56px)' }}>This page is <em>napping</em>.</h1>
         <p className="lede" style={{ marginTop: 14 }}>The link may be old. These letters are wide awake:</p>
         <ul className="qlist" style={{ marginTop: 22, textAlign: 'left' }}>
-          {top.map((a) => (<li key={a.slug}><a className="link" href={`/blog/${a.slug}`}>{a.title}</a><span>{a.topic} · {a.minutes} min read</span></li>))}
+          {top.map((a) => (<li key={a.slug}><a className="link" href={`/letters/${a.slug}`}>{a.title}</a><span>{a.topic} · {a.minutes} min read</span></li>))}
         </ul>
         <a className="btn" href="/" style={{ marginTop: 26 }}>Back to the home page</a>
       </div>

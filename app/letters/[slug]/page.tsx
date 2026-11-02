@@ -17,12 +17,12 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const a = getArticle((await params).slug);
   if (!a) return {};
-  const m = meta({ title: a.seoTitle, description: a.description, path: `/blog/${a.slug}`, type: 'article' });
+  const m = meta({ title: a.seoTitle, description: a.description, path: `/letters/${a.slug}`, type: 'article' });
   return {
     ...m,
     keywords: a.keywords,
-    authors: [{ name: dana.name, url: '/about' }],
-    openGraph: { ...m.openGraph, type: 'article', publishedTime: a.date, modifiedTime: a.updated, authors: ['/about'], section: a.topic, tags: a.keywords },
+    authors: [{ name: dana.name, url: '/dana' }],
+    openGraph: { ...m.openGraph, type: 'article', publishedTime: a.date, modifiedTime: a.updated, authors: ['/dana'], section: a.topic, tags: a.keywords },
   };
 }
 
@@ -38,7 +38,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
             <nav aria-label="Breadcrumb">
               <ol className="crumbs">
                 <li><a href="/">Home</a></li>
-                <li><a href="/blog">Letters</a></li>
+                <li><a href="/letters">Letters</a></li>
                 <li aria-current="page">{a.topic}</li>
               </ol>
             </nav>
@@ -49,7 +49,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={dana.avatar} alt="" width={46} height={46} />
               <div>
-                <a href="/about" rel="author"><b>{dana.name}, {dana.credential}</b></a>
+                <a href="/dana" rel="author"><b>{dana.name}, {dana.credential}</b></a>
                 <span>
                   {dana.role} · <time dateTime={a.date}>{fmtDate(a.date)}</time> · {a.minutes} min read
                 </span>
@@ -90,7 +90,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
             <img src={dana.avatar} alt="" width={52} height={52} loading="lazy" />
             <p style={{ margin: 0 }}>
               <b>Written by {dana.name}, {dana.credential}</b>, {dana.role.toLowerCase()}. Updated <time dateTime={a.updated}>{fmtDate(a.updated)}</time>.
-              Every number links to its source below. This letter teaches; your own doctor diagnoses. <a className="link" href="/about#how-we-write">How we write</a>
+              Every number links to its source below. This letter teaches; your own doctor diagnoses.
             </p>
           </div>
 
@@ -110,16 +110,16 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
       </div>
 
       <div className="wrap" style={{ marginTop: 40 }}>
-        <Newsletter source={`/blog/${a.slug}`} tag="article-end" title={<>Liked this? Get the next one <em>Sunday</em>.</>} pose="bell" peek />
+        <Newsletter source={`/letters/${a.slug}`} tag="article-end" title={<>Liked this? Get the next one <em>Sunday</em>.</>} pose="bell" peek />
       </div>
 
       {more.length > 0 && (
         <section className="sec sec--tight">
           <div className="wrap">
-            <div className="sec__hd"><div><span className="eyebrow">Keep reading</span><h2 className="h3" style={{ marginTop: 10 }}>More letters from Dr. Dana</h2></div><a className="arrow" href="/blog">All letters</a></div>
+            <div className="sec__hd"><div><span className="eyebrow">Keep reading</span><h2 className="h3" style={{ marginTop: 10 }}>More letters from Dr. Dana</h2></div><a className="arrow" href="/letters">All letters</a></div>
             <div className="related">
               {more.map((r) => (
-                <a key={r.slug} className={`card tone--${r.tone}`} href={`/blog/${r.slug}`}>
+                <a key={r.slug} className={`card tone--${r.tone}`} href={`/letters/${r.slug}`}>
                   <span className="card__art" aria-hidden="true"><Cat pose={r.cat} width={118} /></span>
                   <b>{r.title}</b>
                   <span>{r.topic} · {r.minutes} min read</span>

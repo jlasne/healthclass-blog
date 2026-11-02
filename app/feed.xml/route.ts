@@ -9,8 +9,8 @@ export function GET() {
   const items = getArticles().map((a) => `
     <item>
       <title>${esc(a.title)}</title>
-      <link>${absoluteUrl(`/blog/${a.slug}`)}</link>
-      <guid isPermaLink="true">${absoluteUrl(`/blog/${a.slug}`)}</guid>
+      <link>${absoluteUrl(`/letters/${a.slug}`)}</link>
+      <guid isPermaLink="true">${absoluteUrl(`/letters/${a.slug}`)}</guid>
       <pubDate>${new Date(`${a.date}T12:00:00Z`).toUTCString()}</pubDate>
       <category>${esc(a.topic)}</category>
       <dc:creator>${esc(dana.name)}</dc:creator>
