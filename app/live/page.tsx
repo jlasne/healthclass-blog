@@ -42,7 +42,7 @@ export default async function Page() {
         <section className="hero hero--center hero--band live-hero">
           <div className="read">
             <div className="live-hero__clip">
-              <LiveClip src={site.qa.clip} poster={dana.hero} label={`${dana.name}, urologist`} />
+              <LiveClip src={site.qa.clip} poster={dana.hero} label={`${dana.name}, urologist`} captions={[over ? 'Next live: date soon.' : `Next live: ${date}.`, 'Only for the list.', 'Your code is in the app.']} />
               <Cat pose="calendar" width={120} className="live-hero__cat" />
             </div>
             <span className="eyebrow">Live with Dr. Dana</span>
