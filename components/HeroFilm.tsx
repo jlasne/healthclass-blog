@@ -34,7 +34,7 @@ export function HeroFilm() {
   };
 
   return (
-    <div className={paused ? 'film is-paused' : 'film'} onClick={toggle} data-rise>
+    <div className="film" data-paused={paused ? '' : undefined} onClick={toggle}>
       <video
         ref={v}
         src="/media/hero/hero.mp4"

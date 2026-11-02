@@ -46,7 +46,7 @@ NEXT_LOG=next.log node tests/flows.mjs http://localhost:3005    # the forms end 
 1. `npm run check` lists what is left. It fails while a `[bracket]` is in the legal pages or a letter lacks Dr. Dana's
    approval (`reviewed: true` in its front matter).
 2. Dr. Dana approves the 9 letters, the home page quote, "A letter from Dana" on `/dana`, and her facts in
-   `lib/site.ts` (name, DO, board certification, Middlesex Health, medical school and year).
+   `lib/site.ts` (name, board certification, Middlesex Health, medical school and year).
 3. Fill `lib/legal.ts` (publisher, address, governing law, Supabase region) and the video platform in
    `app/privacy/page.tsx`. Have a lawyer read `/privacy` and `/terms`.
 4. **Convex:** `npx convex deploy`, then on the production deployment:

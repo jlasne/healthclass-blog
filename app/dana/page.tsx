@@ -7,7 +7,7 @@ import { absoluteUrl, dana, site } from '@/lib/site';
 
 // Dr. Dana, in her own words: who she is, why the class, where to find her. Trust only, no call to action.
 export const metadata = meta({
-  title: 'Dr. Dana Kivlin, DO, board-certified urologist',
+  title: 'Dr. Dana Kivlin, board-certified urologist',
   description: 'I am Dr. Dana Kivlin, a board-certified urologist at Middlesex Health in Middletown, Connecticut, and the teacher behind Pelvic Health Class: for Women.',
   path: '/dana',
 });

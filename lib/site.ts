@@ -29,17 +29,20 @@ export const site = {
     name: 'Ask Dr. Dana',
     cadence: 'Once a month, live',
     length: '45 minutes',
+    // the next live when Convex has none scheduled (ISO, Eastern time). Set the real hour with Dana.
+    next: '2026-11-30T19:00:00-05:00',
+    // Dana's clip on /live: replace with her own 10-second "next live" video (vertical 4:5, silent captions burnt in)
+    clip: '/media/dana/insta.mp4',
   },
 } as const;
 
 // Dr. Dana Kivlin. Only facts from public profiles; Dana confirms each one before launch.
 export const dana = {
   name: 'Dr. Dana Kivlin',
-  fullName: 'Dana Kivlin, DO',
+  fullName: 'Dana Kivlin',
   shortName: 'Dr. Dana',
   firstName: 'Dana',
   role: 'Board-certified urologist',
-  credential: 'DO',
   practice: 'Middlesex Health',
   practiceCity: 'Middletown, Connecticut',
   medicalSchool: 'University of New England College of Osteopathic Medicine',

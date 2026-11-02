@@ -11,7 +11,7 @@ export function GET() {
 
 > ${site.description}
 
-${site.name} is the blog of the app ${site.appName}. Every letter is written by ${dana.name}, ${dana.credential}, a ${dana.role.toLowerCase()} at ${dana.practice} (${dana.practiceCity}), and cites its sources (NICE, ACOG, AUA guidelines and Cochrane reviews). It is education, not medical advice.
+${site.name} is the blog of the app ${site.appName}. Every letter is written by ${dana.name}, a ${dana.role.toLowerCase()} at ${dana.practice} (${dana.practiceCity}), and cites its sources (NICE, ACOG, AUA guidelines and Cochrane reviews). It is education, not medical advice.
 
 ## Letters
 

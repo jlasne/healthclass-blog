@@ -4,7 +4,7 @@ import { subscribe, type SubState } from '@/app/actions';
 import { Icon } from './Icon';
 
 // The signup: one field, one rose button. After it: the cheering cat (the app congratulates at the end, once).
-export function NewsletterForm({ source, tag, cta = 'Get the free letter', id }: { source: string; tag?: string; cta?: string; id?: string }) {
+export function NewsletterForm({ source, tag, cta = 'Get the free letter', id, fine }: { source: string; tag?: string; cta?: string; id?: string; fine?: string }) {
   const [state, action, pending] = useActionState<SubState, FormData>(subscribe, { status: 'idle' });
   if (state.status === 'ok') {
     return (
@@ -37,7 +37,7 @@ export function NewsletterForm({ source, tag, cta = 'Get the free letter', id }:
       </div>
       {state.status === 'error' && <p className="nl-err" role="alert">{state.message}</p>}
       <p className="nl-fine" id={`${fieldId}-fine`}>
-        Free. Every Wednesday and Sunday. Unsubscribe in 1 click. Your email stays with us: <a href="/privacy#newsletter">privacy</a>.
+        {fine ?? 'Free. Every Wednesday and Sunday. Unsubscribe in 1 click.'} Your email stays with us: <a href="/privacy#newsletter">privacy</a>.
       </p>
     </form>
   );

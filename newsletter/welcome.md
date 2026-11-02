@@ -19,7 +19,7 @@ Free, for good. 2 emails a week. Leave in 1 click at the bottom of any letter.
 replies, and they decide what I write next.
 
 Dana
-Dr. Dana Kivlin, DO · Board-certified urologist
+Dr. Dana Kivlin · Board-certified urologist
 
 ---
 Class Notes is education, not medical advice. In an emergency, call 911.

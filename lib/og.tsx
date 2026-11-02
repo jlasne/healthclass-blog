@@ -34,7 +34,7 @@ export function ogImage({ eyebrow, title, pose = 'hello', tone = 'rosy', foot }:
           <span style={{ marginTop: 14, fontFamily: 'Fraunces', fontSize: size, lineHeight: 1.04, letterSpacing: -2, color: '#2A2421' }}>{title}</span>
           <div style={{ marginTop: 'auto', display: 'flex', alignItems: 'center', gap: 14 }}>
             <div style={{ width: 54, height: 12, borderBottom: '4px solid #D9566F', borderRadius: '0 0 50% 50%' }} />
-            <span style={{ fontSize: 24, color: '#4A3F39' }}>{foot ?? `${dana.name}, ${dana.credential} · ${dana.role}`}</span>
+            <span style={{ fontSize: 24, color: '#4A3F39' }}>{foot ?? `${dana.name} · ${dana.role}`}</span>
           </div>
         </div>
         <div style={{ width: 380, display: 'flex', alignItems: 'flex-end', justifyContent: 'center', position: 'relative' }}>

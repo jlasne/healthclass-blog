@@ -5,13 +5,16 @@ import { Icon } from '@/components/Icon';
 import { JsonLd } from '@/components/JsonLd';
 import { AskForm } from '@/components/QaForms';
 import { NewsletterForm } from '@/components/NewsletterForm';
+import { Countdown } from '@/components/Countdown';
+import { LiveClip } from '@/components/LiveClip';
 import { signOut } from './actions';
 import { api, convex, secret } from '@/lib/convex';
 import { breadcrumbs, graph, meta } from '@/lib/seo';
+import { dana, site } from '@/lib/site';
 
 export const metadata = meta({
   title: 'Live with Dr. Dana: the monthly Q&A for members',
-  description: 'Once a month, Dr. Dana Kivlin, urologist, answers your questions live. Get the next date by email.',
+  description: 'Once a month, Dr. Dana Kivlin, urologist, answers your questions live. For the list: a premium plan in the app and the free letter.',
   path: '/live',
 });
 
@@ -22,6 +25,49 @@ export default async function Page() {
   const pass = (await cookies()).get('hc_qa')?.value;
   const portal = c && pass ? await c.query(api.qa.portal, { secret, passHash: createHash('sha256').update(pass).digest('hex') }).catch(() => null) : null;
   const next = portal?.next ?? (c ? await c.query(api.qa.nextEvent, {}).catch(() => null) : null);
+
+  const fallback = Date.parse(site.qa.next);
+  const durMin = next?.durationMin ?? 45;
+  const startsAt = next?.startsAt ?? fallback;
+  // after the live ends, and until the next one is set, the page says "date soon" instead of an old date
+  const over = !Number.isFinite(startsAt) || Date.now() > startsAt + durMin * 60_000;
+  const at = (o: Intl.DateTimeFormatOptions) => new Date(startsAt).toLocaleString('en-US', { timeZone: 'America/New_York', ...o });
+  const date = over ? '' : at({ month: 'long', day: 'numeric' });
+  const when = over ? '' : `${at({ weekday: 'long' })} · ${at({ hour: 'numeric', minute: '2-digit', timeZoneName: 'short' })} · ${durMin} min`;
+  const appLive = Boolean(site.appStoreUrl || site.playStoreUrl);
+
+  if (!portal) {
+    return (
+      <section className="hero live" style={{ paddingBottom: 80 }}>
+        <div className="wrap live__grid">
+          <div className="live__clip">
+            <LiveClip src={site.qa.clip} poster={dana.hero} label={`${dana.name}, urologist`} />
+            <span className="live__badge"><i aria-hidden="true" />Live Q&amp;A with Dr. Dana</span>
+            <Cat pose="calendar" width={170} className="live__cat" />
+          </div>
+          <div className="live__copy">
+            <span className="eyebrow">Live with Dr. Dana</span>
+            <h1 className="h1 live__h1">Next live: <em>{over ? 'date soon' : date}</em>.</h1>
+            {!over && <p className="live__when">{when}</p>}
+            {!over && <Countdown to={startsAt} durationMin={durMin} />}
+            <div className="live__list">
+              <b>Only for the list</b>
+              <ul className="live__need">
+                <li>Premium in the app</li>
+                <li>Subscribed to the free letter</li>
+              </ul>
+              <p>Your code to join is in the app. The letter reminds you.</p>
+            </div>
+            <div className="live__join">
+              <NewsletterForm source="/live#hero" tag="live-date" cta="Join the letter" />
+              <a className="link live__app" href="/#get">{appLive ? 'Get the app' : 'The app opens soon: get told on launch day'}</a>
+            </div>
+          </div>
+        </div>
+        <JsonLd data={graph(breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Live', path: '/live' }]))} />
+      </section>
+    );
+  }
 
   return (
     <section className="hero hero--center" style={{ paddingBottom: 80 }}>

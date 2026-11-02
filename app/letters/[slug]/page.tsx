@@ -49,7 +49,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={dana.avatar} alt="" width={46} height={46} />
               <div>
-                <a href="/dana" rel="author"><b>{dana.name}, {dana.credential}</b></a>
+                <a href="/dana" rel="author"><b>{dana.name}</b></a>
                 <span>
                   {dana.role} · <time dateTime={a.date}>{fmtDate(a.date)}</time> · {a.minutes} min read
                 </span>
@@ -89,7 +89,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={dana.avatar} alt="" width={52} height={52} loading="lazy" />
             <p style={{ margin: 0 }}>
-              <b>Written by {dana.name}, {dana.credential}</b>, {dana.role.toLowerCase()}. Updated <time dateTime={a.updated}>{fmtDate(a.updated)}</time>.
+              <b>Written by {dana.name}</b>, {dana.role.toLowerCase()}. Updated <time dateTime={a.updated}>{fmtDate(a.updated)}</time>.
               Every number links to its source below. This letter teaches; your own doctor diagnoses.
             </p>
           </div>
