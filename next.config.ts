@@ -35,6 +35,7 @@ const nextConfig: NextConfig = {
       { source: '/qa/access', destination: '/live/access', permanent: false },
       { source: '/about', destination: '/dana-kivlin', permanent: true },
       { source: '/dana', destination: '/dana-kivlin', permanent: true },
+      { source: '/support', destination: '/faq', permanent: true },
       { source: '/app', destination: '/', permanent: true },
       { source: '/rss.xml', destination: '/feed.xml', permanent: true },
       { source: '/download', destination: '/', permanent: true },

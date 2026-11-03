@@ -10,7 +10,7 @@ Same design language as the app: paper, rose and plum, Fraunces and Instrument S
 | `/letters`, `/letters/<slug>` | The letter signup, then the archive with search. Each letter has a hand-drawn sketch, sources, FAQ, share image |
 | `/live` | The monthly live with Dr. Dana. Locked: a premium plan in the app + the free letter. One email field unlocks it |
 | `/dana-kivlin` | Dr. Dana in her own words: credentials, why the class, where to find her, podcasts |
-| `/support` | Support URL for the App Store and Google Play (cancel, restore, delete my data) |
+| `/faq` | FAQ and help, the Support URL for the App Store and Google Play (cancel, restore, delete my data) |
 | `/privacy`, `/terms` | One policy and one set of terms for the app **and** the website (store-ready drafts) |
 | `/sitemap.xml`, `/robots.txt`, `/feed.xml`, `/llms.txt` | Built from the content, refreshed every hour |
 
@@ -59,7 +59,7 @@ NEXT_LOG=next.log node tests/flows.mjs http://localhost:3005    # the forms end 
    to the same path on www).
 7. **Stores:** when the listings are live, set `appStoreUrl`, `playStoreUrl` and `appStoreId` in `lib/site.ts`.
    Store fields: Privacy Policy URL `https://www.healthclass.app/privacy`, Terms of Use (EULA)
-   `https://www.healthclass.app/terms`, Support URL `https://www.healthclass.app/support`, Marketing URL
+   `https://www.healthclass.app/terms`, Support URL `https://www.healthclass.app/faq` (`/support` forwards there), Marketing URL
    `https://www.healthclass.app`, Play data deletion URL `https://www.healthclass.app/privacy#rights`.
 8. **Superwall (left for later):** the setup wizard's last 2 steps wait for the first Android build: in the Play
    Console, Monetisation setup, Real-time developer notifications, paste the topic

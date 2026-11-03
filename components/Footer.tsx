@@ -35,7 +35,7 @@ export function Footer() {
             <ul>
               <li><a href="/#get">Get the app</a></li>
               <li><a href="/live">Live with Dr. Dana</a></li>
-              <li><a href="/support">Help and support</a></li>
+              <li><a href="/faq">FAQ and help</a></li>
             </ul>
           </div>
           <div>

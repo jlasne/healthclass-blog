@@ -33,6 +33,6 @@ export async function subscribe(_prev: SubState, fd: FormData): Promise<SubState
     return { status: 'error', message: 'Check your email: it needs an @ and a domain, like name@gmail.com.', email };
   } catch (e) {
     console.error('[newsletter]', e);
-    return { status: 'error', message: `Our server missed that one. Send again, or write to hello@healthclass.app.`, email };
+    return { status: 'error', message: `Our server missed that one. Send again, or write to dana@healthclass.app.`, email };
   }
 }

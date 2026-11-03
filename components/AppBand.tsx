@@ -1,29 +1,24 @@
 import { Cat } from './Cat';
 import { Stores } from './Stores';
-import { Smile } from './Smile';
-import { site } from '@/lib/site';
 
-// The app, in a band: what it is, in numbers, and where to get it.
+// The app, in one card at the end of each letter: one line, 3 facts, the store buttons, the phone peeking in.
 export function AppBand() {
   return (
-    <section className="sec" aria-labelledby="app-band">
-      <div className="wrap app">
-        <div className="app__copy" data-rise>
-          <span className="eyebrow">The app</span>
-          <h2 id="app-band" className="h2">Turn the letter into a <em>habit</em>.</h2>
-          <Smile />
-          <p className="lede">{site.appName}: Dr. Dana&rsquo;s class on your phone. 6-week programs, 1 short lesson a week, 1 guided exercise a day.</p>
-          <ul className="app__list">
-            <li className="tone--rosy"><span className="du"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="7.5" /><path d="M12 9.5V13l2.5 2M9.5 2.5h5" /></svg></span><div><b>5 minutes a day</b><span>A guided session with a breathing ring and a timer. The cat lifts with you.</span></div></li>
-            <li className="tone--sky"><span className="du"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 016.5 3H20v15H6.5A2.5 2.5 0 004 20.5v-15z" /><path d="M4 20.5A2.5 2.5 0 016.5 18H20v3H6.5" /></svg></span><div><b>1 lesson a week</b><span>Written by a urologist, in plain words, with every source.</span></div></li>
-            <li className="tone--plum"><span className="du"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" /><path d="M8 12l3 3 5-6" /></svg></span><div><b>Your log stays on your phone</b><span>Your answers, notes and photos: only you see them.</span></div></li>
-          </ul>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, alignItems: 'center' }}>
-            <a className="btn" href="/#get">Get the app</a>
+    <section className="sec sec--tight" aria-labelledby="app-band">
+      <div className="wrap">
+        <div className="appcard" data-rise>
+          <div className="appcard__copy">
+            <span className="eyebrow">The app</span>
+            <h2 id="app-band" className="h2">Do it with Dr. Dana, <em>5 minutes a day</em>.</h2>
+            <ul className="appcard__facts" aria-label="What the app gives you">
+              <li>1 lesson a week</li>
+              <li>1 guided exercise a day</li>
+              <li>Your log stays on your phone</li>
+            </ul>
             <Stores />
           </div>
+          <div className="appcard__phone" aria-hidden="true"><Phone /></div>
         </div>
-        <Phone />
       </div>
     </section>
   );

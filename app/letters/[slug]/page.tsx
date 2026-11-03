@@ -5,7 +5,7 @@ import { Cat } from '@/components/Cat';
 import { Newsletter } from '@/components/Newsletter';
 import { JsonLd } from '@/components/JsonLd';
 import { AppBand } from '@/components/AppBand';
-import { articleLd, graph, meta } from '@/lib/seo';
+import { articleLd, breadcrumbs, graph, meta } from '@/lib/seo';
 import { dana } from '@/lib/site';
 
 export const revalidate = 3600;
@@ -33,30 +33,23 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   return (
     <article className={`tone--${a.tone}`}>
       <header className="post-hd">
-        <div className="post-hd__grid">
-          <div>
-            <nav aria-label="Breadcrumb">
-              <ol className="crumbs">
-                <li><a href="/">Home</a></li>
-                <li><a href="/letters">Letters</a></li>
-                <li aria-current="page">{a.topic}</li>
-              </ol>
-            </nav>
-            <span className="eyebrow">{a.topic}</span>
-            <h1 className="h1">{a.title}</h1>
-            <p className="lede">{a.excerpt}</p>
-            <div className="byline">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={dana.avatar} alt="" width={46} height={46} />
-              <div>
-                <a href="/dana-kivlin" rel="author"><b>{dana.name}</b></a>
-                <span>
-                  {dana.role} · <time dateTime={a.date}>{fmtDate(a.date)}</time> · {a.minutes} min read
-                </span>
-              </div>
+        <div className="post-hd__in">
+          <div className="post-hd__top">
+            <a className="post-hd__back" href="/letters">Letters</a>
+            <span className="pill">{a.topic}</span>
+            <span className="post-hd__meta"><time dateTime={a.date}>{fmtDate(a.date)}</time> · {a.minutes} min read</span>
+          </div>
+          <div className="post-hd__art" aria-hidden="true"><Cat pose={a.cat} width={120} priority /></div>
+          <h1 className="h1">{a.title}</h1>
+          <p className="lede">{a.excerpt}</p>
+          <div className="byline">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={dana.avatar} alt="" width={46} height={46} />
+            <div>
+              <a href="/dana-kivlin" rel="author"><b>{dana.name}</b></a>
+              <span>{dana.role}, {dana.practice}</span>
             </div>
           </div>
-          <div className="post-hd__art" aria-hidden="true"><Cat pose={a.cat} width={230} priority /></div>
         </div>
       </header>
 
@@ -131,7 +124,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
       )}
 
       <AppBand />
-      <JsonLd data={graph(...articleLd(a))} />
+      <JsonLd data={graph(...articleLd(a), breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Letters', path: '/letters' }, { name: a.title, path: `/letters/${a.slug}` }]))} />
     </article>
   );
 }

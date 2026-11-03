@@ -23,7 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     page('/dana-kivlin', legal.updatedIso, 'monthly', 0.7),
     page('/live', legal.updatedIso, 'monthly', 0.6),
-    page('/support', legal.updatedIso, 'yearly', 0.4),
+    page('/faq', legal.updatedIso, 'yearly', 0.4),
     page('/privacy', legal.updatedIso, 'yearly', 0.3),
     page('/terms', legal.updatedIso, 'yearly', 0.3),
   ];

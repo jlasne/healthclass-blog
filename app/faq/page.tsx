@@ -7,7 +7,7 @@ import { site } from '@/lib/site';
 export const metadata = meta({
   title: `Support for ${site.appName}`,
   description: `Help with ${site.appName}: manage or cancel your plan, restore a purchase, reminders, the live Q&A and deleting your data. Email ${site.email}.`,
-  path: '/support',
+  path: '/faq',
 });
 
 const TOPICS: { id: string; q: string; a: React.ReactNode }[] = [
@@ -52,7 +52,7 @@ export default function Page() {
           <p style={{ margin: 0 }}>Support can help with the app. For symptoms, see your doctor. In an emergency, call 911 or your local emergency number.</p>
         </div>
       </div>
-      <JsonLd data={graph(breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Support', path: '/support' }]))} />
+      <JsonLd data={graph(breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Support', path: '/faq' }]))} />
     </section>
   );
 }

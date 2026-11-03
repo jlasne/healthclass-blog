@@ -12,7 +12,7 @@ export const site = {
   description:
     'Short letters on bladder leaks, Kegels and the pelvic floor from Dr. Dana Kivlin, a board-certified urologist. The blog of Pelvic Health Class: for Women.',
   locale: 'en_US',
-  email: 'hello@healthclass.app',
+  email: 'dana@healthclass.app',
   // the app's store pages. Empty until the listings go live: the buttons then say "Coming soon" and offer the letter.
   appStoreUrl: '',
   playStoreUrl: '',
