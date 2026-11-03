@@ -62,10 +62,31 @@ export default function Page() {
       <section className="sec" aria-labelledby="find">
         <div className="wrap">
           <div className="sec__hd"><div><span className="eyebrow">Where you can find me</span><h2 id="find" className="h2">Women&rsquo;s health, <em>every day</em></h2></div></div>
-          <div className="related">
+          <div className="related related--find">
             {dana.socials.map((s, i) => (
               <a key={s.url} className={`card tone--${['rosy', 'sky', 'plum'][i % 3]}`} href={s.url} rel="me noopener" target="_blank">
-                <span className="card__art" aria-hidden="true"><Cat pose={(['selfie', 'read', 'write'] as const)[i % 3]} width={118} /></span>
+                {s.label === 'Instagram' ? (
+                  // a preview of her Instagram profile: her face, her handle, 3 recent looks from her videos
+                  <span className="ig" aria-hidden="true">
+                    <span className="ig__hd">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <span className="ig__ring"><img src={dana.avatar} alt="" width={44} height={44} loading="lazy" /></span>
+                      <span className="ig__who"><b>{s.handle.replace('@', '')}</b><span>{dana.name} · Urologist</span></span>
+                      <span className="ig__follow">Follow</span>
+                    </span>
+                    <span className="ig__grid">
+                      {[1, 2, 3].map((n) => (
+                        <span key={n} className="ig__post">
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img src={`/media/dana/ig/${n}.webp`} alt="" width={240} height={240} loading="lazy" />
+                          {n === 1 && <svg viewBox="0 0 24 24" width="16" height="16"><path d="M8 5v14l11-7z" fill="#fff" /></svg>}
+                        </span>
+                      ))}
+                    </span>
+                  </span>
+                ) : (
+                  <span className="card__art" aria-hidden="true"><Cat pose={(['selfie', 'read', 'write'] as const)[i % 3]} width={118} /></span>
+                )}
                 <b>{s.label}</b>
                 <span>{s.handle} ↗</span>
               </a>

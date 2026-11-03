@@ -19,7 +19,7 @@ export function AppBand() {
             <li className="tone--plum"><span className="du"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" /><path d="M8 12l3 3 5-6" /></svg></span><div><b>Your log stays on your phone</b><span>Your answers, notes and photos: only you see them.</span></div></li>
           </ul>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, alignItems: 'center' }}>
-            <a className="btn" href="/#get">Start week 1 free</a>
+            <a className="btn" href="/#get">Get the app</a>
             <Stores />
           </div>
         </div>

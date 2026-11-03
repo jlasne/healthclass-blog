@@ -11,7 +11,7 @@ import { dana, site } from '@/lib/site';
 export const metadata = {
   ...meta({
     title: `${site.appName}: the pelvic floor class by a urologist`,
-    description: `The pelvic floor class for women, by a urologist. Laugh without worrying, get back to sport, feel in control. Week 1 free.`,
+    description: `The pelvic floor class for women, by a urologist. Laugh without worrying, get back to sport, feel in control.`,
     path: '/',
   }),
   title: { absolute: `${site.appName} · The pelvic floor class by a urologist` },
@@ -46,7 +46,7 @@ export default async function Home() {
                 <small>Scan with your phone</small>
               </div>
             ) : (
-              <p className="home__soon">Coming soon to iPhone and Android. <span>Week&nbsp;1&nbsp;free.</span></p>
+              <p className="home__soon">Coming soon to iPhone and Android.</p>
             )}
           </div>
         </div>
