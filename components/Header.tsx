@@ -3,7 +3,14 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useRef } from 'react';
 import { Brand } from './Logo';
 import { Icon } from './Icon';
-import { nav } from '@/lib/site';
+import { dana, nav } from '@/lib/site';
+
+// the small mark before each link: an icon, or Dr. Dana's face
+function Mark({ icon }: { icon: string }) {
+  // eslint-disable-next-line @next/next/no-img-element
+  if (icon === 'face') return <img className="hd__face" src={dana.avatar} alt="" width={22} height={22} />;
+  return <Icon name={icon} className={`hd__ic hd__ic--${icon}`} />;
+}
 
 export function Header() {
   const path = usePathname() || '/';
@@ -17,7 +24,7 @@ export function Header() {
         <Brand />
         <nav className="hd__nav" aria-label="Main">
           {nav.map((n) => (
-            <a key={n.href} href={n.href} aria-current={current(n.href)}>{n.label}</a>
+            <a key={n.href} href={n.href} aria-current={current(n.href)}><Mark icon={n.icon} />{n.label}</a>
           ))}
         </nav>
         <a className="btn btn--sm hd__cta" href="/#get">Get the app</a>
@@ -25,7 +32,7 @@ export function Header() {
           <summary aria-label="Menu"><Icon name="menu" /></summary>
           <div className="hd__sheet">
             {nav.map((n) => (
-              <a key={n.href} href={n.href} aria-current={current(n.href)}>{n.label}</a>
+              <a key={n.href} href={n.href} aria-current={current(n.href)}><Mark icon={n.icon} />{n.label}</a>
             ))}
             <a className="btn" href="/#get">Get the app</a>
           </div>

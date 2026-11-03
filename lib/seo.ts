@@ -16,7 +16,7 @@ export function meta({ title, description, path, image, type = 'website', noinde
 
 export const orgId = absoluteUrl('/#organization');
 export const siteId = absoluteUrl('/#website');
-export const danaId = absoluteUrl('/dana#dana');
+export const danaId = absoluteUrl('/dana-kivlin#dana');
 export const appId = absoluteUrl('/#app');
 
 export const organization = {
@@ -39,7 +39,7 @@ export const person = {
   jobTitle: 'Urologist',
   description: `${dana.role} at ${dana.practice} in ${dana.practiceCity}. Creator of ${site.appName}.`,
   image: absoluteUrl(dana.photo),
-  url: absoluteUrl('/dana'),
+  url: absoluteUrl('/dana-kivlin'),
   worksFor: { '@type': 'MedicalOrganization', name: dana.practice, url: 'https://middlesexhealth.org' },
   alumniOf: { '@type': 'CollegeOrUniversity', name: dana.medicalSchool },
   hasCredential: [{ '@type': 'EducationalOccupationalCredential', credentialCategory: 'degree', name: 'Doctor of Osteopathic Medicine' }],

@@ -21,8 +21,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     ...m,
     keywords: a.keywords,
-    authors: [{ name: dana.name, url: '/dana' }],
-    openGraph: { ...m.openGraph, type: 'article', publishedTime: a.date, modifiedTime: a.updated, authors: ['/dana'], section: a.topic, tags: a.keywords },
+    authors: [{ name: dana.name, url: '/dana-kivlin' }],
+    openGraph: { ...m.openGraph, type: 'article', publishedTime: a.date, modifiedTime: a.updated, authors: ['/dana-kivlin'], section: a.topic, tags: a.keywords },
   };
 }
 
@@ -49,7 +49,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={dana.avatar} alt="" width={46} height={46} />
               <div>
-                <a href="/dana" rel="author"><b>{dana.name}</b></a>
+                <a href="/dana-kivlin" rel="author"><b>{dana.name}</b></a>
                 <span>
                   {dana.role} · <time dateTime={a.date}>{fmtDate(a.date)}</time> · {a.minutes} min read
                 </span>

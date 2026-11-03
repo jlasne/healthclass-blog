@@ -41,7 +41,7 @@ export function Footer() {
           <div>
             <h2>About</h2>
             <ul>
-              <li><a href="/dana">Dr. Dana</a></li>
+              <li><a href="/dana-kivlin">Dr. Dana</a></li>
               <li><a href="/privacy">Privacy</a></li>
               <li><a href="/terms">Terms</a></li>
             </ul>

@@ -115,6 +115,16 @@ button, input, textarea, select { font: inherit; color: inherit; }
 .hd__nav { display: flex; align-items: center; gap: 4px; margin-left: auto; }
 .hd__nav a { position: relative; padding: 10px 14px; border-radius: 999px; color: var(--ink-2); font: 500 15.5px/1 var(--sans); text-decoration: none; transition: background-color .2s, color .2s; }
 .hd__nav a:hover { background: var(--plum-soft); color: var(--plum); }
+.hd__nav a, .hd__sheet a { display: inline-flex; align-items: center; gap: 7px; }
+.hd__ic { width: 17px; height: 17px; flex: none; color: var(--rose); transition: transform .4s var(--spring); }
+.hd__face { width: 22px; height: 22px; flex: none; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 1.5px var(--white), 0 0 0 3px var(--rose-tint); transition: transform .4s var(--spring); }
+.hd__nav a:hover .hd__ic, .hd__nav a:hover .hd__face { transform: scale(1.14) rotate(-6deg); }
+/* Live: a small red dot, like a live stream */
+.hd__ic--video { position: relative; }
+.hd__nav a[href="/live"], .hd__sheet a[href="/live"] { position: relative; }
+.hd__nav a[href="/live"]::before, .hd__sheet a[href="/live"]::before { content: ""; position: absolute; left: 25px; top: 8px; width: 6px; height: 6px; border-radius: 50%; background: #e5484d; box-shadow: 0 0 0 2px var(--paper, #fff); animation: hc-live 2s ease-in-out infinite; }
+.hd__sheet a[href="/live"]::before { left: 27px; top: 12px; }
+@keyframes hc-live { 50% { opacity: .35; } }
 .hd__nav a[aria-current="page"] { color: var(--plum); }
 .hd__nav a[aria-current="page"]::after { content: ""; position: absolute; left: 50%; bottom: 3px; width: 16px; height: 5px; margin-left: -8px; border-bottom: 2px solid var(--rose); border-radius: 0 0 50% 50% / 0 0 100% 100%; }
 .hd__cta { margin-left: 8px; }
@@ -123,7 +133,7 @@ button, input, textarea, select { font: inherit; color: inherit; }
 .hd__menu summary::-webkit-details-marker { display: none; }
 .hd__menu summary svg { width: 22px; height: 22px; }
 .hd__sheet { position: absolute; right: 0; top: 54px; width: min(320px, calc(100vw - 32px)); padding: 10px; border-radius: 24px; background: var(--white); box-shadow: var(--shadow-lg), inset 0 0 0 1px var(--hair); animation: hc-pop .42s var(--spring); }
-.hd__sheet a { display: block; padding: 14px 16px; border-radius: 14px; color: var(--ink); font: 500 17px/1.2 var(--sans); text-decoration: none; }
+.hd__sheet a { padding: 14px 16px; border-radius: 14px; color: var(--ink); font: 500 17px/1.2 var(--sans); text-decoration: none; }
 .hd__sheet a:hover { background: var(--plum-mist); color: var(--plum); }
 .hd__sheet .btn { width: 100%; margin-top: 8px; color: #fff; }
 @keyframes hc-pop { from { opacity: 0; transform: translateY(-8px) scale(.97); } }
@@ -504,7 +514,7 @@ html.js .sketch.is-in .sk-fade { opacity: 1; transition: opacity .6s var(--ease)
   .related--find .card:not(.card--ig) > b { font-size: 17px; }
   .related--find .card:not(.card--ig) > span:not(.card__art) { font-size: 12.5px; padding-top: 6px; }
 }
-@media (prefers-reduced-motion: reduce) { .ig__ring::before { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .ig__ring::before, .hd__nav a[href="/live"]::before, .hd__sheet a[href="/live"]::before { animation: none; } }
 .card > b { font: 400 21px/1.2 var(--serif); letter-spacing: -.012em; color: var(--ink); text-wrap: balance; }
 .card > span:not(.ig):not(.card__art) { margin-top: auto; padding-top: 12px; font: 500 13.5px/1.2 var(--sans); color: var(--muted); }
 .card:hover b { color: var(--rose-ink); }

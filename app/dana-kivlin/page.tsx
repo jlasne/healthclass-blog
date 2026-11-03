@@ -7,9 +7,9 @@ import { absoluteUrl, dana, site } from '@/lib/site';
 
 // Dr. Dana, in her own words: who she is, why the class, where to find her. Trust only, no call to action.
 export const metadata = meta({
-  title: 'Dr. Dana Kivlin, board-certified urologist',
-  description: 'I am Dr. Dana Kivlin, a board-certified urologist at Middlesex Health in Middletown, Connecticut, and the teacher behind Pelvic Health Class: for Women.',
-  path: '/dana',
+  title: 'Dr. Dana Kivlin, Urologist · Pelvic Health for Women',
+  description: 'Dr. Dana Kivlin is a board-certified urologist at Middlesex Health in Middletown, Connecticut. She teaches Pelvic Health Class: for Women. Her training, her story and her videos.',
+  path: '/dana-kivlin',
 });
 
 export default function Page() {
@@ -114,7 +114,7 @@ export default function Page() {
           )}
         </div>
       </section>
-      <JsonLd data={graph({ '@type': 'ProfilePage', '@id': absoluteUrl('/dana'), url: absoluteUrl('/dana'), name: dana.name, mainEntity: { '@id': danaId }, dateModified: '2026-11-02' }, breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Dr. Dana', path: '/dana' }]))} />
+      <JsonLd data={graph({ '@type': 'ProfilePage', '@id': absoluteUrl('/dana-kivlin'), url: absoluteUrl('/dana-kivlin'), name: dana.name, mainEntity: { '@id': danaId }, dateModified: '2026-11-02' }, breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Dr. Dana Kivlin', path: '/dana-kivlin' }]))} />
     </>
   );
 }

@@ -9,12 +9,12 @@ Same design language as the app: paper, rose and plum, Fraunces and Instrument S
 | `/` | One goal: get the app (store buttons, QR code). Below: Dr. Dana, the letters, the lives |
 | `/letters`, `/letters/<slug>` | The letter signup, then the archive with search. Each letter has a hand-drawn sketch, sources, FAQ, share image |
 | `/live` | The monthly live with Dr. Dana. Locked: a premium plan in the app + the free letter. One email field unlocks it |
-| `/dana` | Dr. Dana in her own words: credentials, why the class, where to find her, podcasts |
+| `/dana-kivlin` | Dr. Dana in her own words: credentials, why the class, where to find her, podcasts |
 | `/support` | Support URL for the App Store and Google Play (cancel, restore, delete my data) |
 | `/privacy`, `/terms` | One policy and one set of terms for the app **and** the website (store-ready drafts) |
 | `/sitemap.xml`, `/robots.txt`, `/feed.xml`, `/llms.txt` | Built from the content, refreshed every hour |
 
-Old paths redirect: `/blog` to `/letters`, `/qa` to `/live`, `/about` to `/dana`, `/newsletter` to `/letters`, `/app` to `/`.
+Old paths redirect: `/blog` to `/letters`, `/qa` to `/live`, `/about` and `/dana` to `/dana-kivlin`, `/newsletter` to `/letters`, `/app` to `/`.
 
 ## Stack
 
@@ -45,7 +45,7 @@ NEXT_LOG=next.log node tests/flows.mjs http://localhost:3005    # the forms end 
 
 1. `npm run check` lists what is left. It fails while a `[bracket]` is in the legal pages or a letter lacks Dr. Dana's
    approval (`reviewed: true` in its front matter).
-2. Dr. Dana approves the 9 letters, the home page quote, "A letter from Dana" on `/dana`, and her facts in
+2. Dr. Dana approves the 9 letters, the home page quote, "A letter from Dana" on `/dana-kivlin`, and her facts in
    `lib/site.ts` (name, board certification, Middlesex Health, medical school and year).
 3. Fill `lib/legal.ts` (publisher, address, governing law, Supabase region) and the video platform in
    `app/privacy/page.tsx`. Have a lawyer read `/privacy` and `/terms`.

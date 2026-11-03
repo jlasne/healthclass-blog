@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   title: { default: `${site.name} · ${site.tagline}`, template: `%s · ${site.name}` },
   description: site.description,
   applicationName: site.appName,
-  authors: [{ name: 'Dr. Dana Kivlin', url: '/dana' }],
+  authors: [{ name: 'Dr. Dana Kivlin', url: '/dana-kivlin' }],
   creator: 'Dr. Dana Kivlin',
   publisher: site.name,
   category: 'health',

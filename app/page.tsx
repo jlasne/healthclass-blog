@@ -54,7 +54,7 @@ export default async function Home() {
 
       <section className="sec--tight" aria-label="More from Dr. Dana" style={{ paddingBottom: 72 }}>
         <div className="wrap doors">
-          <a className="door" href="/dana">
+          <a className="door" href="/dana-kivlin">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img className="door__face" src={dana.avatar} alt="" width={76} height={76} />
             <div><b>Meet {dana.name}</b><span>Urologist · {dana.practice}</span></div>
