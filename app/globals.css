@@ -471,8 +471,23 @@ html.js .sketch.is-in .sk-fade { opacity: 1; transition: opacity .6s var(--ease)
 .card__art { position: relative; display: grid; place-items: end center; height: 136px; margin: -4px -4px 14px; border-radius: 18px; background: var(--tone-soft, var(--rose-soft)); overflow: hidden; }
 .card__art::before { content: ""; position: absolute; width: 112px; aspect-ratio: 1; bottom: -6px; border-radius: 50%; background: var(--tone, var(--rose-tint)); }
 .card__art img { position: relative; width: 118px; margin-bottom: -2px; }
-.card b { font: 400 21px/1.2 var(--serif); letter-spacing: -.012em; color: var(--ink); text-wrap: balance; }
-.card span { margin-top: auto; padding-top: 12px; font: 500 13.5px/1.2 var(--sans); color: var(--muted); }
+/* the Instagram card: a preview of her profile (its neighbors on /dana match its height) */
+.related--find .card__art { height: 176px; }
+.ig { display: flex; flex-direction: column; gap: 10px; height: 176px; margin: -4px -4px 14px; padding: 10px; border-radius: 18px; background: #fff; border: 1px solid var(--line, #f0e4e8); box-sizing: border-box; }
+.ig__hd { display: flex; align-items: center; gap: 9px; min-width: 0; }
+.ig__ring { flex: none; padding: 2px; border-radius: 50%; background: conic-gradient(from 210deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5, #feda75); }
+.ig__ring img { display: block; width: 34px; height: 34px; border-radius: 50%; border: 2px solid #fff; object-fit: cover; }
+.ig__who { display: flex; flex-direction: column; min-width: 0; line-height: 1.2; }
+.ig__who b { font: 600 13.5px/1.2 var(--sans); color: var(--ink); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ig__who span { font: 400 11.5px/1.3 var(--sans); color: var(--muted, #8a7a80); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ig__follow { margin-left: auto; flex: none; padding: 5px 12px; border-radius: 8px; background: #0095f6; color: #fff; font: 600 12px/1.2 var(--sans); }
+.ig__grid { flex: 1; min-height: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; border-radius: 10px; overflow: hidden; }
+.ig__post { position: relative; display: block; min-height: 0; }
+.ig__post img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+.ig__post svg { position: absolute; top: 5px; right: 5px; filter: drop-shadow(0 1px 2px rgb(0 0 0 / .4)); }
+.card:hover .ig__post img { transform: scale(1.03); transition: transform .4s ease; }
+.card > b { font: 400 21px/1.2 var(--serif); letter-spacing: -.012em; color: var(--ink); text-wrap: balance; }
+.card > span:not(.ig):not(.card__art) { margin-top: auto; padding-top: 12px; font: 500 13.5px/1.2 var(--sans); color: var(--muted); }
 .card:hover b { color: var(--rose-ink); }
 @media (max-width: 820px) { .related { grid-template-columns: 1fr; } }
 

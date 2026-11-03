@@ -11,7 +11,7 @@ import { dana, site } from '@/lib/site';
 export const metadata = {
   ...meta({
     title: `${site.appName}: the pelvic floor class by a urologist`,
-    description: `Dr. Dana Kivlin's pelvic floor class on your phone. 5 minutes a day for your bladder, your core and your confidence. Week 1 free.`,
+    description: `Dr. Dana Kivlin's pelvic floor class on your phone. 5 minutes a day for your bladder, your core and your confidence.`,
     path: '/',
   }),
   title: { absolute: `${site.appName} · The pelvic floor class by a urologist` },
@@ -27,7 +27,7 @@ export default async function Home() {
           <div>
             <span className="eyebrow">{site.appName}</span>
             <h1 className="h1">The pelvic floor class for <em>women</em>.</h1>
-            <p className="lede">The upcoming app built to be the #1 for women&rsquo;s pelvic floor. 5 minutes a day, by a urologist. Week 1 free.</p>
+            <p className="lede">The upcoming app built to be the #1 for women&rsquo;s pelvic floor. 5 minutes a day, by a urologist.</p>
             <ul className="impacts" aria-label="What your pelvic floor shapes">
               <li className="tone--rosy">Bladder control</li>
               <li className="tone--sky">Core strength</li>
