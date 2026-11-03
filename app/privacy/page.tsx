@@ -80,7 +80,7 @@ export default function Page() {
           </ul>
 
           <h2 id="newsletter">Class Notes, the newsletter</h2>
-          <p>If you join Class Notes on the website or in the app, we store your email, the page you joined from, the date and whether you are subscribed, in our database at Convex. We send the letters through MailCheap, which receives your email, the source &ldquo;website&rdquo; and your IP address (to block fake signups). We use your email to send the letters, twice a week, and nothing else. Every letter has a one-click unsubscribe link. Unsubscribing stops the letters at once.</p>
+          <p>The signup form on the website is MailCheap&rsquo;s, our newsletter provider. When you join there, MailCheap receives your email, the page you joined from and the date. If you join in the app, or when you sign up for the live Q&amp;A, we store your email in our database at Convex and pass it to MailCheap. We use your email to send the letters, twice a week, and nothing else. Every letter has a one-click unsubscribe link. Unsubscribing stops the letters at once.</p>
 
           <h2 id="qa">The live Q&amp;A with Dr. Dana</h2>
           <p>To sign in, you type the email you added in the app. Our server checks it against our list of paid members and, if it matches, emails you a one-time link through Resend. The answer on the page is the same for every email, so the page never shows whether someone has a plan. We store a scrambled form (a hash) of each link and sign-in key, never the key itself.</p>
@@ -97,7 +97,7 @@ export default function Page() {
                 <tr><td>Supabase</td><td>App database</td><td>Email, Notify me requests, screen numbers</td></tr>
                 <tr><td>Convex</td><td>Website database</td><td>Newsletter emails, paid members, Q&amp;A questions, sign-in hashes</td></tr>
                 <tr><td>Vercel</td><td>Website hosting</td><td>Technical request data</td></tr>
-                <tr><td>MailCheap</td><td>Sending Class Notes</td><td>Email, signup source, IP address</td></tr>
+                <tr><td>MailCheap</td><td>The website signup form, sending Class Notes</td><td>Email, signup page and date</td></tr>
                 <tr><td>Resend</td><td>Sending Q&amp;A sign-in links</td><td>Email</td></tr>
                 <tr><td>Reception</td><td>Support chat on iPhone</td><td>See Support chat above</td></tr>
               </tbody>

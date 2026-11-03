@@ -911,3 +911,7 @@ a, button, summary, input, textarea, label { touch-action: manipulation; }
 .live__cap span { display: inline-block; font: 600 15px/1.3 var(--sans); color: #fff; text-shadow: 0 1px 2px rgba(0, 0, 0, .35); animation: capIn .35s var(--ease) both; }
 @keyframes capIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .live__cap span { animation: none; } }
+/* the MailCheap signup frame: centered in the page heroes, left-aligned in the letter boxes */
+.nl-embed iframe { color-scheme: normal; }
+.hero__form .nl-embed iframe { margin-inline: auto; }
+.hero__form .nl-embed .nl-fine { text-align: center; }
