@@ -46,7 +46,7 @@ export default async function Home() {
                 <small>Scan with your phone</small>
               </div>
             ) : (
-              <p className="home__soon">Coming soon to iPhone and Android.</p>
+              <p className="home__soon">Coming soon to iPhone and Android. Tap a store to join the waitlist.</p>
             )}
           </div>
         </div>

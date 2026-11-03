@@ -312,7 +312,22 @@ button, input, textarea, select { font: inherit; color: inherit; }
 .store span { display: flex; flex-direction: column; line-height: 1.05; }
 .store small { font: 500 11px/1 var(--sans); opacity: .78; letter-spacing: .02em; }
 .store b { font: 600 17px/1.1 var(--sans); }
-.store.is-soon { background: var(--white); color: var(--plum); box-shadow: inset 0 0 0 1px var(--hair-2); cursor: default; }
+.store.is-soon { background: var(--white); color: var(--plum); box-shadow: inset 0 0 0 1px var(--hair-2); border: 0; cursor: pointer; font: inherit; text-align: left; }
+.store.is-soon:hover { background: var(--rose-soft); }
+/* the waitlist: the free letter in a sheet, opened by a "Coming soon" store button */
+.wait { width: min(440px, calc(100% - 32px)); max-height: calc(100dvh - 32px); padding: 0; border: 0; border-radius: 28px; background: var(--white); color: inherit; box-shadow: var(--shadow-lg); overflow: auto; }
+.wait::backdrop { background: rgb(42 36 33 / .45); backdrop-filter: blur(3px); }
+.wait[open] { animation: wait-in .42s var(--spring); }
+@keyframes wait-in { from { opacity: 0; transform: translateY(16px) scale(.97); } }
+.wait__in { position: relative; padding: 28px 24px 22px; text-align: center; }
+.wait__cat { display: block; margin: 0 auto 6px; }
+.wait h2 { margin: 0; }
+.wait p { margin: 10px auto 18px; max-width: 34ch; color: var(--muted-dk); font: 400 15.5px/1.5 var(--sans); }
+.wait .nl-embed iframe { margin-inline: auto; }
+.wait .nl-fine { text-align: center; margin-left: 0; }
+.wait__x { position: absolute; top: 12px; right: 12px; display: grid; place-items: center; width: 40px; height: 40px; border: 0; border-radius: 50%; background: var(--well); color: var(--ink-2); cursor: pointer; }
+.wait__x svg { width: 18px; height: 18px; }
+@media (max-width: 560px) { .wait { margin: auto auto 0; width: 100%; max-width: none; border-radius: 28px 28px 0 0; } }
 .store.is-soon small { opacity: 1; color: var(--muted); }
 @media (max-width: 880px) { .app { grid-template-columns: 1fr; } }
 /* the app card at the end of a letter: copy on the left, the top of the phone peeking up on the right */
