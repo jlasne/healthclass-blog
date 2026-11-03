@@ -45,9 +45,7 @@ export default async function Home() {
                 <span dangerouslySetInnerHTML={{ __html: qr }} />
                 <small>Scan with your phone</small>
               </div>
-            ) : (
-              <p className="home__soon">Coming soon to iPhone and Android. Tap a store to join the waitlist.</p>
-            )}
+            ) : null}
           </div>
         </div>
       </section>
