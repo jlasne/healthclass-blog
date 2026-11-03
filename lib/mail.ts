@@ -1,10 +1,10 @@
 import 'server-only';
 // Sends the Q&A sign-in email (a transactional email, separate from the newsletter). Through Resend's API when
-// RESEND_API_KEY is set (from QA_FROM_EMAIL, e.g. "Dr. Dana at Health Class <qa@healthclass.app>"). Without a key, the
+// RESEND_API_KEY is set (from QA_FROM_EMAIL, e.g. "Dr. Dana at Health Class <dana@healthclass.app>"). Without a key, the
 // link is logged on the server, so the flow can be tested before launch.
 export async function sendQaLink(to: string, link: string) {
   const key = process.env.RESEND_API_KEY;
-  const from = process.env.QA_FROM_EMAIL || 'Health Class <qa@healthclass.app>';
+  const from = process.env.QA_FROM_EMAIL || 'Health Class <dana@healthclass.app>';
   const subject = 'Your link to the live Q&A with Dr. Dana';
   const text = `Here is your link to the live Q&A page. It works once, for 30 minutes:\n\n${link}\n\nOn the page: the next session's date and join link, the replays, and a box to send Dr. Dana your question.\n\nYou asked for this link on www.healthclass.app. If it was someone else, ignore this email: nothing changes.\n\nHealth Class · Pelvic Health Class: for Women`;
   const html = `<!doctype html><html><body style="margin:0;background:#FFFBF6;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#4A3F39">
