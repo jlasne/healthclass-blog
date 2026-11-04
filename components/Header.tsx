@@ -3,6 +3,7 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useRef } from 'react';
 import { Brand } from './Logo';
 import { Icon } from './Icon';
+import { GetApp } from './Waitlist';
 import { dana, nav } from '@/lib/site';
 
 // the small mark before each link: an icon, or Dr. Dana's face
@@ -27,14 +28,14 @@ export function Header() {
             <a key={n.href} href={n.href} aria-current={current(n.href)}><Mark icon={n.icon} />{n.label}</a>
           ))}
         </nav>
-        <a className="btn btn--sm hd__cta" href="/#get">Get the app</a>
+        <GetApp className="btn btn--sm hd__cta" />
         <details className="hd__menu" ref={menu}>
           <summary aria-label="Menu"><Icon name="menu" /></summary>
           <div className="hd__sheet">
             {nav.map((n) => (
               <a key={n.href} href={n.href} aria-current={current(n.href)}><Mark icon={n.icon} />{n.label}</a>
             ))}
-            <a className="btn" href="/#get">Get the app</a>
+            <GetApp className="btn" />
           </div>
         </details>
       </div>

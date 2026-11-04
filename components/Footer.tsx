@@ -2,6 +2,7 @@ import { Brand } from './Logo';
 import { Cat } from './Cat';
 import { Icon } from './Icon';
 import { dana, site } from '@/lib/site';
+import { FAMILIES, FAMILY_IDS } from '@/lib/resources';
 
 // The footer: the cat naps in the hammock (the paper's edge curves down into the plum like the app's hammock line).
 export function Footer() {
@@ -28,6 +29,12 @@ export function Footer() {
             <h2>Read</h2>
             <ul>
               <li><a href="/letters">All letters</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Resources</h2>
+            <ul>
+              {FAMILY_IDS.map((f) => (<li key={f}><a href={`/resources/${f}`}>{FAMILIES[f].name}</a></li>))}
             </ul>
           </div>
           <div>

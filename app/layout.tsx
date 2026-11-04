@@ -3,7 +3,9 @@ import localFont from 'next/font/local';
 import './globals.css';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { Analytics } from '@vercel/analytics/next';
 import { Motion } from '@/components/Motion';
+import { Waitlist } from '@/components/Waitlist';
 import { JsonLd } from '@/components/JsonLd';
 import { graph, organization, person, website } from '@/lib/seo';
 import { site } from '@/lib/site';
@@ -71,7 +73,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main id="main">{children}</main>
         <Footer />
+        <Waitlist />
         <Motion />
+        {/* page views for the weekly report: no cookies, no IP kept (Vercel Web Analytics, see /privacy#website).
+            Only on Vercel, where its script exists; a local build stays free of the console error. */}
+        {process.env.VERCEL ? <Analytics /> : null}
         <JsonLd data={graph(organization, website, person)} />
       </body>
     </html>

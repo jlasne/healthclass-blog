@@ -63,6 +63,7 @@ export const dana = {
 export const nav = [
   // icon: an Icon name, or 'face' for Dr. Dana's round photo
   { href: '/letters', label: 'Letters', icon: 'mail' },
+  { href: '/resources', label: 'Resources', icon: 'book' },
   { href: '/live', label: 'Live', icon: 'video' },
   { href: '/dana-kivlin', label: 'Dr. Dana', icon: 'face' },
 ] as const;

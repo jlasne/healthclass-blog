@@ -11,6 +11,7 @@ Same design language as the app: paper, rose and plum, Fraunces and Instrument S
 | `/live` | The monthly live with Dr. Dana. Locked: a premium plan in the app + the free letter. One email field unlocks it |
 | `/dana-kivlin` | Dr. Dana in her own words: credentials, why the class, where to find her, podcasts |
 | `/faq` | FAQ and help, the Support URL for the App Store and Google Play (cancel, restore, delete my data) |
+| `/resources`, `/resources/<family>`, `/resources/<family>/<slug>` | Free tools, Side by side, The classes, Made for you: one page a day ([plan](content/resources/PLAN.md)) |
 | `/privacy`, `/terms` | One policy and one set of terms for the app **and** the website (store-ready drafts) |
 | `/sitemap.xml`, `/robots.txt`, `/feed.xml`, `/llms.txt` | Built from the content, refreshed every hour |
 
@@ -87,6 +88,18 @@ voice), `seoTitle` (the search query), `description` (150 characters), `excerpt`
   sketch (`components/Sketch.tsx`), `<Try>`, `<Doctor>`, `<Remember>` boxes and `<Letter />` for a mid-letter signup.
 - Copy rules (the app's): no em dashes, under 30 words a sentence, a number instead of an adjective, no weasel words,
   simple words, say what to do. `npm run check` flags the dashes and long sentences.
+
+## Resources (/resources)
+
+Free tools, comparisons, the classes week by week and pages for each moment, in `content/resources/<family>/<slug>.mdx`
+(families: `tools`, `compare`, `classes`, `made-for-you`). One new page a day, in the order and with the rules of
+[content/resources/PLAN.md](content/resources/PLAN.md). Each page appears on its family page, on `/resources`, in the
+sitemap and in `llms.txt` by itself. `npm run check:resources` checks a page before it goes out: the front matter, the
+copy rules, the sources, the links and the honesty rule on comparisons.
+
+"Get the app", in the header and on every resource page, opens the launch-day waitlist until `appStoreUrl` and
+`playStoreUrl` are set in `lib/site.ts`; then it goes to the store for the phone. Page views go to Vercel Web Analytics
+(no cookies), on Vercel only.
 
 ## Plan a Q&A session
 

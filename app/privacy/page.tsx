@@ -75,6 +75,7 @@ export default function Page() {
           <h2 id="website">The website</h2>
           <ul>
             <li><b>Reading:</b> the website sets no advertising or analytics cookies. Our host, Vercel, processes the technical data every website receives (IP address, browser, the page requested) to deliver pages and protect them from abuse, and keeps its server logs for a short period.</li>
+            <li><b>Visit counts:</b> Vercel Web Analytics counts the pages people read, with no cookies. For each page view it records the page, the site you came from, your country, region and city, your browser, your phone or computer type and its system. It identifies a visit by a scrambled code (a hash) that it discards after 24 hours, and it keeps no IP address. We see only totals, and we use them to learn which pages help.</li>
             <li><b>Forms:</b> when you send a form, we receive what you type in it and your IP address, which we use only to block abuse (at most a few tries per network every few minutes).</li>
             <li><b>Cookies:</b> only one, after you sign in to the Q&amp;A: <code>hc_qa</code>, a random sign-in key, kept 30 days or until you sign out. It is needed for the members&rsquo; page to work.</li>
           </ul>
@@ -96,7 +97,7 @@ export default function Page() {
                 <tr><td>PostHog (EU)</td><td>App analytics and crash reports</td><td>Random app ID, screens, button names, purchase results, crashes</td></tr>
                 <tr><td>Supabase</td><td>App database</td><td>Email, Notify me requests, screen numbers</td></tr>
                 <tr><td>Convex</td><td>Website database</td><td>Newsletter emails, paid members, Q&amp;A questions, sign-in hashes</td></tr>
-                <tr><td>Vercel</td><td>Website hosting</td><td>Technical request data</td></tr>
+                <tr><td>Vercel</td><td>Website hosting, visit counts</td><td>Technical request data; page views with no cookies and no IP address</td></tr>
                 <tr><td>MailCheap</td><td>The website signup form, sending Class Notes</td><td>Email, signup page and date</td></tr>
                 <tr><td>Resend</td><td>Sending Q&amp;A sign-in links</td><td>Email</td></tr>
                 <tr><td>Reception</td><td>Support chat on iPhone</td><td>See Support chat above</td></tr>
