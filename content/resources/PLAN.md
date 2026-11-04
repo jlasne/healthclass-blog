@@ -98,7 +98,7 @@ gives way to the store link on every page. Report it.
 - [x] 002 · `made-for-you/leak-when-you-sneeze` · peeing when sneezing
 - [x] 003 · `classes/bladder-leaks` · bladder leaks program
 - [x] 004 · `compare/health-class-vs-squeezy` · squeezy app
-- [ ] 005 · `made-for-you/leak-when-you-laugh` · leaking urine when laughing
+- [x] 005 · `made-for-you/leak-when-you-laugh` · leaking urine when laughing
 - [ ] 006 · `made-for-you/leak-when-you-cough` · bladder leaks when coughing
 - [ ] 007 · `made-for-you/leak-when-you-walk` · bladder leaks when walking
 
