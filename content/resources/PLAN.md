@@ -15,6 +15,15 @@ The founders do not review each page: the rules and the check below are the revi
 
 ## The daily routine
 
+0. **App check** (before the new page). The app changes over time: classes, features, prices, phones. Compare the app
+   today with `lib/app-facts.ts`: prices and free weeks in `www/js/config.js`, the classes in `www/js/content-*.js`
+   (titles, weeks, minutes), the phones in its README, and the store listings once live. If anything changed:
+   - update the value in `lib/app-facts.ts` and set `checked` to today. Every page that shows `{app.*}` follows at once;
+   - search `content/resources` for text tied to the old fact that does not use a token (a price, "week 1", a class
+     name, "iOS 17") and fix it, then set `updated` to today on each page you touched;
+   - a class that opens in the app: set its page to `status: live` and update `programs` in `lib/site.ts`; a new
+     class or feature: add it to the classes and to the list below if it deserves a page;
+   - commit `Resources: app facts updated (<what changed>)` and say it in the report.
 1. **Pick** the first unchecked line in the list below. Skip a line marked "ONLY if the module ships" when the module is
    not in the app's current content (`www/js/content-*.js` in jlasne/healthclass, not `www/js/next/`); tick it as skipped.
 2. **Research** the search: read the top results, note the questions people ask (the FAQ), and find 2 to 5 sources
@@ -36,6 +45,10 @@ The founders do not review each page: the rules and the check below are the revi
 If a step fails and cannot be fixed the same day, publish nothing, leave the line unticked, and report what failed.
 The site keeps its last good version when a deploy fails.
 
+**Every day, after the new page**, keep Side by side fresh: if a comparison has a `checked` date (its `rival` or a
+side) older than 90 days, re-check the other side's facts on its store page and site for the oldest one (one page a
+day), fix what changed, set `checked` and `updated` to today, and commit `Resources: <title> facts checked`.
+
 **Mondays**, add the weekly report: pages published, page views per resource page and visits from Google over the
 last 7 days (Vercel Web Analytics, project `healthclass-blog`), and the 3 pages with the most visits.
 
@@ -54,8 +67,11 @@ gives way to the store link on every page. Report it.
 - **Honest comparisons.** At least 2 points where the other side wins, true and useful (price, a device, a physio, a
   feature). Then where Health Class wins. No attack on a brand. Facts dated (`checked`) and sourced. Never mention our
   store ratings or review count.
-- **Our price is not set yet.** Write "Subscription, price shown in the app. Week 1 is open to everyone", until the
-  prices are in `lib/site.ts` and the founders confirm them.
+- **App facts come from `lib/app-facts.ts`.** In a comparison, every Health Class fact that can change (price, free
+  week, phones, classes, daily minutes, features) is written as a token: `{app.price}`, `{app.trial}`, `{app.phones}`,
+  `{app.classes}`, `{app.daily}`, `{app.minutes}`, `{app.learning}`, `{app.tracking}`, `{app.professional}`,
+  `{app.device}`, `{app.languages}`, `{app.privacy}`, `{app.after}`, `{app.maker}`. Add a key there when a new fact
+  is needed. The price stays "Subscription, price shown in the app" until the founders set it in the app.
 - **Copy:** no em or en dashes, under 30 words a sentence, a number instead of an adjective, no weasel words, simple
   words, say what to do. English (US).
 - **One page per search.** Do not write a page for a search an existing letter or page already answers; link to it.

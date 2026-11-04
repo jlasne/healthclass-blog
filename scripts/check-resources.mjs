@@ -15,6 +15,8 @@ const FAMILIES = ['tools', 'compare', 'classes', 'made-for-you'];
 const TOOLS = ['leak-type-quiz'];
 const TONES = ['rosy', 'plum', 'blush', 'sky'];
 const cats = JSON.parse(fs.readFileSync(path.join(root, 'lib/cats.json'), 'utf8'));
+// the app facts pages can show as {app.key} (lib/app-facts.ts)
+const facts = new Set([...fs.readFileSync(path.join(root, 'lib/app-facts.ts'), 'utf8').matchAll(/^\s{2}([a-zA-Z]+): /gm)].map((m) => m[1]));
 const letters = new Set(fs.readdirSync(path.join(root, 'content/articles')).filter((f) => f.endsWith('.mdx')).map((f) => f.replace(/\.mdx$/, '')));
 const fails = [], warns = [];
 const pages = [];
@@ -44,6 +46,8 @@ for (const p of pages) {
   if (dateOf(data.updated) < dateOf(data.date)) fails.push(`${file}: updated is before date`);
   if (data.tone && !TONES.includes(data.tone)) fails.push(`${file}: tone must be one of ${TONES.join(', ')}`);
   if (data.cat && !cats.sizes[data.cat]) fails.push(`${file}: no cat pose "${data.cat}" (poses: ${Object.keys(cats.sizes).join(', ')})`);
+  for (const m of raw.matchAll(/\{app\.([a-zA-Z]+)\}/g)) if (!facts.has(m[1])) fails.push(`${file}: {app.${m[1]}} is not in lib/app-facts.ts`);
+  if (fam === 'compare' && !/\{app\.[a-zA-Z]+\}/.test(raw)) fails.push(`${file}: a comparison shows Health Class facts as {app.price}, {app.phones}... (lib/app-facts.ts), so they follow the app`);
   if (/[—–]/.test(raw)) fails.push(`${file}: an em or en dash (use a period, a colon or a comma)`);
   if (/reviewed by dr|reviewed by dana|medically reviewed/i.test(raw)) fails.push(`${file}: says Dr. Dana reviewed it. Only with her written OK.`);
   for (const s of data.sources ?? []) if (!/^https:\/\//.test(s.url ?? '')) fails.push(`${file}: source URL is not https: ${s.url}`);

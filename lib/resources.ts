@@ -9,6 +9,7 @@ import matter from 'gray-matter';
 import readingTime from 'reading-time';
 import type { Pose } from '@/components/Cat';
 import type { Faq, Source } from './articles';
+import { appFacts, fillFacts, usesFacts } from './app-facts';
 
 export type Tone = 'rosy' | 'plum' | 'blush' | 'sky';
 export type FamilyId = 'tools' | 'compare' | 'classes' | 'made-for-you';
@@ -116,6 +117,7 @@ export type Resource = {
   // made for you
   goal?: string;
   fit?: string;            // the class that fits, as "classes/slug"
+  appChecked?: string;     // set when the page shows app facts ({app.*}): the day those facts were checked
   body: string;
   minutes: number;
   words: number;
@@ -125,6 +127,8 @@ const DIR = path.join(process.cwd(), 'content/resources');
 let cache: Resource[] | null = null;
 
 const d = (v: unknown) => (v instanceof Date ? v.toISOString().slice(0, 10) : String(v ?? ''));
+// {app.price} and the other app facts (lib/app-facts.ts), filled in every string of the front matter
+const fill = (v: unknown): unknown => (typeof v === 'string' ? fillFacts(v) : Array.isArray(v) ? v.map(fill) : v && typeof v === 'object' && !(v instanceof Date) ? Object.fromEntries(Object.entries(v).map(([k, x]) => [k, fill(x)])) : v);
 
 function load(): Resource[] {
   if (cache && process.env.NODE_ENV === 'production') return cache;
@@ -133,7 +137,12 @@ function load(): Resource[] {
     const dir = path.join(DIR, family);
     if (!fs.existsSync(dir)) continue;
     for (const f of fs.readdirSync(dir).filter((x) => x.endsWith('.mdx'))) {
-      const { data, content } = matter(fs.readFileSync(path.join(dir, f), 'utf8'));
+      const raw = fs.readFileSync(path.join(dir, f), 'utf8');
+      const parsed = matter(raw);
+      const data = fill(parsed.data) as Record<string, any>; // eslint-disable-line @typescript-eslint/no-explicit-any
+      const content = fillFacts(parsed.content);
+      // a page that shows app facts is as fresh as those facts: a change in lib/app-facts.ts moves its updated date
+      const app = usesFacts(raw) ? appFacts.checked : undefined;
       const rt = readingTime(content.replace(/<[^>]+>/g, ' '));
       const slug = f.replace(/\.mdx$/, '');
       list.push({
@@ -146,7 +155,7 @@ function load(): Resource[] {
         excerpt: String(data.excerpt ?? data.description ?? ''),
         answer: String(data.answer ?? ''),
         date: d(data.date),
-        updated: d(data.updated ?? data.date),
+        updated: [d(data.updated ?? data.date), app ?? ''].sort().pop() as string,
         tone: (data.tone ?? FAMILIES[family].tone) as Tone,
         cat: (data.cat ?? FAMILIES[family].cat) as Pose,
         keywords: (data.keywords ?? []) as string[],
@@ -170,6 +179,7 @@ function load(): Resource[] {
         weeks: data.weeks,
         goal: data.goal ? String(data.goal) : undefined,
         fit: data.fit ? String(data.fit) : undefined,
+        appChecked: app,
         body: content,
         minutes: Math.max(1, Math.round(rt.minutes)),
         words: rt.words,

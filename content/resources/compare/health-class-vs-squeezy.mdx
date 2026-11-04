@@ -15,31 +15,31 @@ rival:
   checked: 2026-11-04
 table:
   - label: "Made by"
-    us: "Dr. Dana Kivlin, board-certified urologist"
+    us: "{app.maker}"
     them: "Pelvic health physiotherapists working in the NHS. Published by Living With Ltd"
   - label: "Price"
-    us: "Subscription, price shown in the app. Week 1 is open to everyone"
+    us: "{app.price}"
     them: "$4.99, paid once (US App Store)"
   - label: "Phones"
-    us: "iPhone (iOS 17 or later) and Android"
+    us: "{app.phones}"
     them: "iPhone (iOS 15.5 or later) and Android"
   - label: "The plan"
-    us: "2 classes of 6 weeks: Pelvic Floor 101 and Bladder leaks"
+    us: "{app.classes}"
     them: "1 pre-set exercise plan that follows public health guidelines"
   - label: "Each day"
-    us: "1 guided exercise of 5 to 10 minutes, with cues like \"Breathe out, then lift\""
+    us: '{app.daily}'
     them: "Exercises with sound and visual prompts, and reminders you set"
   - label: "Learning"
-    us: "1 short lesson a week"
+    us: "{app.learning}"
     them: "Information pages about the pelvic floor"
   - label: "Tracking"
-    us: "Daily check-ins and your progress, day by day"
+    us: "{app.tracking}"
     them: "Your exercise record against your target, and a bladder diary"
   - label: "With a professional"
-    us: "A monthly live Q&A with Dr. Dana for members"
+    us: "{app.professional}"
     them: "Professional mode: a pelvic health specialist can tailor your plan"
   - label: "Languages"
-    us: "English"
+    us: "{app.languages}"
     them: "English and Polish"
 wins:
   them:
@@ -50,8 +50,8 @@ wins:
   us:
     - "A class by a board-certified urologist, with a short lesson each week."
     - "A plan for your goal, the basics or bladder leaks, from day 1 to day 42."
-    - "Week 1 is open to everyone, so you try the class before you pay."
-    - "Your health answers and your log stay on your phone. No ads."
+    - "{app.trial}, so you try the class before you pay."
+    - "{app.privacy}"
 pick:
   them: "you want one low price, you see a pelvic health physio who will set your plan, or you want a bladder diary on your phone."
   us: "you want a guided class that teaches you a little each week, with a plan built around bladder leaks or the basics, and a first week to try it."
@@ -96,4 +96,4 @@ Both remind you to train. Both show your progress. Both teach you what the pelvi
 
 ## A word on price
 
-Squeezy costs $4.99 once in the US App Store.<Ref n={1} /> Health Class is a subscription, with week 1 open to everyone. If one low price matters most, Squeezy wins. If you want to try a guided class first, start with our week 1.
+Squeezy costs $4.99 once in the US App Store.<Ref n={1} /> Health Class: {app.price}. If one low price matters most, Squeezy wins. If you want to try a guided class first, start with our week 1.

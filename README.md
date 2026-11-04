@@ -95,7 +95,9 @@ Free tools, comparisons, the classes week by week and pages for each moment, in 
 (families: `tools`, `compare`, `classes`, `made-for-you`). One new page a day, in the order and with the rules of
 [content/resources/PLAN.md](content/resources/PLAN.md). Each page appears on its family page, on `/resources`, in the
 sitemap and in `llms.txt` by itself. `npm run check:resources` checks a page before it goes out: the front matter, the
-copy rules, the sources, the links and the honesty rule on comparisons.
+copy rules, the sources, the links and the honesty rule on comparisons. What the app is today (price, free week,
+phones, classes, features) lives in `lib/app-facts.ts`: pages show it as `{app.price}`, `{app.phones}`..., so when the
+app changes, one edit there updates every comparison and its dates.
 
 "Get the app", in the header and on every resource page, opens the launch-day waitlist until `appStoreUrl` and
 `playStoreUrl` are set in `lib/site.ts`; then it goes to the store for the phone. Page views go to Vercel Web Analytics

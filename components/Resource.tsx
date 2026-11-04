@@ -6,6 +6,7 @@ import { GetApp } from './Waitlist';
 import { Phone } from './AppBand';
 import { fmtDate, getArticle, type Article } from '@/lib/articles';
 import { FAMILIES, FAMILY_IDS, getResources, resolve, splitEm, type FamilyId, type Resource } from '@/lib/resources';
+import { appFacts } from '@/lib/app-facts';
 
 // "Laugh *again*." with the starred words in the rose italic
 export function Em({ text }: { text: string }) {
@@ -69,6 +70,16 @@ export function ShortAnswer({ text }: { text: string }) {
 
 // compare: the facts table, then what each one does best, then who should pick which
 const US = 'Health Class';
+
+// when the facts were checked: the other side's (its store page, its site) and ours (lib/app-facts.ts)
+function Checked({ them, theirs, ours }: { them?: string; theirs: string; ours?: string }) {
+  if (!ours || ours === theirs) return <p className="vs__checked">Facts checked on <time dateTime={theirs}>{fmtDate(theirs)}</time>. Sources below.</p>;
+  return (
+    <p className="vs__checked">
+      {them ?? 'Other'} facts checked on <time dateTime={theirs}>{fmtDate(theirs)}</time>. Health Class facts on <time dateTime={ours}>{fmtDate(ours)}</time>. Sources below.
+    </p>
+  );
+}
 const TONES = ['sky', 'plum', 'blush'] as const;
 
 // 3 sides or more: the same table, one column per side, Health Class in rose; then what each one wins
@@ -81,7 +92,7 @@ function CompareMany({ r }: { r: Resource }) {
     <section className="vs" aria-labelledby="vs-t">
       <div className="vs__hd">
         <h2 id="vs-t" className="h3">{sides.map((x) => x.name).filter((n) => n !== US).join(', ')}{sides.some((x) => x.name === US) ? ' and Health Class' : ''}, <em>side by side</em></h2>
-        {checked && <p className="vs__checked">Facts checked on <time dateTime={checked}>{fmtDate(checked)}</time>. Sources below.</p>}
+        {checked && <Checked them="Other apps'" theirs={checked} ours={r.appChecked} />}
       </div>
       <div className="vs__tbl">
         <table className={sides.length > 3 ? 'vs--wide' : undefined}>
@@ -120,7 +131,7 @@ export function CompareBlock({ r }: { r: Resource }) {
     <section className="vs" aria-labelledby="vs-t">
       <div className="vs__hd">
         <h2 id="vs-t" className="h3">Health Class and {them}, <em>side by side</em></h2>
-        <p className="vs__checked">Facts checked on <time dateTime={r.rival.checked}>{fmtDate(r.rival.checked)}</time>. Sources below.</p>
+        <Checked them={them} theirs={r.rival.checked} ours={r.appChecked} />
       </div>
       <div className="vs__tbl">
         <table>
@@ -222,8 +233,8 @@ export function AppCta({ title, line }: { title: string; line?: string }) {
             {line && <p className="appcard__line">{line}</p>}
             <ul className="appcard__facts" aria-label="What the app gives you">
               <li>A class by a urologist</li>
-              <li>5 to 10 minutes a day</li>
-              <li>Week 1 open to everyone</li>
+              <li>{appFacts.minutes}</li>
+              <li>{appFacts.trial}</li>
             </ul>
             <GetApp className="btn" icon />
           </div>
