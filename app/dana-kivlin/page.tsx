@@ -2,7 +2,7 @@ import { Cat } from '@/components/Cat';
 import { Icon } from '@/components/Icon';
 import { Smile } from '@/components/Smile';
 import { JsonLd } from '@/components/JsonLd';
-import { breadcrumbs, danaId, graph, meta } from '@/lib/seo';
+import { breadcrumbs, danaId, graph, meta, dt } from '@/lib/seo';
 import { absoluteUrl, dana, site } from '@/lib/site';
 
 // Dr. Dana, in her own words: who she is, why the class, where to find her. Trust only, no call to action.
@@ -114,7 +114,7 @@ export default function Page() {
           )}
         </div>
       </section>
-      <JsonLd data={graph({ '@type': 'ProfilePage', '@id': absoluteUrl('/dana-kivlin'), url: absoluteUrl('/dana-kivlin'), name: dana.name, mainEntity: { '@id': danaId }, dateModified: '2026-11-02' }, breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Dr. Dana Kivlin', path: '/dana-kivlin' }]))} />
+      <JsonLd data={graph({ '@type': 'ProfilePage', '@id': absoluteUrl('/dana-kivlin'), url: absoluteUrl('/dana-kivlin'), name: dana.name, mainEntity: { '@id': danaId }, dateModified: dt('2026-11-04') }, breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Dr. Dana Kivlin', path: '/dana-kivlin' }]))} />
     </>
   );
 }

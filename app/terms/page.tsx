@@ -1,6 +1,6 @@
 import { Cat } from '@/components/Cat';
 import { JsonLd } from '@/components/JsonLd';
-import { breadcrumbs, graph, meta } from '@/lib/seo';
+import { breadcrumbs, graph, meta, dt } from '@/lib/seo';
 import { legal } from '@/lib/legal';
 import { site } from '@/lib/site';
 
@@ -79,7 +79,7 @@ export default function Page() {
           <p>Questions: <a href={`mailto:${site.email}`}>{site.email}</a>. We post any change on this page and in the app, with a new date at the top.</p>
         </div>
       </div>
-      <JsonLd data={graph({ '@type': 'WebPage', name: 'Terms of Service', dateModified: legal.updatedIso }, breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Terms of Service', path: '/terms' }]))} />
+      <JsonLd data={graph({ '@type': 'WebPage', name: 'Terms of Service', dateModified: dt(legal.updatedIso) }, breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Terms of Service', path: '/terms' }]))} />
     </section>
   );
 }

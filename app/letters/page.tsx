@@ -3,7 +3,7 @@ import { LetterSearch } from '@/components/LetterSearch';
 import { NewsletterForm } from '@/components/NewsletterForm';
 import { Cat } from '@/components/Cat';
 import { JsonLd } from '@/components/JsonLd';
-import { breadcrumbs, graph, meta, orgId, danaId } from '@/lib/seo';
+import { breadcrumbs, graph, meta, orgId, danaId, dt } from '@/lib/seo';
 import { absoluteUrl } from '@/lib/site';
 
 export const revalidate = 3600;
@@ -40,7 +40,7 @@ export default function Page() {
             url: absoluteUrl('/letters'),
             author: { '@id': danaId },
             publisher: { '@id': orgId },
-            blogPost: all.map((a) => ({ '@type': 'BlogPosting', headline: a.title, url: absoluteUrl(`/letters/${a.slug}`), datePublished: a.date, dateModified: a.updated, author: { '@id': danaId } })),
+            blogPost: all.map((a) => ({ '@type': 'BlogPosting', headline: a.title, url: absoluteUrl(`/letters/${a.slug}`), datePublished: dt(a.date), dateModified: dt(a.updated), author: { '@id': danaId } })),
           },
           breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Letters', path: '/letters' }]),
         )}

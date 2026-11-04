@@ -14,6 +14,9 @@ export function meta({ title, description, path, image, type = 'website', noinde
   };
 }
 
+// Google wants full datetimes with a time zone in structured data: '2026-11-02' becomes '2026-11-02T09:00:00-05:00'
+export const dt = (d: string) => (d.includes('T') ? d : `${d}T09:00:00-05:00`);
+
 export const orgId = absoluteUrl('/#organization');
 export const siteId = absoluteUrl('/#website');
 export const danaId = absoluteUrl('/dana-kivlin#dana');
@@ -93,8 +96,8 @@ export function articleLd(a: Article) {
       url,
       mainEntityOfPage: url,
       image: absoluteUrl(`/letters/${a.slug}/opengraph-image`),
-      datePublished: a.date,
-      dateModified: a.updated,
+      datePublished: dt(a.date),
+      dateModified: dt(a.updated),
       lastReviewed: a.updated,
       inLanguage: 'en-US',
       wordCount: a.words,

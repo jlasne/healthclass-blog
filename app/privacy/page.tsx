@@ -1,6 +1,6 @@
 import { Cat } from '@/components/Cat';
 import { JsonLd } from '@/components/JsonLd';
-import { breadcrumbs, graph, meta } from '@/lib/seo';
+import { breadcrumbs, graph, meta, dt } from '@/lib/seo';
 import { legal } from '@/lib/legal';
 import { site } from '@/lib/site';
 
@@ -40,7 +40,7 @@ export default function Page() {
           <div className="doc__short" id="short">
             <h2>The short version</h2>
             <ul>
-              <li>Your health answers, your log (with its photos and notes) and your progress stay on your phone.</li>
+              <li>Your health answers and your log (with its photos and notes) stay on your phone.</li>
               <li>Only a few things reach us: your email if you add it, the programs you ask us to tell you about, which first-question screen you reached (a number, never your answers), your purchases and your chats with us.</li>
               <li>On the website, we collect your email if you join Class Notes or sign in to the Q&amp;A, and the questions you send Dr. Dana.</li>
               <li>We sell no data, show no ads and run no tracking across apps or websites.</li>
@@ -127,7 +127,7 @@ export default function Page() {
           <p>We post any change on this page and in the app, with a new date at the top. For an important change, we also tell Class Notes subscribers by email.</p>
         </div>
       </div>
-      <JsonLd data={graph({ '@type': 'WebPage', name: 'Privacy Policy', dateModified: legal.updatedIso }, breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Privacy Policy', path: '/privacy' }]))} />
+      <JsonLd data={graph({ '@type': 'WebPage', name: 'Privacy Policy', dateModified: dt(legal.updatedIso) }, breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Privacy Policy', path: '/privacy' }]))} />
     </section>
   );
 }
