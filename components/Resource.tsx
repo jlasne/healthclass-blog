@@ -247,10 +247,12 @@ export function AppCta({ title, line }: { title: string; line?: string }) {
 
 // the cards under a page: other resources and letters, each with its family
 export function NextSteps({ items, letters }: { items: Resource[]; letters: string[] }) {
-  // full rows of 3 (3 or 6 cards), with at least 1 letter when the page names one
+  // full rows of 3 (3 or 6 cards). The pages the page names come first and all show (links both ways must render);
+  // letters fill the rest, at least 1 when the page names one.
   const all = letters.map((s) => getArticle(s)).filter((a): a is Article => Boolean(a));
-  const n = items.length + all.length >= 6 ? 6 : items.length + all.length >= 3 ? 3 : items.length + all.length;
-  const nl = Math.min(all.length, n === 6 ? 2 : 1, n);
+  const total = items.length + all.length;
+  const n = total >= 6 ? 6 : total >= 3 ? 3 : total;
+  const nl = Math.min(all.length, Math.max(all.length ? 1 : 0, n - items.length));
   const nr = Math.min(items.length, n - nl);
   const ls = all.slice(0, n - nr);
   items = items.slice(0, nr);

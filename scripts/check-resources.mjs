@@ -53,6 +53,7 @@ for (const p of pages) {
   for (const s of data.sources ?? []) if (!/^https:\/\//.test(s.url ?? '')) fails.push(`${file}: source URL is not https: ${s.url}`);
   const refs = [...content.matchAll(/<Ref n=\{(\d+)\}/g)].map((m) => Number(m[1]));
   for (const n of refs) if (n < 1 || n > (data.sources ?? []).length) fails.push(`${file}: <Ref n={${n}} /> has no source ${n}`);
+  if ((data.links ?? []).length > 5) fails.push(`${file}: ${data.links.length} links (5 at most, so every one shows under the page)`);
   for (const l of data.links ?? []) if (!known.has(l)) warns.push(`${file}: links to ${l}, not written yet (skipped on the page until it exists)`);
   for (const l of data.letters ?? []) if (!letters.has(l)) fails.push(`${file}: no letter "${l}" in content/articles`);
   for (const m of content.matchAll(/\]\((\/[^)\s#]*)/g)) {

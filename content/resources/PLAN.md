@@ -33,7 +33,8 @@ The founders do not review each page: the rules and the check below are the revi
    exists (see "Templates" below). `date` and `updated`: today. Body: 3 to 5 short sections with `##` titles.
 4. **Link** the page: `links` names 3 pages, one from each other family when they exist (a link to a page not written
    yet is skipped on the site until it exists). `letters` names 1 or 2 letters from `content/articles`. Then add the new
-   page to the `links` of 1 or 2 older pages that should point to it, and set their `updated` to today.
+   page at the **start** of the `links` of 1 or 2 older pages that should point to it (5 links at most per page:
+   drop the oldest one if needed), and set their `updated` to today.
 5. **Check**: `npm run check:resources` (must pass), `npm run typecheck`, `npm run build`, then with the site running
    (`npx next start -p 3005`) `node tests/shots.mjs http://localhost:3005 /resources/<family>/<slug>` and look at the
    phone and desktop shots next to an older page of the same family. Same look, nothing cut, nothing wider than the phone.

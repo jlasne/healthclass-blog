@@ -206,7 +206,8 @@ export function resolve(ref: string) {
   return getResource(family, slug);
 }
 
-// the links under a page: the ones it names first, then one page from each other family, then the same family
+// the links under a page: the ones it names first, then one page from each other family, then the same family,
+// then the rest
 export function nextSteps(r: Resource, n = 6) {
   const named = r.links.map(resolve).filter((x): x is Resource => Boolean(x) && x!.path !== r.path);
   const seen = new Set([r.path, ...named.map((x) => x.path)]);
@@ -216,7 +217,8 @@ export function nextSteps(r: Resource, n = 6) {
     .filter((x): x is Resource => Boolean(x));
   const same = rest.filter((x) => x.family === r.family);
   const out: Resource[] = [];
-  for (const x of [...named, ...others, ...same]) if (!out.some((o) => o.path === x.path)) out.push(x);
+  // then any other page, newest first, so the cards always fill full rows
+  for (const x of [...named, ...others, ...same, ...rest]) if (!out.some((o) => o.path === x.path)) out.push(x);
   return out.slice(0, n);
 }
 

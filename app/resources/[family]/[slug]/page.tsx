@@ -126,7 +126,7 @@ export default async function Page({ params }: P) {
         </div>
       </div>
 
-      <NextSteps items={nextSteps(r)} letters={r.letters} />
+      <NextSteps items={nextSteps(r, 8)} letters={r.letters} />
       <JsonLd data={graph(...ld(r))} />
     </article>
   );
