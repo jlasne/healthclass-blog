@@ -19,6 +19,9 @@ export const site = {
   // the store IDs, for the iPhone Smart App Banner and the Play deep link (e.g. '6740000000', 'app.healthclass')
   appStoreId: '',
   playPackage: 'app.healthclass',
+  // App Store campaign links: the provider token (pt) from App Store Connect › Analytics › Acquisition › Campaign Link
+  // Generator. Empty until the app is live (Apple shows Analytics only then): links still work, Apple just does not count them.
+  appStorePt: '',
   price: { weekly: '$7.99', annual: '$79.99', trialDays: 7 },
   newsletter: {
     name: 'Class Notes',
@@ -78,3 +81,15 @@ export const programs = [
 ] as const;
 
 export const absoluteUrl = (p = '/') => new URL(p, site.url).toString();
+
+// The magic link's short codes: healthclass.app/<code> sends a phone to its store and a computer to the site, and tells
+// the stores and PostHog where she came from. Add a channel = add a line. Codes win over pages on the bare domain only.
+export const linkSources: Record<string, string> = {
+  ig: 'instagram',
+  'ig-story': 'instagram-story',
+  nl: 'newsletter',
+  blog: 'blog',
+  web: 'website',
+  dana: 'dr-dana',
+  pod: 'podcast',
+};

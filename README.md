@@ -13,6 +13,7 @@ Same design language as the app: paper, rose and plum, Fraunces and Instrument S
 | `/faq` | FAQ and help, the Support URL for the App Store and Google Play (cancel, restore, delete my data) |
 | `/resources`, `/resources/<family>`, `/resources/<family>/<slug>` | Free tools, Side by side, The classes, Made for you: one page a day ([plan](content/resources/PLAN.md)) |
 | `/privacy`, `/terms` | One policy and one set of terms for the app **and** the website (store-ready drafts) |
+| `healthclass.app/<code>` | Short links by channel (ig, ig-story, nl, blog, web, dana, pod, or ?s=): phones to their store, computers to the site, clicks counted in PostHog (`proxy.ts`, `linkSources` in `lib/site.ts`) |
 | `/sitemap.xml`, `/robots.txt`, `/feed.xml`, `/llms.txt` | Built from the content, refreshed every hour |
 
 Old paths redirect: `/blog` to `/letters`, `/qa` to `/live`, `/about` and `/dana` to `/dana-kivlin`, `/newsletter` to `/letters`, `/app` to `/`.
