@@ -43,7 +43,7 @@ export default function Page() {
 
           <h2 id="plans">4. Plans and payments</h2>
           <ul>
-            <li><b>Plans:</b> Weekly ({site.price.weekly} a week) and Annual ({site.price.annual} a year), in US dollars, or the local price your store shows before you buy. Week 1 of each program is free without a plan.</li>
+            <li><b>Plans:</b> Monthly ({site.price.monthly} a month) and Yearly ({site.price.annual} a year), both with {site.price.trialDays} free days, in US dollars, or the local price your store shows before you buy. Week 1 of each program is free without a plan.</li>
             <li><b>Free trial:</b> a plan can start with a free trial when the store offers one. Before you start it, the app shows the day you pay. If you buy a plan during a free trial, the unused part of the trial ends.</li>
             <li><b>Payment</b> goes through your Apple ID or Google account at confirmation of purchase.</li>
             <li><b>Auto-renewal:</b> Weekly and Annual plans renew automatically at the same price for the same period, unless you cancel at least 24 hours before the end of the current period. Your account is charged for the renewal within the 24 hours before the end of the period.</li>

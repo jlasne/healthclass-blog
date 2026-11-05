@@ -71,8 +71,8 @@ export const app = {
   author: { '@id': danaId },
   publisher: { '@id': orgId },
   offers: [
-    { '@type': 'Offer', price: site.price.weekly.replace('$', ''), priceCurrency: 'USD', name: 'Weekly plan' },
-    { '@type': 'Offer', price: site.price.annual.replace('$', ''), priceCurrency: 'USD', name: 'Annual plan' },
+    { '@type': 'Offer', price: site.price.monthly.replace('$', ''), priceCurrency: 'USD', name: 'Monthly plan' },
+    { '@type': 'Offer', price: site.price.annual.replace('$', ''), priceCurrency: 'USD', name: 'Yearly plan' },
   ],
   ...(site.appStoreUrl || site.playStoreUrl ? { downloadUrl: [site.appStoreUrl, site.playStoreUrl].filter(Boolean) } : {}),
 };

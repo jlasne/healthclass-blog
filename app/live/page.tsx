@@ -30,7 +30,10 @@ export default async function Page() {
   const durMin = next?.durationMin ?? 45;
   const startsAt = next?.startsAt ?? fallback;
   // after the live ends, and until the next one is set, the page says "date soon" instead of an old date
-  const over = !Number.isFinite(startsAt) || Date.now() > startsAt + durMin * 60_000;
+  // only the month set (site.qa.month): "in December", no date and no countdown
+  const month = site.qa.month;
+  const over = Boolean(month) || !Number.isFinite(startsAt) || Date.now() > startsAt + durMin * 60_000;
+  const soon = month ? `in ${month}` : 'date soon';
   const at = (o: Intl.DateTimeFormatOptions) => new Date(startsAt).toLocaleString('en-US', { timeZone: 'America/New_York', ...o });
   const date = over ? '' : at({ month: 'long', day: 'numeric' });
   const when = over ? '' : `${at({ weekday: 'long' })} · ${at({ hour: 'numeric', minute: '2-digit', timeZoneName: 'short' })} · ${durMin} min`;
@@ -42,12 +45,13 @@ export default async function Page() {
         <section className="hero hero--center hero--band live-hero">
           <div className="read">
             <div className="live-hero__clip">
-              <LiveClip src={site.qa.clip} poster={dana.hero} label={`${dana.name}, urologist`} captions={[over ? 'Next live: date soon.' : `Next live: ${date}.`, 'Only for the list.', 'Your code is in the app.']} />
+              <LiveClip src={site.qa.clip} poster={dana.hero} label={`${dana.name}, urologist`} captions={[over ? `Next live: ${soon}.` : `Next live: ${date}.`, 'Only for the list.', 'Your code is in the app.']} />
               <Cat pose="calendar" width={120} className="live-hero__cat" />
             </div>
             <span className="eyebrow">Live with Dr. Dana</span>
-            <h1 className="h1 h1--xl">Next live: <em>{over ? 'date soon' : date}</em>.</h1>
+            <h1 className="h1 h1--xl">Next live: <em>{over ? soon : date}</em>.</h1>
             {!over && <p className="lede">{when}. Dr. Dana answers your questions live.</p>}
+            {month && <p className="lede">{durMin} minutes. Dr. Dana answers your questions live.</p>}
             {!over && <div className="live-hero__count"><Countdown to={startsAt} durationMin={durMin} /></div>}
           </div>
         </section>
@@ -56,7 +60,7 @@ export default async function Page() {
           <span className="eyebrow">Only for the list</span>
           <h2 id="how" className="h2">How to <em>join</em>.</h2>
           <ol className="join-steps">
-            <li className="tone--rosy"><b>Go premium in the app</b><span>{appLive ? 'Weekly or Annual.' : 'The app opens soon.'}</span></li>
+            <li className="tone--rosy"><b>Go premium in the app</b><span>{appLive ? 'Monthly or Yearly.' : 'The app opens soon.'}</span></li>
             <li className="tone--sky"><b>Join the free letter</b><span>Every Wednesday and Sunday.</span></li>
             <li className="tone--plum"><b>Get your code in the app</b><span>The letter reminds you the week of the live.</span></li>
           </ol>
@@ -77,7 +81,7 @@ export default async function Page() {
         <div className="hero__cat" aria-hidden="true"><Cat pose="calendar" width={210} priority /></div>
         <h1 className="h1" style={{ fontSize: 'clamp(40px, 5.6vw, 64px)' }}>Live with Dr. <em>Dana</em>.</h1>
         <p className="lede">Once a month, Dr. Dana answers your questions live.</p>
-        {next && <p className="next-live">Next live: {fmt(next.startsAt)}</p>}
+        {month ? <p className="next-live">Next live: in {month}</p> : next && <p className="next-live">Next live: {fmt(next.startsAt)}</p>}
 
         {portal ? (
           <div className="portal" style={{ marginTop: 32, textAlign: 'left' }}>

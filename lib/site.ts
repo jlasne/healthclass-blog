@@ -22,7 +22,7 @@ export const site = {
   // App Store campaign links: the provider token (pt) from App Store Connect › Analytics › Acquisition › Campaign Link
   // Generator. Empty until the app is live (Apple shows Analytics only then): links still work, Apple just does not count them.
   appStorePt: '',
-  price: { weekly: '$7.99', annual: '$79.99', trialDays: 7 },
+  price: { monthly: '$11.99', annual: '$99.99', trialDays: 3 },
   newsletter: {
     name: 'Class Notes',
     cadence: 'Every Wednesday and Sunday',
@@ -32,6 +32,9 @@ export const site = {
     name: 'Ask Dr. Dana',
     cadence: 'Once a month, live',
     length: '45 minutes',
+    // the next live's month while its exact day is still open: the site and the app say "in December", no date.
+    // Set it to '' once the date is set (in Convex, or in next below).
+    month: 'December',
     // the next live when Convex has none scheduled (ISO, Eastern time). Set the real hour with Dana.
     next: '2026-11-30T19:00:00-05:00',
     // Dana's clip on /live: replace with her own 10-second "next live" video (vertical 4:5, silent captions burnt in)
