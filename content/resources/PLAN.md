@@ -103,7 +103,7 @@ gives way to the store link on every page. Report it.
 - [x] 004 · `compare/health-class-vs-squeezy` · squeezy app
 - [x] 005 · `made-for-you/leak-when-you-laugh` · leaking urine when laughing
 - [x] 006 · `made-for-you/leak-when-you-cough` · bladder leaks when coughing
-- [ ] 007 · `made-for-you/leak-when-you-walk` · bladder leaks when walking
+- [x] 007 · `made-for-you/leak-when-you-walk` · bladder leaks when walking
 
 ### Choosing an app
 
