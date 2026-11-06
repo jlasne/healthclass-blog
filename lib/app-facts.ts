@@ -1,12 +1,25 @@
 // What the Health Class app is today, in one place. The app changes over time (classes, features, pricing): when it
 // does, change the value here and set `checked` to that day. Resource pages write {app.price}, {app.phones}, ...
 // in their front matter and body, so every Side by side page updates at once, with its "updated" date and the
-// "Health Class facts checked on" line. Source of truth: the app itself (jlasne/healthclass: www/js/config.js for
-// prices and free weeks, www/js/content-*.js for the classes, README for the phones).
+// "Health Class facts checked on" line. Source of truth: the app itself (jlasne/healthclass: www/js/content-*.js
+// for the classes, README for the phones). The price follows `site.price` in lib/site.ts, which the founders keep
+// equal to the app's plans: a change there reaches every comparison by itself (then set `checked` to that day).
+import { site } from './site';
+
+// "$11.99 a month or $99.99 a year, with 3 free days": built from whatever plans site.price lists
+function priceLine() {
+  const p = site.price as Record<string, string | number | undefined>;
+  const per: [string, string][] = [['weekly', 'a week'], ['monthly', 'a month'], ['annual', 'a year']];
+  const plans = per.filter(([k]) => typeof p[k] === 'string' && p[k]).map(([k, unit]) => `${p[k]} ${unit}`);
+  if (!plans.length) return 'Subscription, price shown in the app. Week 1 is open to everyone';
+  const trial = typeof p.trialDays === 'number' && p.trialDays > 0 ? `, with ${p.trialDays} free days` : '';
+  return `${plans.join(' or ')}${trial}. Week 1 is open to everyone`;
+}
+
 export const appFacts = {
-  checked: '2026-11-04',
+  checked: '2026-11-06',
   maker: 'Dr. Dana Kivlin, board-certified urologist',
-  price: 'Subscription, price shown in the app. Week 1 is open to everyone',
+  price: priceLine(),
   trial: 'Week 1 is open to everyone',
   phones: 'iPhone (iOS 17 or later) and Android',
   classes: '2 classes of 6 weeks: Pelvic Floor 101 and Bladder leaks',

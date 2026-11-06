@@ -16,7 +16,8 @@ The founders do not review each page: the rules and the check below are the revi
 ## The daily routine
 
 0. **App check** (before the new page). The app changes over time: classes, features, prices, phones. Compare the app
-   today with `lib/app-facts.ts`: prices and free weeks in `www/js/config.js`, the classes in `www/js/content-*.js`
+   today with `lib/app-facts.ts`: the plans in `site.price` (`lib/site.ts`, kept equal to the app's plans by the
+   founders; see `git log -p lib/site.ts`), the free weeks, the classes in `www/js/content-*.js`
    (titles, weeks, minutes), the phones in its README, and the store listings once live. If anything changed:
    - update the value in `lib/app-facts.ts` and set `checked` to today. Every page that shows `{app.*}` follows at once;
    - search `content/resources` for text tied to the old fact that does not use a token (a price, "week 1", a class
@@ -72,7 +73,8 @@ gives way to the store link on every page. Report it.
   week, phones, classes, daily minutes, features) is written as a token: `{app.price}`, `{app.trial}`, `{app.phones}`,
   `{app.classes}`, `{app.daily}`, `{app.minutes}`, `{app.learning}`, `{app.tracking}`, `{app.professional}`,
   `{app.device}`, `{app.languages}`, `{app.privacy}`, `{app.after}`, `{app.maker}`. Add a key there when a new fact
-  is needed. The price stays "Subscription, price shown in the app" until the founders set it in the app.
+  is needed. `{app.price}` is built from `site.price` in `lib/site.ts` (the founders keep it equal to the app's
+  plans): when it changes, set `checked` in `lib/app-facts.ts` to that day and re-read the comparisons' text.
 - **Copy:** no em or en dashes, under 30 words a sentence, a number instead of an adjective, no weasel words, simple
   words, say what to do. English (US).
 - **One page per search.** Do not write a page for a search an existing letter or page already answers; link to it.
