@@ -30,6 +30,7 @@ export const appFacts = {
   tracking: 'Daily check-ins and your progress, day by day',
   professional: 'A monthly live Q&A with Dr. Dana for members',
   device: 'No device: you train with your own muscles',
+  feedback: 'No sensor: you follow the cues on screen and answer daily check-ins',
   languages: 'English',
   privacy: 'Your health answers and your log stay on your phone. No ads.',
   after: 'A routine on the days you pick, after week 6',
