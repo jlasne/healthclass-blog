@@ -12,7 +12,8 @@ export const metadata = meta({
   path: '/terms',
 });
 
-const F = ({ children }: { children: React.ReactNode }) => <span className="fill">{children}</span>;
+// a value still to fill shows highlighted; a filled one reads as plain text
+const F = ({ children }: { children: React.ReactNode }) => (/^\[/.test(String(children)) ? <span className="fill">{children}</span> : <>{children}</>);
 
 export default function Page() {
   return (

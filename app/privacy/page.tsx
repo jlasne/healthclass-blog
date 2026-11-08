@@ -13,7 +13,8 @@ export const metadata = meta({
   path: '/privacy',
 });
 
-const F = ({ children }: { children: React.ReactNode }) => <span className="fill">{children}</span>;
+// a value still to fill shows highlighted; a filled one reads as plain text
+const F = ({ children }: { children: React.ReactNode }) => (/^\[/.test(String(children)) ? <span className="fill">{children}</span> : <>{children}</>);
 const SECTIONS = [
   ['short', 'The short version'], ['who', 'Who we are'], ['phone', 'Data that stays on your phone'], ['app', 'Data the app sends us'],
   ['purchases', 'Purchases'], ['chat', 'Support chat'], ['website', 'The website'], ['newsletter', 'Class Notes'], ['qa', 'The live Q&A'],
@@ -86,7 +87,7 @@ export default function Page() {
 
           <h2 id="qa">The live Q&amp;A with Dr. Dana</h2>
           <p>To sign in, you type the email you added in the app. Our server checks it against our list of paid members and, if it matches, emails you a one-time link through Resend. The answer on the page is the same for every email, so the page never shows whether someone has a plan. We store a scrambled form (a hash) of each link and sign-in key, never the key itself.</p>
-          <p>When you send a question, we store it with your email, the date and, only if you choose, your first name. Dr. Dana reads the questions without email addresses. The session is hosted on <F>[video platform, e.g. Zoom]</F> under its own policy; joining is optional and your camera can stay off.</p>
+          <p>When you send a question, we store it with your email, the date and, only if you choose, your first name. Dr. Dana reads the questions without email addresses. The session runs on a video platform under its own privacy policy, named in your invite; joining is optional and your camera can stay off.</p>
 
           <h2 id="processors">Who processes data for us</h2>
           <div className="tbl">
