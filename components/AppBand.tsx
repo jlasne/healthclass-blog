@@ -1,7 +1,7 @@
 import { Cat } from './Cat';
 import { Stores } from './Stores';
 
-// The app, in one card at the end of each letter: one line, 3 facts, the store buttons, the phone peeking in.
+// The app, in one card at the end of each letter: the outcome, her 3 goals, the store buttons, the phone peeking in.
 export function AppBand() {
   return (
     <section className="sec sec--tight" aria-labelledby="app-band">
@@ -9,11 +9,11 @@ export function AppBand() {
         <div className="appcard" data-rise>
           <div className="appcard__copy">
             <span className="eyebrow">The app</span>
-            <h2 id="app-band" className="h2">Do it with Dr. Dana, <em>5 minutes a day</em>.</h2>
-            <ul className="appcard__facts" aria-label="What the app gives you">
-              <li>1 lesson a week</li>
-              <li>1 guided exercise a day</li>
-              <li>Your log stays on your phone</li>
+            <h2 id="app-band" className="h2">Laugh, run and jump <em>again</em>.</h2>
+            <ul className="appcard__facts" aria-label="What women come for">
+              <li>Laugh without worrying</li>
+              <li>Get back to sport</li>
+              <li>Feel in control</li>
             </ul>
             <Stores />
           </div>

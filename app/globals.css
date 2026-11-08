@@ -1090,3 +1090,4 @@ a, button, summary, input, textarea, label { touch-action: manipulation; }
 .goal__fit:hover b { color: var(--rose-ink); }
 @media (max-width: 480px) { .goal__card { padding: 16px; gap: 12px; } .goal__card .tone-disc { width: 72px; } }
 .tool__res img, .goal__card img { animation: hc-idle 4.8s ease-in-out infinite; }
+.sec__links { display: flex; flex-wrap: wrap; gap: 6px 22px; }

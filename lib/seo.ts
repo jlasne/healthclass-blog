@@ -67,7 +67,7 @@ export const app = {
   name: site.appName,
   operatingSystem: 'iOS 17+, Android',
   applicationCategory: 'HealthApplication',
-  description: 'Pelvic floor classes for women from a board-certified urologist: 6-week programs, one short lesson a week, one guided 5-minute exercise a day.',
+  description: 'The pelvic floor class for women, by a board-certified urologist: laugh without worrying, get back to sport, feel in control.',
   author: { '@id': danaId },
   publisher: { '@id': orgId },
   offers: [
