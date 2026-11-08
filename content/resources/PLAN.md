@@ -67,8 +67,8 @@ gives way to the store link on every page. Report it.
 - **Signed by the Health Class team.** Never write that Dr. Dana reviewed or wrote a page. Quote her only from text
   already on the site or in the app, or from her Instagram reels summed up in `content/dana/reels-tips.md`, as
   "Dr. Dana, on Instagram" (a `<Try>` or `<Remember>` box, or a short quote). Use her bladder, pelvic floor, core,
-  breathing and gut tips. Leave out her treatment tips (medicines, estrogen, injections, surgery, pessaries): they
-  belong in her own letters, after her review.
+  breathing and gut tips. Never use her treatment tips (medicines, estrogen, injections, surgery, pessaries): no
+  medical advice anywhere on the site, the founders' rule.
 - **Honest comparisons.** At least 2 points where the other side wins, true and useful (price, a device, a physio, a
   feature). Then where Health Class wins. No attack on a brand. Facts dated (`checked`) and sourced. Never mention our
   store ratings or review count.
