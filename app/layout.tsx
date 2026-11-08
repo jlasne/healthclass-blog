@@ -10,11 +10,11 @@ import { JsonLd } from '@/components/JsonLd';
 import { graph, organization, person, website } from '@/lib/seo';
 import { site } from '@/lib/site';
 
-// the app's two families, self-hosted (no request to Google), plus Caveat for the hand-drawn sketches
+// the app's two families, self-hosted (no request to Google), plus Caveat for the hand-drawn sketches.
+// Latin only: the site is in English, and the basic Latin files already cover accents like é and curly quotes.
 const fraunces = localFont({
   src: [
     { path: './fonts/fraunces-latin.woff2', weight: '300 650', style: 'normal' },
-    { path: './fonts/fraunces-latin-ext.woff2', weight: '300 650', style: 'normal' },
     { path: './fonts/fraunces-italic-latin.woff2', weight: '300 650', style: 'italic' },
   ],
   variable: '--font-fraunces',
@@ -24,7 +24,6 @@ const fraunces = localFont({
 const instrument = localFont({
   src: [
     { path: './fonts/instrument-sans-latin.woff2', weight: '400 700', style: 'normal' },
-    { path: './fonts/instrument-sans-latin-ext.woff2', weight: '400 700', style: 'normal' },
   ],
   variable: '--font-instrument',
   display: 'swap',

@@ -21,8 +21,14 @@ export function HeroFilm() {
     el.addEventListener('pause', sync);
     el.addEventListener('seeked', draw);
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (!reduce) el.play().catch(sync);
-    return () => { cancelAnimationFrame(raf); el.removeEventListener('play', sync); el.removeEventListener('pause', sync); el.removeEventListener('seeked', draw); };
+    // the film loads after the page: the poster shows first, then a 480p file on phones (0.7 MB) or 720p (1.1 MB)
+    const start = () => {
+      el.src = window.innerWidth < 700 ? '/media/hero/hero-480.mp4' : '/media/hero/hero.mp4';
+      if (!reduce) el.play().catch(sync);
+    };
+    if (document.readyState === 'complete') start();
+    else window.addEventListener('load', start, { once: true });
+    return () => { window.removeEventListener('load', start); cancelAnimationFrame(raf); el.removeEventListener('play', sync); el.removeEventListener('pause', sync); el.removeEventListener('seeked', draw); };
   }, []);
 
   const toggle = () => { const el = v.current; if (!el) return; if (el.paused) el.play().catch(() => setPaused(true)); else el.pause(); };
@@ -37,12 +43,11 @@ export function HeroFilm() {
     <div className="film" data-paused={paused ? '' : undefined} onClick={toggle}>
       <video
         ref={v}
-        src="/media/hero/hero.mp4"
         poster="/media/hero/poster.jpg"
         muted
         playsInline
         loop
-        preload="metadata"
+        preload="none"
         aria-label="A 20-second film: the class cat laughs, jumps and dives into the app. Laugh without worrying, get back to sport, feel in control. By Dr. Dana, urologist."
       />
       <button className="film__play" type="button" aria-label={paused ? 'Play' : 'Pause'} onClick={(e) => { e.stopPropagation(); toggle(); }}>
