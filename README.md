@@ -92,6 +92,9 @@ voice), `seoTitle` (the search query), `description` (150 characters), `excerpt`
 
 ## Resources (/resources)
 
+Dr. Dana's tips from her Instagram reels, summed up in `content/dana/reels-tips.md`, feed `/dana-kivlin` and the pages
+(quoted as "Dr. Dana, on Instagram"). Her treatment tips stay for her own letters, after her review.
+
 Free tools, comparisons, the classes week by week and pages for each moment, in `content/resources/<family>/<slug>.mdx`
 (families: `tools`, `compare`, `classes`, `made-for-you`). One new page a day, in the order and with the rules of
 [content/resources/PLAN.md](content/resources/PLAN.md). Each page appears on its family page, on `/resources`, in the

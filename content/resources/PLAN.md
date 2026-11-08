@@ -65,7 +65,10 @@ gives way to the store link on every page. Report it.
 - **Avoid medical topics.** No disease pages, no surgery recovery advice, no medicine, no scores used by doctors to
   diagnose. When a search needs a doctor, the page says so and points to one.
 - **Signed by the Health Class team.** Never write that Dr. Dana reviewed or wrote a page. Quote her only from text
-  already on the site or in the app.
+  already on the site or in the app, or from her Instagram reels summed up in `content/dana/reels-tips.md`, as
+  "Dr. Dana, on Instagram" (a `<Try>` or `<Remember>` box, or a short quote). Use her bladder, pelvic floor, core,
+  breathing and gut tips. Leave out her treatment tips (medicines, estrogen, injections, surgery, pessaries): they
+  belong in her own letters, after her review.
 - **Honest comparisons.** At least 2 points where the other side wins, true and useful (price, a device, a physio, a
   feature). Then where Health Class wins. No attack on a brand. Facts dated (`checked`) and sourced. Never mention our
   store ratings or review count.
@@ -133,6 +136,7 @@ gives way to the store link on every page. Report it.
 - [ ] 025 · `tools/bladder-training-schedule` · bladder training schedule
 - [ ] 026 · `classes/bladder-training` · bladder training program (ONLY if the module ships in the app; else skip)
 - [ ] 027 · `made-for-you/teachers` · teacher bladder
+- [ ] 155 · `made-for-you/urge-when-you-get-home` · urge to pee when i get home / latchkey incontinence (Dr. Dana's arrival routine: 3 tasks before the toilet, name your bladder)
 - [ ] 028 · `compare/pelvic-floor-therapy-vs-kegels` · pelvic floor therapy vs kegel exercises
 
 ### After birth
@@ -167,7 +171,7 @@ gives way to the store link on every page. Report it.
 
 ### Everyday bladder
 
-- [ ] 050 · `tools/how-often-should-you-pee` · how many times a day should you pee female
+- [ ] 050 · `tools/how-often-should-you-pee` · how many times a day should you pee female (Dr. Dana: drink more to pee less, sip steadily)
 - [ ] 051 · `tools/nighttime-pee-checker` · how often should you pee at night
 - [ ] 052 · `tools/bladder-irritants-checker` · bladder irritants list
 - [ ] 053 · `tools/caffeine-and-bladder-calculator` · caffeine bladder urgency
@@ -268,6 +272,7 @@ gives way to the store link on every page. Report it.
 ### Strong after 60
 
 - [ ] 120 · `made-for-you/women-over-60` · pelvic floor exercises for women over 60
+- [ ] 156 · `tools/grip-strength-checker` · grip strength test chart by age (Dr. Dana: grip strength tracks the risk of leaks and prolapse; below 16 kg flags muscle loss in women)
 - [ ] 121 · `made-for-you/postmenopause` · pelvic floor postmenopausal
 - [ ] 122 · `classes/prolapse` · prolapse class (status: soon; send symptoms to a doctor)
 - [ ] 123 · `classes/lift-a-bag-safely` · pelvic floor and heavy lifting
@@ -311,6 +316,6 @@ gives way to the store link on every page. Report it.
 - [ ] 149 · `compare/emsella-vs-pelvic-floor-therapy` · emsella vs pelvic floor therapy
 - [ ] 150 · `tools/stream-counter` · how long should you pee for women
 - [ ] 151 · `tools/urine-color-chart` · urine color chart for hydration
-- [ ] 152 · `tools/water-intake-calculator` · water intake calculator by weight
+- [ ] 152 · `tools/water-intake-calculator` · water intake calculator by weight / does drinking more water help overactive bladder (Dr. Dana: drink more to pee less)
 - [ ] 153 · `tools/bristol-stool-chart` · bristol stool chart
 - [ ] 154 · `tools/kegel-chart` · kegel exercise chart for women (with a printable version)

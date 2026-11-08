@@ -8,9 +8,36 @@ import { absoluteUrl, dana, site } from '@/lib/site';
 // Dr. Dana, in her own words: who she is, why the class, where to find her. Trust only, no call to action.
 export const metadata = meta({
   title: 'Dr. Dana Kivlin, Urologist · Pelvic Health for Women',
-  description: 'Dr. Dana Kivlin is a board-certified urologist at Middlesex Health in Middletown, Connecticut. She teaches Pelvic Health Class: for Women. Her training, her story and her videos.',
+  description: 'Dr. Dana Kivlin is a board-certified urologist in Connecticut. Her story, her rules for your bladder and pelvic floor, and the 5 signs that need a urologist.',
   path: '/dana-kivlin',
 });
+
+// From her Instagram reels (content/dana/reels-tips.md), in her voice. Education only: her rules and her warning
+// signs, no treatment advice on this page.
+const RULES: { title: string; text: string; tone: 'rosy' | 'sky' | 'plum' | 'blush' }[] = [
+  { title: 'Common is not normal', text: '1 in 2 women will leak urine. Women wait 6.5 years on average to bring it up. Treat every symptom as fixable, and ask early.', tone: 'rosy' },
+  { title: 'Train your bladder', text: 'Do 3 things before the toilet when you get home: keys away, shoes off, bag on the hook. Then walk calmly. Your bladder learns to wait its turn.', tone: 'sky' },
+  { title: 'Drink more to pee less', text: 'Concentrated urine irritates your bladder. Sip water steadily through the day, and cut back 1 to 2 hours before bed.', tone: 'plum' },
+  { title: 'Tight is weak too', text: 'About 1 in 10 people have a tight pelvic floor, and Kegels make it worse. Learn to let go first, then strengthen.', tone: 'blush' },
+  { title: 'Lift weights, guide the pressure', text: 'Muscle protects your pelvic floor. Breathe 360 degrees, breathe out on the effort, start light and progress slowly.', tone: 'sky' },
+  { title: 'The core is the glue', text: 'Your deep core fires a split second before you move. I have yet to meet a prolapse patient with a strong core.', tone: 'rosy' },
+];
+
+const RECIPE: { title: string; text: string }[] = [
+  { title: 'Mobility', text: 'Stretch, breathe from your diaphragm, lower your stress.' },
+  { title: 'Posture', text: 'Sit and stand tall. Use a chair that supports your lower back and pelvis.' },
+  { title: 'Core', text: 'Planks, dead bugs and bird dogs.' },
+  { title: 'Gut', text: 'Eat fiber and drink water with it. Constipation strains your pelvic floor.' },
+  { title: 'Kegels', text: 'Last, once the first 4 are in place, with the right technique.' },
+];
+
+const SIGNS = [
+  'Urgency that borders on pain',
+  'Pain when you pee, above all at the end of your stream',
+  'UTI symptoms that keep coming back with negative cultures',
+  'A sudden change in urgency and frequency that stays',
+  'Blood in your urine, whether you see it or a test finds it',
+];
 
 export default function Page() {
   return (
@@ -56,6 +83,62 @@ export default function Page() {
             <p>So I built a class around that hard part. 1 short lesson a week. 1 guided exercise a day, 5 minutes long. A cat that lifts with you, and naps in its hammock when your day is done.</p>
           </div>
           <div className="signoff"><span className="signoff__name">Dana</span></div>
+        </div>
+      </section>
+
+      <section className="sec" aria-labelledby="rules">
+        <div className="wrap">
+          <div className="sec__hd">
+            <div><span className="eyebrow">From my reels</span><h2 id="rules" className="h2">What I tell <em>every patient</em></h2></div>
+            <p>The rules I repeat in clinic and on Instagram, {dana.socials[0].handle}. They teach. Your own doctor decides what fits you.</p>
+          </div>
+          <div className="programs">
+            {RULES.map((r) => (
+              <div key={r.title} className={`program tone--${r.tone}`}>
+                <b>{r.title}</b>
+                <p>{r.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="sec band" aria-labelledby="recipe">
+        <div className="read">
+          <span className="eyebrow">My pelvic floor recipe</span>
+          <h2 id="recipe" className="h2" style={{ marginTop: 12 }}>Kegels are 1 ingredient <em>of 5</em></h2>
+          <Smile />
+          <p className="lede" style={{ marginTop: 22 }}>Women who rely on Kegels alone often see no change. Build the 5 ingredients in this order: each one supports the next.</p>
+          <ol className="join-steps tone--rosy">
+            {RECIPE.map((r) => (<li key={r.title}><b>{r.title}</b><span>{r.text}</span></li>))}
+          </ol>
+          <div className="prose" style={{ marginTop: 30 }}>
+            <h3>How I teach a Kegel</h3>
+            <ul>
+              <li><strong>Lift</strong> as if you hold in gas or stop your stream. Practice off the toilet.</li>
+              <li><strong>Hold, then let go:</strong> 3 seconds on, 3 seconds off. Build to 5, then 10 seconds.</li>
+              <li><strong>Quick flicks:</strong> squeeze hard for 1 second, rest 1 second.</li>
+              <li><strong>Twice a day:</strong> 10 holds and 10 flicks while you brush your teeth.</li>
+              <li><strong>Avoid the 3 mistakes:</strong> keep your butt and thighs relaxed, breathe through each squeeze, and relax fully between reps.</li>
+            </ul>
+            <p>Struggling to find the right muscles? See a pelvic floor physical therapist. More in my letters on <a href="/letters/how-to-do-kegels-correctly">Kegels done right</a> and on <a href="/letters/pelvic-floor-relaxation-let-go">letting go</a>.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="sec" aria-labelledby="signs" style={{ paddingBottom: 24 }}>
+        <div className="read">
+          <span className="eyebrow">Act early</span>
+          <h2 id="signs" className="h2" style={{ marginTop: 12 }}>5 signs that need a <em>urologist</em></h2>
+          <Smile />
+          <p className="lede" style={{ marginTop: 22 }}>Women die from bladder cancer at a higher rate than men, and a late diagnosis is a likely reason. See a urologist for any of these:</p>
+          <aside className="box box--doctor" style={{ marginTop: 22 }}>
+            <span className="box__k" style={{ display: 'flex', alignItems: 'center', gap: 8 }}><Icon name="alert" /> See a urologist for</span>
+            <ol style={{ margin: 0, paddingLeft: 22 }}>
+              {SIGNS.map((x) => <li key={x} style={{ margin: '6px 0' }}>{x}</li>)}
+            </ol>
+            <p style={{ margin: '14px 0 0' }}>2 UTIs in 6 months, or 3 in a year, count as recurrent. Ask for a full evaluation by name, with a pelvic exam. Bring all your culture results to one urologist.</p>
+          </aside>
         </div>
       </section>
 
@@ -114,7 +197,7 @@ export default function Page() {
           )}
         </div>
       </section>
-      <JsonLd data={graph({ '@type': 'ProfilePage', '@id': absoluteUrl('/dana-kivlin'), url: absoluteUrl('/dana-kivlin'), name: dana.name, mainEntity: { '@id': danaId }, dateModified: dt('2026-11-04') }, breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Dr. Dana Kivlin', path: '/dana-kivlin' }]))} />
+      <JsonLd data={graph({ '@type': 'ProfilePage', '@id': absoluteUrl('/dana-kivlin'), url: absoluteUrl('/dana-kivlin'), name: dana.name, mainEntity: { '@id': danaId }, dateModified: dt('2026-11-08') }, breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Dr. Dana Kivlin', path: '/dana-kivlin' }]))} />
     </>
   );
 }
