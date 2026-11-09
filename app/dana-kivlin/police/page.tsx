@@ -3,32 +3,39 @@ import { DanaBio } from '@/components/DanaBio';
 import { FontSwitch, type FontOption } from '@/components/FontSwitch';
 import { meta } from '@/lib/seo';
 
-// Font test for Dr. Dana (she asked to compare text fonts): her page, with a switch at the bottom between today's
-// font and 10 others. Hidden from search. Only the text font changes; headings stay in Fraunces.
-const dmSans = localFont({ src: '../../fonts/dm-sans-latin-wght-normal.woff2', weight: '100 1000', preload: false });
-const nunitoSans = localFont({ src: '../../fonts/nunito-sans-latin-wght-normal.woff2', weight: '200 1000', preload: false });
-const figtree = localFont({ src: '../../fonts/figtree-latin-wght-normal.woff2', weight: '300 900', preload: false });
-const jakarta = localFont({ src: '../../fonts/plus-jakarta-sans-latin-wght-normal.woff2', weight: '200 800', preload: false });
-const manrope = localFont({ src: '../../fonts/manrope-latin-wght-normal.woff2', weight: '200 800', preload: false });
-const outfit = localFont({ src: '../../fonts/outfit-latin-wght-normal.woff2', weight: '100 900', preload: false });
-const workSans = localFont({ src: '../../fonts/work-sans-latin-wght-normal.woff2', weight: '100 900', preload: false });
-const franklin = localFont({ src: '../../fonts/libre-franklin-latin-wght-normal.woff2', weight: '100 900', preload: false });
-const sourceSerif = localFont({ src: '../../fonts/source-serif-4-latin-wght-normal.woff2', weight: '200 900', preload: false });
-const lora = localFont({ src: '../../fonts/lora-latin-wght-normal.woff2', weight: '400 700', preload: false });
+// Font test for Dr. Dana (she asked to compare fonts): her page, with a switch at the bottom between today's look
+// and 10 others. Each option sets both the headings and the text, from a distinct style family, so the difference
+// shows at a glance. Hidden from search; the fonts load only on this page.
+const playfair = localFont({ src: '../../fonts/playfair-display-latin-wght-normal.woff2', weight: '400 900', preload: false, display: 'swap' });
+const sourceSans = localFont({ src: '../../fonts/source-sans-3-latin-wght-normal.woff2', weight: '200 900', preload: false, display: 'swap' });
+const garamond = localFont({ src: '../../fonts/eb-garamond-latin-wght-normal.woff2', weight: '400 800', preload: false, display: 'swap' });
+const nunito = localFont({ src: '../../fonts/nunito-latin-wght-normal.woff2', weight: '200 1000', preload: false, display: 'swap' });
+const outfit = localFont({ src: '../../fonts/outfit-latin-wght-normal.woff2', weight: '100 900', preload: false, display: 'swap' });
+const robotoSlab = localFont({ src: '../../fonts/roboto-slab-latin-wght-normal.woff2', weight: '100 900', preload: false, display: 'swap' });
+const workSans = localFont({ src: '../../fonts/work-sans-latin-wght-normal.woff2', weight: '100 900', preload: false, display: 'swap' });
+const cormorant = localFont({ src: '../../fonts/cormorant-latin-wght-normal.woff2', weight: '300 700', preload: false, display: 'swap' });
+const raleway = localFont({ src: '../../fonts/raleway-latin-wght-normal.woff2', weight: '100 900', preload: false, display: 'swap' });
+const josefin = localFont({ src: '../../fonts/josefin-sans-latin-wght-normal.woff2', weight: '100 700', preload: false, display: 'swap' });
+const lato = localFont({ src: [{ path: '../../fonts/lato-latin-400-normal.woff2', weight: '400' }, { path: '../../fonts/lato-latin-700-normal.woff2', weight: '700' }], preload: false, display: 'swap' });
+const atkinson = localFont({ src: '../../fonts/atkinson-hyperlegible-next-latin-wght-normal.woff2', weight: '200 800', preload: false, display: 'swap' });
+const dmSerif = localFont({ src: '../../fonts/dm-serif-display-latin-400-normal.woff2', weight: '400', preload: false, display: 'swap' });
+const dmSans = localFont({ src: '../../fonts/dm-sans-latin-wght-normal.woff2', weight: '100 1000', preload: false, display: 'swap' });
+const lora = localFont({ src: '../../fonts/lora-latin-wght-normal.woff2', weight: '400 700', preload: false, display: 'swap' });
 
 const SANS = 'sans-serif', SERIF = 'Georgia, serif';
+const f = (x: { style: { fontFamily: string } }, fb: string) => `${x.style.fontFamily}, ${fb}`;
 const OPTIONS: FontOption[] = [
-  { id: 'today', name: 'Instrument Sans (today)', feel: 'the font the site uses now', family: 'var(--font-instrument), sans-serif' },
-  { id: 'dm-sans', name: 'DM Sans', feel: 'clean and round', family: `${dmSans.style.fontFamily}, ${SANS}` },
-  { id: 'nunito-sans', name: 'Nunito Sans', feel: 'soft and warm', family: `${nunitoSans.style.fontFamily}, ${SANS}` },
-  { id: 'figtree', name: 'Figtree', feel: 'friendly and modern', family: `${figtree.style.fontFamily}, ${SANS}` },
-  { id: 'plus-jakarta-sans', name: 'Plus Jakarta Sans', feel: 'polished, a little wide', family: `${jakarta.style.fontFamily}, ${SANS}` },
-  { id: 'manrope', name: 'Manrope', feel: 'crisp and technical', family: `${manrope.style.fontFamily}, ${SANS}` },
-  { id: 'outfit', name: 'Outfit', feel: 'geometric and light', family: `${outfit.style.fontFamily}, ${SANS}` },
-  { id: 'work-sans', name: 'Work Sans', feel: 'plain and sturdy', family: `${workSans.style.fontFamily}, ${SANS}` },
-  { id: 'libre-franklin', name: 'Libre Franklin', feel: 'classic newspaper sans', family: `${franklin.style.fontFamily}, ${SANS}` },
-  { id: 'source-serif-4', name: 'Source Serif 4', feel: 'a book serif, calm to read', family: `${sourceSerif.style.fontFamily}, ${SERIF}` },
-  { id: 'lora', name: 'Lora', feel: 'a warm, curvy serif', family: `${lora.style.fontFamily}, ${SERIF}` },
+  { id: 'today', name: 'Today', feel: 'soft serif headings, clean text', heads: 'Fraunces', text: 'Instrument Sans', headFamily: 'var(--font-fraunces), Georgia, serif', textFamily: 'var(--font-instrument), sans-serif' },
+  { id: 'editorial', name: 'Editorial', feel: 'magazine headlines, plain text', heads: 'Playfair Display', text: 'Source Sans 3', headFamily: f(playfair, SERIF), textFamily: f(sourceSans, SANS) },
+  { id: 'book', name: 'Classic book', feel: 'like a printed book', heads: 'EB Garamond', text: 'EB Garamond', headFamily: f(garamond, SERIF), textFamily: f(garamond, SERIF) },
+  { id: 'rounded', name: 'Rounded', feel: 'soft and friendly, no serif', heads: 'Nunito', text: 'Nunito', headFamily: f(nunito, SANS), textFamily: f(nunito, SANS) },
+  { id: 'geometric', name: 'Geometric', feel: 'modern and clean', heads: 'Outfit', text: 'Outfit', headFamily: f(outfit, SANS), textFamily: f(outfit, SANS) },
+  { id: 'slab', name: 'Slab', feel: 'sturdy, like a medical chart', heads: 'Roboto Slab', text: 'Work Sans', headFamily: f(robotoSlab, SERIF), textFamily: f(workSans, SANS) },
+  { id: 'elegant', name: 'Elegant', feel: 'fine and airy', heads: 'Cormorant', text: 'Raleway', headFamily: f(cormorant, SERIF), textFamily: f(raleway, SANS) },
+  { id: 'vintage', name: 'Vintage', feel: '1920s poster headings', heads: 'Josefin Sans', text: 'Lato', headFamily: f(josefin, SANS), textFamily: f(lato, SANS) },
+  { id: 'easy', name: 'Easy to read', feel: 'designed for low vision', heads: 'Atkinson Hyperlegible', text: 'Atkinson Hyperlegible', headFamily: f(atkinson, SANS), textFamily: f(atkinson, SANS) },
+  { id: 'bold-serif', name: 'Bold serif', feel: 'strong headings, round text', heads: 'DM Serif Display', text: 'DM Sans', headFamily: f(dmSerif, SERIF), textFamily: f(dmSans, SANS) },
+  { id: 'warm', name: 'Warm serif', feel: 'serif everywhere, gentle curves', heads: 'Lora', text: 'Lora', headFamily: f(lora, SERIF), textFamily: f(lora, SERIF) },
 ];
 
 export const metadata = meta({ title: 'Font test', description: 'A font test of Dr. Dana’s page.', path: '/dana-kivlin/police', noindex: true });
