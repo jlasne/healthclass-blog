@@ -7,7 +7,7 @@ is being set up.
 
 ## Set up MailCheap (once)
 
-1. Create the newsletter "Class Notes", sender **Dr. Dana · Class Notes**, from `dana@healthclass.app` (or `notes@`).
+1. Create the newsletter "Class Notes", sender **Dr. Dana · Class Notes**, from `DrDana@healthclass.app`; replies go to info@healthclass.app.
    Authenticate the domain (SPF, DKIM, DMARC) in MailCheap's deliverability settings.
 2. Turn on confirmed opt-in if you want it (MailCheap sends the confirmation email itself).
 3. Paste `welcome.md` as the welcome email.

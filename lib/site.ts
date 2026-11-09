@@ -12,7 +12,8 @@ export const site = {
   description:
     'Short letters on bladder leaks, Kegels and the pelvic floor from Dr. Dana Kivlin, a board-certified urologist. The blog of Pelvic Health Class: for Women.',
   locale: 'en_US',
-  email: 'dana@healthclass.app',
+  // support and every reply: one inbox (Resend). Dr. Dana's letter is sent from DrDana@healthclass.app (MailCheap).
+  email: 'info@healthclass.app',
   // the app's store pages. Empty until the listings go live: the buttons then say "Coming soon" and offer the letter.
   appStoreUrl: '',
   playStoreUrl: '',
@@ -55,12 +56,26 @@ export const dana = {
   medicalSchoolYear: 2011,
   board: 'Board certified in Urology',
   photo: '/media/dana/portrait.webp',
+  // her page's portrait (her own photo, November 2026)
+  bioPhoto: '/media/dana/bio.webp',
   avatar: '/media/dana/avatar.webp',
   hero: '/media/dana/hero.webp',
   socials: [
     { label: 'Instagram', handle: '@dr_hapee_bladder', url: 'https://www.instagram.com/dr_hapee_bladder/' },
     { label: 'Middlesex Health', handle: 'Doctor profile', url: 'https://middlesexhealth.org/find-a-doctor/dana-u-kivlin-do' },
     { label: 'ResearchGate', handle: 'Research profile', url: 'https://www.researchgate.net/profile/Dana-Kivlin' },
+  ],
+  // what she uses and recommends (affiliate links: the page says so under the cards)
+  shop: [
+    { label: 'My Amazon list', handle: 'What I use and recommend', url: 'https://www.amazon.com/shop/dr_hapee_bladder/list/31WCU2955C91J?tag=danakivlin-20&linkCode=gg3' },
+    { label: 'Anthros chair', handle: 'Lower back and pelvic support', url: 'https://configurator.anthros.com/products/chair?platform=anthros&link_id=1397&token=Qh-sGCybpbqh8m5JNQ-gEA&contact_id=affiliate-1397&attribution_window=90' },
+  ],
+  // the Instagram preview on her page: her 3 latest reels. A tile with a video plays it (muted, looping); a tile
+  // without one shows its poster. Add each reel as public/media/dana/ig/<n>.mp4 and set its video here.
+  reels: [
+    { video: '/media/dana/insta.mp4', poster: '/media/dana/ig/1.webp' },
+    { video: '', poster: '/media/dana/ig/2.webp' },
+    { video: '', poster: '/media/dana/ig/3.webp' },
   ],
   // podcasts Dana joins: add one entry per episode as they air ({ show, episode, date: 'YYYY-MM-DD', url })
   podcasts: [] as { show: string; episode: string; date: string; url: string }[],
