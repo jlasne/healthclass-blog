@@ -134,7 +134,7 @@ gives way to the store link on every page. Report it.
 - [ ] 023 · `tools/overactive-bladder-quiz` · overactive bladder quiz
 - [ ] 024 · `tools/urge-wave-timer` · urge suppression techniques
 - [ ] 025 · `tools/bladder-training-schedule` · bladder training schedule
-- [ ] 026 · `classes/bladder-training` · bladder training program (ONLY if the module ships in the app; else skip)
+- [ ] 026 · `classes/bladder-training` · bladder training program (in the app since November 9, 2026)
 - [ ] 027 · `made-for-you/teachers` · teacher bladder
 - [ ] 155 · `made-for-you/urge-when-you-get-home` · urge to pee when i get home / latchkey incontinence (Dr. Dana's arrival routine: 3 tasks before the toilet, name your bladder)
 - [ ] 028 · `compare/pelvic-floor-therapy-vs-kegels` · pelvic floor therapy vs kegel exercises
@@ -225,7 +225,7 @@ gives way to the store link on every page. Report it.
 - [ ] 086 · `classes/hip-stretches-for-pelvic-floor` · hip stretches for pelvic floor
 - [ ] 087 · `compare/kegels-vs-reverse-kegels` · kegels vs reverse kegels
 - [ ] 088 · `tools/pelvic-floor-self-check` · pelvic floor self exam
-- [ ] 089 · `classes/self-check` · pelvic floor self check (ONLY if the module ships in the app; else skip)
+- [ ] 089 · `classes/self-check` · pelvic floor self check (in the app since November 9, 2026)
 - [ ] 090 · `made-for-you/cyclists` · is cycling bad for pelvic floor
 - [ ] 091 · `made-for-you/horse-riders` · pelvic floor horse riding
 
@@ -244,7 +244,7 @@ gives way to the store link on every page. Report it.
 - [ ] 099 · `tools/fiber-calculator` · fiber intake per day for women
 - [ ] 100 · `tools/constipation-check` · pelvic floor constipation symptoms
 - [ ] 101 · `made-for-you/constipation` · pelvic floor constipation
-- [ ] 102 · `classes/fiber-tracker` · fiber (ONLY if the module ships in the app; else skip)
+- [ ] 102 · `classes/fiber-tracker` · fiber (in the app since November 9, 2026)
 - [ ] 103 · `classes/bladder-leaks-week-1` · Bladder leaks week 1 (title from the app)
 - [ ] 104 · `compare/kegel-balls-vs-weights` · kegel balls vs weights
 - [ ] 105 · `made-for-you/overweight` · pelvic floor exercises for overweight women
@@ -276,8 +276,8 @@ gives way to the store link on every page. Report it.
 - [ ] 121 · `made-for-you/postmenopause` · pelvic floor postmenopausal
 - [ ] 122 · `classes/prolapse` · prolapse class (status: soon; send symptoms to a doctor)
 - [ ] 123 · `classes/lift-a-bag-safely` · pelvic floor and heavy lifting
-- [ ] 124 · `classes/breath-test` · breath test (ONLY if the module ships in the app; else skip)
-- [ ] 125 · `classes/plan-for-life` · plan for life (ONLY if the module ships in the app; else skip)
+- [ ] 124 · `classes/breath-test` · breath test (in the app since November 9, 2026)
+- [ ] 125 · `classes/plan-for-life` · plan for life (in the app since November 9, 2026)
 - [ ] 126 · `compare/health-class-vs-leva` · leva pelvic health system reviews
 
 ### Devices
