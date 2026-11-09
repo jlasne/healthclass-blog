@@ -17,6 +17,10 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       { source: '/:path*', headers: security },
+      // pages that must never show in search: Google may crawl them (robots.txt allows it) and reads this noindex
+      { source: '/api/:path*', headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }] },
+      { source: '/live/access', headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }] },
+      { source: '/qa/access', headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }] },
       // the cats and the fonts never change under the same name
       { source: '/cats/:file*', headers: [{ key: 'Cache-Control', value: 'public, max-age=604800, stale-while-revalidate=86400' }] },
     ];
