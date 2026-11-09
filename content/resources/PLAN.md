@@ -44,6 +44,10 @@ The founders do not review each page: the rules and the check below are the revi
 7. **Tick** the line in this file (same commit) and **report** in 3 lines: the link, the search it targets, the pages it
    links to and from.
 
+If no Vercel deployment shows up 5 minutes after a push (it happened on November 9), start one from the commit:
+Vercel `create_deployment` with target `production` and `gitSource` {type: github, org: jlasne, repo:
+healthclass-blog, ref: main, sha: <the commit>}, then check it is READY.
+
 If a step fails and cannot be fixed the same day, publish nothing, leave the line unticked, and report what failed.
 The site keeps its last good version when a deploy fails.
 
