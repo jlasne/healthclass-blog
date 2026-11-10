@@ -107,7 +107,7 @@ function CompareMany({ r }: { r: Resource }) {
         </table>
       </div>
       {r.winsBy?.length ? (
-        <div className={r.winsBy.length === 2 ? 'wins' : 'wins wins--3'}>
+        <div className={r.winsBy.length === 3 ? 'wins wins--3' : 'wins'}>
           {r.winsBy.map((w) => (
             <div key={w.name} className={`wins__col tone--${tone(w.name)}`}>
               <h3>Where {w.name} wins</h3>

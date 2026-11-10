@@ -1091,3 +1091,14 @@ a, button, summary, input, textarea, label { touch-action: manipulation; }
 @media (max-width: 480px) { .goal__card { padding: 16px; gap: 12px; } .goal__card .tone-disc { width: 72px; } }
 .tool__res img, .goal__card img { animation: hc-idle 4.8s ease-in-out infinite; }
 .sec__links { display: flex; flex-wrap: wrap; gap: 6px 22px; }
+
+/* resource pages: the cat badge floats beside the title, so a long title wraps around it (never under it) */
+.res .post-hd__top { padding-right: 0; }
+.res .post-hd__art { position: relative; top: auto; right: auto; float: right; margin: 14px 0 6px 16px; }
+.res .post-hd .h1 { margin-top: 18px; }
+.res .post-hd .lede, .res .post-hd .byline { clear: both; }
+/* 4 sides or more: the table steps out of the reading column on wide screens, so every column has room */
+@media (min-width: 1060px) {
+  .vs__tbl:has(table.vs--wide) { margin-left: calc((var(--read) - 980px) / 2); margin-right: calc((var(--read) - 980px) / 2); }
+  .vs table.vs--wide tbody th { width: 16%; }
+}

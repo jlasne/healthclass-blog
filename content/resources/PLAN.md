@@ -117,7 +117,7 @@ gives way to the store link on every page. Report it.
 - [x] 008 · `compare/health-class-vs-perifit` · perifit vs / is perifit worth it
 - [x] 009 · `compare/health-class-vs-elvie-trainer` · is elvie trainer worth it
 - [x] 010 · `compare/elvie-trainer-vs-perifit` · elvie trainer vs perifit (3 sides: Elvie Trainer, Perifit, Health Class)
-- [ ] 011 · `compare/best-pelvic-floor-app-for-women` · best pelvic floor app for women (sides: 4 to 6 apps, Health Class one of them)
+- [x] 011 · `compare/best-pelvic-floor-app-for-women` · best pelvic floor app for women (sides: 4 to 6 apps, Health Class one of them)
 - [ ] 012 · `tools/kegel-timer` · kegel timer online free
 - [ ] 013 · `classes/slow-holds` · slow kegel holds
 - [ ] 014 · `made-for-you/leak-when-you-lift` · leaking when lifting weights
