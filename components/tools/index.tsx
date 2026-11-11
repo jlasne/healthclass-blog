@@ -3,6 +3,7 @@
 import { getArticle } from '@/lib/articles';
 import { resolve } from '@/lib/resources';
 import { LeakQuiz } from './LeakQuiz';
+import { KegelTimer } from './KegelTimer';
 
 const page = (ref: string, fallback: string) => resolve(ref)?.path ?? fallback;
 const letter = (slug: string) => (getArticle(slug) ? `/letters/${slug}` : undefined);
@@ -19,6 +20,9 @@ export function Tool({ id }: { id: string }) {
         }}
       />
     );
+  }
+  if (id === 'kegel-timer') {
+    return <KegelTimer links={{ classes: page('classes/pelvic-floor-101', '/resources/classes'), letter: letter('how-to-do-kegels-correctly') }} />;
   }
   return null;
 }

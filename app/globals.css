@@ -1102,3 +1102,13 @@ a, button, summary, input, textarea, label { touch-action: manipulation; }
   .vs__tbl:has(table.vs--wide) { margin-left: calc((var(--read) - 980px) / 2); margin-right: calc((var(--read) - 980px) / 2); }
   .vs table.vs--wide tbody th { width: 16%; }
 }
+
+/* the Kegel timer: a ring that fills while you squeeze (rose) and empties while you relax (sky) */
+.timer { --p: 0; --ring: var(--rose); position: relative; display: grid; place-items: center; width: min(240px, 70vw); aspect-ratio: 1; margin: 22px auto 0; border-radius: 50%; background: conic-gradient(var(--ring) calc(var(--p) * 360deg), var(--plum-mist) 0); transition: background .1s linear; }
+.timer--relax { --ring: var(--sky-2); }
+.timer__in { display: grid; place-items: center; align-content: center; width: 82%; aspect-ratio: 1; border-radius: 50%; background: var(--white); box-shadow: inset 0 0 0 1px var(--hair); text-align: center; }
+.timer__in b { font: 400 clamp(30px, 3.4vw, 38px)/1.05 var(--serif); letter-spacing: -.015em; color: var(--ink); }
+.timer--squeeze .timer__in b { color: var(--rose-ink); }
+.timer__in span { margin-top: 6px; font: 600 15px/1.2 var(--sans); color: var(--muted-dk); font-variant-numeric: tabular-nums; }
+.timer__cue { margin: 16px 0 0; text-align: center; font: italic 400 19px/1.4 var(--serif); color: var(--plum); }
+@media (prefers-reduced-motion: reduce) { .timer { transition: none; } }

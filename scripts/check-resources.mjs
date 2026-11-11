@@ -12,7 +12,7 @@ import matter from 'gray-matter';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dir = path.join(root, 'content/resources');
 const FAMILIES = ['tools', 'compare', 'classes', 'made-for-you'];
-const TOOLS = ['leak-type-quiz'];
+const TOOLS = ['leak-type-quiz', 'kegel-timer'];
 const TONES = ['rosy', 'plum', 'blush', 'sky'];
 const cats = JSON.parse(fs.readFileSync(path.join(root, 'lib/cats.json'), 'utf8'));
 // the app facts pages can show as {app.key} (lib/app-facts.ts)
