@@ -96,8 +96,8 @@ gives way to the store link on every page. Report it.
 - Health Class vs one other: `compare/health-class-vs-squeezy.mdx` (`rival`, `table`, `wins`, `pick`).
 - 3 sides or more (X vs Y, alternatives, best of): use `sides` (Health Class as the last side), `rows` (one value per
   side), `winsBy` (every side, 2 points or more) and `pickBy`, in place of `rival`, `table`, `wins` and `pick`.
-- Class or week or exercise: `classes/bladder-leaks.mdx` (`status`, `facts`, `weeks`; an exercise page leaves `weeks` out
-  and uses a `<Try>` box in the body). A class not out yet: `status: soon`.
+- Class or week or exercise: `classes/bladder-leaks.mdx` (`status`, `facts`, `weeks`; an exercise page sets `kind: exercise`,
+  leaves `weeks` out, keeps `facts`, and uses a `<Try>` box in the body). A class not out yet: `status: soon`.
 - Made for you: `made-for-you/leak-when-you-sneeze.mdx` (`goal`, `fit`).
 
 ## The list
@@ -119,7 +119,7 @@ gives way to the store link on every page. Report it.
 - [x] 010 · `compare/elvie-trainer-vs-perifit` · elvie trainer vs perifit (3 sides: Elvie Trainer, Perifit, Health Class)
 - [x] 011 · `compare/best-pelvic-floor-app-for-women` · best pelvic floor app for women (sides: 4 to 6 apps, Health Class one of them)
 - [x] 012 · `tools/kegel-timer` · kegel timer online free
-- [ ] 013 · `classes/slow-holds` · slow kegel holds
+- [x] 013 · `classes/slow-holds` · slow kegel holds
 - [ ] 014 · `made-for-you/leak-when-you-lift` · leaking when lifting weights
 
 ### Kegels done right

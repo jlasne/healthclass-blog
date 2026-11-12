@@ -169,14 +169,18 @@ export function CompareBlock({ r }: { r: Resource }) {
 
 // classes: the facts, then the 6 weeks
 export function ClassBlock({ r }: { r: Resource }) {
-  if (!r.weeks?.length) return null;
+  if (!r.weeks?.length && !r.facts?.length) return null;
   return (
-    <section className="weeks" aria-labelledby="weeks-t">
-      {r.facts?.length ? <ul className="appcard__facts weeks__facts" aria-label="The class in numbers">{r.facts.map((f) => <li key={f}>{f}</li>)}</ul> : null}
-      <h2 id="weeks-t" className="h3">Week by <em>week</em></h2>
-      <ol className="join-steps weeks__list tone--rosy">
-        {r.weeks.map((w) => (<li key={w.title}><b>{w.title}</b><span>{w.line}</span></li>))}
-      </ol>
+    <section className="weeks" aria-labelledby={r.weeks?.length ? 'weeks-t' : undefined} aria-label={r.weeks?.length ? undefined : 'In numbers'}>
+      {r.facts?.length ? <ul className="appcard__facts weeks__facts" aria-label="In numbers">{r.facts.map((f) => <li key={f}>{f}</li>)}</ul> : null}
+      {r.weeks?.length ? (
+        <>
+          <h2 id="weeks-t" className="h3">Week by <em>week</em></h2>
+          <ol className="join-steps weeks__list tone--rosy">
+            {r.weeks.map((w) => (<li key={w.title}><b>{w.title}</b><span>{w.line}</span></li>))}
+          </ol>
+        </>
+      ) : null}
     </section>
   );
 }

@@ -83,7 +83,9 @@ for (const p of pages) {
     if ((data.wins?.us ?? []).length < 2) fails.push(`${file}: list 2 or more points where Health Class wins`);
     need('pick.them', data.pick?.them); need('pick.us', data.pick?.us);
   }
-  if (fam === 'classes') { need('weeks'); need('status'); }
+  // a class or a week has weeks and a status; an exercise page (kind: exercise) has facts and a <Try> box
+  if (fam === 'classes' && data.kind !== 'exercise') { need('weeks'); need('status'); }
+  if (fam === 'classes' && data.kind === 'exercise') { need('facts'); if (!/<Try[\s>]/.test(content)) fails.push(`${file}: an exercise page needs a <Try> box`); }
   if (fam === 'made-for-you') { need('goal'); need('fit'); if (data.fit && !known.has(data.fit)) warns.push(`${file}: fit ${data.fit} is not written yet`); }
 }
 
