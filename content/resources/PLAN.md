@@ -126,7 +126,7 @@ gives way to the store link on every page. Report it.
 
 - [x] 015 · `classes/how-to-find-your-pelvic-floor` · how to find your pelvic floor muscles (skipped: the letters how-to-do-kegels-correctly and stop-peeing-midstream-myth already answer it)
 - [x] 016 · `classes/quick-flicks` · quick flicks kegel
-- [ ] 017 · `classes/pelvic-floor-101` · pelvic floor 101 / pelvic floor program
+- [x] 017 · `classes/pelvic-floor-101` · pelvic floor 101 / pelvic floor program
 - [ ] 018 · `tools/kegel-plan-by-age` · kegel exercise plan according to your age
 - [ ] 019 · `tools/weak-or-tight-pelvic-floor-quiz` · how to know your pelvic floor is weak or tight
 - [ ] 020 · `compare/kegels-vs-pelvic-floor-exercises` · kegels vs pelvic floor exercises
