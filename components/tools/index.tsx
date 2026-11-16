@@ -4,6 +4,7 @@ import { getArticle } from '@/lib/articles';
 import { resolve } from '@/lib/resources';
 import { LeakQuiz } from './LeakQuiz';
 import { KegelTimer } from './KegelTimer';
+import { KegelPlan } from './KegelPlan';
 
 const page = (ref: string, fallback: string) => resolve(ref)?.path ?? fallback;
 const letter = (slug: string) => (getArticle(slug) ? `/letters/${slug}` : undefined);
@@ -23,6 +24,19 @@ export function Tool({ id }: { id: string }) {
   }
   if (id === 'kegel-timer') {
     return <KegelTimer links={{ classes: page('classes/pelvic-floor-101', '/resources/classes'), letter: letter('how-to-do-kegels-correctly') }} />;
+  }
+  if (id === 'kegel-plan-by-age') {
+    return (
+      <KegelPlan
+        links={{
+          classes: page('classes/pelvic-floor-101', '/resources/classes'),
+          timer: resolve('tools/kegel-timer')?.path,
+          slow: resolve('classes/slow-holds')?.path,
+          flicks: resolve('classes/quick-flicks')?.path,
+          letter: letter('how-to-do-kegels-correctly'),
+        }}
+      />
+    );
   }
   return null;
 }
