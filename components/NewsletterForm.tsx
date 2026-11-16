@@ -8,7 +8,7 @@ import { useEffect, useRef, useState } from 'react';
 const FORM = '6ae32d38dfdc6c9a1785eba1';
 const ORIGIN = 'https://mailcheap.ai';
 
-export function NewsletterForm({ fine }: { source?: string; tag?: string; cta?: string; id?: string; fine?: string }) {
+export function NewsletterForm({ fine, privacy = true }: { source?: string; tag?: string; cta?: string; id?: string; fine?: string; privacy?: boolean }) {
   const frame = useRef<HTMLIFrameElement>(null);
   const [height, setHeight] = useState(50);
   useEffect(() => {
@@ -31,7 +31,7 @@ export function NewsletterForm({ fine }: { source?: string; tag?: string; cta?: 
         style={{ display: 'block', width: '100%', maxWidth: 480, height, border: 0, background: 'transparent' }}
       />
       <p className="nl-fine">
-        {fine ?? 'Free. Every Wednesday and Sunday. Unsubscribe in 1 click.'} <a href="/privacy#newsletter">Privacy</a>.
+        {fine ?? 'Free. Every Wednesday and Sunday. Unsubscribe in 1 click.'}{privacy && <> <a href="/privacy#newsletter">Privacy</a>.</>}
       </p>
     </div>
   );
