@@ -34,6 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       images: [absoluteUrl(`${r.path}/opengraph-image`)],
     })),
     page('/dana-kivlin', legal.updatedIso, 'monthly', 0.7),
+    page('/dana-kivlin/fiber', '2026-11-16', 'monthly', 0.8),
     page('/live', legal.updatedIso, 'monthly', 0.6),
     page('/faq', legal.updatedIso, 'yearly', 0.4),
     page('/privacy', legal.updatedIso, 'yearly', 0.3),
