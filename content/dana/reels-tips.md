@@ -4,6 +4,23 @@ Source: 50 reels from @dr_hapee_bladder, August 10 to November 8, 2026.
 Figures and study results are as stated in the reels.
 Take personal medical decisions to your own doctor.
 
+## Dr. Dana's positions, confirmed November 2026
+
+Dr. Dana answered our report on her reels. Where a reel below says otherwise, these lines win. Every page and letter follows them.
+
+- **Fluids: balance.** Too little and too much both make things worse. Clearer urine irritates the bladder less, so it hurts less. The goal is less pain and urgency, not fewer trips. Drink first thing after waking, sip through the day, and stop 2 to 3 hours before bed.
+- **Caffeine: scale back.** Keep what you love. Swap part of it for water, then watch the leak log. Never write "quit" or "cut out".
+- **The 5 ingredients.** Mobility, posture, core, gut and the squeeze. The order of core and the squeeze does not matter. Kegels are proven to work. They are 1 piece of 5, and most women were never taught to do them right.
+- **Arrival routine.** For the urge at the front door: 3 small tasks before the toilet (keys away, shoes off, bag on the hook), then walk calmly.
+- **Unclench.** Release the pelvic floor each time you catch yourself clenching, at a desk or in traffic.
+- **No stomach vacuums by default.** Never suggest them to readers in general. They do not suit high blood pressure, breathing problems, pregnancy or recent belly surgery. Offer core work by level in place of them.
+  - Level 1: dead bug with toe taps, glute bridge, plank on your knees.
+  - Level 2: dead bug with arm and leg, bird dog, side plank on your knees.
+  - Level 3: full plank, single-leg bridge, bird dog with a 5-second hold.
+  - A heavy or dragging feeling means go back a level.
+- **Grip strength: optional.** Arthritis, rheumatoid arthritis or a hand injury: skip the test, since weak hands then say little about the rest of the body. For a low score, use her message: "Your grip strength gives us interesting information about your overall muscle strength. Research links lower grip strength with a higher risk of pelvic floor disorders. But low grip strength does not mean you are destined to develop one. Think of this as an opportunity, not a diagnosis. Muscle strength is a modifiable risk factor: you can improve it, and that lowers your risk."
+- **Still open:** the path for a tight (high-tone) pelvic floor, and the sources for "1 in 2", "6.5 years" and "6 to 7 months". Use none of these on a page until she confirms them.
+
 ## 1. Know your normal
 
 1 in 2 women will leak urine.
@@ -46,19 +63,20 @@ It takes repetition.
 - Holding urine and delaying bowel movements are direct causes of pelvic floor spasm, and health workers and teachers carry this risk through long shifts without breaks.
 - Carry disposable seat covers in your purse.
 
-## 3. Drink to pee less
+## 3. Drink for a calmer bladder
 
-Drink more to pee less.
+Aim for balance: pale yellow urine.
 Concentrated urine irritates the bladder lining and triggers more spasms and more trips.
-Water dilutes your urine, lowers that irritation, and lets your bladder hold more volume each time, so cutting your fluids makes overactive bladder symptoms worse.
+Water dilutes your urine and lowers that irritation, so clearer urine hurts less. Cutting your fluids makes overactive bladder symptoms worse.
 Keep drinking water.
 
 - Sip steadily and evenly through the day.
 - Chugging water at intervals overloads a bladder that already has a smaller capacity.
 - Stay within reason, because 2 gallons of water in a day will send you to the toilet again and again from morning to night.
-- Cut coffee, tea, soda and alcohol.
+- Drink first thing after waking.
+- Scale back coffee, tea, soda and alcohol, and keep the ones you love.
 - Replace part of those drinks with water to lower urgency and frequency.
-- Cut back fluids 1 to 2 hours before bedtime to reduce nighttime trips.
+- Stop drinking 2 to 3 hours before bedtime to reduce nighttime trips.
 
 ## 4. Treat bladder leaks
 
@@ -117,7 +135,7 @@ Women die from bladder cancer at a higher rate than men, and delayed diagnosis i
 ## 6. Build the full pelvic floor recipe
 
 Kegels are 1 ingredient of 5.
-Each ingredient below supports the next, so build them in this order.
+Each ingredient below supports the others. Core and the squeeze can come in either order.
 Women who rely on Kegels alone often report zero change, and on exam nearly all of them turn out to be contracting incorrectly with a weak pelvic floor.
 Use all 5.
 
@@ -125,7 +143,7 @@ Use all 5.
 2. Posture: global postural exercises improve pelvic floor function and lower your disorder risk in studies.
 3. Core: planks, bird dogs, dead bugs and boat pose build the stability your pelvic floor needs during every lift, cough and step you take.
 4. Gut: eat fiber and drink water with it.
-5. Kegels: add these last, after the first 4 are in place, and do them with the technique below.
+5. Kegels: proven to work, and 1 piece of 5. Most women were never taught them, so learn the technique below.
 
 **How to do a Kegel**
 
@@ -204,8 +222,9 @@ Train it directly.
 1. Hold forearm planks.
 2. Dead bugs, starting with toe taps and adding weight as you get stronger.
 3. Bird dogs, which also build strength in your shoulders and glutes.
-4. Stomach vacuums: exhale, draw in the corset muscle, hold, release, first lying down, then on all fours, then seated or standing.
-5. Add daily draw-ins.
+4. Add daily draw-ins.
+
+Stomach vacuums appear in her reels. Per her November 2026 answer, pages never suggest them by default: use the 3 core levels at the top of this file.
 
 - Hold a draw-in at your desk, at traffic lights or during TV, while staying able to talk.
 - Spread these across your week, and pair them with stretching and breathing so your muscles keep their full range of motion.
@@ -221,6 +240,7 @@ Measure yours at home.
 - Buy a low-cost hand dynamometer online.
 - Squeeze as hard as you can for under 3 seconds, then alternate hands and rest 30 seconds.
 - Record your best of 3.
+- Skip the test with arthritis, rheumatoid arthritis or a hand injury.
 - Below 16 kg meets the threshold for muscle loss in women, and your device can show the normal range for your age and sex.
 - Retest over time, and answer a weak score with full-body strength training along with hand exercises, since grip reflects your whole body.
 - Fix your posture daily.

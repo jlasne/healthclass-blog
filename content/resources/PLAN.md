@@ -68,6 +68,10 @@ gives way to the store link on every page. Report it.
   diagnosis". Every page gets the doctor note from the template; add page-specific lines in `doctor`.
 - **Avoid medical topics.** No disease pages, no surgery recovery advice, no medicine, no scores used by doctors to
   diagnose. When a search needs a doctor, the page says so and points to one.
+- **Dr. Dana's confirmed positions win.** Read "Dr. Dana's positions, confirmed November 2026" at the top of
+  `content/dana/reels-tips.md` before each page. Fluids: balance, never "drink more to pee less". Caffeine: scale back,
+  never "quit". No stomach vacuums by default: core work by level instead. Grip test: optional, with the hand
+  conditions note. Leave out the 3 numbers she has yet to source ("1 in 2", "6.5 years", "6 to 7 months").
 - **Signed by the Health Class team.** Never write that Dr. Dana reviewed or wrote a page. Quote her only from text
   already on the site or in the app, or from her Instagram reels summed up in `content/dana/reels-tips.md`, as
   "Dr. Dana, on Instagram" (a `<Try>` or `<Remember>` box, or a short quote). Use her bladder, pelvic floor, core,
@@ -142,7 +146,7 @@ gives way to the store link on every page. Report it.
 - [ ] 025 · `tools/bladder-training-schedule` · bladder training schedule
 - [ ] 026 · `classes/bladder-training` · bladder training program (in the app since November 9, 2026)
 - [ ] 027 · `made-for-you/teachers` · teacher bladder
-- [ ] 155 · `made-for-you/urge-when-you-get-home` · urge to pee when i get home / latchkey incontinence (Dr. Dana's arrival routine: 3 tasks before the toilet, name your bladder)
+- [ ] 155 · `made-for-you/urge-when-you-get-home` · urge to pee when i get home / latchkey incontinence (Dr. Dana's arrival routine, confirmed November 2026: 3 tasks before the toilet, keys away, shoes off, bag on the hook, then walk calmly; name your bladder)
 - [ ] 028 · `compare/pelvic-floor-therapy-vs-kegels` · pelvic floor therapy vs kegel exercises
 
 ### After birth
@@ -177,7 +181,7 @@ gives way to the store link on every page. Report it.
 
 ### Everyday bladder
 
-- [ ] 050 · `tools/how-often-should-you-pee` · how many times a day should you pee female (Dr. Dana: drink more to pee less, sip steadily)
+- [ ] 050 · `tools/how-often-should-you-pee` · how many times a day should you pee female (Dr. Dana, confirmed November 2026: balance, pale yellow urine; clearer urine irritates less; sip steadily, drink after waking, stop 2 to 3 hours before bed)
 - [ ] 051 · `tools/nighttime-pee-checker` · how often should you pee at night
 - [ ] 052 · `tools/bladder-irritants-checker` · bladder irritants list
 - [ ] 053 · `tools/caffeine-and-bladder-calculator` · caffeine bladder urgency
@@ -278,7 +282,7 @@ gives way to the store link on every page. Report it.
 ### Strong after 60
 
 - [ ] 120 · `made-for-you/women-over-60` · pelvic floor exercises for women over 60
-- [ ] 156 · `tools/grip-strength-checker` · grip strength test chart by age (Dr. Dana: grip strength tracks the risk of leaks and prolapse; below 16 kg flags muscle loss in women)
+- [ ] 156 · `tools/grip-strength-checker` · grip strength test chart by age (Dr. Dana, confirmed November 2026: optional test; skip it with arthritis, rheumatoid arthritis or a hand injury; below 16 kg flags low muscle strength in women; a low score shows her message from `content/dana/reels-tips.md`: an opportunity, not a diagnosis)
 - [ ] 121 · `made-for-you/postmenopause` · pelvic floor postmenopausal
 - [ ] 122 · `classes/prolapse` · prolapse class (status: soon; send symptoms to a doctor)
 - [ ] 123 · `classes/lift-a-bag-safely` · pelvic floor and heavy lifting
@@ -322,6 +326,6 @@ gives way to the store link on every page. Report it.
 - [ ] 149 · `compare/emsella-vs-pelvic-floor-therapy` · emsella vs pelvic floor therapy
 - [ ] 150 · `tools/stream-counter` · how long should you pee for women
 - [ ] 151 · `tools/urine-color-chart` · urine color chart for hydration
-- [ ] 152 · `tools/water-intake-calculator` · water intake calculator by weight / does drinking more water help overactive bladder (Dr. Dana: drink more to pee less)
+- [ ] 152 · `tools/water-intake-calculator` · water intake calculator by weight / does drinking more water help overactive bladder (Dr. Dana, confirmed November 2026: aim for balance, pale yellow urine; too little and too much both hurt; caffeine: scale back, keep what you love)
 - [ ] 153 · `tools/bristol-stool-chart` · bristol stool chart
 - [ ] 154 · `tools/kegel-chart` · kegel exercise chart for women (with a printable version)

@@ -41,7 +41,7 @@ export default function Page() {
           <div className="doc__short" id="short">
             <h2>The short version</h2>
             <ul>
-              <li>Your health answers and your log (with its photos and notes) stay on your phone.</li>
+              <li>Your health answers and your log (with its photos, notes and grip scores) stay on your phone.</li>
               <li>Only a few things reach us: your email if you add it, the programs you ask us to tell you about, which first-question screen you reached (a number, never your answers), your purchases and your chats with us.</li>
               <li>On the website, we collect your email if you join Class Notes or sign in to the Q&amp;A, and the questions you send Dr. Dana.</li>
               <li>We sell no data, show no ads and run no tracking across apps or websites.</li>
@@ -53,7 +53,7 @@ export default function Page() {
           <p>{site.appName} (&ldquo;the app&rdquo;) and the website www.healthclass.app (&ldquo;the website&rdquo;) are published by <F>{legal.entity}</F>, <F>{legal.address}</F> (&ldquo;we&rdquo;), with Dr. Dana Kivlin, a urologist. We are the controller of the data described here. Contact: <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
 
           <h2 id="phone">Data that stays on your phone</h2>
-          <p>Your answers to the first questions (your need, your life stage, your symptoms, the safety check), your check-ins, your log (its photos and notes), your progress, your routine and your reminder time. The app stores them on your phone only. Your phone&rsquo;s own backup (iCloud or Google) may keep a copy, under the settings of your Apple or Google account. We cannot read this data.</p>
+          <p>Your answers to the first questions (your need, your life stage, your symptoms, the safety check), your check-ins, your log (its photos, notes and grip scores), your progress, your routine, your reminder time and your nudge setting. The app stores them on your phone only. Your phone&rsquo;s own backup (iCloud or Google) may keep a copy, under the settings of your Apple or Google account. We cannot read this data.</p>
 
           <h2 id="app">Data the app sends us</h2>
           <ul>
