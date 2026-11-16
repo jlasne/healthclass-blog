@@ -3,6 +3,8 @@ import { preload } from 'react-dom';
 import { Cat } from '@/components/Cat';
 import { HeroFilm } from '@/components/HeroFilm';
 import { Stores } from '@/components/Stores';
+import { Icon } from '@/components/Icon';
+import { NewsletterForm } from '@/components/NewsletterForm';
 import { JsonLd } from '@/components/JsonLd';
 import { app, graph, meta } from '@/lib/seo';
 import { dana, site } from '@/lib/site';
@@ -17,6 +19,13 @@ export const metadata = {
   title: { absolute: `${site.appName} · The pelvic floor class by a urologist` },
 };
 
+// the 3 things women come for, each with its cat (still frames: no loop)
+const WINS = [
+  { text: 'Laugh without worrying', cat: 'laugh', tone: 'rosy' },
+  { text: 'Get back to sport', cat: 'stretch', tone: 'sky' },
+  { text: 'Feel in control', cat: 'lift', tone: 'plum' },
+];
+
 export default async function Home() {
   const live = Boolean(site.appStoreUrl || site.playStoreUrl);
   preload('/media/hero/poster.jpg', { as: 'image', fetchPriority: 'high' });
@@ -27,25 +36,38 @@ export default async function Home() {
         <div className="wrap home__stage">
           <div className="home__copy">
             <h1 className="h1 home__h1">The pelvic floor class for <em>women</em>.</h1>
-            <ul className="goals" aria-label="What women come for">
-              <li>Laugh without worrying.</li>
-              <li>Get back to sport.</li>
-              <li>Feel in control.</li>
+            <ul className="wins" aria-label="What women come for">
+              {WINS.map((w) => (
+                <li key={w.text} className={`tone--${w.tone}`}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <span className="wins__disc" aria-hidden="true"><img src={`/cats/still/${w.cat}.svg`} alt="" width={52} height={52} /></span>
+                  <span>{w.text}</span>
+                </li>
+              ))}
             </ul>
             <p className="home__by">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={dana.avatar} alt="" width={36} height={36} />By {dana.name}, urologist at {dana.practice}
+              <img src={dana.avatar} alt="" width={36} height={36} />By {dana.name}, urologist
             </p>
           </div>
           <div className="home__film"><HeroFilm /></div>
           <div className="home__cta">
-            <Stores />
             {live ? (
-              <div className="qr" aria-label={`QR code: scan to open ${site.magicHost} on your phone`} role="img">
-                <span dangerouslySetInnerHTML={{ __html: qr }} />
-                <small>Scan with your phone</small>
+              <>
+                <Stores />
+                <div className="qr" aria-label={`QR code: scan to open ${site.magicHost} on your phone`} role="img">
+                  <span dangerouslySetInnerHTML={{ __html: qr }} />
+                  <small>Scan with your phone</small>
+                </div>
+              </>
+            ) : (
+              // before launch: the free letter is the waitlist (MailCheap), it sends the launch-day email
+              <div className="soon">
+                <p className="soon__t"><Icon name="apple" /><Icon name="play" />Coming soon on iPhone and Android</p>
+                <p className="soon__s">Get the launch-day email and Dr. Dana&rsquo;s free letter.</p>
+                <NewsletterForm source="/#get" tag="app-waitlist" fine="Free. Unsubscribe in 1 click." />
               </div>
-            ) : null}
+            )}
           </div>
         </div>
       </section>
