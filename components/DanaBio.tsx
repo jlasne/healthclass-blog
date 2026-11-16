@@ -5,7 +5,7 @@ import { Newsletter } from '@/components/Newsletter';
 import { dana } from '@/lib/site';
 
 // Dr. Dana's page body, in her own words (her bio, November 2026): who she is, why the class, where to find her,
-// then the letter. Shared by /dana-kivlin and its font test (/dana-kivlin/police).
+// then the letter. Used by /dana-kivlin.
 const lastName = dana.fullName.replace(`${dana.firstName} `, '');
 
 export function DanaBio() {
