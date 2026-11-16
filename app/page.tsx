@@ -43,7 +43,7 @@ export default async function Home() {
           ) : (
             // before launch: the free letter is the waitlist (MailCheap); it sends the launch-day email
             <div className="lp__get">
-              <p className="lp__soon">Coming soon on iPhone and Android. Get the launch-day email.</p>
+              <p className="lp__soon">Coming soon on iPhone and Android. Get the launch&#8209;day email.</p>
               <NewsletterForm source="/#get" tag="app-waitlist" fine="Plus Dr. Dana's free letter. Unsubscribe in 1 click." />
             </div>
           )}

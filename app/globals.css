@@ -1147,7 +1147,7 @@ a, button, summary, input, textarea, label { touch-action: manipulation; }
 .lp__in { max-width: 680px; text-align: center; }
 .lp__h1 { font-size: clamp(42px, 5.4vw, 72px); line-height: 1.04; }
 .lp__get { margin: 28px auto 0; max-width: 480px; }
-.lp__soon { margin: 0 0 12px; font: 600 16px/1.4 var(--sans); color: var(--ink); }
+.lp__soon { margin: 0 0 12px; font: 600 16px/1.4 var(--sans); color: var(--ink); text-wrap: balance; }
 .lp__get .nl-embed iframe { margin-inline: auto; }
 .lp__get .nl-fine { margin: 8px 0 0; text-align: center; }
 .lp__get .stores { justify-content: center; }
