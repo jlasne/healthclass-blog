@@ -19,7 +19,7 @@ You need 2 kinds of fiber, plus water:
 - **Insoluble fiber, the bulker.** It does not dissolve. It bulks up stool and stretches the bowel to trigger movement.
 - **Water, the activator.** Water makes fiber work. More fiber without more water can make constipation and bloating worse.
 
-Eat both kinds. Drink more water each time you add fiber. And go slow: add only a few grams a week, so your body adjusts and bloating stays low.
+Eat both kinds. Raise your water a little each time you add fiber, and aim for balance: pale yellow urine. And go slow: add only a few grams a week, so your body adjusts and bloating stays low.
 
 **Try it today: the kiwi start**
 

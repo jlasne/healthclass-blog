@@ -21,7 +21,7 @@ Why does a urologist care? Less constipation means a lower risk of pelvic floor 
 4 steps I go over with my patients:
 
 1. **Eat both kinds.** Together they give the best bowel movements.
-2. **Drink more water as you add fiber.** Water is the activator. Without it, constipation and bloating can get worse.
+2. **Raise your water as you add fiber.** Water is the activator. Aim for balance: pale yellow urine. Without enough, constipation and bloating can get worse.
 3. **Go slow.** Add only a few grams a week. Your body adjusts and bloating stays low.
 4. **Food first.** The best health data is on fiber from food. Supplements alone are not enough.
 
