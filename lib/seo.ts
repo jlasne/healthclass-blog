@@ -47,7 +47,7 @@ export const person = {
   alumniOf: { '@type': 'CollegeOrUniversity', name: dana.medicalSchool },
   hasCredential: [{ '@type': 'EducationalOccupationalCredential', credentialCategory: 'degree', name: 'Doctor of Osteopathic Medicine' }],
   knowsAbout: ['Urology', 'Pelvic floor muscle training', 'Urinary incontinence', 'Stress urinary incontinence', 'Overactive bladder', "Women's pelvic health"],
-  sameAs: dana.socials.map((s) => s.url),
+  sameAs: [...dana.socials.map((s) => s.url), dana.profiles.hospital, dana.profiles.research],
 };
 
 export const website = {

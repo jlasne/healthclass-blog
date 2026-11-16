@@ -60,11 +60,17 @@ export const dana = {
   bioPhoto: '/media/dana/bio.webp',
   avatar: '/media/dana/avatar.webp',
   hero: '/media/dana/hero.webp',
+  // the link tree under her name on /dana-kivlin (Instagram stays first: the footer and the organization use it)
   socials: [
     { label: 'Instagram', handle: '@dr_hapee_bladder', url: 'https://www.instagram.com/dr_hapee_bladder/' },
-    { label: 'Middlesex Health', handle: 'Doctor profile', url: 'https://middlesexhealth.org/find-a-doctor/dana-u-kivlin-do' },
-    { label: 'ResearchGate', handle: 'Research profile', url: 'https://www.researchgate.net/profile/Dana-Kivlin' },
+    { label: 'TikTok', handle: '@drhapeebladder', url: 'https://www.tiktok.com/@drhapeebladder' },
+    { label: 'Facebook', handle: 'Dr. HaPee Bladder', url: 'https://www.facebook.com/p/Dr-HaPee-Bladder-61583763963554/' },
   ],
+  // her professional profiles, linked inside her bio text (and in her structured data)
+  profiles: {
+    hospital: 'https://middlesexhealth.org/find-a-doctor/dana-u-kivlin-do',
+    research: 'https://www.researchgate.net/profile/Dana-Kivlin',
+  },
   // what she uses and recommends (affiliate links: the page says so under the cards)
   shop: [
     { label: 'My Amazon list', handle: 'What I use and recommend', url: 'https://www.amazon.com/shop/dr_hapee_bladder/list/31WCU2955C91J?tag=danakivlin-20&linkCode=gg3' },

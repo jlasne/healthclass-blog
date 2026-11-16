@@ -4,27 +4,36 @@ import { Smile } from '@/components/Smile';
 import { Newsletter } from '@/components/Newsletter';
 import { dana } from '@/lib/site';
 
-// Dr. Dana's page body, in her own words (her bio, November 2026): who she is, why the class, where to find her,
-// then the letter. Used by /dana-kivlin.
+// Dr. Dana's page body, in her own words (her bio, November 2026): who she is and where to follow her, why the
+// class, her recommendations (her fiber guide, her Amazon list, her chair), then the letter. Used by /dana-kivlin.
 const lastName = dana.fullName.replace(`${dana.firstName} `, '');
 
 export function DanaBio() {
-  const cards = [...dana.socials.map((s) => ({ ...s, shop: false })), ...dana.shop.map((s) => ({ ...s, shop: true }))];
-  return (
+    return (
     <>
       <section className="hero">
         <div className="wrap hero__grid">
           <div className="hero__copy">
             <span className="eyebrow">About me</span>
             <h1 className="h1">I&rsquo;m Dr. {dana.firstName} <em>{lastName}</em>.</h1>
+            <ul className="links" aria-label="Follow me">
+              {dana.socials.map((s) => (
+                <li key={s.url}>
+                  <a className="links__a" href={s.url} rel="me noopener" target="_blank">
+                    <Icon name={s.label.toLowerCase()} />
+                    <span><b>{s.label}</b><small>{s.handle}</small></span>
+                  </a>
+                </li>
+              ))}
+            </ul>
             <p className="lede">
               I am a board-certified urologist with fellowship training in urogynecology and additional certification in menopause medicine.
             </p>
             <ul className="creds" aria-label="My credentials">
               <li><Icon name="check" />Board certified in urology</li>
-              <li><Icon name="check" />Fellowship trained in Female Pelvic Medicine and Reconstructive Surgery (Urogynecology)</li>
+              <li><Icon name="check" /><span>Fellowship trained in Female Pelvic Medicine and Reconstructive Surgery (Urogynecology). <a className="link" href={dana.profiles.research} rel="me noopener" target="_blank">My research</a></span></li>
               <li><Icon name="check" />Menopause Society Certified Practitioner (MSCP)</li>
-              <li><Icon name="check" />Director for the Center of Continence and Pelvic Health at {dana.practice}</li>
+              <li><Icon name="check" /><span>Director for the Center of Continence and Pelvic Health at <a className="link" href={dana.profiles.hospital} rel="me noopener" target="_blank">{dana.practice}</a></span></li>
             </ul>
           </div>
           <div className="hero__art">
@@ -57,45 +66,24 @@ export function DanaBio() {
         </div>
       </section>
 
-      <section className="sec" aria-labelledby="find">
+      <section className="sec" aria-labelledby="recs">
         <div className="wrap">
-          <div className="sec__hd"><div><span className="eyebrow">Where you can find me</span><h2 id="find" className="h2">Women&rsquo;s health, <em>every day</em></h2></div></div>
-          <div className="related related--find">
-            {cards.map((s, i) => (
-              <a key={s.url} className={`card${s.label === 'Instagram' ? ' card--ig' : ''} tone--${['rosy', 'sky', 'plum', 'blush', 'rosy'][i % 5]}`} href={s.url} rel={s.shop ? 'sponsored noopener' : 'me noopener'} target="_blank">
-                {s.label === 'Instagram' ? (
-                  // a preview of her Instagram profile: her face, her handle and her 3 latest reels, playing
-                  <span className="ig" aria-hidden="true">
-                    <span className="ig__hd">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <span className="ig__ring"><img src={dana.avatar} alt="" width={56} height={56} loading="lazy" /></span>
-                      <span className="ig__who"><b>{s.handle.replace('@', '')}</b><span>{dana.name}</span></span>
-                      <span className="ig__follow">Follow</span>
-                    </span>
-                    <span className="ig__bio">Urologist · Bladder, pelvic floor and women&rsquo;s health, in 1 minute</span>
-                    <span className="ig__grid">
-                      {dana.reels.map((r) => (
-                        <span key={r.poster} className={`ig__post${r.video ? ' ig__post--reel' : ''}`}>
-                          {r.video ? (
-                            <video src={r.video} poster={r.poster} autoPlay muted loop playsInline preload="metadata" />
-                          ) : (
-                            // eslint-disable-next-line @next/next/no-img-element
-                            <img src={r.poster} alt="" width={240} height={320} loading="lazy" />
-                          )}
-                          <svg viewBox="0 0 24 24" width="18" height="18"><path d="M8 5v14l11-7z" fill="#fff" /></svg>
-                        </span>
-                      ))}
-                    </span>
-                  </span>
-                ) : (
-                  <span className="card__art" aria-hidden="true"><Cat pose={(['selfie', 'read', 'write', 'heart', 'reading'] as const)[i % 5]} width={118} /></span>
-                )}
+          <div className="sec__hd"><div><h2 id="recs" className="h2">My recommendations</h2><p>What I give my patients, and what I use myself.</p></div></div>
+          <div className="related related--recs">
+            <a className="card tone--sky" href="/dana-kivlin/fiber">
+              <span className="card__art" aria-hidden="true"><Cat pose="reading" width={118} /></span>
+              <b>My fiber guide</b>
+              <span>The guide I give every patient: 25 to 35 g a day →</span>
+            </a>
+            {dana.shop.map((s, i) => (
+              <a key={s.url} className={`card tone--${['rosy', 'plum'][i % 2]}`} href={s.url} rel="sponsored noopener" target="_blank">
+                <span className="card__art" aria-hidden="true"><Cat pose={(['gift', 'stretch'] as const)[i % 2]} width={118} /></span>
                 <b>{s.label}</b>
-                <span>{s.label === 'Instagram' ? 'Watch my videos' : s.handle} ↗</span>
+                <span>{s.handle} ↗</span>
               </a>
             ))}
           </div>
-          <p className="nl-fine" style={{ margin: "14px 0 0" }}>The Amazon and Anthros links earn me a small commission. As an Amazon Associate I earn from qualifying purchases.</p>
+          <p className="nl-fine" style={{ margin: '14px 0 0' }}>The Amazon and Anthros links earn me a small commission. As an Amazon Associate I earn from qualifying purchases.</p>
         </div>
       </section>
 

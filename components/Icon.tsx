@@ -25,10 +25,13 @@ const P: Record<string, React.ReactNode> = {
   drop: <path d="M12 3.5s6 6.4 6 10.5a6 6 0 01-12 0c0-4.1 6-10.5 6-10.5z" />,
   users: <><circle cx="9" cy="8.5" r="3.5" /><path d="M2.5 20a6.5 6.5 0 0113 0" /><path d="M16 5.5a3.5 3.5 0 010 6.5M18 14.5c2 .8 3.5 2.8 3.5 5.5" /></>,
   close: <path d="M6 6l12 12M18 6L6 18" />,
+  // brand marks, filled
+  facebook: <path d="M13.5 21v-7.6h2.6l.4-3h-3V8.5c0-.9.3-1.5 1.5-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4V10.4H7.8v3h2.6V21h3.1z" />,
+  tiktok: <path d="M16.6 3c.3 2.2 1.6 3.6 3.9 3.7v2.9c-1.4.1-2.6-.3-3.9-1.1v5.6c0 7.1-7.8 9.3-10.9 4.2-2-3.3-.8-9.1 5.7-9.3v3.1c-.5.1-1 .2-1.5.4-1.4.5-2.2 1.4-2 3 .4 3 6 3.9 5.5-2V3h3.2z" />,
 };
 
 export function Icon({ name, className, title }: { name: keyof typeof P | string; className?: string; title?: string }) {
-  const filled = name === 'apple' || name === 'play';
+  const filled = name === 'apple' || name === 'play' || name === 'facebook' || name === 'tiktok';
   return (
     <svg
       className={className}
