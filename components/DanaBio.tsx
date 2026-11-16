@@ -19,9 +19,8 @@ export function DanaBio() {
             <ul className="links" aria-label="Follow me">
               {dana.socials.map((s) => (
                 <li key={s.url}>
-                  <a className="links__a" href={s.url} rel="me noopener" target="_blank">
+                  <a className="links__a" href={s.url} rel="me noopener" target="_blank" aria-label={`${s.label}: ${s.handle}`} title={`${s.label} · ${s.handle}`}>
                     <Icon name={s.label.toLowerCase()} />
-                    <span><b>{s.label}</b><small>{s.handle}</small></span>
                   </a>
                 </li>
               ))}
@@ -29,12 +28,6 @@ export function DanaBio() {
             <p className="lede">
               I am a board-certified urologist with fellowship training in urogynecology and additional certification in menopause medicine.
             </p>
-            <ul className="creds" aria-label="My credentials">
-              <li><Icon name="check" />Board certified in urology</li>
-              <li><Icon name="check" /><span>Fellowship trained in Female Pelvic Medicine and Reconstructive Surgery (Urogynecology). <a className="link" href={dana.profiles.research} rel="me noopener" target="_blank">My research</a></span></li>
-              <li><Icon name="check" />Menopause Society Certified Practitioner (MSCP)</li>
-              <li><Icon name="check" /><span>Director for the Center of Continence and Pelvic Health at <a className="link" href={dana.profiles.hospital} rel="me noopener" target="_blank">{dana.practice}</a></span></li>
-            </ul>
           </div>
           <div className="hero__art">
             <div className="arch">
@@ -63,6 +56,13 @@ export function DanaBio() {
             <p>My mission is to empower women with knowledge, help them recognize what they can control, and bring greater awareness to conditions that have historically been dismissed, overlooked, or simply accepted as a normal part of being a woman. Just because something is common doesn&rsquo;t mean it&rsquo;s normal, and it certainly doesn&rsquo;t mean you have to live with it.</p>
           </div>
           <div className="signoff"><span className="signoff__name">{dana.firstName}</span></div>
+          <h3 className="h3 creds__t">My credentials</h3>
+          <ul className="creds" aria-label="My credentials">
+              <li><Icon name="check" />Board certified in urology</li>
+              <li><Icon name="check" /><span>Fellowship trained in Female Pelvic Medicine and Reconstructive Surgery (Urogynecology). <a className="link" href={dana.profiles.research} rel="me noopener" target="_blank">My research</a></span></li>
+              <li><Icon name="check" />Menopause Society Certified Practitioner (MSCP)</li>
+              <li><Icon name="check" /><span>Director for the Center of Continence and Pelvic Health at <a className="link" href={dana.profiles.hospital} rel="me noopener" target="_blank">{dana.practice}</a></span></li>
+            </ul>
         </div>
       </section>
 

@@ -158,6 +158,17 @@
 /* ------------------------------------------------------------------ 5. the food chart */
 .chart { display: grid; gap: 16px; align-items: start; }
 .chartMain { min-width: 0; }
+.search { position: relative; display: flex; align-items: center; margin: 0 0 10px; }
+.search > svg { position: absolute; left: 16px; width: 20px; height: 20px; fill: none; stroke: var(--muted); stroke-width: 2; stroke-linecap: round; pointer-events: none; }
+.search input { width: 100%; min-height: 52px; padding: 0 48px 0 46px; border: 0; border-radius: 999px; background: var(--white); color: var(--ink); font: 400 17px/1.2 var(--sans); box-shadow: var(--card-sh); -webkit-appearance: none; appearance: none; }
+.search input::placeholder { color: var(--muted); }
+.search input:focus { outline: none; box-shadow: var(--card-sh), 0 0 0 3px var(--rose-tint); }
+.search input::-webkit-search-cancel-button { display: none; }
+.searchX { position: absolute; right: 6px; display: grid; place-items: center; width: 44px; height: 44px; border: 0; border-radius: 50%; background: transparent; cursor: pointer; }
+.searchX svg { width: 18px; height: 18px; fill: none; stroke: var(--muted-dk); stroke-width: 2; stroke-linecap: round; }
+.searchX:hover { background: var(--plum-mist); }
+.tabs[data-dim] { opacity: .55; }
+.found { margin: 4px 4px 12px; font: 600 15px/1.4 var(--sans); color: var(--ink-2); }
 .tabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; padding: 6px; border-radius: 22px; background: var(--plum-mist); box-shadow: inset 0 0 0 1px var(--hair); }
 .tab {
   display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 48px; padding: 8px 14px; border: 0; border-radius: 16px;

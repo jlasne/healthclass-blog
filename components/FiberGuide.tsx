@@ -104,11 +104,15 @@ function savePicks(p: Picks) {
   try { window.localStorage.setItem(KEY, JSON.stringify(p)); } catch { /* private mode: the day still works, unsaved */ }
 }
 
+// lowercase, no accents: "Brussels" finds "brussels", "puree" finds "purée"
+const norm = (t: string) => t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
 export function FoodChart() {
   const [tab, setTab] = useState(foodGroups[0].id);
   const [sort, setSort] = useState<Sort>('most');
   const [picks, setPicks] = useState<Picks>({});
   const [open, setOpen] = useState(false);
+  const [q, setQ] = useState('');
   const wide = useWide();
   const tabs = useRef<(HTMLButtonElement | null)[]>([]);
 
@@ -126,11 +130,13 @@ export function FoodChart() {
   const reset = () => { setPicks({}); savePicks({}); };
 
   const group = foodGroups.find((g) => g.id === tab) ?? foodGroups[0];
+  // search: across every group, by food name or note ("kiwi", "beans", "constipation"); accents and case ignored
+  const query = norm(q.trim());
   const foods = useMemo(() => {
-    const list = [...group.foods];
+    const list = query ? allFoods.filter((f) => norm(f.name).includes(query) || norm(f.note ?? '').includes(query)) : [...group.foods];
     if (sort === 'az') return list.sort((a, b) => a.name.localeCompare(b.name));
     return list.sort((a, b) => (b.total == null ? -1 : a.total == null ? 1 : mid(b.total) - mid(a.total)));
-  }, [group, sort]);
+  }, [group, sort, query]);
 
   const chosen = allFoods.filter((f) => picks[f.id] && trackable(f));
   const total = round(chosen.reduce((sum, f) => sum + low(f.total) * picks[f.id], 0));
@@ -156,7 +162,22 @@ export function FoodChart() {
   return (
     <div className={s.chart}>
       <div className={s.chartMain}>
-        <div className={s.tabs} role="tablist" aria-label="Food groups">
+        <div className={s.search}>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" /><path d="M20 20l-4.2-4.2" /></svg>
+          <input
+            type="search"
+            value={q}
+            onChange={(e) => setQ(e.target.value)}
+            placeholder="Search a food: kiwi, beans, oats…"
+            aria-label="Search the food chart"
+            aria-controls="fiber-foods"
+            enterKeyHint="search"
+            autoComplete="off"
+          />
+          {q && <button type="button" className={s.searchX} aria-label="Clear the search" onClick={() => setQ('')}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17" /></svg></button>}
+        </div>
+
+        <div className={s.tabs} role="tablist" aria-label="Food groups" data-dim={query ? 'true' : undefined}>
           {foodGroups.map((g, i) => (
             <button
               key={g.id}
@@ -167,7 +188,7 @@ export function FoodChart() {
               aria-controls="fiber-foods"
               tabIndex={tab === g.id ? 0 : -1}
               className={s.tab}
-              onClick={() => setTab(g.id)}
+              onClick={() => { setTab(g.id); setQ(''); }}
               onKeyDown={(e) => onTabKey(e, i)}
             >
               <span>{g.label}</span>
@@ -187,11 +208,18 @@ export function FoodChart() {
           </p>
         </div>
 
-        <ul className={s.rows} id="fiber-foods" role="tabpanel" aria-labelledby={`tab-${group.id}`}>
-          {foods.map((f) => (
-            <FoodRow key={f.id} f={f} count={picks[f.id] ?? 0} onAdd={() => change(f.id, 1)} />
-          ))}
-        </ul>
+        {query && (
+          <p className={s.found} aria-live="polite">
+            {foods.length ? `${foods.length} ${foods.length === 1 ? 'food' : 'foods'} for “${q.trim()}”` : `No food matches “${q.trim()}”. Try apple, beans or oats.`}
+          </p>
+        )}
+        {foods.length > 0 && (
+          <ul className={s.rows} id="fiber-foods" role={query ? undefined : 'tabpanel'} aria-labelledby={query ? undefined : `tab-${group.id}`} aria-label={query ? 'Search results' : undefined}>
+            {foods.map((f) => (
+              <FoodRow key={f.id} f={f} count={picks[f.id] ?? 0} onAdd={() => change(f.id, 1)} />
+            ))}
+          </ul>
+        )}
         <p className={s.fine}>Grams of fiber per serving, from my chart. Bars share one scale: the longest is {MAX_GRAMS} g. A range counts its low end in your day.</p>
       </div>
 
