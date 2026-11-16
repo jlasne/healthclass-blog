@@ -15,6 +15,19 @@ is being set up.
    `MAILCHEAP_NEWSLETTER <slug>` if the account has more than one newsletter).
 5. Optional: MailCheap can read `https://www.healthclass.app/feed.xml` for an RSS digest.
 
+## On autopilot: every Wednesday and Sunday, 7:00 AM Eastern
+
+The issues wait in `issues/` (`01-<slug>.md`, `02-...`), in sending order. Vercel calls `/api/cron/newsletter` every
+Wednesday and Sunday at 9:00 UTC (`vercel.json`). It takes the first issue MailCheap has not seen (matched by its `slug`),
+adds the resource pages published since the last issue under "New on Health Class", creates it in MailCheap and
+schedules it for 7:00 AM New York time. Until then it can be canceled in MailCheap, Campaigns, Scheduled.
+
+- Once: in Vercel, project healthclass-blog, Settings, Environment Variables (Production), add `MAILCHEAP_API_KEY` (a
+  **Full access** key from MailCheap, API keys) and `CRON_SECRET` (any long random text), then redeploy.
+- Preview the next issue: `curl -H "Authorization: Bearer <CRON_SECRET>" https://www.healthclass.app/api/cron/newsletter?dry=1`
+- Add issues: drop new files at the end of `issues/` (see `issues/README.md`). With fewer than 4 left, write more.
+- Skip an issue: cancel it in MailCheap; the next run sends the following one.
+
 ## Every issue is built for trust
 
 Use `issue-template.md`. The checklist, in short:

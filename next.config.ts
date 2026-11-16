@@ -13,7 +13,7 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   images: { formats: ['image/avif', 'image/webp'] },
   // the letters are read from content/ at request time too (hourly re-render, scheduled letters)
-  outputFileTracingIncludes: { '/**': ['./content/**/*', './lib/og-fonts/*', './public/cats/still/*'] },
+  outputFileTracingIncludes: { '/**': ['./content/**/*', './lib/og-fonts/*', './public/cats/still/*'], '/api/cron/newsletter': ['./newsletter/issues/*'] },
   async headers() {
     return [
       { source: '/:path*', headers: security },
