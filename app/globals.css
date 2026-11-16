@@ -1141,24 +1141,31 @@ a, button, summary, input, textarea, label { touch-action: manipulation; }
   .related--recs .card > span:not(.card__art) { align-self: start; padding-top: 2px; font-size: 13.5px; }
 }
 
-/* Home hero (Nov 2026), phone first: title, the 3 wins in one divided row, the byline, one rose button (it opens
-   the waitlist sheet until the stores are live), then the film. Desktop: the film on the right. */
-.lp { padding: clamp(24px, 4vw, 64px) 0 clamp(40px, 5vw, 72px); }
-.lp__stage { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(32px, 5vw, 72px); align-items: center; }
-.lp__h1 { font-size: clamp(42px, 4.6vw, 66px); line-height: 1.04; }
-.lp__wins { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 24px 0 0; padding: 14px 0; border-top: 1px solid var(--hair); border-bottom: 1px solid var(--hair); max-width: 520px; }
+/* Home hero (Nov 2026): the title, the email right under it, then the 3 wins in one divided row and Dr. Dana.
+   One centered column on desktop, left-aligned on phones. */
+.lp { padding: clamp(28px, 6vw, 96px) 0 clamp(32px, 5vw, 72px); }
+.lp__in { max-width: 680px; text-align: center; }
+.lp__h1 { font-size: clamp(42px, 5.4vw, 72px); line-height: 1.04; }
+.lp__get { margin: 28px auto 0; max-width: 480px; }
+.lp__soon { margin: 0 0 12px; font: 600 16px/1.4 var(--sans); color: var(--ink); }
+.lp__get .nl-embed iframe { margin-inline: auto; }
+.lp__get .nl-fine { margin: 8px 0 0; text-align: center; }
+.lp__get .stores { justify-content: center; }
+.lp__wins { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 40px auto 0; padding: 14px 0; border-top: 1px solid var(--hair); border-bottom: 1px solid var(--hair); max-width: 560px; }
 .lp__wins li { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 0 8px; text-align: center; font: 600 15px/1.25 var(--sans); color: var(--ink); }
 .lp__wins li + li { border-left: 1px solid var(--hair); }
 .lp__wins img { width: 44px; height: 44px; }
-.lp__by { display: flex; align-items: center; gap: 12px; margin: 20px 0 0; font: 500 15px/1.35 var(--sans); color: var(--ink-2); }
+.lp__by { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 20px 0 0; font: 500 15px/1.35 var(--sans); color: var(--ink-2); }
 .lp__by img { flex: none; border-radius: 50%; box-shadow: 0 0 0 2px var(--white), 0 0 0 3.5px var(--rose-tint); }
-.lp__get { margin-top: 24px; max-width: 520px; }
-.lp__btn { width: 100%; min-height: 56px; font-size: 17px; }
-.lp__soon { margin: 10px 0 0; text-align: center; font: 400 14px/1.3 var(--sans); color: var(--muted); }
-.lp__film { position: relative; }
 @media (max-width: 860px) {
-  .lp { padding-top: 20px; }
-  .lp__stage { grid-template-columns: 1fr; gap: 0; }
-  .lp__film { margin-top: 32px; }
+  .lp { padding-top: 24px; }
+  .lp__in { text-align: left; }
+  .lp__get { margin: 24px 0 0; }
+  .lp__soon { font-size: 15px; }
+  .lp__get .nl-embed iframe { margin-inline: 0; max-width: none !important; }
+  .lp__get .nl-fine { text-align: left; }
+  .lp__get .stores { justify-content: flex-start; }
+  .lp__wins { margin-top: 32px; }
   .lp__wins li { font-size: 14px; }
+  .lp__by { justify-content: flex-start; }
 }

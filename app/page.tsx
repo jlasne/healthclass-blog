@@ -1,14 +1,13 @@
 import QRCode from 'qrcode';
-import { preload } from 'react-dom';
 import { Cat } from '@/components/Cat';
-import { HeroFilm } from '@/components/HeroFilm';
 import { Stores } from '@/components/Stores';
-import { GetApp } from '@/components/Waitlist';
+import { NewsletterForm } from '@/components/NewsletterForm';
 import { JsonLd } from '@/components/JsonLd';
 import { app, graph, meta } from '@/lib/seo';
 import { dana, site } from '@/lib/site';
 
-// One page, one goal: the app (before launch: the launch-day email). Then the film, then 3 doors.
+// One page, one goal: the title, then the email (before launch: the launch-day waitlist), then the 3 wins and
+// Dr. Dana. Then 3 doors.
 export const metadata = {
   ...meta({
     title: `${site.appName}: the pelvic floor class by a urologist`,
@@ -27,45 +26,41 @@ const WINS = [
 
 export default async function Home() {
   const live = Boolean(site.appStoreUrl || site.playStoreUrl);
-  preload('/media/hero/poster.jpg', { as: 'image', fetchPriority: 'high' });
   const qr = await QRCode.toString(`https://${site.magicHost}`, { type: 'svg', margin: 0, errorCorrectionLevel: 'M', color: { dark: '#4A2433', light: '#0000' } });
   return (
     <>
       <section className="lp" id="get">
-        <div className="wrap lp__stage">
-          <div className="lp__copy">
-            <h1 className="h1 lp__h1">The pelvic floor class for <em>women</em>.</h1>
-            <ul className="lp__wins" aria-label="What women come for">
-              {WINS.map((w) => (
-                <li key={w.text}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={`/cats/still/${w.cat}.svg`} alt="" width={44} height={44} />
-                  <span>{w.text}</span>
-                </li>
-              ))}
-            </ul>
-            <p className="lp__by">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={dana.avatar} alt="" width={40} height={40} />
-              <span>By {dana.name}, urologist at {dana.practice}</span>
-            </p>
-            {live ? (
-              <div className="lp__get">
-                <Stores />
-                <div className="qr" aria-label={`QR code: scan to open ${site.magicHost} on your phone`} role="img">
-                  <span dangerouslySetInnerHTML={{ __html: qr }} />
-                  <small>Scan with your phone</small>
-                </div>
+        <div className="wrap lp__in">
+          <h1 className="h1 lp__h1">The pelvic floor class for <em>women</em>.</h1>
+          {live ? (
+            <div className="lp__get">
+              <Stores />
+              <div className="qr" aria-label={`QR code: scan to open ${site.magicHost} on your phone`} role="img">
+                <span dangerouslySetInnerHTML={{ __html: qr }} />
+                <small>Scan with your phone</small>
               </div>
-            ) : (
-              // before launch the button opens the waitlist sheet: the free letter (MailCheap), which sends the launch-day email
-              <div className="lp__get">
-                <GetApp className="btn lp__btn" label="Get notified on launch day" />
-                <p className="lp__soon">Coming soon on iPhone and Android</p>
-              </div>
-            )}
-          </div>
-          <div className="lp__film"><HeroFilm /></div>
+            </div>
+          ) : (
+            // before launch: the free letter is the waitlist (MailCheap); it sends the launch-day email
+            <div className="lp__get">
+              <p className="lp__soon">Coming soon on iPhone and Android. Get the launch-day email.</p>
+              <NewsletterForm source="/#get" tag="app-waitlist" fine="Plus Dr. Dana's free letter. Unsubscribe in 1 click." />
+            </div>
+          )}
+          <ul className="lp__wins" aria-label="What women come for">
+            {WINS.map((w) => (
+              <li key={w.text}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={`/cats/still/${w.cat}.svg`} alt="" width={44} height={44} />
+                <span>{w.text}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="lp__by">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={dana.avatar} alt="" width={40} height={40} />
+            <span>By {dana.name}, urologist at {dana.practice}</span>
+          </p>
         </div>
       </section>
 
