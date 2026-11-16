@@ -10,22 +10,23 @@ import { JsonLd } from '@/components/JsonLd';
 import { graph, organization, person, website } from '@/lib/seo';
 import { site } from '@/lib/site';
 
-// the app's two families, self-hosted (no request to Google), plus Caveat for the hand-drawn sketches.
-// Latin only: the site is in English, and the basic Latin files already cover accents like é and curly quotes.
-const fraunces = localFont({
+// Editorial: Playfair Display for titles, Source Sans 3 for text, self-hosted (no request to Google), plus Caveat
+// for the hand-drawn sketches. Latin only: the site is in English, and the Latin files cover accents and curly quotes.
+const playfair = localFont({
   src: [
-    { path: './fonts/fraunces-latin.woff2', weight: '300 650', style: 'normal' },
-    { path: './fonts/fraunces-italic-latin.woff2', weight: '300 650', style: 'italic' },
+    { path: './fonts/playfair-display-latin-wght-normal.woff2', weight: '400 900', style: 'normal' },
+    { path: './fonts/playfair-display-latin-wght-italic.woff2', weight: '400 900', style: 'italic' },
   ],
-  variable: '--font-fraunces',
+  variable: '--font-playfair',
   display: 'swap',
   fallback: ['Georgia', 'serif'],
 });
-const instrument = localFont({
+const sourceSans = localFont({
   src: [
-    { path: './fonts/instrument-sans-latin.woff2', weight: '400 700', style: 'normal' },
+    { path: './fonts/source-sans-3-latin-wght-normal.woff2', weight: '200 900', style: 'normal' },
+    { path: './fonts/source-sans-3-latin-wght-italic.woff2', weight: '200 900', style: 'italic' },
   ],
-  variable: '--font-instrument',
+  variable: '--font-source-sans',
   display: 'swap',
   fallback: ['-apple-system', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
 });
@@ -61,7 +62,7 @@ export const viewport: Viewport = { themeColor: '#FFFBF6', width: 'device-width'
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${instrument.variable} ${caveat.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${playfair.variable} ${sourceSans.variable} ${caveat.variable}`} suppressHydrationWarning>
       <head>
         {/* motion waits for the page only when JavaScript runs; a safety net shows everything after 2.5 s */}
         <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js');setTimeout(function(){if(window.__hcMotion)return;document.querySelectorAll('[data-rise],.sketch').forEach(function(e){e.classList.add('is-in')})},2500)" }} />

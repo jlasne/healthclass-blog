@@ -1,4 +1,4 @@
-// The resource pages' blocks (server). Every block reuses the letters' look: paper, rose and plum, Fraunces titles,
+// The resource pages' blocks (server). Every block reuses the letters' look: paper, rose and plum, Playfair titles,
 // the cat on its tone, the same boxes and cards. A page shows only the blocks its front matter fills.
 import { Cat } from './Cat';
 import { Icon } from './Icon';

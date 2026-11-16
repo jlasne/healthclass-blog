@@ -2,7 +2,7 @@
 
 The blog, the newsletter, the monthly members' Q&A and the legal pages of **Pelvic Health Class: for Women**, the app
 of Dr. Dana Kivlin, board-certified urologist ([jlasne/healthclass](https://github.com/jlasne/healthclass)).
-Same design language as the app: paper, rose and plum, Fraunces and Instrument Sans, and the class cat in 6-frame loops.
+Same design language as the app: paper, rose and plum, Playfair Display and Source Sans 3 (the "Editorial" pairing), and the class cat in 6-frame loops.
 
 | Page | What |
 |---|---|
