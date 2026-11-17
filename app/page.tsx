@@ -56,11 +56,6 @@ export default async function Home() {
               </li>
             ))}
           </ul>
-          <p className="lp__by">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={dana.avatar} alt="" width={40} height={40} />
-            <span>By {dana.name}, urologist at {dana.practice}</span>
-          </p>
         </div>
       </section>
 
