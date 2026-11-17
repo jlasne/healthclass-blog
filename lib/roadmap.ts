@@ -56,14 +56,14 @@ export function liveDay(month: number, weekday: number, rule: WeekRule, year = Y
   return d;
 }
 
-// The 3 moments spread evenly over the month: the update in week 1 to 2, the program mid-month, the live at the end.
-// The live never sits on a promotion week: it moves a week earlier until it is free (e.g. Thanksgiving, Black Friday).
-export type Spacing = 'even' | 'compact';
+// Only the live is set by Dr. Dana. The other 2 moments spread over the month: the micro update on the 1st Tuesday,
+// the big update on the Tuesday halfway to the live. The live never sits on a promotion week: it moves a week
+// earlier until it is free (e.g. Thanksgiving, Black Friday).
 const inPromo = (d: Date) => {
   const k = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
   return PROMOS.find((p) => k >= p.start && k <= p.end) ?? null;
 };
-export function moments(month: number, weekday: number, rule: WeekRule, spacing: Spacing, year = YEAR) {
+export function moments(month: number, weekday: number, rule: WeekRule, year = YEAR) {
   let live = liveDay(month, weekday, rule, year);
   let movedFor: string | null = null;
   for (let i = 0; i < 3; i++) {
@@ -72,10 +72,10 @@ export function moments(month: number, weekday: number, rule: WeekRule, spacing:
     movedFor = p.name;
     live = new Date(live.getFullYear(), live.getMonth(), live.getDate() - 7);
   }
-  const back = (n: number) => new Date(live.getFullYear(), live.getMonth(), live.getDate() - n);
-  const [u, pr] = spacing === 'even' ? [20, 10] : [7, 3];
-  // the update stays in the live's month (a moved live would push it into the month before)
-  const first = new Date(live.getFullYear(), live.getMonth(), 1);
-  const update = back(u) < first ? first : back(u);
-  return { update, program: back(pr), live, movedFor };
+  const update = new Date(year, month, 1);
+  while (update.getDay() !== 2) update.setDate(update.getDate() + 1);
+  const mid = (update.getDate() + live.getDate()) / 2;
+  const tuesdays = [0, 1, 2, 3].map((w) => update.getDate() + 7 * w).filter((d) => d > update.getDate() && d < live.getDate() - 2);
+  const pick = tuesdays.sort((x, y) => Math.abs(x - mid) - Math.abs(y - mid))[0] ?? update.getDate() + 7;
+  return { update, program: new Date(year, month, pick), live, movedFor };
 }

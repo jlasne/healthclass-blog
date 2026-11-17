@@ -1,11 +1,11 @@
 'use client';
 import { useEffect, useMemo, useState } from 'react';
-import { PLANS, PROMOS, WEEKDAYS, YEAR, moments, type Spacing, type WeekRule } from '@/lib/roadmap';
+import { PLANS, PROMOS, WEEKDAYS, YEAR, moments, type WeekRule } from '@/lib/roadmap';
 import { dana } from '@/lib/site';
 import s from './roadmap.module.css';
 
 // The 2027 calendar. Pick Dr. Dana's live day; the micro update and the new program follow it. The choice is kept in
-// the address (?day=4&week=last&gap=even), so the link you share opens on the same plan.
+// the address (?day=4&week=last), so the link you share opens on the same plan.
 const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 const iso = (d: Date) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
 const short = (d: Date) => d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
@@ -14,7 +14,6 @@ type Kind = 'live' | 'update' | 'program' | 'promo';
 export function Roadmap() {
   const [day, setDay] = useState(4);
   const [week, setWeek] = useState<WeekRule>('last');
-  const [gap, setGap] = useState<Spacing>('even');
   const [hour, setHour] = useState('7:00 PM ET');
   const [today, setToday] = useState('');
 
@@ -24,23 +23,21 @@ export function Roadmap() {
     if (q.has('day') && d >= 0 && d <= 6) setDay(d);
     const w = q.get('week');
     if (w === 'last' || w === '3' || w === '4') setWeek(w);
-    const g = q.get('gap');
-    if (g === 'even' || g === 'compact') setGap(g);
     if (q.get('hour')) setHour(q.get('hour') as string);
     setToday(iso(new Date()));
   }, []);
   useEffect(() => {
-    const q = new URLSearchParams({ day: String(day), week, gap, hour });
+    const q = new URLSearchParams({ day: String(day), week, hour });
     window.history.replaceState(null, '', `?${q.toString()}`);
-  }, [day, week, gap, hour]);
+  }, [day, week, hour]);
 
-  const months = useMemo(() => PLANS.map((p) => ({ plan: p, m: moments(p.month, day, week, gap) })), [day, week, gap]);
+  const months = useMemo(() => PLANS.map((p) => ({ plan: p, m: moments(p.month, day, week) })), [day, week]);
 
   return (
     <div className={s.root}>
       <section className={s.controls} aria-label="When Dr. Dana does her live">
         <label>
-          <span>Live day</span>
+          <span>Dr. Dana's live day</span>
           <select value={day} onChange={(e) => setDay(Number(e.target.value))}>
             {WEEKDAYS.map((w, i) => <option key={w} value={i}>{w}</option>)}
           </select>
@@ -54,19 +51,12 @@ export function Roadmap() {
           </select>
         </label>
         <label>
-          <span>Spacing</span>
-          <select value={gap} onChange={(e) => setGap(e.target.value as Spacing)}>
-            <option value="even">Spread over the month</option>
-            <option value="compact">All in the last week</option>
-          </select>
-        </label>
-        <label>
           <span>Live time</span>
           <input value={hour} onChange={(e) => setHour(e.target.value)} />
         </label>
       </section>
 
-      <p className={s.note}>Live dates can move when Dr. Dana joins a podcast. Change her day above and the month follows.</p>
+      <p className={s.note}>Live dates can move when Dr. Dana joins a podcast. Only her live is fixed: change her day above and the month follows.</p>
 
       <ul className={s.legend} aria-label="Legend">
         <li data-k="update"><span><b>Micro update</b>: a small change to keep the app in the news, like a new language</span></li>
