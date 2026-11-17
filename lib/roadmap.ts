@@ -56,11 +56,26 @@ export function liveDay(month: number, weekday: number, rule: WeekRule, year = Y
   return d;
 }
 
-// spacing before the live: compact = update 7 days before, program 3 days before; spread = 14 and 7 days
-export type Spacing = 'compact' | 'spread';
+// The 3 moments spread evenly over the month: the update in week 1 to 2, the program mid-month, the live at the end.
+// The live never sits on a promotion week: it moves a week earlier until it is free (e.g. Thanksgiving, Black Friday).
+export type Spacing = 'even' | 'compact';
+const inPromo = (d: Date) => {
+  const k = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  return PROMOS.find((p) => k >= p.start && k <= p.end) ?? null;
+};
 export function moments(month: number, weekday: number, rule: WeekRule, spacing: Spacing, year = YEAR) {
-  const live = liveDay(month, weekday, rule, year);
-  const back = (n: number) => { const d = new Date(live); d.setDate(d.getDate() - n); return d; };
-  const [u, p] = spacing === 'compact' ? [7, 3] : [14, 7];
-  return { update: back(u), program: back(p), live };
+  let live = liveDay(month, weekday, rule, year);
+  let movedFor: string | null = null;
+  for (let i = 0; i < 3; i++) {
+    const p = inPromo(live);
+    if (!p) break;
+    movedFor = p.name;
+    live = new Date(live.getFullYear(), live.getMonth(), live.getDate() - 7);
+  }
+  const back = (n: number) => new Date(live.getFullYear(), live.getMonth(), live.getDate() - n);
+  const [u, pr] = spacing === 'even' ? [20, 10] : [7, 3];
+  // the update stays in the live's month (a moved live would push it into the month before)
+  const first = new Date(live.getFullYear(), live.getMonth(), 1);
+  const update = back(u) < first ? first : back(u);
+  return { update, program: back(pr), live, movedFor };
 }
