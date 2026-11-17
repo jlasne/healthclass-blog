@@ -8,7 +8,7 @@ export function PreferredSource({ tone = 'light' }: { tone?: 'light' | 'dark' })
   return (
     <a className={`pref pref--${tone}`} href={site.preferredSourceUrl} rel="noopener" target="_blank">
       <Icon name="star" />
-      <span>Add us on Google<small>See our letters first in Google Search</small></span>
+      <span>Add us on Google<small>See our letters more often on Google</small></span>
     </a>
   );
 }
