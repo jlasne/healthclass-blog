@@ -10,7 +10,7 @@ export default function Page() {
       <div className="wrap">
         <h1 className="h1" style={{ fontSize: 'clamp(38px, 5vw, 60px)' }}>Roadmap <em>2027</em></h1>
         <p className="lede" style={{ maxWidth: '60ch' }}>
-          Every month: a micro update, a big update, then a live with Dr. Dana. Plus promotions on the big dates of the year. Names are proposals.
+          Every month: a micro update, a big update, then a live with Dr. Dana. Plus promotions on the big dates of the year. The update names are examples for now: we pick the real ones each month.
         </p>
         <div style={{ marginTop: 28 }}><Roadmap /></div>
       </div>

@@ -96,8 +96,8 @@ export function Roadmap() {
                 })}
               </div>
               <ol className={s.list}>
-                <li data-k="update"><time>{short(m.update)}</time><b>Micro update: {plan.update.name}</b><span>{plan.update.line}</span></li>
-                <li data-k="program"><time>{short(m.program)}</time><b>Big update: {plan.program.name}</b><span>{plan.program.line}</span></li>
+                <li data-k="update"><time>{short(m.update)}</time><b>Micro update: {plan.update.name} <i className={s.tpl}>Example</i></b><span>{plan.update.line}</span></li>
+                <li data-k="program"><time>{short(m.program)}</time><b>Big update: {plan.program.name} <i className={s.tpl}>Example</i></b><span>{plan.program.line}</span></li>
                 <li data-k="live" className={s.liveItem}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={dana.avatar} alt="" width={40} height={40} />
