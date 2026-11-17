@@ -3,6 +3,7 @@ import { getArticle, getArticles, related, fmtDate } from '@/lib/articles';
 import { Mdx } from '@/components/Mdx';
 import { Cat } from '@/components/Cat';
 import { Newsletter } from '@/components/Newsletter';
+import { PreferredSource } from '@/components/PreferredSource';
 import { JsonLd } from '@/components/JsonLd';
 import { AppBand } from '@/components/AppBand';
 import { articleLd, breadcrumbs, graph, meta } from '@/lib/seo';
@@ -103,6 +104,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
       </div>
 
       <div className="wrap" style={{ marginTop: 40 }}>
+        <div className="pref__row"><PreferredSource /></div>
         <Newsletter source={`/letters/${a.slug}`} tag="article-end" title={<>Liked this? The next letter lands <em>Wednesday or Sunday</em>.</>} pose="bell" peek />
       </div>
 

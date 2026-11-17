@@ -5,6 +5,8 @@ export const site = {
   url: 'https://www.healthclass.app',
   // the magic link: healthclass.app (no www) sends phones to their store, computers to the home page (see proxy.ts)
   magicHost: 'healthclass.app',
+  // Google "preferred sources": a plain link, no Google script. The domain only (a subdirectory is not eligible).
+  preferredSourceUrl: 'https://www.google.com/preferences/source?q=www.healthclass.app',
   name: 'Health Class',
   appName: 'Pelvic Health Class: for Women',
   appShort: 'Pelvic Health Class',

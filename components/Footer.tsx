@@ -1,6 +1,7 @@
 import { Brand } from './Logo';
 import { Cat } from './Cat';
 import { Icon } from './Icon';
+import { PreferredSource } from './PreferredSource';
 import { dana, site } from '@/lib/site';
 import { FAMILIES, FAMILY_IDS } from '@/lib/resources';
 
@@ -20,6 +21,7 @@ export function Footer() {
             <p className="ft__about">
               The pelvic floor class for women. Laugh, move and feel in control.
             </p>
+            <PreferredSource tone="dark" />
             <div className="ft__social">
               <a href={dana.socials[0].url} rel="me noopener" target="_blank" aria-label="Dr. Dana on Instagram"><Icon name="instagram" /></a>
               <a href={`mailto:${site.email}`} aria-label="Email us"><Icon name="mail" /></a>
