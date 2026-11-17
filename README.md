@@ -54,6 +54,9 @@ NEXT_LOG=next.log node tests/flows.mjs http://localhost:3005    # the forms end 
 4. **Convex:** `npx convex deploy`, then on the production deployment:
    `npx convex env set HC_SERVER_SECRET <random>`, `SUPERWALL_WEBHOOK_KEY <random>`, `HC_ADMIN_TOKEN <random>`,
    and `MAILCHEAP_API_KEY <key>` once the newsletter exists (signups made before wait in Convex and go out within the hour).
+   `ROADMAP_PASSWORD <password>` locks `/roadmap` (change it to lock everyone out).
+   Auto deploy: put the production deploy key in Vercel as `CONVEX_DEPLOY_KEY` (Production only); `vercel.json` then
+   runs `convex deploy` before each production build.
 5. **Vercel:** import this repo. Env: `NEXT_PUBLIC_CONVEX_URL` (production), `HC_SERVER_SECRET` (same value),
    `RESEND_API_KEY`, `QA_FROM_EMAIL`. See `.env.example`.
 6. **Domains (Vercel):** add `www.healthclass.app` and `healthclass.app` to the same project. Do **not** set a Vercel

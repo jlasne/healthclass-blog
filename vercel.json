@@ -1,6 +1,10 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "if [ -n \"$CONVEX_DEPLOY_KEY\" ]; then npx convex deploy --typecheck=disable --cmd 'npm run build'; else npm run build; fi",
   "crons": [
-    { "path": "/api/cron/newsletter", "schedule": "0 9 * * 0,3" }
+    {
+      "path": "/api/cron/newsletter",
+      "schedule": "0 9 * * 0,3"
+    }
   ]
 }

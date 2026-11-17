@@ -15,6 +15,7 @@ import type * as mailcheap from "../mailcheap.js";
 import type * as members from "../members.js";
 import type * as newsletter from "../newsletter.js";
 import type * as qa from "../qa.js";
+import type * as roadmap from "../roadmap.js";
 
 import type {
   ApiFromModules,
@@ -30,6 +31,7 @@ declare const fullApi: ApiFromModules<{
   members: typeof members;
   newsletter: typeof newsletter;
   qa: typeof qa;
+  roadmap: typeof roadmap;
 }>;
 
 /**
