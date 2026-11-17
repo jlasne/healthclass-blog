@@ -17,7 +17,7 @@ function priceLine() {
 }
 
 export const appFacts = {
-  checked: '2026-11-09',
+  checked: '2026-11-17',
   maker: 'Dr. Dana Kivlin, board-certified urologist',
   price: priceLine(),
   trial: 'Week 1 is open to everyone',
@@ -27,8 +27,8 @@ export const appFacts = {
   daily: '1 guided exercise of 5 to 10 minutes, with cues like "Breathe out, then lift"',
   minutes: '5 to 10 minutes a day',
   learning: '1 short lesson a week',
-  tracking: 'Daily check-ins, your progress day by day, an urge log and a fiber tracker',
-  tools: 'A self-check of your pelvic floor, bladder training, a weekly breath test and a fiber tracker',
+  tracking: 'Daily check-ins, your progress day by day, an urge log, a fiber tracker and an optional monthly grip strength test',
+  tools: 'A self-check of your pelvic floor, bladder training, a weekly breath test, a fiber tracker and optional unclench nudges, 3 a day',
   professional: 'A monthly live Q&A with Dr. Dana for members',
   device: 'No device: you train with your own muscles',
   feedback: 'No sensor: you follow the cues on screen and answer daily check-ins',
