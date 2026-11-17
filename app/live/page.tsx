@@ -11,10 +11,11 @@ import { signOut } from './actions';
 import { api, convex, secret } from '@/lib/convex';
 import { breadcrumbs, graph, meta } from '@/lib/seo';
 import { dana, site } from '@/lib/site';
+import { liveLine, livesLeft, livesLeftLine } from '@/lib/lives';
 
 export const metadata = meta({
-  title: 'Live with Dr. Dana: the monthly Q&A for members',
-  description: 'Once a month, Dr. Dana Kivlin, urologist, answers your questions live. For the list: a premium plan in the app and the free letter.',
+  title: 'Live with Dr. Dana: every month of 2027, for members',
+  description: 'A live with Dr. Dana Kivlin, urologist, every month of 2027. Members get the replay of every live from the day they join.',
   path: '/live',
 });
 
@@ -38,6 +39,7 @@ export default async function Page() {
   const date = over ? '' : at({ month: 'long', day: 'numeric' });
   const when = over ? '' : `${at({ weekday: 'long' })} · ${at({ hour: 'numeric', minute: '2-digit', timeZoneName: 'short' })} · ${durMin} min`;
   const appLive = Boolean(site.appStoreUrl || site.playStoreUrl);
+  const left = livesLeft(next?.startsAt ?? null);
 
   if (!portal) {
     return (
@@ -52,6 +54,7 @@ export default async function Page() {
             <h1 className="h1 h1--xl">Next live: <em>{over ? soon : date}</em>.</h1>
             {!over && <p className="lede">{when}. Dr. Dana answers your questions live.</p>}
             {month && <p className="lede">{durMin} minutes. Dr. Dana answers your questions live.</p>}
+            {left > 0 && <p className="next-live">{liveLine(left)}. {livesLeftLine(left)}</p>}
             {!over && <div className="live-hero__count"><Countdown to={startsAt} durationMin={durMin} /></div>}
           </div>
         </section>
@@ -80,7 +83,7 @@ export default async function Page() {
       <div className="read">
         <div className="hero__cat" aria-hidden="true"><Cat pose="calendar" width={210} priority /></div>
         <h1 className="h1" style={{ fontSize: 'clamp(40px, 5.6vw, 64px)' }}>Live with Dr. <em>Dana</em>.</h1>
-        <p className="lede">Once a month, Dr. Dana answers your questions live.</p>
+        <p className="lede">{left > 0 ? `${liveLine(left)}.` : 'Dr. Dana answers your questions live.'}</p>
         {month ? <p className="next-live">Next live: in {month}</p> : next && <p className="next-live">Next live: {fmt(next.startsAt)}</p>}
 
         {portal ? (
@@ -97,7 +100,7 @@ export default async function Page() {
                 <div style={{ marginTop: 14 }}><AskForm /></div>
                 {portal.replays.length > 0 && (
                   <>
-                    <h2 className="h3" style={{ marginTop: 30 }}>Past lives</h2>
+                    <h2 className="h3" style={{ marginTop: 30 }}>Your replays</h2>
                     <ul className="qlist" style={{ marginTop: 14 }}>
                       {portal.replays.map((r) => (<li key={r.replayUrl}><a className="link" href={r.replayUrl} rel="noopener" target="_blank">{r.title}</a><span>{fmt(r.startsAt)}</span></li>))}
                     </ul>

@@ -71,7 +71,7 @@ export default function Page() {
           <p>PostHog, our analytics provider, stores data in the European Union (Frankfurt). It receives the random app ID, your phone&rsquo;s platform and app version, the screens you open, the buttons you tap (their names, never what you type), session lengths, your streak, whether you have a plan, purchase results and crash reports. It discards your IP address. It never receives your answers, your log, your program, your email or your photos. We use it to fix crashes and to make the class easier to follow. PostHog keeps this data for up to 1 year. Delete my data gives your phone a new app ID; to erase the old one at PostHog, email us. The website itself sends nothing to PostHog.</p>
 
           <h2 id="chat">Support chat (iPhone)</h2>
-          <p>On iPhone, Today and Settings open a chat with our team, run by Reception. When the app opens, Reception receives your phone&rsquo;s details: app version, phone model, iOS version, language, region, time zone and whether notifications are on. When you chat, Reception receives what you write and the photos you send. From your first chat, it also receives your email if you added it, your plan, the day you joined, your week and day, your reminder time and your break dates. Never your answers to the first questions or your log. If you mention your health in the chat, we use it only to answer you.</p>
+          <p>On iPhone and Android, Today and Settings open a chat with our team, run by Reception. When the app opens, Reception receives your phone&rsquo;s details: app version, phone model, iOS or Android version, language, region, time zone and whether notifications are on. When you chat, Reception receives what you write and the photos you send. From your first chat, it also receives your email if you added it, your plan, the day you joined, your week and day, your reminder time and your break dates. Never your answers to the first questions or your log. If you mention your health in the chat, we use it only to answer you.</p>
 
           <h2 id="website">The website</h2>
           <ul>
@@ -102,7 +102,7 @@ export default function Page() {
                 <tr><td>Vercel</td><td>Website hosting, visit counts</td><td>Technical request data; page views with no cookies and no IP address</td></tr>
                 <tr><td>MailCheap</td><td>The website signup form, sending Class Notes</td><td>Email, signup page and date</td></tr>
                 <tr><td>Resend</td><td>Sending Q&amp;A sign-in links</td><td>Email</td></tr>
-                <tr><td>Reception</td><td>Support chat on iPhone</td><td>See Support chat above</td></tr>
+                <tr><td>Reception</td><td>Support chat on iPhone and Android</td><td>See Support chat above</td></tr>
               </tbody>
             </table>
           </div>

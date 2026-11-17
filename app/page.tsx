@@ -1,4 +1,5 @@
 import QRCode from 'qrcode';
+import { liveLine, livesLeft, livesLeftLine } from '@/lib/lives';
 import { Cat } from '@/components/Cat';
 import { Stores } from '@/components/Stores';
 import { NewsletterForm } from '@/components/NewsletterForm';
@@ -23,6 +24,9 @@ const WINS = [
   { text: 'Get back to sport', cat: 'stretch' },
   { text: 'Feel in control', cat: 'lift' },
 ];
+
+// the live card counts the lives left in 2027: the page refreshes every hour
+export const revalidate = 3600;
 
 export default async function Home() {
   const live = Boolean(site.appStoreUrl || site.playStoreUrl);
@@ -72,7 +76,7 @@ export default async function Home() {
           </a>
           <a className="door" href="/live">
             <span className="tone-disc tone--plum" aria-hidden="true"><Cat pose="calendar" width={76} /></span>
-            <div><b>Join the lives</b><span>Ask Dr. Dana, once a month</span></div>
+            <div><b>{liveLine(livesLeft())}</b><span>{livesLeftLine(livesLeft()) || 'Ask Dr. Dana your questions'}</span></div>
           </a>
         </div>
       </section>

@@ -77,10 +77,14 @@ export const portal = query({
     const next = await nextEventOf(ctx);
     const past = await ctx.db.query('qaEvents').withIndex('by_startsAt', (q) => q.lt('startsAt', Date.now() - 3 * 3600_000)).order('desc').take(12);
     const mine = await ctx.db.query('qaQuestions').withIndex('by_email', (q) => q.eq('email', email)).order('desc').take(20);
+    // her replays: every live since her first plan day (her first member row), the months between 2 plans included, and a
+    // live held the day she joins (Dr. Dana, November 2026: "Join today: every replay from today.")
+    const rows = await ctx.db.query('members').withIndex('by_email', (q) => q.eq('email', email)).collect();
+    const since = (rows.length ? Math.min(...rows.map((m) => m._creationTime)) : Date.now()) - 24 * 3600_000;
     return {
       email,
       next: next ? { id: next._id, startsAt: next.startsAt, durationMin: next.durationMin, title: next.title, topic: next.topic ?? null, joinUrl: next.joinUrl ?? null } : null,
-      replays: past.filter((e) => e.replayUrl).map((e) => ({ startsAt: e.startsAt, title: e.title, replayUrl: e.replayUrl! })),
+      replays: past.filter((e) => e.replayUrl && e.startsAt >= since).map((e) => ({ startsAt: e.startsAt, title: e.title, replayUrl: e.replayUrl! })),
       questions: mine.map((q) => ({ text: q.text, status: q.status, createdAt: q.createdAt })),
     };
   },

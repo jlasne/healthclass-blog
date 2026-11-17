@@ -53,7 +53,7 @@ export default function Page() {
           </ul>
 
           <h2 id="members">5. Members&rsquo; benefits: the live Q&amp;A</h2>
-          <p>Members with an active paid plan can join a live Q&amp;A with Dr. Dana, usually once a month, and watch its replays while their plan is active. Dates, length and format may change; we announce each date by email. We may decline or shorten a question that is off-topic, that asks for a personal diagnosis, or that names another person. Recording the session yourself, or sharing its link or replays, needs our written consent.</p>
+          <p>Members with an active paid plan can join a live Q&amp;A with Dr. Dana, once a month in 2027. While their plan is active, they can watch the replay of every live held since their first plan day, including any months between two plans. Dates, length and format may change; we announce each date by email. We may decline or shorten a question that is off-topic, that asks for a personal diagnosis, or that names another person. Recording the session yourself, or sharing its link or replays, needs our written consent.</p>
 
           <h2 id="newsletter">6. The newsletter</h2>
           <p>Class Notes is free. You can unsubscribe at any time with the link at the bottom of each letter. We may change its cadence or format.</p>
