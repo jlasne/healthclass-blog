@@ -2,7 +2,11 @@ import { Cat } from '@/components/Cat';
 import { Icon } from '@/components/Icon';
 import { Smile } from '@/components/Smile';
 import { Newsletter } from '@/components/Newsletter';
-import { dana } from '@/lib/site';
+import { GetApp } from '@/components/Waitlist';
+import { dana, site } from '@/lib/site';
+
+// before launch the app button opens the launch-day email sheet
+const live = Boolean(site.appStoreUrl || site.playStoreUrl);
 
 // Dr. Dana's page body, in her own words (her bio, November 2026): who she is and where to follow her, why the
 // class, her recommendations (her fiber guide, her Amazon list, her chair), then the letter. Used by /dana-kivlin.
@@ -69,19 +73,31 @@ export function DanaBio() {
       <section className="sec" aria-labelledby="recs">
         <div className="wrap">
           <div className="sec__hd"><div><h2 id="recs" className="h2">My recommendations</h2><p>What I give my patients, and what I use myself.</p></div></div>
-          <div className="related related--recs">
-            <a className="card tone--sky" href="/dana-kivlin/fiber">
-              <span className="card__art" aria-hidden="true"><Cat pose="reading" width={118} /></span>
-              <b>My fiber guide</b>
-              <span>The guide I give every patient: 25 to 35 g a day →</span>
-            </a>
-            {dana.shop.map((s, i) => (
-              <a key={s.url} className={`card tone--${['rosy', 'plum'][i % 2]}`} href={s.url} rel="sponsored noopener" target="_blank">
-                <span className="card__art" aria-hidden="true"><Cat pose={(['gift', 'stretch'] as const)[i % 2]} width={118} /></span>
-                <b>{s.label}</b>
-                <span>{s.handle} ↗</span>
+          {/* the app first and big; the 3 other picks smaller beside it (stacked below on a phone) */}
+          <div className="recs">
+            <div className="card recs__app tone--rosy">
+              <span className="card__art" aria-hidden="true"><Cat pose="cheer" width={168} /></span>
+              <span className="eyebrow">My app</span>
+              <b>Pelvic Health Class: for Women</b>
+              <ul className="recs__wins">
+                <li>Laugh without worrying</li>
+                <li>Get back to sport</li>
+                <li>Feel in control</li>
+              </ul>
+              <GetApp className="btn recs__cta" label={live ? 'Get the app' : 'Get the launch-day email'} />
+            </div>
+            <div className="recs__side">
+              <a className="recs__mini tone--sky" href="/dana-kivlin/fiber">
+                <span className="tone-disc" aria-hidden="true"><Cat pose="reading" width={64} /></span>
+                <div><b>My fiber guide</b><span>The guide I give every patient: 25 to 35 g a day →</span></div>
               </a>
-            ))}
+              {dana.shop.map((s, i) => (
+                <a key={s.url} className={`recs__mini tone--${['rosy', 'plum'][i % 2]}`} href={s.url} rel="sponsored noopener" target="_blank">
+                  <span className="tone-disc" aria-hidden="true"><Cat pose={(['gift', 'stretch'] as const)[i % 2]} width={64} /></span>
+                  <div><b>{s.label}</b><span>{s.handle} ↗</span></div>
+                </a>
+              ))}
+            </div>
           </div>
           <p className="nl-fine" style={{ margin: '14px 0 0' }}>The Amazon and Anthros links earn me a small commission. As an Amazon Associate I earn from qualifying purchases.</p>
         </div>
