@@ -2,8 +2,11 @@ import { Cat } from '@/components/Cat';
 import { Icon } from '@/components/Icon';
 import { Smile } from '@/components/Smile';
 import { Newsletter } from '@/components/Newsletter';
-import { GetApp, live } from '@/components/Waitlist';
-import { dana } from '@/lib/site';
+import { GetApp } from '@/components/Waitlist';
+import { dana, site } from '@/lib/site';
+
+// before launch the app button opens the launch-day email sheet
+const live = Boolean(site.appStoreUrl || site.playStoreUrl);
 
 // Dr. Dana's page body, in her own words (her bio, November 2026): who she is and where to follow her, why the
 // class, her recommendations (her fiber guide, her Amazon list, her chair), then the letter. Used by /dana-kivlin.
