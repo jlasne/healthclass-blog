@@ -30,7 +30,7 @@ export default async function Page() {
   const durMin = next?.durationMin ?? 45;
   const startsAt = next?.startsAt ?? fallback;
   // after the live ends, and until the next one is set, the page says "date soon" instead of an old date
-  // only the month set (site.qa.month): "in December", no date and no countdown
+  // only the month set (site.qa.month): "in January", no date and no countdown
   const month = site.qa.month;
   const over = Boolean(month) || !Number.isFinite(startsAt) || Date.now() > startsAt + durMin * 60_000;
   const soon = month ? `in ${month}` : 'date soon';
