@@ -17,11 +17,11 @@ function priceLine() {
 }
 
 export const appFacts = {
-  checked: '2026-11-17',
+  checked: '2026-11-18',
   maker: 'Dr. Dana Kivlin, board-certified urologist',
   price: priceLine(),
   trial: 'Week 1 is open to everyone',
-  phones: 'iPhone (iOS 17 or later) and Android',
+  phones: 'iPhone (iOS 17 or later) and Android (8.0 or later)',
   classes: '2 classes of 6 weeks: Pelvic Floor 101 and Bladder leaks',
   classNames: 'Pelvic Floor 101 and Bladder leaks',
   daily: '1 guided exercise of 5 to 10 minutes, with cues like "Breathe out, then lift"',
@@ -29,7 +29,7 @@ export const appFacts = {
   learning: '1 short lesson a week',
   tracking: 'Daily check-ins, your progress day by day, an urge log, a fiber tracker and an optional monthly grip strength test',
   tools: 'A self-check of your pelvic floor, bladder training, a weekly breath test, a fiber tracker and optional unclench nudges, 3 a day',
-  professional: 'A monthly live Q&A with Dr. Dana for members',
+  professional: 'A live Q&A with Dr. Dana every month of 2027 for members, with replays, and a chat where Dr. Dana and her team reply',
   device: 'No device: you train with your own muscles',
   feedback: 'No sensor: you follow the cues on screen and answer daily check-ins',
   languages: 'English',
