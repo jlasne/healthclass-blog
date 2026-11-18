@@ -133,7 +133,7 @@ gives way to the store link on every page. Report it.
 - [x] 017 · `classes/pelvic-floor-101` · pelvic floor 101 / pelvic floor program
 - [x] 018 · `tools/kegel-plan-by-age` · kegel exercise plan according to your age
 - [x] 158 · `tools/fiber-calculator` · how much fiber per day for constipation (do this next: Dr. Dana's fiber guide is live at `/dana-kivlin/fiber`; a short tool page "how many grams of fiber do I eat" that reuses `lib/fiber.ts`, explains why constipation strains the pelvic floor, and links the full guide)
-- [ ] 159 · `classes/printable-pelvic-floor-exercises` · printable pelvic floor exercises pdf (Dr. Dana's printable sheets from the app's exercises; also link the free sheets of the National Association For Continence, https://nafc.org/downloadable-pelvic-floor-exercises/, as "more free sheets" with credit. Their page blocks automated readers: open it in a browser, describe only what it shows, never copy it)
+- [x] 159 · `classes/printable-pelvic-floor-exercises` · printable pelvic floor exercises pdf (Dr. Dana's printable sheets from the app's exercises; also link the free sheets of the National Association For Continence, https://nafc.org/downloadable-pelvic-floor-exercises/, as "more free sheets" with credit. Their page blocks automated readers: open it in a browser, describe only what it shows, never copy it)
 - [ ] 019 · `tools/weak-or-tight-pelvic-floor-quiz` · how to know your pelvic floor is weak or tight
 - [ ] 020 · `compare/kegels-vs-pelvic-floor-exercises` · kegels vs pelvic floor exercises
 - [ ] 021 · `made-for-you/desk-workers` · is sitting bad for pelvic floor

@@ -6,6 +6,7 @@ import { LeakQuiz } from './LeakQuiz';
 import { KegelTimer } from './KegelTimer';
 import { KegelPlan } from './KegelPlan';
 import { FiberCalc } from './FiberCalc';
+import { ExerciseSheet } from './ExerciseSheet';
 
 const page = (ref: string, fallback: string) => resolve(ref)?.path ?? fallback;
 const letter = (slug: string) => (getArticle(slug) ? `/letters/${slug}` : undefined);
@@ -42,5 +43,6 @@ export function Tool({ id }: { id: string }) {
   if (id === 'fiber-calculator') {
     return <FiberCalc links={{ guide: '/dana-kivlin/fiber', classes: page('classes/pelvic-floor-101', '/resources/classes') }} />;
   }
+  if (id === 'exercise-sheet') return <ExerciseSheet />;
   return null;
 }

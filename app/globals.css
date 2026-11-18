@@ -1024,6 +1024,24 @@ a, button, summary, input, textarea, label { touch-action: manipulation; }
 .tool__go { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
 .tool__more { display: grid; gap: 6px; margin: 18px 0 0; padding: 0; list-style: none; font-size: 15.5px; }
 .tool__again { display: block; margin-top: 10px; }
+/* the printable exercise sheet (classes/printable-pelvic-floor-exercises): a tick chart of 12 weeks x 7 days */
+.sheet .sheet__when { margin-top: 0; }
+.sheet .sheet__cues { margin: 18px 0 0; }
+.sheet__chart { display: grid; gap: 4px; margin: 18px 0 0; }
+.sheet__row { display: grid; grid-template-columns: 52px repeat(7, minmax(0, 1fr)); gap: 4px; align-items: center; }
+.sheet__row span { font: 600 13px/1 var(--sans); color: var(--muted-dk); text-align: center; }
+.sheet__row span:first-child { text-align: left; }
+.sheet__row i { height: 22px; border-radius: 6px; box-shadow: inset 0 0 0 1.4px var(--hair-2); background: var(--white); }
+.sheet__row--hd span { color: var(--plum); letter-spacing: .06em; }
+#print-root { display: none; }
+@media print {
+  html.print-sheet body > *:not(#print-root) { display: none !important; }
+  html.print-sheet #print-root { display: block; }
+  #print-root .sheet { margin: 0; padding: 0; box-shadow: none; background: #fff; }
+  #print-root .sheet__go { display: none; }
+  #print-root .weeks__list li { padding-top: 10px; padding-bottom: 10px; }
+  .sheet__row i { box-shadow: inset 0 0 0 1px #999; }
+}
 @media (max-width: 480px) {
   .opts--2 { grid-template-columns: 1fr 1fr; }
   .tool__go .btn { flex: 1 1 100%; }
