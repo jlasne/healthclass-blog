@@ -5,6 +5,8 @@ export const site = {
   url: 'https://www.healthclass.app',
   // the magic link: healthclass.app (no www) sends phones to their store, computers to the home page (see proxy.ts)
   magicHost: 'healthclass.app',
+  // IndexNow: the key is public by design; public/<key>.txt holds it, so Bing and others can check the site is ours.
+  indexNowKey: '227531c6ffde09c040da5b2964824773',
   // Google "preferred sources": a plain link, no Google script. The domain only (a subdirectory is not eligible).
   preferredSourceUrl: 'https://www.google.com/preferences/source?q=www.healthclass.app',
   name: 'Health Class',
