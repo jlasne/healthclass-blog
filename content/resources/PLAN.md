@@ -25,7 +25,7 @@ The founders do not review each page: the rules and the check below are the revi
    - a class that opens in the app: set its page to `status: live` and update `programs` in `lib/site.ts`; a new
      class or feature: add it to the classes and to the list below if it deserves a page;
    - commit `Resources: app facts updated (<what changed>)` and say it in the report.
-1. **Pick** the first unchecked line in the list below. Skip a line marked "ONLY if the module ships" when the module is
+1. **Pick** the first unchecked line in the list below that is not marked "on hold". Skip a line marked "ONLY if the module ships" when the module is
    not in the app's current content (`www/js/content-*.js` in jlasne/healthclass, not `www/js/next/`); tick it as skipped.
 2. **Research** the search: read the top results, note the questions people ask (the FAQ), and find 2 to 5 sources
    (guidelines, PubMed, the app store listing, the maker's own site). For a comparison, check every fact about the other
@@ -134,8 +134,8 @@ gives way to the store link on every page. Report it.
 - [x] 018 · `tools/kegel-plan-by-age` · kegel exercise plan according to your age
 - [x] 158 · `tools/fiber-calculator` · how much fiber per day for constipation (do this next: Dr. Dana's fiber guide is live at `/dana-kivlin/fiber`; a short tool page "how many grams of fiber do I eat" that reuses `lib/fiber.ts`, explains why constipation strains the pelvic floor, and links the full guide)
 - [x] 159 · `classes/printable-pelvic-floor-exercises` · printable pelvic floor exercises pdf (Dr. Dana's printable sheets from the app's exercises; also link the free sheets of the National Association For Continence, https://nafc.org/downloadable-pelvic-floor-exercises/, as "more free sheets" with credit. Their page blocks automated readers: open it in a browser, describe only what it shows, never copy it)
-- [ ] 019 · `tools/weak-or-tight-pelvic-floor-quiz` · how to know your pelvic floor is weak or tight
-- [ ] 020 · `compare/kegels-vs-pelvic-floor-exercises` · kegels vs pelvic floor exercises
+- [ ] 019 · `tools/weak-or-tight-pelvic-floor-quiz` · how to know your pelvic floor is weak or tight (on hold: waits for Dr. Dana to confirm the path for a tight pelvic floor, see the top of `content/dana/reels-tips.md`; skip it until then)
+- [x] 020 · `compare/kegels-vs-pelvic-floor-exercises` · kegels vs pelvic floor exercises
 - [ ] 021 · `made-for-you/desk-workers` · is sitting bad for pelvic floor
 
 ### Sudden urges

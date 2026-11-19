@@ -92,7 +92,7 @@ function CompareMany({ r }: { r: Resource }) {
     <section className="vs" aria-labelledby="vs-t">
       <div className="vs__hd">
         <h2 id="vs-t" className="h3">{sides.map((x) => x.name).filter((n) => n !== US).join(', ')}{sides.some((x) => x.name === US) ? ' and Health Class' : ''}, <em>side by side</em></h2>
-        {checked && <Checked them="Other apps'" theirs={checked} ours={r.appChecked} />}
+        {checked && <Checked them="The other sides'" theirs={checked} ours={r.appChecked} />}
       </div>
       <div className="vs__tbl">
         <table className={sides.length > 3 ? 'vs--wide' : undefined}>
