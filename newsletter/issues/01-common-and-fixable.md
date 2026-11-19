@@ -2,6 +2,9 @@
 subject: "Common, and fixable"
 preview: "6 in 10 US women leaked in the past year. Here is why that also makes leaks fixable."
 slug: "common-and-fixable"
+topic: "Leaks"
+cat: "laugh"
+tone: "rosy"
 ---
 Hi {{first_name|there}},
 

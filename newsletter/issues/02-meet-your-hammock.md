@@ -2,6 +2,9 @@
 subject: "Meet your hammock"
 preview: "3 jobs, 1 picture, and a 60-second way to feel your pelvic floor lift and let go."
 slug: "meet-your-hammock"
+topic: "Basics"
+cat: "hammock"
+tone: "sky"
 ---
 Hi {{first_name|there}},
 

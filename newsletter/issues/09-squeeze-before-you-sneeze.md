@@ -2,6 +2,9 @@
 subject: "Squeeze before you sneeze"
 preview: "A 1-second squeeze, timed right, cut leakage by 98% on a medium cough in one small study."
 slug: "squeeze-before-you-sneeze"
+topic: "The Knack"
+cat: "cheer"
+tone: "rosy"
 ---
 Hi {{first_name|there}},
 

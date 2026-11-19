@@ -2,6 +2,9 @@
 subject: "Which leak is yours?"
 preview: "3 questions about when you leak. Your answers point to a pattern: stress, urge or mixed. No email."
 slug: "leak-type-quiz"
+topic: "Tools"
+cat: "think"
+tone: "plum"
 ---
 Hi {{first_name|there}},
 

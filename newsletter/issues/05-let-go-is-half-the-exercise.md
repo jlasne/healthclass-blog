@@ -2,6 +2,9 @@
 subject: "Let go is half the exercise"
 preview: "Every rep has 2 halves. Why I time the let-go at twice the lift, and a 2-minute drill to practice it."
 slug: "let-go-is-half-the-exercise"
+topic: "Relaxation"
+cat: "sleep"
+tone: "sky"
 ---
 Hi {{first_name|there}},
 

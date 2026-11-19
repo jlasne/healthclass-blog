@@ -1,13 +1,14 @@
 // llms.txt: a plain map of the site for AI answer engines (ChatGPT, Perplexity, Google's AI answers), so they find,
 // understand and cite the letters. Updates with the letters.
 import { getArticles } from '@/lib/articles';
+import { sentIssues } from '@/lib/newsletter';
 import { FAMILIES, FAMILY_IDS, getResources } from '@/lib/resources';
 import { absoluteUrl, dana, site } from '@/lib/site';
 
 export const revalidate = 3600;
 
 export function GET() {
-  const letters = getArticles().map((a) => `- [${a.title}](${absoluteUrl(`/letters/${a.slug}`)}): ${a.description}`).join('\n');
+  const letters = [...getArticles().map((a) => `- [${a.title}](${absoluteUrl(`/letters/${a.slug}`)}): ${a.description}`), ...sentIssues().map((i) => `- [${i.subject}](${absoluteUrl(`/letters/${i.slug}`)}): ${i.preview}`)].join('\n');
   const resources = FAMILY_IDS.map((f) => {
     const list = getResources(f);
     if (!list.length) return '';

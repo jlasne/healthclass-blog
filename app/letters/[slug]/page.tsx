@@ -8,16 +8,26 @@ import { JsonLd } from '@/components/JsonLd';
 import { AppBand } from '@/components/AppBand';
 import { articleLd, breadcrumbs, graph, meta } from '@/lib/seo';
 import { dana } from '@/lib/site';
+import { IssuePage } from '@/components/IssuePage';
+import { getIssue, getIssues, sentIssues } from '@/lib/newsletter';
+import { dt, danaId, orgId } from '@/lib/seo';
+import { absoluteUrl } from '@/lib/site';
 
 export const revalidate = 3600;
 export const dynamicParams = true;
 export function generateStaticParams() {
-  return getArticles().map((a) => ({ slug: a.slug }));
+  return [...getArticles().map((a) => ({ slug: a.slug })), ...getIssues().map((i) => ({ slug: i.slug }))];
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
-  const a = getArticle((await params).slug);
-  if (!a) return {};
+  const slug = (await params).slug;
+  const a = getArticle(slug);
+  if (!a) {
+    const i = getIssue(slug);
+    if (!i) return {};
+    const m = meta({ title: i.subject, description: i.preview, path: `/letters/${i.slug}`, type: 'article' });
+    return { ...m, authors: [{ name: dana.name, url: '/dana-kivlin' }], openGraph: { ...m.openGraph, type: 'article', publishedTime: i.date, authors: ['/dana-kivlin'], section: i.topic } };
+  }
   const m = meta({ title: a.seoTitle, description: a.description, path: `/letters/${a.slug}`, type: 'article' });
   return {
     ...m,
@@ -28,8 +38,27 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 }
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
-  const a = getArticle((await params).slug);
-  if (!a) notFound();
+  const slug = (await params).slug;
+  const a = getArticle(slug);
+  if (!a) {
+    const issue = getIssue(slug);
+    if (!issue) notFound();
+    const all = getIssues();
+    const at = all.indexOf(issue);
+    const sent = new Set(sentIssues().map((x) => x.slug));
+    const url = absoluteUrl(`/letters/${issue.slug}`);
+    return (
+      <>
+        <IssuePage issue={issue} prev={all[at - 1] && sent.has(all[at - 1].slug) ? all[at - 1] : null} next={all[at + 1] && sent.has(all[at + 1].slug) ? all[at + 1] : null} />
+        <JsonLd
+          data={graph(
+            { '@type': 'BlogPosting', '@id': `${url}#article`, headline: issue.subject, description: issue.preview, url, mainEntityOfPage: url, image: absoluteUrl(`/letters/${issue.slug}/opengraph-image`), datePublished: dt(issue.date), dateModified: dt(issue.date), inLanguage: 'en-US', articleSection: issue.topic, author: { '@id': danaId }, publisher: { '@id': orgId }, citation: issue.sources.map((x) => ({ '@type': 'CreativeWork', name: x.text, ...(x.url ? { url: x.url } : {}) })) },
+            breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Letters', path: '/letters' }, { name: issue.subject, path: `/letters/${issue.slug}` }]),
+          )}
+        />
+      </>
+    );
+  }
   const more = related(a);
   return (
     <article className={`tone--${a.tone}`}>

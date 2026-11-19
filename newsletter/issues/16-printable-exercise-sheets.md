@@ -2,6 +2,9 @@
 subject: "Exercises you can print"
 preview: "Free pelvic floor exercise sheets from a US non-profit, ready to print and tape to your fridge."
 slug: "printable-exercise-sheets"
+topic: "Tools"
+cat: "write"
+tone: "sky"
 ---
 Hi {{first_name|there}},
 

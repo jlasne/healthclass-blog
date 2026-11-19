@@ -2,6 +2,9 @@
 subject: "Build a 25-gram day"
 preview: "Your goal is 25 to 35 grams of fiber a day. Here is 1 day from my food chart that gets you there."
 slug: "build-a-25-gram-day"
+topic: "Fiber"
+cat: "write"
+tone: "blush"
 ---
 Hi {{first_name|there}},
 

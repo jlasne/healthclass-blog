@@ -2,6 +2,9 @@
 subject: "56 versus 6"
 preview: "56% of women who trained reported cure. 6% without training. If you keep 1 number, keep this one."
 slug: "56-versus-6"
+topic: "Kegels"
+cat: "cheer"
+tone: "rosy"
 ---
 Hi {{first_name|there}},
 

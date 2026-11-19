@@ -2,6 +2,9 @@
 subject: "Laugh out loud again"
 preview: "A long laugh can last 10 seconds or more. Here is how to keep your squeeze until it ends."
 slug: "laugh-out-loud-again"
+topic: "Leaks"
+cat: "laugh"
+tone: "blush"
 ---
 Hi {{first_name|there}},
 

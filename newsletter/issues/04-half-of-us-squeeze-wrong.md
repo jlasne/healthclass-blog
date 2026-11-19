@@ -2,6 +2,9 @@
 subject: "Half of us squeeze wrong"
 preview: "In one study, 23 of 47 women did a correct Kegel after brief instructions. Here is how to join them."
 slug: "half-of-us-squeeze-wrong"
+topic: "Kegels"
+cat: "lift"
+tone: "plum"
 ---
 Hi {{first_name|there}},
 

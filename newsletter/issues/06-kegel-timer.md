@@ -2,6 +2,9 @@
 subject: "Squeeze while the circle fills"
 preview: "A free Kegel timer in your browser: 3, 5 or 10-second holds. No app, no email, nothing saved."
 slug: "kegel-timer"
+topic: "Tools"
+cat: "calendar"
+tone: "blush"
 ---
 Hi {{first_name|there}},
 

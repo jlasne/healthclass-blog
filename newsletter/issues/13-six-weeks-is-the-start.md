@@ -2,6 +2,9 @@
 subject: "Six weeks is the start"
 preview: "Every trial behind Kegels ran 3 to 6 months. Here is the 12-week timeline, stage by stage."
 slug: "six-weeks-is-the-start"
+topic: "Kegels"
+cat: "calendar"
+tone: "plum"
 ---
 Hi {{first_name|there}},
 

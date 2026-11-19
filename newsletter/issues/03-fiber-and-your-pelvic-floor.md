@@ -2,6 +2,9 @@
 subject: "Fiber and your pelvic floor"
 preview: "25 to 35 grams a day: the fiber guide I give every patient, and why a urologist cares."
 slug: "fiber-and-your-pelvic-floor"
+topic: "Fiber"
+cat: "think"
+tone: "blush"
 ---
 Hi {{first_name|there}},
 

@@ -2,6 +2,9 @@
 subject: "Stop stopping your pee"
 preview: "You have read this Kegel tip for years. As a urologist, I would retire it. Here are 3 better ways."
 slug: "stop-stopping-your-pee"
+topic: "Habits"
+cat: "worry"
+tone: "sky"
 ---
 Hi {{first_name|there}},
 

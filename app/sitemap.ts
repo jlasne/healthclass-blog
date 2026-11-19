@@ -3,6 +3,7 @@
 // this file. A resource family appears once it has its first page.
 import type { MetadataRoute } from 'next';
 import { getArticles } from '@/lib/articles';
+import { sentIssues } from '@/lib/newsletter';
 import { FAMILY_IDS, getResources } from '@/lib/resources';
 import { legal } from '@/lib/legal';
 import { absoluteUrl } from '@/lib/site';
@@ -24,6 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
       images: [absoluteUrl(`/letters/${a.slug}/opengraph-image`)],
     })),
+    ...sentIssues().map((i) => ({ url: absoluteUrl(`/letters/${i.slug}`), lastModified: i.date, changeFrequency: 'monthly' as const, priority: 0.7, images: [absoluteUrl(`/letters/${i.slug}/opengraph-image`)] })),
     ...(resources.length ? [page('/resources', resources[0].updated, 'weekly', 0.9)] : []),
     ...FAMILY_IDS.map((f) => resources.filter((r) => r.family === f)).filter((l) => l.length).map((l) => page(`/resources/${l[0].family}`, l.reduce((m, r) => (r.updated > m ? r.updated : m), l[0].updated), 'weekly', 0.8)),
     ...resources.map((r) => ({

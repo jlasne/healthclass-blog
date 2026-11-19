@@ -2,6 +2,9 @@
 subject: "New here? Start with these 3"
 preview: "What Class Notes is, and the 3 letters I would read first, in order."
 slug: "start-here"
+topic: "Start here"
+cat: "hello"
+tone: "rosy"
 ---
 Hi {{first_name|there}},
 

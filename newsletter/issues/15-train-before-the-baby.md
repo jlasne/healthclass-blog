@@ -2,6 +2,9 @@
 subject: "Train before the baby"
 preview: "In a review of 11 trials, training in pregnancy cut the risk of leaks in late pregnancy by 22%."
 slug: "train-before-the-baby"
+topic: "Pregnancy"
+cat: "heart"
+tone: "rosy"
 ---
 Hi {{first_name|there}},
 
