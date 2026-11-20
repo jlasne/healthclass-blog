@@ -136,7 +136,7 @@ gives way to the store link on every page. Report it.
 - [x] 159 · `classes/printable-pelvic-floor-exercises` · printable pelvic floor exercises pdf (Dr. Dana's printable sheets from the app's exercises; also link the free sheets of the National Association For Continence, https://nafc.org/downloadable-pelvic-floor-exercises/, as "more free sheets" with credit. Their page blocks automated readers: open it in a browser, describe only what it shows, never copy it)
 - [ ] 019 · `tools/weak-or-tight-pelvic-floor-quiz` · how to know your pelvic floor is weak or tight (on hold: waits for Dr. Dana to confirm the path for a tight pelvic floor, see the top of `content/dana/reels-tips.md`; skip it until then)
 - [x] 020 · `compare/kegels-vs-pelvic-floor-exercises` · kegels vs pelvic floor exercises
-- [ ] 021 · `made-for-you/desk-workers` · is sitting bad for pelvic floor
+- [x] 021 · `made-for-you/desk-workers` · is sitting bad for pelvic floor
 
 ### Sudden urges
 
