@@ -1033,12 +1033,30 @@ a, button, summary, input, textarea, label { touch-action: manipulation; }
 .sheet__row span:first-child { text-align: left; }
 .sheet__row i { height: 22px; border-radius: 6px; box-shadow: inset 0 0 0 1.4px var(--hair-2); background: var(--white); }
 .sheet__row--hd span { color: var(--plum); letter-spacing: .06em; }
+/* the 3-day bladder diary (tools/bladder-diary): a small table on screen, 3 pages on paper */
+.diary__wrap { margin: 16px 0 0; }
+.diary__tbl { width: 100%; border-collapse: collapse; table-layout: fixed; font: 500 13.5px/1.3 var(--sans); color: var(--ink-2); }
+.diary__tbl th { padding: 8px 6px; text-align: left; font: 600 12px/1.2 var(--sans); letter-spacing: .04em; color: var(--plum); background: var(--plum-mist); }
+.diary__tbl td { height: 34px; padding: 6px; border-top: 1px solid var(--hair-2); overflow-wrap: anywhere; }
+.diary__tbl th:first-child, .diary__tbl td:first-child { width: 15%; }
+.diary__ex td { color: var(--muted); font-style: italic; }
+.diary .diary__legend { margin: 16px 0 0; }
 #print-root { display: none; }
 @media print {
   html.print-sheet body > *:not(#print-root) { display: none !important; }
   html.print-sheet #print-root { display: block; }
   #print-root .sheet { margin: 0; padding: 0; box-shadow: none; background: #fff; }
   #print-root .sheet__go { display: none; }
+  html.print-sheet, html.print-sheet body { background: #fff !important; }
+  #print-root .diary__pages { display: block; }
+  #print-root .diary__page { break-after: page; padding: 0; }
+  #print-root .diary__page:last-child { break-after: auto; }
+  #print-root .diary__hd { display: flex; justify-content: space-between; gap: 12px; margin: 0 0 10px; font: 500 12px/1.3 var(--sans); }
+  #print-root .diary__hd b { font: 600 15px/1.2 var(--sans); }
+  #print-root .diary__tbl--print td { height: 33px; border: 1px solid #999; }
+  #print-root .diary__tbl--print th { border: 1px solid #999; }
+  #print-root .diary__tbl--print th:nth-child(2), #print-root .diary__tbl--print th:last-child { width: 26%; }
+  #print-root .diary__foot { margin: 8px 0 0; font: 500 10.5px/1.4 var(--sans); color: #555; }
   #print-root .weeks__list li { padding-top: 10px; padding-bottom: 10px; }
   .sheet__row i { box-shadow: inset 0 0 0 1px #999; }
 }
