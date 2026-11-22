@@ -8,6 +8,7 @@ import { KegelPlan } from './KegelPlan';
 import { FiberCalc } from './FiberCalc';
 import { ExerciseSheet } from './ExerciseSheet';
 import { BladderDiary } from './BladderDiary';
+import { OabQuiz } from './OabQuiz';
 
 const page = (ref: string, fallback: string) => resolve(ref)?.path ?? fallback;
 const letter = (slug: string) => (getArticle(slug) ? `/letters/${slug}` : undefined);
@@ -46,5 +47,8 @@ export function Tool({ id }: { id: string }) {
   }
   if (id === 'exercise-sheet') return <ExerciseSheet />;
   if (id === 'bladder-diary') return <BladderDiary />;
+  if (id === 'overactive-bladder-quiz') {
+    return <OabQuiz links={{ diary: resolve('tools/bladder-diary')?.path, leaks: page('classes/bladder-leaks', '/resources/classes'), quiz: resolve('tools/leak-type-quiz')?.path }} />;
+  }
   return null;
 }
