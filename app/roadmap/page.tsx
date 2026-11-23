@@ -29,7 +29,7 @@ export default async function Page() {
       <div className="wrap">
         <h1 className="h1" style={{ fontSize: 'clamp(38px, 5vw, 60px)' }}>Roadmap <em>2027</em></h1>
         <p className="lede" style={{ maxWidth: '60ch' }}>
-          Our plan for 2027: a big update and a live with Dr. Dana every month, 3 new languages, and promotions on the big dates of the year. A question or a change request? Email us at <a className="link" href={`mailto:${site.email}`}>{site.email}</a>.
+          Our plan for 2027: a big update and a live with Dr. Kivlin every month, 3 new languages, and promotions on the big dates of the year. A question or a change request? Email us at <a className="link" href={`mailto:${site.email}`}>{site.email}</a>.
         </p>
         <div style={{ marginTop: 28 }}><Roadmap /></div>
       </div>

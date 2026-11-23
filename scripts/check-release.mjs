@@ -14,23 +14,23 @@ for (const f of ['lib/legal.ts', 'app/privacy/page.tsx', 'app/terms/page.tsx']) 
   hits.forEach((h) => fails.push(`${f}: fill [${h}]`));
 }
 
-// 2. every letter approved by Dr. Dana (reviewed: true in its front matter), and the copy rules
+// 2. every letter approved by Dr. Kivlin (reviewed: true in its front matter), and the copy rules
 const dir = path.join(root, 'content/articles');
 for (const f of fs.readdirSync(dir).filter((x) => x.endsWith('.mdx'))) {
   const raw = fs.readFileSync(path.join(dir, f), 'utf8');
-  if (!/^reviewed:\s*true/m.test(raw)) fails.push(`content/articles/${f}: Dr. Dana has not approved it yet (set reviewed: true)`);
+  if (!/^reviewed:\s*true/m.test(raw)) fails.push(`content/articles/${f}: Dr. Kivlin has not approved it yet (set reviewed: true)`);
   if (/[—–]/.test(raw)) fails.push(`content/articles/${f}: an em or en dash (use a period, a colon or a comma)`);
   const body = raw.split('---').slice(2).join('---').replace(/<[A-Z][\s\S]*?\/>/g, '').replace(/<[^>]+>/g, '').replace(/\*\*/g, '');
   body.split(/(?<=[.!?])\s+/).forEach((s) => { const n = s.split(/\s+/).filter(Boolean).length; if (n > 30) warns.push(`content/articles/${f}: ${n} words in "${s.slice(0, 60).replace(/\n/g, ' ')}..."`); });
   for (const m of raw.matchAll(/url:\s*"([^"]+)"/g)) if (!/^https:\/\//.test(m[1])) fails.push(`content/articles/${f}: source URL is not https: ${m[1]}`);
 }
 
-// 3. the store links and the copy Dr. Dana signs
+// 3. the store links and the copy Dr. Kivlin signs
 const site = read('lib/site.ts');
 if (/appStoreUrl:\s*''/.test(site)) warns.push('lib/site.ts: appStoreUrl is empty (buttons say "Coming soon"; healthclass.app sends iPhones to /app)');
 if (/playStoreUrl:\s*''/.test(site)) warns.push('lib/site.ts: playStoreUrl is empty (same for Android)');
 if (/podcasts:\s*\[\]/.test(site)) warns.push('lib/site.ts: no podcast episodes yet (the About page shows "on the way")');
-warns.push('Dr. Dana to approve: "Why I made this class" on /dana, and her credentials in lib/site.ts');
+warns.push('Dr. Kivlin to approve: "Why I made this class" on /dana-kivlin, and her credentials in lib/site.ts');
 
 // 4. the environment (Vercel and Convex)
 const env = { ...process.env };

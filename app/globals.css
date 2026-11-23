@@ -170,7 +170,7 @@ button, input, textarea, select { font: inherit; color: inherit; }
   .arch__note { font-size: 21px; right: -2%; }
 }
 
-/* Dana in an arch, an offset rose shape behind (print out of register), the cat waving on the sill */
+/* Dr. Kivlin in an arch, an offset rose shape behind (print out of register), the cat waving on the sill */
 .arch { position: absolute; inset: 0 6% 12% 6%; }
 .arch::before { content: ""; position: absolute; inset: 0; border-radius: 999px 999px 36px 36px; background: var(--rose-tint); transform: translate(14px, 14px); }
 .arch__photo { position: absolute; inset: 0; overflow: hidden; border-radius: 999px 999px 36px 36px; background: var(--well); box-shadow: var(--shadow-lg); }
@@ -380,7 +380,7 @@ button, input, textarea, select { font: inherit; color: inherit; }
 @media (max-width: 820px) { .programs { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 520px) { .programs { grid-template-columns: 1fr; } }
 
-/* ------------------------------------------------------------------ Dana, the person */
+/* ------------------------------------------------------------------ Dr. Kivlin, the person */
 .dana { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(28px, 5vw, 72px); align-items: center; }
 .dana__photo { position: relative; aspect-ratio: 4 / 5; }
 .dana__photo::before { content: ""; position: absolute; inset: 0; border-radius: 34px; background: var(--sky); transform: translate(14px, 14px); }
@@ -627,6 +627,8 @@ html.js .sketch.is-in .sk-fade { opacity: 1; transition: opacity .6s var(--ease)
 .ft a { color: rgba(255, 255, 255, .86); text-decoration: none; font-size: 15px; }
 .ft a:hover { color: #fff; text-decoration: underline; text-underline-offset: 4px; }
 .ft__base { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; margin-top: 48px; padding-top: 22px; box-shadow: inset 0 .5px 0 rgba(255, 255, 255, .14); font-size: 13.5px; color: rgba(255, 255, 255, .6); }
+/* Dr. Kivlin's credential line: its own row at the top of the base line */
+.ft .ft__cred { flex-basis: 100%; font-size: 14px; font-weight: 600; color: rgba(255, 255, 255, .84); }
 .ft__social { display: flex; gap: 8px; margin-top: 18px; }
 .ft__social a { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: rgba(255, 255, 255, .08); }
 .ft__social a:hover { background: rgba(255, 255, 255, .16); }
@@ -870,7 +872,7 @@ a, button, summary, input, textarea, label { touch-action: manipulation; }
   .home__film::after { bottom: -18px; height: 18px; }
 }
 
-/* ------------------------------------------------------------------ /live: Dana, the date, the countdown, who it is for */
+/* ------------------------------------------------------------------ /live: Dr. Kivlin, the date, the countdown, who it is for */
 .live__grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(32px, 6vw, 88px); align-items: center; }
 .live__clip { position: relative; width: min(100%, 420px); justify-self: center; aspect-ratio: 4 / 5; }
 .live__clip::before { content: ""; position: absolute; inset: 0; border-radius: 999px 999px 36px 36px; background: var(--rose-tint); transform: translate(14px, 14px); }
@@ -906,7 +908,10 @@ a, button, summary, input, textarea, label { touch-action: manipulation; }
 .home__by img { border-radius: 50%; box-shadow: 0 0 0 2px var(--white), 0 0 0 3.5px var(--rose-tint); }
 .home__soon { text-wrap: balance; }
 .live__vid { display: block; position: relative; width: 100%; height: 100%; padding: 0; border: 0; background: none; cursor: pointer; border-radius: 999px 999px 36px 36px; }
-.live__vid video { position: relative; width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 999px 999px 36px 36px; box-shadow: var(--shadow-lg); background: var(--well); }
+.live__vid video, .live__vid img { position: relative; width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 999px 999px 36px 36px; box-shadow: var(--shadow-lg); background: var(--well); }
+/* no video yet: her headshot in the same frame, face centered (the photo is a touch wider than the 4:5 frame) */
+.live__vid--photo { margin: 0; cursor: default; }
+.live__vid--photo img { object-position: 50% 50%; }
 .live__badge { max-width: calc(100% - 24px); }
 .live__need { margin: 8px 0 0; padding: 0; list-style: none; display: grid; gap: 4px; }
 .live__need li { display: flex; align-items: center; gap: 10px; font: 600 16.5px/1.4 var(--sans); color: var(--ink); }
@@ -931,8 +936,8 @@ a, button, summary, input, textarea, label { touch-action: manipulation; }
 
 /* ------------------------------------------------------------------ /live: the letters' smooth hero, then how to join */
 .live-hero__clip { position: relative; width: clamp(170px, 20vw, 230px); aspect-ratio: 4 / 5; margin: 0 auto 22px; }
-.live-hero__clip .live__vid, .live-hero__clip .live__vid video { border-radius: 999px 999px 30px 30px; }
-.live-hero__clip .live__vid video { box-shadow: 0 0 0 6px var(--white), var(--shadow-lg); }
+.live-hero__clip .live__vid, .live-hero__clip .live__vid video, .live-hero__clip .live__vid img { border-radius: 999px 999px 30px 30px; }
+.live-hero__clip .live__vid video, .live-hero__clip .live__vid img { box-shadow: 0 0 0 6px var(--white), var(--shadow-lg); }
 .live-hero__cat { position: absolute; right: -62px; bottom: -10px; width: 110px; height: auto; }
 .live-hero .eyebrow { margin-top: 4px; }
 .live-hero .h1 { margin-top: 14px; }
@@ -947,7 +952,7 @@ a, button, summary, input, textarea, label { touch-action: manipulation; }
 .live-how__join { margin-top: 28px; }
 @media (max-width: 860px) { .live-hero__cat { right: -48px; width: 88px; } }
 
-/* placeholder captions over Dana's clip, styled like the app's welcome video caption */
+/* placeholder captions over Dr. Kivlin's clip or photo, styled like the app's welcome video caption */
 .live__cap { position: absolute; left: 0; right: 0; bottom: 0; padding: 40px 14px 16px; border-radius: 0 0 30px 30px; background: linear-gradient(rgba(28, 20, 16, 0), rgba(28, 20, 16, .66)); text-align: center; pointer-events: none; }
 .live__cap span { display: inline-block; font: 600 15px/1.3 var(--sans); color: #fff; text-shadow: 0 1px 2px rgba(0, 0, 0, .35); animation: capIn .35s var(--ease) both; }
 @keyframes capIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
@@ -1150,7 +1155,7 @@ a, button, summary, input, textarea, label { touch-action: manipulation; }
 .timer__cue { margin: 16px 0 0; text-align: center; font: italic 400 19px/1.4 var(--serif); color: var(--plum); }
 @media (prefers-reduced-motion: reduce) { .timer { transition: none; } }
 
-/* Dr. Dana's social links, under her name: 3 round icons (44 px targets), plum, white mark */
+/* Dr. Kivlin's social links, under her name: 3 round icons (44 px targets), plum, white mark */
 .links { list-style: none; margin: 18px 0 0; padding: 0; display: flex; gap: 10px; }
 .links__a { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--plum-deep); color: #fff; transition: transform .15s var(--ease), background-color .2s; }
 .links__a:hover { background: var(--plum); }
@@ -1170,7 +1175,7 @@ a, button, summary, input, textarea, label { touch-action: manipulation; }
   .related--recs .card > span:not(.card__art) { align-self: start; padding-top: 2px; font-size: 13.5px; }
 }
 
-/* Home hero (Nov 2026): the title, the email right under it, then the 3 wins in one divided row and Dr. Dana.
+/* Home hero (Nov 2026): the title, the email right under it, then the 3 wins in one divided row and Dr. Kivlin.
    One centered column on desktop, left-aligned on phones. */
 .lp { padding: clamp(28px, 6vw, 96px) 0 clamp(32px, 5vw, 72px); }
 .lp__in { max-width: 680px; text-align: center; }

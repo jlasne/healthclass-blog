@@ -29,10 +29,10 @@ export default function Page() {
         </div>
         <div className="prose">
           <h2 id="who">1. Who we are</h2>
-          <p>{site.appName} (&ldquo;the app&rdquo;) and www.healthclass.app (&ldquo;the website&rdquo;) are published by <F>{legal.entity}</F>, <F>{legal.address}</F> (&ldquo;we&rdquo;), with Dr. Dana Kivlin, a urologist. By using the app or the website, you accept these terms.</p>
+          <p>{site.appName} (&ldquo;the app&rdquo;) and www.healthclass.app (&ldquo;the website&rdquo;) are published by <F>{legal.entity}</F>, <F>{legal.address}</F> (&ldquo;we&rdquo;), with Dr. Kivlin, a board-certified urologist. By using the app or the website, you accept these terms.</p>
 
           <h2 id="education">2. Education, not medical advice</h2>
-          <p>The app, the letters, the newsletter and the live Q&amp;A teach how the pelvic floor works and how to train it. They do not diagnose or treat any condition, and they do not replace a visit to your doctor. The live Q&amp;A is general education: Dr. Dana does not examine you, diagnose you or create a doctor-patient relationship there.</p>
+          <p>The app, the letters, the newsletter and the live Q&amp;A teach how the pelvic floor works and how to train it. They do not diagnose or treat any condition, and they do not replace a visit to your doctor. The live Q&amp;A is general education: Dr. Kivlin does not examine you, diagnose you or create a doctor-patient relationship there.</p>
           <ul>
             <li>Check with your doctor before you start if one of the warning signs of the app&rsquo;s safety check applies to you.</li>
             <li>Stop an exercise and see a doctor if you notice one of the warning signs listed in the app or in a letter.</li>
@@ -53,13 +53,13 @@ export default function Page() {
           </ul>
 
           <h2 id="members">5. Members&rsquo; benefits: the live Q&amp;A</h2>
-          <p>Members with an active paid plan can join a live Q&amp;A with Dr. Dana, once a month in 2027. While their plan is active, they can watch the replay of every live held since their first plan day, including any months between two plans. Dates, length and format may change; we announce each date by email. We may decline or shorten a question that is off-topic, that asks for a personal diagnosis, or that names another person. Recording the session yourself, or sharing its link or replays, needs our written consent.</p>
+          <p>Members with an active paid plan can join a live Q&amp;A with Dr. Kivlin, once a month in 2027. While their plan is active, they can watch the replay of every live held since their first plan day, including any months between two plans. Dates, length and format may change; we announce each date by email. We may decline or shorten a question that is off-topic, that asks for a personal diagnosis, or that names another person. Recording the session yourself, or sharing its link or replays, needs our written consent.</p>
 
           <h2 id="newsletter">6. The newsletter</h2>
           <p>Class Notes is free. You can unsubscribe at any time with the link at the bottom of each letter. We may change its cadence or format.</p>
 
           <h2 id="content">7. Content</h2>
-          <p>The programs, lessons, letters, drawings (the class cat included), texts and videos belong to us and to Dr. Dana. You may use them for your own practice and share links to the website. Copying, republishing or selling them needs our written consent.</p>
+          <p>The programs, lessons, letters, drawings (the class cat included), texts and videos belong to us and to Dr. Kivlin. You may use them for your own practice and share links to the website. Copying, republishing or selling them needs our written consent.</p>
 
           <h2 id="data">8. Your data</h2>
           <p>The <a href="/privacy">Privacy Policy</a> explains what stays on your phone and what reaches us.</p>

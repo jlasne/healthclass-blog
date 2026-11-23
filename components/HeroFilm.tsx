@@ -48,7 +48,7 @@ export function HeroFilm() {
         playsInline
         loop
         preload="none"
-        aria-label="A 20-second film: the class cat laughs, jumps and dives into the app. Laugh without worrying, get back to sport, feel in control. By Dr. Dana, urologist."
+        aria-label="A 20-second film: the class cat laughs, jumps and dives into the app. Laugh without worrying, get back to sport, feel in control. By Dr. Kivlin, board-certified urologist."
       />
       <button className="film__play" type="button" aria-label={paused ? 'Play' : 'Pause'} onClick={(e) => { e.stopPropagation(); toggle(); }}>
         {paused ? (

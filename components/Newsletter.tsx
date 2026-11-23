@@ -7,7 +7,7 @@ import { dana } from '@/lib/site';
 export function Newsletter({
   source,
   tag,
-  title = <>Letters from a urologist, <em>Dr. Dana Kivlin</em>.</>,
+  title = <>Letters from a urologist, <em>Dr. Kivlin</em>.</>,
   pose = 'write',
   as = 'h2',
   peek = false,

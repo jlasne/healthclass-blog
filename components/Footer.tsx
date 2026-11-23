@@ -6,6 +6,7 @@ import { dana, site } from '@/lib/site';
 import { FAMILIES, FAMILY_IDS } from '@/lib/resources';
 
 // The footer: the cat naps in the hammock (the paper's edge curves down into the plum like the app's hammock line).
+// The base line opens with Dr. Kivlin's credential line, on its own row.
 export function Footer() {
   const year = new Date().getFullYear();
   return (
@@ -23,7 +24,7 @@ export function Footer() {
             </p>
             <PreferredSource tone="dark" />
             <div className="ft__social">
-              <a href={dana.socials[0].url} rel="me noopener" target="_blank" aria-label="Dr. Dana on Instagram"><Icon name="instagram" /></a>
+              <a href={dana.socials[0].url} rel="me noopener" target="_blank" aria-label="Dr. Hapee Bladder on Instagram"><Icon name="instagram" /></a>
               <a href={`mailto:${site.email}`} aria-label="Email us"><Icon name="mail" /></a>
             </div>
           </div>
@@ -43,20 +44,22 @@ export function Footer() {
             <h2>The class</h2>
             <ul>
               <li><a href="/#get">Get the app</a></li>
-              <li><a href="/live">Live with Dr. Dana</a></li>
+              <li><a href="/live">Live with Dr. Kivlin</a></li>
               <li><a href="/faq">FAQ and help</a></li>
             </ul>
           </div>
           <div>
             <h2>About</h2>
             <ul>
-              <li><a href="/dana-kivlin">Dr. Dana</a></li>
+              <li><a href="/dana-kivlin">Dr. Kivlin</a></li>
               <li><a href="/privacy">Privacy</a></li>
               <li><a href="/terms">Terms</a></li>
             </ul>
           </div>
         </div>
         <div className="ft__base">
+          {/* her credential line, at the bottom of every page */}
+          <a className="ft__cred" href="/dana-kivlin">{dana.name}, {dana.role.toLowerCase()}</a>
           <span>© {year} {site.name}. Education from a urologist, not medical advice. In an emergency, call 911.</span>
           <span><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/sitemap.xml">Sitemap</a></span>
         </div>

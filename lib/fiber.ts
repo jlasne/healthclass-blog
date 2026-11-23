@@ -1,4 +1,4 @@
-// Dr. Dana's fiber guide, the one she gives to every patient (her 7-page PDF: public/media/dana/fiber-guide.pdf).
+// Dr. Kivlin's fiber guide, the one she gives to every patient (her 7-page PDF: public/media/dana/fiber-guide.pdf).
 // Her numbers, her notes. Fixed from the PDF: spelling; 3 notes pasted from another row (spinach had the banana note,
 // pumpernickel the walnut note, barley "3x the fiber of oats"); watercress keeps its 0.1 g total but no split (her
 // 0.1 soluble + 1.7 insoluble cannot add up to 0.1); psyllium seeds have no gram value, only their 20/80 split.

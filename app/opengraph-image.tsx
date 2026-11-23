@@ -1,6 +1,6 @@
 import { ogImage, ogSize } from '@/lib/og';
 
-export const alt = 'Health Class: your pelvic floor, taught by a urologist, Dr. Dana Kivlin';
+export const alt = 'Health Class: your pelvic floor, taught by Dr. Kivlin, board-certified urologist';
 export const size = ogSize;
 export const contentType = 'image/png';
 

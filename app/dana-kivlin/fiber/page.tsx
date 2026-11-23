@@ -8,7 +8,7 @@ import { breadcrumbs, danaId, dt, graph, meta } from '@/lib/seo';
 import { absoluteUrl, dana } from '@/lib/site';
 import s from '@/components/fiber.module.css';
 
-// Dr. Dana's fiber guide: her 7-page handout for every patient, as one page that is easy to go through on a phone.
+// Dr. Kivlin's fiber guide: her 7-page handout for every patient, as one page that is easy to go through on a phone.
 // Data and her numbers: lib/fiber.ts. The moving parts (chips, food chart, "Build your day", supplement picker):
 // components/FiberGuide.tsx. The original PDF stays one tap away for printing.
 const PATH = '/dana-kivlin/fiber';
@@ -17,7 +17,7 @@ const UPDATED = '2026-11-16';
 
 export const metadata = meta({
   title: 'Fiber guide: 25 to 35 grams a day, from a urologist',
-  description: 'The fiber guide Dr. Dana Kivlin gives every patient: why fiber matters, the 2 kinds, a food chart with grams, and which supplement fits your goal.',
+  description: 'The fiber guide Dr. Kivlin gives every patient: why fiber matters, the 2 kinds, a food chart with grams, and which supplement fits your goal.',
   path: PATH,
 });
 
@@ -286,7 +286,7 @@ export default function Page() {
             '@type': 'WebPage',
             '@id': absoluteUrl(`${PATH}#page`),
             url: absoluteUrl(PATH),
-            name: 'Fiber, the superfood: a guide from Dr. Dana Kivlin',
+            name: 'Fiber, the superfood: a guide from Dr. Kivlin',
             description: `The fiber guide ${dana.name} gives every patient: ${GOAL.min} to ${GOAL.max} grams a day, soluble and insoluble fiber, a food chart of ${allFoods.length} foods (up to ${MAX_GRAMS} g per serving) and fiber supplements by goal.`,
             inLanguage: 'en-US',
             dateModified: dt(UPDATED),

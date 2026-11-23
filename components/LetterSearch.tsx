@@ -65,7 +65,7 @@ export function LetterSearch({ items }: { items: LetterItem[] }) {
           </ol>
         </>
       ) : (
-        <p className="search__empty">No letter matches yet. Try another word, or ask Dr. Dana in the next live.</p>
+        <p className="search__empty">No letter matches yet. Try another word, or ask Dr. Kivlin in the next live.</p>
       )}
     </>
   );

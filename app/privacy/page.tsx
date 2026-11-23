@@ -43,14 +43,14 @@ export default function Page() {
             <ul>
               <li>Your health answers and your log (with its photos, notes and grip scores) stay on your phone.</li>
               <li>Only a few things reach us: your email if you add it, the programs you ask us to tell you about, which first-question screen you reached (a number, never your answers), your purchases and your chats with us.</li>
-              <li>On the website, we collect your email if you join Class Notes or sign in to the Q&amp;A, and the questions you send Dr. Dana.</li>
+              <li>On the website, we collect your email if you join Class Notes or sign in to the Q&amp;A, and the questions you send Dr. Kivlin.</li>
               <li>We sell no data, show no ads and run no tracking across apps or websites.</li>
               <li>In the app, Settings, then Delete my data, erases everything on your phone and asks our server to erase the rest. You can also email {site.email}.</li>
             </ul>
           </div>
 
           <h2 id="who">Who we are</h2>
-          <p>{site.appName} (&ldquo;the app&rdquo;) and the website www.healthclass.app (&ldquo;the website&rdquo;) are published by <F>{legal.entity}</F>, <F>{legal.address}</F> (&ldquo;we&rdquo;), with Dr. Dana Kivlin, a urologist. We are the controller of the data described here. Contact: <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
+          <p>{site.appName} (&ldquo;the app&rdquo;) and the website www.healthclass.app (&ldquo;the website&rdquo;) are published by <F>{legal.entity}</F>, <F>{legal.address}</F> (&ldquo;we&rdquo;), with Dr. Kivlin, a board-certified urologist. We are the controller of the data described here. Contact: <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
 
           <h2 id="phone">Data that stays on your phone</h2>
           <p>Your answers to the first questions (your need, your life stage, your symptoms, the safety check), your check-ins, your log (its photos, notes and grip scores), your progress, your routine, your reminder time and your nudge setting. The app stores them on your phone only. Your phone&rsquo;s own backup (iCloud or Google) may keep a copy, under the settings of your Apple or Google account. We cannot read this data.</p>
@@ -85,9 +85,9 @@ export default function Page() {
           <h2 id="newsletter">Class Notes, the newsletter</h2>
           <p>The signup form on the website is MailCheap&rsquo;s, our newsletter provider. When you join there, MailCheap receives your email, the page you joined from and the date. If you join in the app, or when you sign up for the live Q&amp;A, we store your email in our database at Convex and pass it to MailCheap. We use your email to send the letters, twice a week, and nothing else. Every letter has a one-click unsubscribe link. Unsubscribing stops the letters at once.</p>
 
-          <h2 id="qa">The live Q&amp;A with Dr. Dana</h2>
+          <h2 id="qa">The live Q&amp;A with Dr. Kivlin</h2>
           <p>To sign in, you type the email you added in the app. Our server checks it against our list of paid members and, if it matches, emails you a one-time link through Resend. The answer on the page is the same for every email, so the page never shows whether someone has a plan. We store a scrambled form (a hash) of each link and sign-in key, never the key itself.</p>
-          <p>When you send a question, we store it with your email, the date and, only if you choose, your first name. Dr. Dana reads the questions without email addresses. The session runs on a video platform under its own privacy policy, named in your invite; joining is optional and your camera can stay off.</p>
+          <p>When you send a question, we store it with your email, the date and, only if you choose, your first name. Dr. Kivlin reads the questions without email addresses. The session runs on a video platform under its own privacy policy, named in your invite; joining is optional and your camera can stay off.</p>
 
           <h2 id="processors">Who processes data for us</h2>
           <div className="tbl">

@@ -1,6 +1,6 @@
 'use client';
 // Kegel timer: pick a routine, press Start, squeeze while the circle fills, relax while it empties. The routines follow
-// Dr. Dana's progression from her reels (3, then 5, then 10 seconds; quick flicks of 1 second). Built from LeakQuiz:
+// Dr. Kivlin's progression from her reels (Dr. Hapee Bladder on Instagram) (3, then 5, then 10 seconds; quick flicks of 1 second). Built from LeakQuiz:
 // the same card, option tiles and result block. Nothing is sent or saved.
 import { useEffect, useRef, useState } from 'react';
 import { GetApp } from '../Waitlist';

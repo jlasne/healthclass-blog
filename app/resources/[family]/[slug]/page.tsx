@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: P) {
   const r = getResource(family, slug);
   if (!r) return {};
   const m = meta({ title: r.seoTitle, description: r.description, path: r.path, type: 'article' });
-  // signed by the team (the layout's default author is Dr. Dana, for the letters she writes)
+  // signed by the team (the layout's default author is Dr. Kivlin, for the letters she writes)
   return { ...m, keywords: r.keywords, authors: [{ name: 'The Health Class team', url: '/resources' }], creator: 'Health Class', openGraph: { ...m.openGraph, type: 'article', publishedTime: r.date, modifiedTime: r.updated, section: FAMILIES[r.family].name, tags: r.keywords } };
 }
 

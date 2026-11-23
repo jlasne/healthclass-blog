@@ -1,5 +1,5 @@
 'use client';
-// Fiber calculator: 3 short steps, tick what you ate yesterday, and see your grams next to Dr. Dana's goal (25 to 35 g).
+// Fiber calculator: 3 short steps, tick what you ate yesterday, and see your grams next to Dr. Kivlin's goal (25 to 35 g).
 // The foods, servings and grams come from her fiber guide (lib/fiber.ts); the low end of a range counts, as in the
 // guide's "Build your day". Built from LeakQuiz: the same card, option tiles and result block. Nothing is sent or saved.
 import { useState } from 'react';
@@ -75,7 +75,7 @@ export function FiberCalc({ links }: { links: FiberLinks }) {
         )}
         <p className="tool__note">This tool counts fiber from food. It does not diagnose or treat. Constipation that lasts more than 3 weeks, or blood in your stool, needs a doctor.</p>
         <div className="tool__go">
-          <a className="btn btn--quiet" href={links.guide}>See Dr. Dana&rsquo;s fiber guide</a>
+          <a className="btn btn--quiet" href={links.guide}>See Dr. Kivlin&rsquo;s fiber guide</a>
           <GetApp className="btn" />
         </div>
         <ul className="tool__more">

@@ -1,12 +1,15 @@
-# Women's Health Tips from Dr. Dana
+# Women's Health Tips from Dr. Hapee Bladder (Dr. Kivlin)
 
 Source: 50 reels from @dr_hapee_bladder, August 10 to November 8, 2026.
 Figures and study results are as stated in the reels.
 Take personal medical decisions to your own doctor.
 
-## Dr. Dana's positions, confirmed November 2026
+Naming: on the site she is Dr. Kivlin (credential line: Dr. Kivlin, board-certified urologist). Quote these reels as
+"Dr. Hapee Bladder, on Instagram". Never Dr. Dana.
 
-Dr. Dana answered our report on her reels. Where a reel below says otherwise, these lines win. Every page and letter follows them.
+## Dr. Kivlin's positions, confirmed November 2026
+
+Dr. Kivlin answered our report on her reels. Where a reel below says otherwise, these lines win. Every page and letter follows them.
 
 - **Fluids: balance.** Too little and too much both make things worse. Clearer urine irritates the bladder less, so it hurts less. The goal is less pain and urgency, not fewer trips. Drink first thing after waking, sip through the day, and stop 2 to 3 hours before bed.
 - **Caffeine: scale back.** Keep what you love. Swap part of it for water, then watch the leak log. Never write "quit" or "cut out".

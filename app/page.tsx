@@ -11,7 +11,7 @@ import { sentIssues } from '@/lib/newsletter';
 import { getResource } from '@/lib/resources';
 
 // One page, one goal: the title, then the email (before launch: the launch-day waitlist), then the 3 wins and
-// Dr. Dana. Then 3 doors.
+// Dr. Kivlin. Then 3 doors.
 export const metadata = {
   ...meta({
     title: `${site.appName}: the pelvic floor class by a urologist`,
@@ -59,7 +59,7 @@ export default async function Home() {
             // before launch: the free letter is the waitlist (MailCheap); it sends the launch-day email
             <div className="lp__get">
               <p className="lp__soon">Coming soon on iPhone and Android. Get the launch&#8209;day email.</p>
-              <NewsletterForm source="/#get" tag="app-waitlist" fine="Plus Dr. Dana's free letter. Unsubscribe in 1 click." privacy={false} />
+              <NewsletterForm source="/#get" tag="app-waitlist" fine="Plus Dr. Hapee Bladder's free letter. Unsubscribe in 1 click." privacy={false} />
             </div>
           )}
           <ul className="lp__wins" aria-label="What women come for">
@@ -74,7 +74,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="sec--tight" aria-label="More from Dr. Dana" style={{ paddingBottom: 72 }}>
+      <section className="sec--tight" aria-label="More from Dr. Kivlin" style={{ paddingBottom: 72 }}>
         <div className="wrap doors">
           <a className="door" href="/dana-kivlin">
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -87,7 +87,7 @@ export default async function Home() {
           </a>
           <a className="door" href="/live">
             <span className="tone-disc tone--plum" aria-hidden="true"><Cat pose="calendar" width={76} /></span>
-            <div><b>{liveLine(livesLeft())}</b><span>{livesLeftLine(livesLeft()) || 'Ask Dr. Dana your questions'}</span></div>
+            <div><b>{liveLine(livesLeft())}</b><span>{livesLeftLine(livesLeft()) || 'Ask Dr. Kivlin your questions'}</span></div>
           </a>
         </div>
       </section>

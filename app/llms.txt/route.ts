@@ -29,7 +29,7 @@ ${resources ? `## Resources\n\nFree tools, the classes week by week, apps side b
 - [About ${dana.name}](${absoluteUrl('/dana-kivlin')}): credentials and practice
 - [The app](${absoluteUrl('/')}): ${site.appName}, 6-week pelvic floor programs
 - [The letters](${absoluteUrl('/letters')}): free, every Wednesday and Sunday
-- [Live with Dr. Dana](${absoluteUrl('/live')}): the monthly Q&A for premium members
+- [Live with Dr. Kivlin](${absoluteUrl('/live')}): the monthly Q&A for premium members
 
 ## Policies
 

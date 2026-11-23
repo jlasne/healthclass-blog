@@ -44,7 +44,7 @@ Read the full letter, with the sketch: [Train before the baby](https://www.healt
 
 The app opens soon on iPhone and Android: [get the launch-day email](https://www.healthclass.app/#get).
 
-Dana
+Dr. Kivlin
 
 **Sources**
 1. Woodley SJ, et al. [Pelvic floor muscle training for preventing and treating urinary and faecal incontinence in antenatal and postnatal women](https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD007471.pub4/full). Cochrane Database of Systematic Reviews, 2020.

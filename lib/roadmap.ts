@@ -1,8 +1,8 @@
 // The 2027 roadmap (/roadmap, behind the team password). Every month: a big update (a new program or an extension of
-// one), a live with Dr. Dana, and in some months a micro update (a new language). Promotions are a % off or a
+// one), a live with Dr. Kivlin, and in some months a micro update (a new language). Promotions are a % off or a
 // challenge on the big dates of the year. Feats (a live or a post with a guest) can be added on any day. Only the
 // live is fixed: the updates are placed in the free days around the live, the promotions and the feats.
-// Program order follows Dr. Dana's call (Nov 2026): prolapse, then hormones and menopause, then the rest.
+// Program order follows Dr. Kivlin's call (Nov 2026): prolapse, then hormones and menopause, then the rest.
 
 export type Plan = {
   month: number; // 0 = January

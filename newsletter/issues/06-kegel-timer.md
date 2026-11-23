@@ -38,7 +38,7 @@ Open the timer and press Start: [Kegel timer](https://www.healthclass.app/resour
 
 The app opens soon on iPhone and Android: [get the launch-day email](https://www.healthclass.app/#get).
 
-Dana
+Dr. Kivlin
 
 **Sources**
 1. NICE guideline NG123. [Urinary incontinence and pelvic organ prolapse in women: management](https://www.nice.org.uk/guidance/ng123/chapter/recommendations), 2019.

@@ -8,9 +8,8 @@ import { dana, site } from '@/lib/site';
 // before launch the app button opens the launch-day email sheet
 const live = Boolean(site.appStoreUrl || site.playStoreUrl);
 
-// Dr. Dana's page body, in her own words (her bio, November 2026): who she is and where to follow her, why the
+// Dr. Kivlin's page body, in her own words (her bio, November 2026): who she is and where to follow her, why the
 // class, her recommendations (her fiber guide, her Amazon list, her chair), then the letter. Used by /dana-kivlin.
-const lastName = dana.fullName.replace(`${dana.firstName} `, '');
 
 export function DanaBio() {
     return (
@@ -19,7 +18,7 @@ export function DanaBio() {
         <div className="wrap hero__grid">
           <div className="hero__copy">
             <span className="eyebrow">About me</span>
-            <h1 className="h1">I&rsquo;m Dr. {dana.firstName} <em>{lastName}</em>.</h1>
+            <h1 className="h1">I&rsquo;m Dr. <em>{dana.lastName}</em>.</h1>
             <ul className="links" aria-label="Follow me">
               {dana.socials.map((s) => (
                 <li key={s.url}>
@@ -37,7 +36,7 @@ export function DanaBio() {
             <div className="arch">
               <div className="arch__photo">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={dana.bioPhoto} alt={`${dana.name}, urologist`} width={960} height={1152} />
+                <img src={dana.bioPhoto} alt={`${dana.name}, ${dana.role.toLowerCase()}`} width={960} height={1152} />
               </div>
               <Cat pose="heart" width={200} className="arch__cat" priority />
               <div className="arch__badge">
@@ -59,7 +58,7 @@ export function DanaBio() {
             <p>My passion is translating complex medical concepts into clear, practical tools that women can use to better understand their bodies, take an active role in their health, and make informed decisions about their care.</p>
             <p>My mission is to empower women with knowledge, help them recognize what they can control, and bring greater awareness to conditions that have historically been dismissed, overlooked, or simply accepted as a normal part of being a woman. Just because something is common doesn&rsquo;t mean it&rsquo;s normal, and it certainly doesn&rsquo;t mean you have to live with it.</p>
           </div>
-          <div className="signoff"><span className="signoff__name">{dana.firstName}</span></div>
+          <div className="signoff"><span className="signoff__name">{dana.name}</span><span className="signoff__who">{dana.name}, {dana.role.toLowerCase()}</span></div>
           <h3 className="h3 creds__t">My credentials</h3>
           <ul className="creds" aria-label="My credentials">
               <li><Icon name="check" />Board certified in urology</li>

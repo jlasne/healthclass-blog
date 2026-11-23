@@ -31,13 +31,13 @@ export function AskForm() {
   return (
     <form action={action} className="qform">
       <label htmlFor="q" className="sr-only">Your question</label>
-      <textarea id="q" name="question" maxLength={1200} placeholder="What would you like Dr. Dana to explain?" required key={s.status === 'ok' ? Date.now() : 'q'} />
+      <textarea id="q" name="question" maxLength={1200} placeholder="What would you like Dr. Kivlin to explain?" required key={s.status === 'ok' ? Date.now() : 'q'} />
       <div className="qform__row">
         <label className="check"><input type="checkbox" name="showName" /> Show my first name:</label>
         <input name="firstName" placeholder="First name" maxLength={40} style={{ flex: '1 1 140px', height: 44, padding: '0 14px', border: 0, borderRadius: 999, background: '#fff', boxShadow: 'inset 0 0 0 1px var(--hair-2)' }} />
         <button className="btn" type="submit" disabled={pending}>{pending ? 'Sending…' : 'Send my question'}</button>
       </div>
-      {s.status === 'ok' && <p className="nl-fine" role="status" style={{ color: 'var(--plum)', fontWeight: 600 }}>Sent. Dr. Dana will see it before the next session.</p>}
+      {s.status === 'ok' && <p className="nl-fine" role="status" style={{ color: 'var(--plum)', fontWeight: 600 }}>Sent. Dr. Kivlin will see it before the next session.</p>}
       {s.status === 'error' && <p className="nl-err" role="alert">{s.message}</p>}
     </form>
   );

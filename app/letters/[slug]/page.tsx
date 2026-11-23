@@ -89,8 +89,8 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         </div>
 
         <div className="signoff">
-          <span className="signoff__name">{dana.firstName}</span>
-          <span className="signoff__who">{dana.fullName}, {dana.role.toLowerCase()}, {dana.practice}</span>
+          <span className="signoff__name">{dana.name}</span>
+          <span className="signoff__who">{dana.name}, {dana.role.toLowerCase()}, {dana.practice}</span>
         </div>
 
         <div className="post-foot">
@@ -140,7 +140,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
       {more.length > 0 && (
         <section className="sec sec--tight">
           <div className="wrap">
-            <div className="sec__hd"><div><span className="eyebrow">Keep reading</span><h2 className="h3" style={{ marginTop: 10 }}>More letters from Dr. Dana</h2></div><a className="arrow" href="/letters">All letters</a></div>
+            <div className="sec__hd"><div><span className="eyebrow">Keep reading</span><h2 className="h3" style={{ marginTop: 10 }}>More letters from Dr. Kivlin</h2></div><a className="arrow" href="/letters">All letters</a></div>
             <div className="related">
               {more.map((r) => (
                 <a key={r.slug} className={`card tone--${r.tone}`} href={`/letters/${r.slug}`}>

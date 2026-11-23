@@ -14,9 +14,9 @@ export const site = {
   appShort: 'Pelvic Health Class',
   tagline: 'Your pelvic floor, taught by a urologist.',
   description:
-    'Short letters on bladder leaks, Kegels and the pelvic floor from Dr. Dana Kivlin, a board-certified urologist. The blog of Pelvic Health Class: for Women.',
+    'Short letters on bladder leaks, Kegels and the pelvic floor from Dr. Kivlin, a board-certified urologist. The blog of Pelvic Health Class: for Women.',
   locale: 'en_US',
-  // support and every reply: one inbox (Resend). Dr. Dana's letter is sent from DrDana@healthclass.app (MailCheap).
+  // support and every reply: one inbox (Resend). Dr. Hapee Bladder's letter is sent from DrDana@healthclass.app (MailCheap).
   email: 'info@healthclass.app',
   // the app's store pages. Empty until the listings go live: the buttons then say "Coming soon" and offer the letter.
   appStoreUrl: '',
@@ -34,36 +34,42 @@ export const site = {
     promise: '1 idea, 1 exercise and 1 reader question, in a 3-minute read.',
   },
   qa: {
-    name: 'Ask Dr. Dana',
+    name: 'Ask Dr. Kivlin',
     cadence: 'Once a month, live',
     length: '45 minutes',
     // the next live's month while its exact day is still open: the site and the app say "in January", no date.
     // Set it to '' once the date is set (in Convex, or in next below).
     month: 'January',
-    // the next live when Convex has none scheduled (ISO, Eastern time). Set the real hour with Dana.
+    // the next live when Convex has none scheduled (ISO, Eastern time). Set the real hour with Dr. Kivlin.
     next: '2027-01-31T19:00:00-05:00',
-    // Dana's clip on /live: replace with her own 10-second "next live" video (vertical 4:5, silent captions burnt in)
-    clip: '/media/dana/insta.mp4',
+    // her clip on /live. Empty: /live shows her headshot (dana.bioPhoto) in the same frame, with the captions.
+    // Set it to her own 10-second "next live" video (vertical 4:5, silent captions burnt in) when she sends one.
+    clip: '',
   },
 } as const;
 
-// Dr. Dana Kivlin. Only facts from public profiles; Dana confirms each one before launch.
+// Dr. Kivlin. Only facts from public profiles; she confirms each one before launch.
+// Naming (her request, November 2026): on the site she is "Dr. Kivlin"; the credential line is "Dr. Kivlin,
+// board-certified urologist". Her Instagram persona and the Class Notes sender are "Dr. Hapee Bladder".
+// Never "Dr. Dana", never "Dr. Dana Kivlin". firstName is data only: the site never shows it.
 export const dana = {
-  name: 'Dr. Dana Kivlin',
-  fullName: 'Dana Kivlin',
-  shortName: 'Dr. Dana',
+  name: 'Dr. Kivlin',
+  fullName: 'Dr. Kivlin',
+  shortName: 'Dr. Kivlin',
   firstName: 'Dana',
+  lastName: 'Kivlin',
   role: 'Board-certified urologist',
   practice: 'Middlesex Health',
   practiceCity: 'Middletown, Connecticut',
   medicalSchool: 'University of New England College of Osteopathic Medicine',
   medicalSchoolYear: 2011,
   board: 'Board certified in Urology',
-  photo: '/media/dana/portrait.webp',
+  // her photo: her professional headshot everywhere (she asked us to stop using the video stills, November 2026)
+  photo: '/media/dana/bio.webp',
   // her page's portrait (her own photo, November 2026)
   bioPhoto: '/media/dana/bio.webp',
   avatar: '/media/dana/avatar.webp',
-  hero: '/media/dana/hero.webp',
+  hero: '/media/dana/bio.webp',
   // the link tree under her name on /dana-kivlin (Instagram stays first: the footer and the organization use it)
   socials: [
     { label: 'Instagram', handle: '@dr_hapee_bladder', url: 'https://www.instagram.com/dr_hapee_bladder/' },
@@ -87,16 +93,16 @@ export const dana = {
     { video: '', poster: '/media/dana/ig/2.webp' },
     { video: '', poster: '/media/dana/ig/3.webp' },
   ],
-  // podcasts Dana joins: add one entry per episode as they air ({ show, episode, date: 'YYYY-MM-DD', url })
+  // podcasts she joins: add one entry per episode as they air ({ show, episode, date: 'YYYY-MM-DD', url })
   podcasts: [] as { show: string; episode: string; date: string; url: string }[],
 };
 
 export const nav = [
-  // icon: an Icon name, or 'face' for Dr. Dana's round photo
+  // icon: an Icon name, or 'face' for Dr. Kivlin's round photo
   { href: '/letters', label: 'Letters', icon: 'mail' },
   { href: '/resources', label: 'Resources', icon: 'book' },
   { href: '/live', label: 'Live', icon: 'video' },
-  { href: '/dana-kivlin', label: 'Dr. Dana', icon: 'face' },
+  { href: '/dana-kivlin', label: 'Dr. Kivlin', icon: 'face' },
 ] as const;
 
 export const programs = [

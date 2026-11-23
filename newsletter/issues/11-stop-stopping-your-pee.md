@@ -48,7 +48,7 @@ Read the full letter, with the sketch: [Stop stopping your pee](https://www.heal
 
 The app opens soon on iPhone and Android: [get the launch-day email](https://www.healthclass.app/#get).
 
-Dana
+Dr. Kivlin
 
 **Sources**
 1. ClinicalTrials.gov NCT03650179. [Influence of the urine stream interruption exercise on the micturition](https://clinicaltrials.gov/study/NCT03650179).

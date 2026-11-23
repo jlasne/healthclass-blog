@@ -46,7 +46,7 @@ export async function requestLink(_prev: LinkState, fd: FormData): Promise<LinkS
 export async function askQuestion(_prev: AskState, fd: FormData): Promise<AskState> {
   const text = String(fd.get('question') ?? '').trim();
   const firstName = fd.get('showName') ? String(fd.get('firstName') ?? '').trim() : '';
-  if (text.length < 8) return { status: 'error', message: 'Write a little more: one full sentence helps Dr. Dana answer well.' };
+  if (text.length < 8) return { status: 'error', message: 'Write a little more: one full sentence helps Dr. Kivlin answer well.' };
   if (text.length > 1200) return { status: 'error', message: 'Keep it under 1,200 characters, about 200 words.' };
   const c = convex();
   const pass = (await cookies()).get('hc_qa')?.value;

@@ -46,7 +46,7 @@ Open my fiber guide and build your own day: [Fiber, the superfood](https://www.h
 
 The app opens soon on iPhone and Android: [get the launch-day email](https://www.healthclass.app/#get).
 
-Dana
+Dr. Kivlin
 
 **Sources**
 1. Kivlin D. Fiber, the superfood: the fiber guide I give every patient. Health Class, 2026.

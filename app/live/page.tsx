@@ -14,8 +14,8 @@ import { dana, site } from '@/lib/site';
 import { liveLine, livesLeft, livesLeftLine } from '@/lib/lives';
 
 export const metadata = meta({
-  title: 'Live with Dr. Dana: every month of 2027, for members',
-  description: 'A live with Dr. Dana Kivlin, urologist, every month of 2027. Members get the replay of every live from the day they join.',
+  title: 'Live with Dr. Kivlin: every month of 2027, for members',
+  description: 'A live with Dr. Kivlin, board-certified urologist, every month of 2027. Members get the replay of every live from the day they join.',
   path: '/live',
 });
 
@@ -47,13 +47,13 @@ export default async function Page() {
         <section className="hero hero--center hero--band live-hero">
           <div className="read">
             <div className="live-hero__clip">
-              <LiveClip src={site.qa.clip} poster={dana.hero} label={`${dana.name}, urologist`} captions={[over ? `Next live: ${soon}.` : `Next live: ${date}.`, 'Only for the list.', 'Your code is in the app.']} />
+              <LiveClip src={site.qa.clip} poster={dana.bioPhoto} label={`${dana.name}, ${dana.role.toLowerCase()}`} captions={[over ? `Next live: ${soon}.` : `Next live: ${date}.`, 'Only for the list.', 'Your code is in the app.']} />
               <Cat pose="calendar" width={120} className="live-hero__cat" />
             </div>
-            <span className="eyebrow">Live with Dr. Dana</span>
+            <span className="eyebrow">Live with Dr. Kivlin</span>
             <h1 className="h1 h1--xl">Next live: <em>{over ? soon : date}</em>.</h1>
-            {!over && <p className="lede">{when}. Dr. Dana answers your questions live.</p>}
-            {month && <p className="lede">{durMin} minutes. Dr. Dana answers your questions live.</p>}
+            {!over && <p className="lede">{when}. Dr. Kivlin answers your questions live.</p>}
+            {month && <p className="lede">{durMin} minutes. Dr. Kivlin answers your questions live.</p>}
             {left > 0 && <p className="next-live">{liveLine(left)}. {livesLeftLine(left)}</p>}
             {!over && <div className="live-hero__count"><Countdown to={startsAt} durationMin={durMin} /></div>}
           </div>
@@ -82,8 +82,8 @@ export default async function Page() {
     <section className="hero hero--center" style={{ paddingBottom: 80 }}>
       <div className="read">
         <div className="hero__cat" aria-hidden="true"><Cat pose="calendar" width={210} priority /></div>
-        <h1 className="h1" style={{ fontSize: 'clamp(40px, 5.6vw, 64px)' }}>Live with Dr. <em>Dana</em>.</h1>
-        <p className="lede">{left > 0 ? `${liveLine(left)}.` : 'Dr. Dana answers your questions live.'}</p>
+        <h1 className="h1" style={{ fontSize: 'clamp(40px, 5.6vw, 64px)' }}>Live with Dr. <em>Kivlin</em>.</h1>
+        <p className="lede">{left > 0 ? `${liveLine(left)}.` : 'Dr. Kivlin answers your questions live.'}</p>
         {month ? <p className="next-live">Next live: in {month}</p> : next && <p className="next-live">Next live: {fmt(next.startsAt)}</p>}
 
         {portal ? (
@@ -96,7 +96,7 @@ export default async function Page() {
                 ) : (
                   <p className="muted" style={{ marginTop: 12 }}>The join link appears here on the day.</p>
                 )}
-                <h2 className="h3" style={{ marginTop: 26 }}>Your question for Dr. Dana</h2>
+                <h2 className="h3" style={{ marginTop: 26 }}>Your question for Dr. Kivlin</h2>
                 <div style={{ marginTop: 14 }}><AskForm /></div>
                 {portal.replays.length > 0 && (
                   <>

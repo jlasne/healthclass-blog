@@ -1,5 +1,5 @@
 'use client';
-// The moving parts of Dr. Dana's fiber guide (/dana-kivlin/fiber): the sticky section chips, the food chart with
+// The moving parts of Dr. Kivlin's fiber guide (/dana-kivlin/fiber): the sticky section chips, the food chart with
 // "Build your day", and the supplement picker. Data in lib/fiber.ts. Picks stay in this browser only (localStorage).
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Icon } from './Icon';

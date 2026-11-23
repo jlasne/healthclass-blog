@@ -277,7 +277,7 @@ export function NextSteps({ items, letters }: { items: Resource[]; letters: stri
           {ls.map((a) => (
             <a key={a.slug} className={`card tone--${a.tone}`} href={`/letters/${a.slug}`}>
               <span className="card__art" aria-hidden="true"><Cat pose={a.cat} width={118} /></span>
-              <span className="pill card__fam">Letter from Dr. Dana</span>
+              <span className="pill card__fam">Letter from Dr. Kivlin</span>
               <b>{a.title}</b>
               <span>{a.minutes} min read</span>
             </a>

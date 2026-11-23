@@ -42,7 +42,7 @@ Read the full letter, with the sketch: [56 versus 6](https://www.healthclass.app
 
 The app opens soon on iPhone and Android: [get the launch-day email](https://www.healthclass.app/#get).
 
-Dana
+Dr. Kivlin
 
 **Sources**
 1. Dumoulin C, Cacciari LP, Hay-Smith EJC. [Pelvic floor muscle training versus no treatment, or inactive control treatments, for urinary incontinence in women](https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD005654.pub4/full). Cochrane Database of Systematic Reviews, 2018.

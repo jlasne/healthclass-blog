@@ -8,7 +8,7 @@ import { Motion } from '@/components/Motion';
 import { Waitlist } from '@/components/Waitlist';
 import { JsonLd } from '@/components/JsonLd';
 import { graph, organization, person, website } from '@/lib/seo';
-import { site } from '@/lib/site';
+import { dana, site } from '@/lib/site';
 
 // Editorial: Playfair Display for titles, Source Sans 3 for text, self-hosted (no request to Google), plus Caveat
 // for the hand-drawn sketches. Latin only: the site is in English, and the Latin files cover accents and curly quotes.
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
   title: { default: `${site.name} · ${site.tagline}`, template: `%s · ${site.name}` },
   description: site.description,
   applicationName: site.appName,
-  authors: [{ name: 'Dr. Dana Kivlin', url: '/dana-kivlin' }],
-  creator: 'Dr. Dana Kivlin',
+  authors: [{ name: dana.name, url: '/dana-kivlin' }],
+  creator: dana.name,
   publisher: site.name,
   category: 'health',
   alternates: { canonical: '/', types: { 'application/rss+xml': [{ url: '/feed.xml', title: `${site.name} letters` }] } },

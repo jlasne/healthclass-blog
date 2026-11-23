@@ -4,7 +4,7 @@ import { FEATS, PLANS, PROMOS, WEEKDAYS, YEAR, moments, type Feat, type WeekRule
 import { dana } from '@/lib/site';
 import s from './roadmap.module.css';
 
-// The 2027 calendar. Only Dr. Dana's live is fixed; the big and micro updates fill the free days around the live,
+// The 2027 calendar. Only Dr. Kivlin's live is fixed; the big and micro updates fill the free days around the live,
 // the promotions and the feats. Every choice is kept in the address (?day=4&week=last&feat=2027-03-10~Name), so the
 // link you share opens on the same plan.
 const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -50,9 +50,9 @@ export function Roadmap() {
 
   return (
     <div className={s.root}>
-      <section className={s.controls} aria-label="When Dr. Dana does her live">
+      <section className={s.controls} aria-label="When Dr. Kivlin does her live">
         <label>
-          <span>Dr. Dana&rsquo;s live day</span>
+          <span>Dr. Kivlin&rsquo;s live day</span>
           <select value={day} onChange={(e) => setDay(Number(e.target.value))}>
             {WEEKDAYS.map((w, i) => <option key={w} value={i}>{w}</option>)}
           </select>
@@ -93,12 +93,12 @@ export function Roadmap() {
         </ul>
       )}
 
-      <p className={s.note}>Only Dr. Dana&rsquo;s live is fixed. It can move when she joins a podcast: change her day above, and the updates move around it.</p>
+      <p className={s.note}>Only Dr. Kivlin&rsquo;s live is fixed. It can move when she joins a podcast: change her day above, and the updates move around it.</p>
 
       <ul className={s.legend} aria-label="Legend">
         <li data-k="big"><span><b>Big update</b>: a new program, or the next level of one</span></li>
         <li data-k="micro"><span><b>Micro update</b>: a new language (Spanish, Portuguese, French)</span></li>
-        <li data-k="live"><span><b>Live with Dr. Dana</b></span></li>
+        <li data-k="live"><span><b>Live with Dr. Kivlin</b></span></li>
         <li data-k="promo"><span><b>Promotion</b>: a % off or a challenge</span></li>
         <li data-k="feat"><span><b>Feat</b>: a live or a post with a guest</span></li>
       </ul>
@@ -132,7 +132,7 @@ export function Roadmap() {
                   const k = iso(d);
                   const promo = PROMOS.some((p) => k >= p.start && k <= p.end);
                   return (
-                    <span key={i} className={s.day} data-k={marks[k]} data-promo={promo ? 'true' : undefined} data-today={k === today ? 'true' : undefined} title={marks[k] === 'live' ? 'Live with Dr. Dana' : undefined}>
+                    <span key={i} className={s.day} data-k={marks[k]} data-promo={promo ? 'true' : undefined} data-today={k === today ? 'true' : undefined} title={marks[k] === 'live' ? 'Live with Dr. Kivlin' : undefined}>
                       {marks[k] === 'live' ? (
                         // eslint-disable-next-line @next/next/no-img-element
                         <img src={dana.avatar} alt="" width={40} height={40} />
@@ -148,7 +148,7 @@ export function Roadmap() {
                 <li data-k="live" className={s.liveItem}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={dana.avatar} alt="" width={40} height={40} />
-                  <div><time>{short(m.live)} · {hour}</time><b>Live with Dr. Dana</b><span>{plan.live}</span>{m.movedFor && <em>A week earlier, off the {m.movedFor} week.</em>}</div>
+                  <div><time>{short(m.live)} · {hour}</time><b>Live with Dr. Kivlin</b><span>{plan.live}</span>{m.movedFor && <em>A week earlier, off the {m.movedFor} week.</em>}</div>
                 </li>
               </ol>
               {promos.map((p) => (

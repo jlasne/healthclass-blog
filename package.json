@@ -2,7 +2,7 @@
   "name": "healthclass-blog",
   "version": "1.0.0",
   "private": true,
-  "description": "www.healthclass.app: the blog, newsletter and monthly Q&A of Pelvic Health Class: for Women, with Dr. Dana Kivlin.",
+  "description": "www.healthclass.app: the blog, newsletter and monthly Q&A of Pelvic Health Class: for Women, with Dr. Kivlin, board-certified urologist.",
   "scripts": {
     "dev": "next dev",
     "build": "node scripts/build-cats.mjs && next build",

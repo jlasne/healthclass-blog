@@ -68,15 +68,17 @@ gives way to the store link on every page. Report it.
   diagnosis". Every page gets the doctor note from the template; add page-specific lines in `doctor`.
 - **Avoid medical topics.** No disease pages, no surgery recovery advice, no medicine, no scores used by doctors to
   diagnose. When a search needs a doctor, the page says so and points to one.
-- **Dr. Dana's confirmed positions win.** Read "Dr. Dana's positions, confirmed November 2026" at the top of
+- **Her name.** Name her Dr. Kivlin (credential line: Dr. Kivlin, board-certified urologist). The letter and Instagram persona are Dr. Hapee Bladder. Never Dr. Dana.
+- **Dr. Kivlin's confirmed positions win.** Read "Dr. Kivlin's positions, confirmed November 2026" at the top of
   `content/dana/reels-tips.md` before each page. Fluids: balance, never "drink more to pee less". Caffeine: scale back,
   never "quit". No stomach vacuums by default: core work by level instead. Grip test: optional, with the hand
   conditions note. Leave out the 3 numbers she has yet to source ("1 in 2", "6.5 years", "6 to 7 months").
-- **Signed by the Health Class team.** Never write that Dr. Dana reviewed or wrote a page. Quote her only from text
+- **Signed by the Health Class team.** Never write that Dr. Kivlin reviewed or wrote a page. Quote her only from text
   already on the site or in the app, or from her Instagram reels summed up in `content/dana/reels-tips.md`, as
-  "Dr. Dana, on Instagram" (a `<Try>` or `<Remember>` box, or a short quote). Use her bladder, pelvic floor, core,
-  breathing and gut tips. Never use her treatment tips (medicines, estrogen, injections, surgery, pessaries): no
-  medical advice anywhere on the site, the founders' rule.
+  "Dr. Hapee Bladder, on Instagram" (a `<Try>` or `<Remember>` box, or a short quote). In a source line, write
+  "Dr. Kivlin, board-certified urologist. Instagram reels on <topic> (@dr_hapee_bladder), <months>". Use her
+  bladder, pelvic floor, core, breathing and gut tips. Never use her treatment tips (medicines, estrogen, injections,
+  surgery, pessaries): no medical advice anywhere on the site, the founders' rule.
 - **Honest comparisons.** At least 2 points where the other side wins, true and useful (price, a device, a physio, a
   feature). Then where Health Class wins. No attack on a brand. Facts dated (`checked`) and sourced. Never mention our
   store ratings or review count.
@@ -132,9 +134,9 @@ gives way to the store link on every page. Report it.
 - [x] 016 · `classes/quick-flicks` · quick flicks kegel
 - [x] 017 · `classes/pelvic-floor-101` · pelvic floor 101 / pelvic floor program
 - [x] 018 · `tools/kegel-plan-by-age` · kegel exercise plan according to your age
-- [x] 158 · `tools/fiber-calculator` · how much fiber per day for constipation (do this next: Dr. Dana's fiber guide is live at `/dana-kivlin/fiber`; a short tool page "how many grams of fiber do I eat" that reuses `lib/fiber.ts`, explains why constipation strains the pelvic floor, and links the full guide)
-- [x] 159 · `classes/printable-pelvic-floor-exercises` · printable pelvic floor exercises pdf (Dr. Dana's printable sheets from the app's exercises; also link the free sheets of the National Association For Continence, https://nafc.org/downloadable-pelvic-floor-exercises/, as "more free sheets" with credit. Their page blocks automated readers: open it in a browser, describe only what it shows, never copy it)
-- [ ] 019 · `tools/weak-or-tight-pelvic-floor-quiz` · how to know your pelvic floor is weak or tight (on hold: waits for Dr. Dana to confirm the path for a tight pelvic floor, see the top of `content/dana/reels-tips.md`; skip it until then)
+- [x] 158 · `tools/fiber-calculator` · how much fiber per day for constipation (do this next: Dr. Kivlin's fiber guide is live at `/dana-kivlin/fiber`; a short tool page "how many grams of fiber do I eat" that reuses `lib/fiber.ts`, explains why constipation strains the pelvic floor, and links the full guide)
+- [x] 159 · `classes/printable-pelvic-floor-exercises` · printable pelvic floor exercises pdf (Dr. Kivlin's printable sheets from the app's exercises; also link the free sheets of the National Association For Continence, https://nafc.org/downloadable-pelvic-floor-exercises/, as "more free sheets" with credit. Their page blocks automated readers: open it in a browser, describe only what it shows, never copy it)
+- [ ] 019 · `tools/weak-or-tight-pelvic-floor-quiz` · how to know your pelvic floor is weak or tight (on hold: waits for Dr. Kivlin to confirm the path for a tight pelvic floor, see the top of `content/dana/reels-tips.md`; skip it until then)
 - [x] 020 · `compare/kegels-vs-pelvic-floor-exercises` · kegels vs pelvic floor exercises
 - [x] 021 · `made-for-you/desk-workers` · is sitting bad for pelvic floor
 
@@ -146,7 +148,7 @@ gives way to the store link on every page. Report it.
 - [ ] 025 · `tools/bladder-training-schedule` · bladder training schedule
 - [ ] 026 · `classes/bladder-training` · bladder training program (in the app since November 9, 2026)
 - [ ] 027 · `made-for-you/teachers` · teacher bladder
-- [ ] 155 · `made-for-you/urge-when-you-get-home` · urge to pee when i get home / latchkey incontinence (Dr. Dana's arrival routine, confirmed November 2026: 3 tasks before the toilet, keys away, shoes off, bag on the hook, then walk calmly; name your bladder)
+- [ ] 155 · `made-for-you/urge-when-you-get-home` · urge to pee when i get home / latchkey incontinence (Dr. Kivlin's arrival routine, confirmed November 2026: 3 tasks before the toilet, keys away, shoes off, bag on the hook, then walk calmly; name your bladder)
 - [ ] 028 · `compare/pelvic-floor-therapy-vs-kegels` · pelvic floor therapy vs kegel exercises
 
 ### After birth
@@ -181,7 +183,7 @@ gives way to the store link on every page. Report it.
 
 ### Everyday bladder
 
-- [ ] 050 · `tools/how-often-should-you-pee` · how many times a day should you pee female (Dr. Dana, confirmed November 2026: balance, pale yellow urine; clearer urine irritates less; sip steadily, drink after waking, stop 2 to 3 hours before bed)
+- [ ] 050 · `tools/how-often-should-you-pee` · how many times a day should you pee female (Dr. Kivlin, confirmed November 2026: balance, pale yellow urine; clearer urine irritates less; sip steadily, drink after waking, stop 2 to 3 hours before bed)
 - [ ] 051 · `tools/nighttime-pee-checker` · how often should you pee at night
 - [ ] 052 · `tools/bladder-irritants-checker` · bladder irritants list
 - [ ] 053 · `tools/caffeine-and-bladder-calculator` · caffeine bladder urgency
@@ -282,7 +284,7 @@ gives way to the store link on every page. Report it.
 ### Strong after 60
 
 - [ ] 120 · `made-for-you/women-over-60` · pelvic floor exercises for women over 60
-- [ ] 156 · `tools/grip-strength-checker` · grip strength test chart by age (Dr. Dana, confirmed November 2026: optional test; skip it with arthritis, rheumatoid arthritis or a hand injury; below 16 kg flags low muscle strength in women; a low score shows her message from `content/dana/reels-tips.md`: an opportunity, not a diagnosis)
+- [ ] 156 · `tools/grip-strength-checker` · grip strength test chart by age (Dr. Kivlin, confirmed November 2026: optional test; skip it with arthritis, rheumatoid arthritis or a hand injury; below 16 kg flags low muscle strength in women; a low score shows her message from `content/dana/reels-tips.md`: an opportunity, not a diagnosis)
 - [ ] 121 · `made-for-you/postmenopause` · pelvic floor postmenopausal
 - [ ] 122 · `classes/prolapse` · prolapse class (status: soon; send symptoms to a doctor)
 - [ ] 123 · `classes/lift-a-bag-safely` · pelvic floor and heavy lifting
@@ -326,6 +328,6 @@ gives way to the store link on every page. Report it.
 - [ ] 149 · `compare/emsella-vs-pelvic-floor-therapy` · emsella vs pelvic floor therapy
 - [ ] 150 · `tools/stream-counter` · how long should you pee for women
 - [ ] 151 · `tools/urine-color-chart` · urine color chart for hydration
-- [ ] 152 · `tools/water-intake-calculator` · water intake calculator by weight / does drinking more water help overactive bladder (Dr. Dana, confirmed November 2026: aim for balance, pale yellow urine; too little and too much both hurt; caffeine: scale back, keep what you love)
+- [ ] 152 · `tools/water-intake-calculator` · water intake calculator by weight / does drinking more water help overactive bladder (Dr. Kivlin, confirmed November 2026: aim for balance, pale yellow urine; too little and too much both hurt; caffeine: scale back, keep what you love)
 - [ ] 153 · `tools/bristol-stool-chart` · bristol stool chart
 - [ ] 154 · `tools/kegel-chart` · kegel exercise chart for women (with a printable version)

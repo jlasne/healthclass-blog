@@ -9,9 +9,12 @@ import matter from 'gray-matter';
 import readingTime from 'reading-time';
 import type { Pose } from '@/components/Cat';
 import { getResources } from './resources';
-import { absoluteUrl } from './site';
+import { absoluteUrl, dana } from './site';
 
 const DIR = path.join(process.cwd(), 'newsletter', 'issues');
+// the sign-off line at the end of an issue: "Dr. Kivlin" (older files: "Dana"). The page shows its own sign-off
+// block, so the web body drops it; the email body ends with "Dr. Kivlin".
+const SIGNOFF = /\n+(?:Dr\. Kivlin|Dana)\s*$/;
 
 // the first send: Wednesday, November 18, 2026. Then Sunday, Wednesday, Sunday... (the cron's schedule).
 const FIRST_SEND = Date.UTC(2026, 10, 18);
@@ -63,7 +66,7 @@ export function getIssues(): Issue[] {
       const marks = sources.length ? `\n\n**Want the sources?** They are on the web: [${page.replace('https://', '')}](${page})` : '';
       const web = main
         .replace(/^Hi \{\{first_name\|there\}\},\s*/, '')
-        .replace(/\n+Dana\s*$/, '')
+        .replace(SIGNOFF, '')
         .replace(/\[(\d+)\](?!\()/g, '<Ref n={$1} />');
       return {
         file: r.file,
@@ -76,7 +79,7 @@ export function getIssues(): Issue[] {
         tone: (r.data.tone || 'rosy') as Issue['tone'],
         date: sendDate(index),
         minutes: Math.max(1, Math.round(readingTime(web).minutes)),
-        body: `${main.replace(/\n+Dana\s*$/, '')}${marks}\n\nDana`,
+        body: `${main.replace(SIGNOFF, '')}${marks}\n\n${dana.name}`,
         web,
         sources,
       };

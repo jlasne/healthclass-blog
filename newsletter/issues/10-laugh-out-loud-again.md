@@ -38,7 +38,7 @@ Our team wrote a page for exactly this moment: [For women who leak when they lau
 
 The app opens soon on iPhone and Android: [get the launch-day email](https://www.healthclass.app/#get).
 
-Dana
+Dr. Kivlin
 
 **Sources**
 1. Patel UJ, Godecker AL, Giles DL, Brown HW. [Updated prevalence of urinary incontinence in women: 2015-2018 national population-based survey data](https://pubmed.ncbi.nlm.nih.gov/35030139/). Female Pelvic Med Reconstr Surg, 2022.

@@ -32,7 +32,7 @@ export function Waitlist() {
             <h2 id="wait-t" className="h3">Be first on <em>launch day</em>.</h2>
           </div>
         </div>
-        <p className="wait__lede">The app opens soon. Join Dr. Dana&rsquo;s free letter: the launch-day email comes first.</p>
+        <p className="wait__lede">The app opens soon. Join Dr. Hapee Bladder&rsquo;s free letter: the launch-day email comes first.</p>
         <NewsletterForm source="waitlist" tag="app-waitlist" fine="Then 1 short letter every Wednesday and Sunday. Free, unsubscribe in 1 click." />
       </div>
     </dialog>

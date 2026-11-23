@@ -2,7 +2,7 @@ import { ogImage, ogSize } from '@/lib/og';
 import { getArticle, getArticles } from '@/lib/articles';
 import { getIssue, getIssues } from '@/lib/newsletter';
 
-export const alt = 'A letter from Dr. Dana Kivlin, board-certified urologist';
+export const alt = 'A letter from Dr. Kivlin, board-certified urologist';
 export const size = ogSize;
 export const contentType = 'image/png';
 export function generateStaticParams() {

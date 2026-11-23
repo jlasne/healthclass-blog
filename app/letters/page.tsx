@@ -11,7 +11,7 @@ export const revalidate = 3600;
 
 export const metadata = meta({
   title: 'Pelvic floor letters for women: leaks, core, intimacy, after birth',
-  description: 'Free letters twice a week from Dr. Dana Kivlin, board-certified urologist: bladder leaks, Kegels done right, the Knack, pregnancy and more. Short and sourced.',
+  description: 'Free letters twice a week from Dr. Kivlin, board-certified urologist: bladder leaks, Kegels done right, the Knack, pregnancy and more. Short and sourced.',
   path: '/letters',
 });
 

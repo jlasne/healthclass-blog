@@ -1,15 +1,19 @@
 # www.healthclass.app
 
 The blog, the newsletter, the monthly members' Q&A and the legal pages of **Pelvic Health Class: for Women**, the app
-of Dr. Dana Kivlin, board-certified urologist ([jlasne/healthclass](https://github.com/jlasne/healthclass)).
+of Dr. Kivlin, board-certified urologist ([jlasne/healthclass](https://github.com/jlasne/healthclass)).
+Naming (her request, November 2026): she is **Dr. Kivlin** everywhere; the credential line is "Dr. Kivlin, board-certified
+urologist". Her Instagram persona and the Class Notes sender are **Dr. Hapee Bladder** (@dr_hapee_bladder). Never
+"Dr. Dana" or "Dr. Dana Kivlin". Identifiers stay as they are (`dana`, `/dana-kivlin`, `content/dana/`, DrDana@).
+
 Same design language as the app: paper, rose and plum, Playfair Display and Source Sans 3 (the "Editorial" pairing), and the class cat in 6-frame loops.
 
 | Page | What |
 |---|---|
-| `/` | One goal: get the app (store buttons, QR code). Below: Dr. Dana, the letters, the lives |
+| `/` | One goal: get the app (store buttons, QR code). Below: Dr. Kivlin, the letters, the lives |
 | `/letters`, `/letters/<slug>` | The letter signup, then the archive with search. Each letter has a hand-drawn sketch, sources, FAQ, share image |
-| `/live` | The monthly live with Dr. Dana. Locked: a premium plan in the app + the free letter. One email field unlocks it |
-| `/dana-kivlin` | Dr. Dana in her own words: credentials, why the class, where to find her, podcasts |
+| `/live` | The monthly live with Dr. Kivlin. Locked: a premium plan in the app + the free letter. One email field unlocks it |
+| `/dana-kivlin` | Dr. Kivlin in her own words: credentials, why the class, where to find her, podcasts |
 | `/faq` | FAQ and help, the Support URL for the App Store and Google Play (cancel, restore, delete my data) |
 | `/resources`, `/resources/<family>`, `/resources/<family>/<slug>` | Free tools, Side by side, The classes, Made for you: one page a day ([plan](content/resources/PLAN.md)) |
 | `/privacy`, `/terms` | One policy and one set of terms for the app **and** the website (store-ready drafts) |
@@ -45,9 +49,9 @@ NEXT_LOG=next.log node tests/flows.mjs http://localhost:3005    # the forms end 
 
 ## Launch checklist
 
-1. `npm run check` lists what is left. It fails while a `[bracket]` is in the legal pages or a letter lacks Dr. Dana's
+1. `npm run check` lists what is left. It fails while a `[bracket]` is in the legal pages or a letter lacks Dr. Kivlin's
    approval (`reviewed: true` in its front matter).
-2. Dr. Dana approves the 9 letters, the home page quote, "A letter from Dana" on `/dana-kivlin`, and her facts in
+2. Dr. Kivlin approves the 9 letters, the home page quote, "Why I made this class" on `/dana-kivlin`, and her facts in
    `lib/site.ts` (name, board certification, Middlesex Health, medical school and year).
 3. Fill `lib/legal.ts` (publisher, address, governing law, Supabase region) and the video platform in
    `app/privacy/page.tsx`. Have a lawyer read `/privacy` and `/terms`.
@@ -94,8 +98,8 @@ voice), `seoTitle` (the search query), `description` (150 characters), `excerpt`
 
 ## Resources (/resources)
 
-Dr. Dana's tips from her Instagram reels, summed up in `content/dana/reels-tips.md`, feed `/dana-kivlin` and the pages
-(quoted as "Dr. Dana, on Instagram"). Her treatment tips are never used: no medical advice on the site.
+Dr. Kivlin's tips from her Instagram reels, summed up in `content/dana/reels-tips.md`, feed `/dana-kivlin` and the pages
+(quoted as "Dr. Hapee Bladder, on Instagram"). Her treatment tips are never used: no medical advice on the site.
 
 Free tools, comparisons, the classes week by week and pages for each moment, in `content/resources/<family>/<slug>.mdx`
 (families: `tools`, `compare`, `classes`, `made-for-you`). One new page a day, in the order and with the rules of

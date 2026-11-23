@@ -1,7 +1,7 @@
 Subject: You're in. Here is what Wednesday and Sunday bring.
 Preview: 1 idea, 1 exercise, 1 reader question. 3 minutes.
 
-Hi, I'm Dana.
+Hi, I'm Dr. Kivlin. On Instagram, I'm Dr. Hapee Bladder.
 
 I'm a board-certified urologist at Middlesex Health in Connecticut. Every Wednesday and Sunday I'll send you one short letter about
 your pelvic floor:
@@ -18,8 +18,7 @@ Free, for good. 2 emails a week. Leave in 1 click at the bottom of any letter.
 **One favor:** reply with one word: what brought you here? Leaks, pregnancy, curiosity, something else? I read the
 replies, and they decide what I write next.
 
-Dana
-Dr. Dana Kivlin · Board-certified urologist
+Dr. Kivlin, board-certified urologist
 
 ---
 Class Notes is education, not medical advice. In an emergency, call 911.

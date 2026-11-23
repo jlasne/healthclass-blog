@@ -6,7 +6,7 @@ import { Icon } from './Icon';
 import { GetApp } from './Waitlist';
 import { dana, nav } from '@/lib/site';
 
-// the small mark before each link: an icon, or Dr. Dana's face
+// the small mark before each link: an icon, or Dr. Kivlin's face
 function Mark({ icon }: { icon: string }) {
   // eslint-disable-next-line @next/next/no-img-element
   if (icon === 'face') return <img className="hd__face" src={dana.avatar} alt="" width={22} height={22} />;

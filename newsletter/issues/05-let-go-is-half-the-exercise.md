@@ -45,7 +45,7 @@ Read the full letter, with the sketch: [Let go is half the exercise](https://www
 
 The app opens soon on iPhone and Android: [get the launch-day email](https://www.healthclass.app/#get).
 
-Dana
+Dr. Kivlin
 
 **Sources**
 1. Frawley H, et al. [An International Continence Society (ICS) report on the terminology for pelvic floor muscle assessment](https://www.ics.org/Wasabi/Documents/DocumentsDownload.aspx?DocumentID=6008). Neurourology and Urodynamics, 2021.

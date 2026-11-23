@@ -37,7 +37,7 @@ export default defineSchema({
   qaLinks: defineTable({ tokenHash: v.string(), email: v.string(), expiresAt: v.number(), usedAt: v.optional(v.number()) }).index('by_tokenHash', ['tokenHash']),
   // a signed-in browser (its cookie's SHA-256), valid 30 days
   qaPasses: defineTable({ passHash: v.string(), email: v.string(), expiresAt: v.number(), createdAt: v.number() }).index('by_passHash', ['passHash']),
-  // the live sessions with Dr. Dana, one a month
+  // the live sessions with Dr. Kivlin, one a month
   qaEvents: defineTable({
     startsAt: v.number(),
     durationMin: v.number(),

@@ -37,10 +37,11 @@ export const organization = {
 export const person = {
   '@type': 'Person',
   '@id': danaId,
-  name: dana.name.replace(/^Dr\.\s*/, ''),
+  name: dana.name,
+  familyName: dana.lastName,
   honorificPrefix: 'Dr.',
   jobTitle: 'Urologist',
-  description: `${dana.role} at ${dana.practice} in ${dana.practiceCity}. Creator of ${site.appName}.`,
+  description: `${dana.name}, ${dana.role.toLowerCase()} at ${dana.practice} in ${dana.practiceCity}. Creator of ${site.appName}.`,
   image: absoluteUrl(dana.photo),
   url: absoluteUrl('/dana-kivlin'),
   worksFor: { '@type': 'MedicalOrganization', name: dana.practice, url: 'https://middlesexhealth.org' },

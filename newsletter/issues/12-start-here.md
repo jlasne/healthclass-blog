@@ -10,7 +10,7 @@ Hi {{first_name|there}},
 
 If you joined in the last few weeks, welcome. This one is for you. If you have been here from the start, think of it as a recap.
 
-I'm Dana, a board-certified urologist at Middlesex Health in Connecticut. Class Notes is my free letter about your pelvic floor. It comes every Wednesday and Sunday at 7:00 AM Eastern. Each one brings:
+I'm Dr. Kivlin, a board-certified urologist at Middlesex Health in Connecticut. Class Notes is my free letter about your pelvic floor. It comes every Wednesday and Sunday at 7:00 AM Eastern. Each one brings:
 
 1. **1 idea.** What the research says, in plain words, with its source.
 2. **1 exercise.** A 2-minute move to try the same day.
@@ -36,7 +36,7 @@ Leaks do rise with age. In a national survey, 9.7% of women aged 20 to 39 had a 
 
 The app opens soon on iPhone and Android: [get the launch-day email](https://www.healthclass.app/#get).
 
-Dana
+Dr. Kivlin
 
 **Sources**
 1. Patel UJ, Godecker AL, Giles DL, Brown HW. [Updated prevalence of urinary incontinence in women: 2015-2018 national population-based survey data](https://pubmed.ncbi.nlm.nih.gov/35030139/). Female Pelvic Med Reconstr Surg, 2022.

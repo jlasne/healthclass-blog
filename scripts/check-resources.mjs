@@ -3,7 +3,7 @@
 // What it checks, per page in content/resources/<family>/<slug>.mdx:
 //   the front matter a template needs, the copy rules (no em or en dashes, under 30 words a sentence), https sources,
 //   links that land on real pages, the honesty rule on comparisons (2 or more points where the other side wins),
-//   no "Reviewed by Dr. Dana" without her review, and one page per search title.
+//   no "Reviewed by Dr. Kivlin" without her review, and one page per search title.
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -49,7 +49,7 @@ for (const p of pages) {
   for (const m of raw.matchAll(/\{app\.([a-zA-Z]+)\}/g)) if (!facts.has(m[1])) fails.push(`${file}: {app.${m[1]}} is not in lib/app-facts.ts`);
   if (fam === 'compare' && !/\{app\.[a-zA-Z]+\}/.test(raw)) fails.push(`${file}: a comparison shows Health Class facts as {app.price}, {app.phones}... (lib/app-facts.ts), so they follow the app`);
   if (/[—–]/.test(raw)) fails.push(`${file}: an em or en dash (use a period, a colon or a comma)`);
-  if (/reviewed by dr|reviewed by dana|medically reviewed/i.test(raw)) fails.push(`${file}: says Dr. Dana reviewed it. Only with her written OK.`);
+  if (/reviewed by dr|reviewed by dana|medically reviewed/i.test(raw)) fails.push(`${file}: says Dr. Kivlin reviewed it. Only with her written OK.`);
   for (const s of data.sources ?? []) if (!/^https:\/\//.test(s.url ?? '')) fails.push(`${file}: source URL is not https: ${s.url}`);
   const refs = [...content.matchAll(/<Ref n=\{(\d+)\}/g)].map((m) => Number(m[1]));
   for (const n of refs) if (n < 1 || n > (data.sources ?? []).length) fails.push(`${file}: <Ref n={${n}} /> has no source ${n}`);

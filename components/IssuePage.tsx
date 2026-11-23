@@ -7,7 +7,7 @@ import { type Issue } from '@/lib/newsletter';
 import { fmtDate } from '@/lib/articles';
 
 // One Class Notes issue on the site: the same letter that went out by email, with its sources listed here (the email
-// only links to this page). Reads like a letter: kind and number up top, the cat, the body, Dana's sign-off.
+// only links to this page). Reads like a letter: kind and number up top, the cat, the body, Dr. Kivlin's sign-off.
 export async function IssuePage({ issue, prev, next }: { issue: Issue; prev: Issue | null; next: Issue | null }) {
   return (
     <article className={`tone--${issue.tone}`}>
@@ -38,8 +38,8 @@ export async function IssuePage({ issue, prev, next }: { issue: Issue; prev: Iss
         </div>
 
         <div className="signoff">
-          <span className="signoff__name">{dana.firstName}</span>
-          <span className="signoff__who">{dana.fullName}, {dana.role.toLowerCase()}, {dana.practice}</span>
+          <span className="signoff__name">{dana.name}</span>
+          <span className="signoff__who">{dana.name}, {dana.role.toLowerCase()}, {dana.practice}</span>
         </div>
 
         <div className="post-foot">

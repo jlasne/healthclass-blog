@@ -50,7 +50,7 @@ Read the full letter, with the sketch: [Half of us squeeze wrong](https://www.he
 
 The app opens soon on iPhone and Android: [get the launch-day email](https://www.healthclass.app/#get).
 
-Dana
+Dr. Kivlin
 
 **Sources**
 1. Bump RC, Hurt WG, Fantl JA, Wyman JF. [Assessment of Kegel pelvic muscle exercise performance after brief verbal instruction](https://pubmed.ncbi.nlm.nih.gov/1872333/). American Journal of Obstetrics and Gynecology, 1991.

@@ -47,7 +47,7 @@ Read the full letter, with the sketch: [Squeeze before you sneeze](https://www.h
 
 The app opens soon on iPhone and Android: [get the launch-day email](https://www.healthclass.app/#get).
 
-Dana
+Dr. Kivlin
 
 **Sources**
 1. Miller JM, Ashton-Miller JA, DeLancey JO. [A pelvic muscle precontraction can reduce cough-related urine loss in selected women with mild SUI](https://pubmed.ncbi.nlm.nih.gov/9670874/). Journal of the American Geriatrics Society, 1998.

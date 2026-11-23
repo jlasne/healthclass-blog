@@ -1,4 +1,4 @@
-// The monthly Q&A with Dr. Dana, for the app's paid members. The website's server does the crypto (random tokens,
+// The monthly Q&A with Dr. Kivlin, for the app's paid members. The website's server does the crypto (random tokens,
 // SHA-256) and the email; Convex only stores hashes and answers "is this a member". Nothing here tells a browser
 // whether an email has a plan: requestLink answers the same way for everyone, and only the server sees `sent`.
 import { v } from 'convex/values';
@@ -78,7 +78,7 @@ export const portal = query({
     const past = await ctx.db.query('qaEvents').withIndex('by_startsAt', (q) => q.lt('startsAt', Date.now() - 3 * 3600_000)).order('desc').take(12);
     const mine = await ctx.db.query('qaQuestions').withIndex('by_email', (q) => q.eq('email', email)).order('desc').take(20);
     // her replays: every live since her first plan day (her first member row), the months between 2 plans included, and a
-    // live held the day she joins (Dr. Dana, November 2026: "Join today: every replay from today.")
+    // live held the day she joins (Dr. Kivlin, November 2026: "Join today: every replay from today.")
     const rows = await ctx.db.query('members').withIndex('by_email', (q) => q.eq('email', email)).collect();
     const since = (rows.length ? Math.min(...rows.map((m) => m._creationTime)) : Date.now()) - 24 * 3600_000;
     return {
