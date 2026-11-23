@@ -121,6 +121,8 @@ export const absoluteUrl = (p = '/') => new URL(p, site.url).toString();
 export const linkSources: Record<string, string> = {
   ig: 'instagram',
   'ig-story': 'instagram-story',
+  tiktok: 'tiktok',
+  fb: 'facebook',
   nl: 'newsletter',
   blog: 'blog',
   web: 'website',
