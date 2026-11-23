@@ -28,6 +28,12 @@ export function proxy(req: NextRequest, ev: NextFetchEvent) {
   if (host !== site.magicHost) return NextResponse.next();
 
   const url = req.nextUrl;
+  // Search engines and link checkers get a permanent redirect to www for every path, so Google keeps one home page
+  // (www) instead of two. Phones and people keep the magic link below. Googlebot smartphone sends an Android user agent,
+  // so this check comes before the phone check: it must never be sent to a store.
+  if (/bot|crawler|spider|slurp|Google-InspectionTool|bingpreview|facebookexternalhit/i.test(req.headers.get('user-agent') ?? '')) {
+    return NextResponse.redirect(new URL(url.pathname + url.search, WWW), 308);
+  }
   const code = url.pathname.replace(/^\/+|\/+$/g, '').toLowerCase();
   const isLink = code === '' || code === 'get' || code === 'download' || code in linkSources;
   if (!isLink) return NextResponse.redirect(new URL(url.pathname + url.search, WWW), 308);
