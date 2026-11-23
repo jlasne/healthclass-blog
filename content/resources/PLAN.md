@@ -142,7 +142,7 @@ gives way to the store link on every page. Report it.
 
 - [x] 022 · `tools/bladder-diary` · bladder diary (with a printable version)
 - [x] 023 · `tools/overactive-bladder-quiz` · overactive bladder quiz
-- [ ] 024 · `tools/urge-wave-timer` · urge suppression techniques
+- [x] 024 · `tools/urge-wave-timer` · urge suppression techniques
 - [ ] 025 · `tools/bladder-training-schedule` · bladder training schedule
 - [ ] 026 · `classes/bladder-training` · bladder training program (in the app since November 9, 2026)
 - [ ] 027 · `made-for-you/teachers` · teacher bladder
