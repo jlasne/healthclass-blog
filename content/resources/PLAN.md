@@ -145,7 +145,7 @@ gives way to the store link on every page. Report it.
 - [x] 022 · `tools/bladder-diary` · bladder diary (with a printable version)
 - [x] 023 · `tools/overactive-bladder-quiz` · overactive bladder quiz
 - [x] 024 · `tools/urge-wave-timer` · urge suppression techniques
-- [ ] 025 · `tools/bladder-training-schedule` · bladder training schedule
+- [x] 025 · `tools/bladder-training-schedule` · bladder training schedule
 - [ ] 026 · `classes/bladder-training` · bladder training program (in the app since November 9, 2026)
 - [ ] 027 · `made-for-you/teachers` · teacher bladder
 - [ ] 155 · `made-for-you/urge-when-you-get-home` · urge to pee when i get home / latchkey incontinence (Dr. Kivlin's arrival routine, confirmed November 2026: 3 tasks before the toilet, keys away, shoes off, bag on the hook, then walk calmly; name your bladder)

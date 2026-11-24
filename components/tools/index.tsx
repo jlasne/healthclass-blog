@@ -10,6 +10,7 @@ import { ExerciseSheet } from './ExerciseSheet';
 import { BladderDiary } from './BladderDiary';
 import { OabQuiz } from './OabQuiz';
 import { UrgeTimer } from './UrgeTimer';
+import { BladderSchedule } from './BladderSchedule';
 
 const page = (ref: string, fallback: string) => resolve(ref)?.path ?? fallback;
 const letter = (slug: string) => (getArticle(slug) ? `/letters/${slug}` : undefined);
@@ -48,6 +49,9 @@ export function Tool({ id }: { id: string }) {
   }
   if (id === 'exercise-sheet') return <ExerciseSheet />;
   if (id === 'bladder-diary') return <BladderDiary />;
+  if (id === 'bladder-training-schedule') {
+    return <BladderSchedule links={{ urge: resolve('tools/urge-wave-timer')?.path, diary: resolve('tools/bladder-diary')?.path, leaks: page('classes/bladder-leaks', '/resources/classes') }} />;
+  }
   if (id === 'urge-wave-timer') {
     return <UrgeTimer links={{ diary: resolve('tools/bladder-diary')?.path, leaks: page('classes/bladder-leaks', '/resources/classes'), oab: resolve('tools/overactive-bladder-quiz')?.path }} />;
   }
