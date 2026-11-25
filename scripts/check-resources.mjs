@@ -84,7 +84,8 @@ for (const p of pages) {
     need('pick.them', data.pick?.them); need('pick.us', data.pick?.us);
   }
   // a class or a week has weeks and a status; an exercise page (kind: exercise) has facts and a <Try> box
-  if (fam === 'classes' && data.kind !== 'exercise') { need('weeks'); need('status'); }
+  if (fam === 'classes' && data.kind !== 'exercise' && data.kind !== 'tool') { need('weeks'); need('status'); }
+  if (fam === 'classes' && data.kind === 'tool') { need('status'); need('facts'); }
   if (fam === 'classes' && data.kind === 'exercise') { need('facts'); if (!/<Try[\s>]/.test(content)) fails.push(`${file}: an exercise page needs a <Try> box`); }
   if (fam === 'made-for-you') { need('goal'); need('fit'); if (data.fit && !known.has(data.fit)) warns.push(`${file}: fit ${data.fit} is not written yet`); }
 }

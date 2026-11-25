@@ -103,7 +103,8 @@ gives way to the store link on every page. Report it.
 - 3 sides or more (X vs Y, alternatives, best of): use `sides` (Health Class as the last side), `rows` (one value per
   side), `winsBy` (every side, 2 points or more) and `pickBy`, in place of `rival`, `table`, `wins` and `pick`.
 - Class or week or exercise: `classes/bladder-leaks.mdx` (`status`, `facts`, `weeks`; an exercise page sets `kind: exercise`,
-  leaves `weeks` out, keeps `facts`, and uses a `<Try>` box in the body). A class not out yet: `status: soon`.
+  leaves `weeks` out, keeps `facts`, and uses a `<Try>` box in the body; a tool of the classes, like bladder training, sets `kind: tool`,
+  keeps `status` and `facts`, and leaves `weeks` out). A class not out yet: `status: soon`.
 - Made for you: `made-for-you/leak-when-you-sneeze.mdx` (`goal`, `fit`).
 
 ## The list
@@ -146,7 +147,7 @@ gives way to the store link on every page. Report it.
 - [x] 023 · `tools/overactive-bladder-quiz` · overactive bladder quiz
 - [x] 024 · `tools/urge-wave-timer` · urge suppression techniques
 - [x] 025 · `tools/bladder-training-schedule` · bladder training schedule
-- [ ] 026 · `classes/bladder-training` · bladder training program (in the app since November 9, 2026)
+- [x] 026 · `classes/bladder-training` · bladder training program (in the app since November 9, 2026)
 - [ ] 027 · `made-for-you/teachers` · teacher bladder
 - [ ] 155 · `made-for-you/urge-when-you-get-home` · urge to pee when i get home / latchkey incontinence (Dr. Kivlin's arrival routine, confirmed November 2026: 3 tasks before the toilet, keys away, shoes off, bag on the hook, then walk calmly; name your bladder)
 - [ ] 028 · `compare/pelvic-floor-therapy-vs-kegels` · pelvic floor therapy vs kegel exercises
