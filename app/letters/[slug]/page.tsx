@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!a) {
     const i = getIssue(slug);
     if (!i) return {};
-    const m = meta({ title: i.subject, description: i.preview, path: `/letters/${i.slug}`, type: 'article' });
+    const m = meta({ title: `${i.subject}: Class Notes No. ${i.n}`, description: i.preview, path: `/letters/${i.slug}`, type: 'article' });
     return { ...m, authors: [{ name: dana.name, url: '/dana-kivlin' }], openGraph: { ...m.openGraph, type: 'article', publishedTime: i.date, authors: ['/dana-kivlin'], section: i.topic } };
   }
   const m = meta({ title: a.seoTitle, description: a.description, path: `/letters/${a.slug}`, type: 'article' });

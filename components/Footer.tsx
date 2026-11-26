@@ -31,6 +31,10 @@ export function Footer() {
           <div>
             <h2>Read</h2>
             <ul>
+              <li><a href="/letters/how-to-do-kegels-correctly">How to do a Kegel</a></li>
+              <li><a href="/letters/what-is-the-pelvic-floor">What is the pelvic floor</a></li>
+              <li><a href="/letters/bladder-leaks-common-not-normal">Bladder leaks</a></li>
+              <li><a href="/letters/do-kegels-work-for-bladder-leaks">Do Kegels work?</a></li>
               <li><a href="/letters">All letters</a></li>
             </ul>
           </div>
