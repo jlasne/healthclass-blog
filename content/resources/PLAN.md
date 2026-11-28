@@ -150,7 +150,7 @@ gives way to the store link on every page. Report it.
 - [x] 026 · `classes/bladder-training` · bladder training program (in the app since November 9, 2026)
 - [x] 027 · `made-for-you/teachers` · teacher bladder
 - [x] 155 · `made-for-you/urge-when-you-get-home` · urge to pee when i get home / latchkey incontinence (Dr. Kivlin's arrival routine, confirmed November 2026: 3 tasks before the toilet, keys away, shoes off, bag on the hook, then walk calmly; name your bladder)
-- [ ] 028 · `compare/pelvic-floor-therapy-vs-kegels` · pelvic floor therapy vs kegel exercises
+- [x] 028 · `compare/pelvic-floor-therapy-vs-kegels` · pelvic floor therapy vs kegel exercises
 
 ### After birth
 
