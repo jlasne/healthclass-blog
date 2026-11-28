@@ -14,6 +14,6 @@ export async function unlockRoadmap(_prev: GateState, fd: FormData): Promise<Gat
     await new Promise((r) => setTimeout(r, 800)); // slows down guessing
     return { status: 'error', message: 'Wrong password. Try again.' };
   }
-  (await cookies()).set('hc_roadmap', passFor(pw), { httpOnly: true, secure: process.env.NODE_ENV === 'production', sameSite: 'lax', path: '/roadmap', maxAge: 30 * 24 * 3600 });
+  (await cookies()).set('hc_roadmap', passFor(pw), { httpOnly: true, secure: process.env.NODE_ENV === 'production', sameSite: 'lax', path: '/', maxAge: 30 * 24 * 3600 });
   return { status: 'idle' };
 }

@@ -12,7 +12,9 @@
     "convex:dev": "convex dev",
     "convex:deploy": "convex deploy",
     "typecheck": "tsc --noEmit",
-    "check:resources": "node scripts/check-resources.mjs"
+    "check:resources": "node scripts/check-resources.mjs",
+    "brand:check": "node scripts/check-brand.mjs",
+    "brand:sync": "node scripts/sync-brand.mjs ../healthclass/brand"
   },
   "engines": {
     "node": ">=20.9"
